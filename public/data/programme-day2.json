@@ -1,0 +1,28 @@
+{
+  "day": "DAY 2",
+  "date": "THURSDAY, NOVEMBER 28, 2025",
+  "theme": "Empower Voices with Authority – Articulating the Kingdom in a Noisy World",
+  "focus": "Equipping Christian leaders to communicate boldly and influence culture with biblical clarity.",
+  "morning": [
+    { "time": "09:00 – 09:10", "title": "Opening Prayer & Welcome" },
+    { "time": "09:10 – 09:30", "title": "Worship & Devotion (Voice Like a Trumpet)" },
+    { "time": "09:30 – 10:00", "title": "Keynote #1: Prophetic Leadership in the Age of Cultural Decay" },
+    { "time": "10:00 – 10:30", "title": "Keynote #2: Digital Prophets – Preaching Beyond the Pulpit" },
+    { "time": "10:30 – 11:00", "title": "Panel Discussion: Navigating Truth & Grace in a Divided World" },
+    { "time": "11:00 – 11:15", "title": "Spoken Word Interlude – \"I Will Not Be Silent\"" },
+    { "time": "11:15 – 11:45", "title": "Story Segment – How I Used My Voice to Shift Culture" },
+    { "time": "11:45 – 12:15", "title": "Prayer & Commissioning" },
+    { "time": "12:15 – 12:30", "title": "Announcements & Lab Orientation" }
+  ],
+  "afternoon": {
+    "time": "14:00 – 17:30",
+    "description": "Each track combines teaching, case study, and digital enablement.",
+    "tracks": [
+      { "emoji": "1️⃣", "title": "Media & Technology Lab", "subtitle": "Owning the Narrative: Tools for Prophetic Content" },
+      { "emoji": "2️⃣", "title": "Business & Governance Lab", "subtitle": "Kingdom Influence in Policy & Enterprise" },
+      { "emoji": "3️⃣", "title": "Faith & Education Lab", "subtitle": "Shaping Worldviews Through Biblical Instruction" },
+      { "emoji": "4️⃣", "title": "Arts & Culture Lab", "subtitle": "Creative Voices: Redeeming the Artistic Space" }
+    ]
+  },
+  "evening": "Optional Evening Activities: Faith Village Exhibits, Media Booths, Digital Empowerment Clinics"
+}
