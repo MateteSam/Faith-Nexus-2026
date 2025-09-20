@@ -3,6 +3,7 @@ import RegistrationForm from '@/components/RegistrationForm';
 import { ScrollingBanner } from '@/components/ScrollingBanner';
 import { RegisterButton } from '@/components/RegisterButton';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import { Target, Users, Award, Heart } from 'lucide-react';
 
 const FaithNexus = () => {
   return (
@@ -10,6 +11,72 @@ const FaithNexus = () => {
       <ScrollingBanner />
       <main className="py-12">
         <AboutSection />
+
+        {/* Enhanced About Section */}
+        <section className="max-w-6xl mx-auto px-4 mt-16 mb-16">
+          <div className="bg-card rounded-2xl p-8 md:p-12 border border-border">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">About Faith Nexus</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+              Faith Nexus is a global summit and movement dedicated to equipping and connecting Christian content creators to influence society for Christ through media, technology, education, governance, economy, and the arts.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
+              Founded on the belief that faith-driven voices can shape culture and the future, Faith Nexus serves as a platform for training, collaboration, and strategic networking for pastors, authors, filmmakers, podcasters, broadcasters, educators, entrepreneurs, and creatives. It is a <span className="font-semibold text-primary">WCCCS (World Christian Content Creators Summit)</span> initiative.
+            </p>
+          </div>
+        </section>
+
+        {/* Vision, Mission & Values */}
+        <section className="max-w-6xl mx-auto px-4 mb-16">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Vision */}
+            <div className="bg-card rounded-xl p-6 border border-border text-center">
+              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Vision</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To raise and empower a global movement of Christian content creators who will shape media, culture, and society with excellence, innovation, and the message of Christ.
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="bg-card rounded-xl p-6 border border-border text-center">
+              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Mission</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To equip and connect Kingdom-minded content creators and media professionals through training, mentorship, collaboration, and networking—creating platforms for faith-based voices to have a global impact.
+              </p>
+            </div>
+
+            {/* Values */}
+            <div className="bg-card rounded-xl p-6 border border-border text-center">
+              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Values</h3>
+              <div className="text-left space-y-3">
+                <div>
+                  <span className="font-semibold text-primary">Excellence:</span>
+                  <span className="text-muted-foreground text-sm ml-2">World-class content creation and event delivery.</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-primary">Collaboration:</span>
+                  <span className="text-muted-foreground text-sm ml-2">Partnerships that amplify Christian creators worldwide.</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-primary">Innovation:</span>
+                  <span className="text-muted-foreground text-sm ml-2">Creativity and new media for today's generation.</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-primary">Integrity:</span>
+                  <span className="text-muted-foreground text-sm ml-2">Ethical standards and transparency in all initiatives.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="max-w-5xl mx-auto px-4 mt-8">
           <Accordion type="single" collapsible>
