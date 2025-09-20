@@ -47,51 +47,7 @@ From tech innovators to educators, podcasters to policymakers, Faith Nexus is th
         </div>
 
         {/* Seven Strategic Pillars section */}
-        <div className="mt-8 bg-card rounded-2xl p-8 md:p-12 border border-border text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Seven Strategic Pillars</h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-            At Faith Nexus, we understand that content creation extends far beyond media production—it is a transformative force that shapes culture and drives influence across every sphere of society. To this end, Faith Nexus' annual gathering is anchored in seven strategic pillars. They include:
-          </p>
-          
-          <img 
-            src="/images/Faith Nexus Seven Pillars Icons.png" 
-            alt="Seven Strategic Pillars of Faith Nexus" 
-            className="mx-auto mb-8 w-full max-w-4xl h-auto object-contain"
-            loading="eager"
-            decoding="async"
-          />
-          
-          <div className="grid gap-4 max-w-4xl mx-auto text-left">
-            <div className="flex items-start gap-3">
-              <span className="font-bold text-primary min-w-fit">Faith:</span>
-              <span className="text-muted-foreground">Rooting all content in biblical truth with theological depth and integrity.</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="font-bold text-primary min-w-fit">Media:</span>
-              <span className="text-muted-foreground">Leveraging TV, radio, podcasts, film, and digital platforms for Kingdom storytelling.</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="font-bold text-primary min-w-fit">Technology:</span>
-              <span className="text-muted-foreground">Embracing emerging tools to reach audiences effectively and innovatively.</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="font-bold text-primary min-w-fit">Governance:</span>
-              <span className="text-muted-foreground">Shaping conversations around leadership, ethics, and civic responsibility.</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="font-bold text-primary min-w-fit">Economy:</span>
-              <span className="text-muted-foreground">Empowering faith-based entrepreneurship, financial literacy, and sustainable business.</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="font-bold text-primary min-w-fit">Education:</span>
-              <span className="text-muted-foreground">Developing Christian curricula, resources, and training programs for impact.</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="font-bold text-primary min-w-fit">Arts & Culture:</span>
-              <span className="text-muted-foreground">Inspiring creativity in music, literature, film, drama, and the visual arts.</span>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>;
 };
