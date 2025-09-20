@@ -10,6 +10,9 @@ import FaithNexus from "./pages/FaithNexus";
 import Footer from "@/components/Footer";
 import Register from "./pages/Register";
 import PartnershipPage from "./pages/Partnership";
+import CorporatePartnershipPage from "./pages/partnership/CorporatePartnershipPage";
+import ChurchPartnershipPage from "./pages/partnership/ChurchPartnershipPage";
+import TechnicalPartnershipPage from "./pages/partnership/TechnicalPartnershipPage";
 import VisaPage from "./pages/hospitality/VisaPage";
 import FlightsPage from "./pages/hospitality/FlightsPage";
 import AccommodationPage from "./pages/hospitality/AccommodationPage";
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/faith-nexus" element={<FaithNexus />} />
           <Route path="/register" element={<Register />} />
           <Route path="/partnership" element={<PartnershipPage />} />
+          <Route path="/partnership/corporate" element={<CorporatePartnershipPage />} />
+          <Route path="/partnership/church" element={<ChurchPartnershipPage />} />
+          <Route path="/partnership/technical" element={<TechnicalPartnershipPage />} />
           <Route path="/hospitality/visa" element={<VisaPage />} />
           <Route path="/hospitality/flights" element={<FlightsPage />} />
           <Route path="/hospitality/accommodation" element={<AccommodationPage />} />
