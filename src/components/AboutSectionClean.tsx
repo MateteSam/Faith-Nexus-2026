@@ -48,7 +48,7 @@ From tech innovators to educators, podcasters to policymakers, Faith Nexus is th
 
         {/* Seven Strategic Pillars section */}
         <div className="mt-8 rounded-2xl p-8 md:p-12 border border-border text-center bg-gray-900">
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Seven Strategic Pillars</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-orange-400">Seven Strategic Pillars</h3>
           <p className="text-lg text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
             At Faith Nexus, we understand that content creation extends far beyond media production—it is a transformative force that shapes culture and drives influence across every sphere of society. To this end, Faith Nexus' annual gathering is anchored in seven strategic pillars. They include:
           </p>
