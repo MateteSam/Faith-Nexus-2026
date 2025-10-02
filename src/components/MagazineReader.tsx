@@ -330,7 +330,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       {/* Changed background for a more magazine-like feel */}
-      <DialogContent className={`${isFullscreen ? 'w-screen h-screen max-w-none max-h-none p-0 magazine-fullscreen' : 'max-w-7xl h-[92vh] p-4'} bg-gray-100`}>
+      <DialogContent className={`${isFullscreen ? 'w-screen h-screen max-w-none max-h-none p-0 magazine-fullscreen' : 'w-[95vw] sm:w-[90vw] md:max-w-7xl h-[85vh] sm:h-[92vh] p-2 sm:p-4'} bg-gray-100`}>
         <DialogHeader className="sr-only">
           <DialogTitle>NEXUS Magazine Viewer</DialogTitle>
           <DialogDescription>Flip through pages and view in fullscreen.</DialogDescription>
@@ -345,19 +345,19 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
 
           {hydrationPending && (
             <div className="absolute inset-0 z-40 flex items-center justify-center bg-white/95 backdrop-blur-sm">
-              <div className="magazine-loading-container text-center max-w-md w-full px-6 py-8 bg-white rounded-xl shadow-2xl border border-gray-100">
+              <div className="magazine-loading-container text-center max-w-xs sm:max-w-md w-full px-4 sm:px-6 py-6 sm:py-8 bg-white rounded-xl shadow-2xl border border-gray-100">
                 <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="text-2xl font-bold text-primary">Preparing magazine</div>
+                  <div className="text-lg sm:text-2xl font-bold text-primary">Preparing magazine</div>
                 </div>
                 <div className="relative h-3 w-full bg-gray-100 rounded-full overflow-hidden mb-4">
-                  <div 
+                  <div
                     className="absolute top-0 left-0 h-full bg-primary transition-all duration-300 ease-out magazine-progress-bar"
                     style={{ width: `${loadingProgress}%` }}
                   ></div>
                 </div>
                 <div className="flex justify-between w-full mb-2">
-                  <div className="text-sm text-muted-foreground">Loading and rendering pages</div>
-                  <div className="text-sm text-primary font-medium">{loadingProgress}% complete</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Loading and rendering pages</div>
+                  <div className="text-xs sm:text-sm text-primary font-medium">{loadingProgress}% complete</div>
                 </div>
                 {loadingProgress < 30 && (
                   <div className="text-xs text-gray-400 mt-2">
@@ -368,20 +368,22 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
             </div>
           )}
           {/* Professional Magazine Toolbar */}
-          <div className="flex flex-col gap-2 mb-4 px-4 py-3 bg-white rounded-lg shadow-md border border-gray-100">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="font-bold text-lg text-primary">NEXUS Magazine</div>
-                <div className="text-sm px-2 py-1 bg-primary/10 rounded-md font-medium text-primary">
+          <div className="flex flex-col gap-2 mb-2 sm:mb-4 px-2 sm:px-4 py-2 sm:py-3 bg-white rounded-lg shadow-md border border-gray-100">
+            {/* Mobile First Row - Title and Page Info */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="font-bold text-base sm:text-lg text-primary">NEXUS Magazine</div>
+                <div className="text-xs sm:text-sm px-2 py-1 bg-primary/10 rounded-md font-medium text-primary">
                   Page {currentPage + 1} of {magazinePages.length}
                 </div>
               </div>
               
-              <div className="flex items-center gap-2">
+              {/* Desktop Actions - Hidden on Mobile */}
+              <div className="hidden sm:flex items-center gap-2">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={toggleFullscreen} className="h-9 w-9">
+                      <Button variant="outline" size="icon" onClick={toggleFullscreen} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Maximize className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -394,7 +396,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={handleShare} className="h-9 w-9">
+                      <Button variant="outline" size="icon" onClick={handleShare} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Share2 className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -407,7 +409,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={handleDownload} className="h-9 w-9">
+                      <Button variant="outline" size="icon" onClick={handleDownload} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Download className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -420,7 +422,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={handlePrint} className="h-9 w-9">
+                      <Button variant="outline" size="icon" onClick={handlePrint} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Printer className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -432,66 +434,33 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
               </div>
             </div>
             
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" onClick={() => goToPage(0)} className="h-8">
-                        <Home className="h-4 w-4 mr-1" />
-                        <span>First</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Go to first page</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+            {/* Second Row - Navigation and Controls */}
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+              {/* Navigation Controls */}
+              <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
+                <Button variant="ghost" size="sm" onClick={() => goToPage(0)} className="h-7 sm:h-8 text-xs sm:text-sm px-2">
+                  <Home className="h-3 w-3 sm:h-4 sm:w-4 sm:mr-1" />
+                  <span className="hidden sm:inline">First</span>
+                </Button>
                 
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" onClick={prevButtonClick} className="h-8">
-                        <ChevronLeft className="h-4 w-4 mr-1" />
-                        <span>Previous</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Previous page</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <Button variant="ghost" size="sm" onClick={prevButtonClick} className="h-7 sm:h-8 text-xs sm:text-sm px-2">
+                  <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 sm:mr-1" />
+                  <span className="hidden sm:inline">Previous</span>
+                </Button>
                 
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" onClick={nextButtonClick} className="h-8">
-                        <span>Next</span>
-                        <ChevronRight className="h-4 w-4 ml-1" />
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Next page</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <Button variant="ghost" size="sm" onClick={nextButtonClick} className="h-7 sm:h-8 text-xs sm:text-sm px-2">
+                  <span className="hidden sm:inline">Next</span>
+                  <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 sm:ml-1" />
+                </Button>
                 
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="ghost" size="sm" onClick={() => goToPage(magazinePages.length - 1)} className="h-8">
-                        <span>Last</span>
-                        <RotateCcw className="h-4 w-4 ml-1" />
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Go to last page</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <Button variant="ghost" size="sm" onClick={() => goToPage(magazinePages.length - 1)} className="h-7 sm:h-8 text-xs sm:text-sm px-2">
+                  <span className="hidden sm:inline">Last</span>
+                  <RotateCcw className="h-3 w-3 sm:h-4 sm:w-4 sm:ml-1" />
+                </Button>
               </div>
               
-              <div className="flex items-center gap-3">
+              {/* Right Side Controls */}
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                 {/* Page search */}
                 <div className="flex items-center border rounded-md overflow-hidden bg-gray-50">
                   <input
@@ -500,35 +469,36 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                     value={gotoValue}
                     onChange={(e) => setGotoValue(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleGotoSubmit()}
-                    className="px-2 py-1 w-20 bg-transparent text-sm outline-none"
+                    className="px-2 py-1 w-16 sm:w-20 bg-transparent text-xs sm:text-sm outline-none"
                   />
-                  <button onClick={handleGotoSubmit} title="Go" className="px-2 py-1 border-l bg-gray-100 hover:bg-gray-200">
-                    <Search className="w-4 h-4" />
+                  <button onClick={handleGotoSubmit} title="Go" className="px-1 sm:px-2 py-1 border-l bg-gray-100 hover:bg-gray-200">
+                    <Search className="w-3 h-3 sm:w-4 sm:h-4" />
                   </button>
                 </div>
                 
                 {/* Layout toggle */}
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button variant="outline" size="sm" onClick={toggleLayout} className="h-8">
-                        <Layout className="h-4 w-4 mr-1" />
-                        <span>{layoutMode === 'flip' ? 'Book View' : 'Scroll View'}</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Toggle layout mode</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <Button variant="outline" size="sm" onClick={toggleLayout} className="h-7 sm:h-8 text-xs sm:text-sm px-2">
+                  <Layout className="h-3 w-3 sm:h-4 sm:w-4 sm:mr-1" />
+                  <span className="hidden sm:inline">{layoutMode === 'flip' ? 'Book' : 'Scroll'}</span>
+                </Button>
                 
-                {/* Zoom controls */}
+                {/* Mobile Action Buttons */}
+                <div className="flex sm:hidden gap-1">
+                  <Button variant="outline" size="icon" onClick={handleDownload} className="h-7 w-7">
+                    <Download className="h-3 w-3" />
+                  </Button>
+                  <Button variant="outline" size="icon" onClick={handleShare} className="h-7 w-7">
+                    <Share2 className="h-3 w-3" />
+                  </Button>
+                </div>
+                
+                {/* Zoom controls - Simplified on mobile */}
                 <div className="flex items-center gap-1">
-                  <Button variant="outline" size="icon" onClick={zoomOut} className="h-8 w-8">
-                    <ZoomOut className="h-4 w-4" />
+                  <Button variant="outline" size="icon" onClick={zoomOut} className="h-7 w-7 sm:h-8 sm:w-8">
+                    <ZoomOut className="h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                   
-                  <div className="w-32 px-2 flex items-center gap-2">
+                  <div className="hidden sm:flex w-24 sm:w-32 px-2 items-center gap-2">
                     <Slider
                       value={[zoom * 100]}
                       min={50}
@@ -537,11 +507,11 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                       onValueChange={(value) => setZoom(value[0] / 100)}
                       className="w-full"
                     />
-                    <span className="text-xs font-medium w-10">{(zoom * 100).toFixed(0)}%</span>
+                    <span className="text-xs font-medium w-8">{(zoom * 100).toFixed(0)}%</span>
                   </div>
                   
-                  <Button variant="outline" size="icon" onClick={zoomIn} className="h-8 w-8">
-                    <ZoomIn className="h-4 w-4" />
+                  <Button variant="outline" size="icon" onClick={zoomIn} className="h-7 w-7 sm:h-8 sm:w-8">
+                    <ZoomIn className="h-3 w-3 sm:h-4 sm:w-4" />
                   </Button>
                 </div>
               </div>

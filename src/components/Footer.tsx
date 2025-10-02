@@ -12,11 +12,11 @@ const IconButton: React.FC<{
   </a>;
 const Footer: React.FC = () => {
   return <footer className="bg-gray-900 text-gray-200">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">Company</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Company</h4>
+            <ul className="space-y-1 sm:space-y-2 text-sm">
               <li>
                 <a href="#about" className="hover:underline">
                   About WCCCS
@@ -41,8 +41,8 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">Useful Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Useful Links</h4>
+            <ul className="space-y-1 sm:space-y-2 text-sm">
               <li>
                 <a href="https://wcccs.world/" target="_blank" rel="noopener noreferrer" className="hover:underline inline-flex items-center gap-2">
                   WCCCS
@@ -83,14 +83,14 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Contact</h4>
+            <ul className="space-y-1 sm:space-y-2 text-sm">
               <li>
                 <a href="/contact" className="hover:underline">
                   Contact Us
                 </a>
               </li>
-              <li className="pt-2">
+              <li className="pt-1 sm:pt-2">
                 Email: <a href="mailto:info@faithnexus.org" className="hover:underline">info@faithnexus.org</a>
               </li>
               <li>
@@ -100,8 +100,8 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">Follow Us</h4>
-            <div className="flex items-center gap-3">
+            <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Follow Us</h4>
+            <div className="flex items-center gap-2 sm:gap-3">
               <IconButton href="https://facebook.com" label="Facebook">
                 {/* Facebook SVG */}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -126,9 +126,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between">
+        <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-4 sm:pt-6 text-xs sm:text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between">
           <div>© 2025 Faith Nexus</div>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
+          <div className="flex items-center gap-3 sm:gap-4 mt-3 md:mt-0">
             <a href="#privacy" className="hover:underline">Privacy</a>
             <a href="#terms" className="hover:underline">Terms</a>
           </div>

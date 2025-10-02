@@ -48,19 +48,19 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <div className="relative h-12 w-12">
+          <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+            <div className="relative h-10 w-10 sm:h-12 sm:w-12">
               {!logoLoaded && (
                 <div className="absolute inset-0 bg-gray-200 animate-pulse rounded"></div>
               )}
               <img
                 src="/images/logo.png"
                 alt="Faith Nexus Logo"
-                className={`h-12 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`h-10 w-auto sm:h-12 transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
                 loading="lazy"
               />
             </div>
-            <div className="text-2xl font-bold">
+            <div className="text-xl sm:text-2xl font-bold">
               <span className="text-white">FAITH</span>
               <span className="text-yellow-300 ml-1">NEXUS</span>
             </div>
@@ -118,7 +118,7 @@ export const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-blue-400/30 bg-blue-700/90 backdrop-blur-md rounded-b-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-blue-400/30 bg-blue-700/95 backdrop-blur-md rounded-b-lg shadow-xl">
               {navItems.map((nav) => (
                 <Link
                   key={nav.label}
@@ -127,7 +127,7 @@ export const Navigation = () => {
                     setActiveItem(nav.label);
                     setIsMenuOpen(false);
                   }}
-                  className={`block px-3 py-2 text-base font-medium rounded-md transition-all duration-300 hover:bg-blue-500/50 ${
+                  className={`block px-3 py-3 text-base font-medium rounded-md transition-all duration-300 hover:bg-blue-500/50 ${
                     nav.label === activeItem
                       ? "text-white bg-blue-500/40 shadow-[0_0_10px_rgba(59,130,246,0.5)] font-semibold"
                       : "text-blue-100"
@@ -136,9 +136,11 @@ export const Navigation = () => {
                   {nav.label}
                 </Link>
               ))}
-              <HospitalityDropdown isMobile onClose={() => setIsMenuOpen(false)} />
               <div className="px-3 py-2">
-                <RegisterButton size="sm" className="w-full" />
+                <HospitalityDropdown isMobile onClose={() => setIsMenuOpen(false)} />
+              </div>
+              <div className="px-3 py-2">
+                <RegisterButton size="sm" className="w-full h-10 text-sm font-semibold" />
               </div>
             </div>
           </div>
