@@ -118,54 +118,53 @@ const Programme: React.FC = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-slate-50 py-12 programme-page">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-8">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">Programme — {programme.day}</h1>
-            <p className="text-sm text-slate-500">{programme.date} · {programme.theme}</p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="w-full md:w-auto">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 text-center md:text-left">Programme — {programme.day}</h1>
+            <p className="text-xs sm:text-sm text-slate-500 text-center md:text-left mt-1">{programme.date} · {programme.theme}</p>
           </div>
 
-            <div className="flex items-center gap-3">
-            <RegisterButton size="sm" text="Reserve Spot" className="mr-2" />
-            <Button size="sm" variant="ghost" onClick={() => window.print()} className="px-3 py-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-3 w-full md:w-auto">
+            <RegisterButton size="sm" text="Reserve Spot" className="w-full sm:w-auto" />
+            <Button size="sm" variant="ghost" onClick={() => window.print()} className="px-3 py-2 w-full sm:w-auto">
               Print
             </Button>
-            <Button size="sm" onClick={async () => { await generateProgramPdf(); }} className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+            <Button size="sm" onClick={async () => { await generateProgramPdf(); }} className="bg-gradient-to-r from-amber-500 to-orange-500 text-white w-full sm:w-auto">
               <Download className="w-4 h-4 mr-2" />Download PDF
             </Button>
-            <div className="ml-3 flex items-center gap-2">
-              <button className={`px-3 py-2 rounded ${day === 1 ? 'bg-amber-500 text-white' : 'bg-transparent text-slate-700 border border-slate-200'}`} onClick={() => setDay(1)}>Day 1</button>
-              <button className={`px-3 py-2 rounded ${day === 2 ? 'bg-amber-500 text-white' : 'bg-transparent text-slate-700 border border-slate-200'}`} onClick={() => setDay(2)}>Day 2</button>
-              <button className={`px-3 py-2 rounded ${day === 3 ? 'bg-amber-500 text-white' : 'bg-transparent text-slate-700 border border-slate-200'}`} onClick={() => setDay(3)}>Day 3</button>
-            </div>
-            <div className="ml-4">
-              <Link to="/" className="inline-block text-sm text-slate-700 hover:text-amber-600">Home</Link>
-            </div>
           </div>
         </div>
 
-        <section id="programme-content" className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 print:rounded-none print:shadow-none">
-          <header className="text-center mb-6">
-            <h2 className="text-2xl font-semibold">{programme.day} – {programme.date}</h2>
-            <p className="mt-2 text-slate-600">Theme: <strong>{programme.theme}</strong></p>
-            <p className="mt-1 text-sm text-slate-500">{programme.focus}</p>
+        {/* Day Selection Buttons */}
+        <div className="flex justify-center md:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8 flex-wrap">
+          <button className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${day === 1 ? 'bg-amber-500 text-white shadow-md' : 'bg-transparent text-slate-700 border border-slate-200 hover:bg-slate-100'}`} onClick={() => setDay(1)}>Day 1</button>
+          <button className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${day === 2 ? 'bg-amber-500 text-white shadow-md' : 'bg-transparent text-slate-700 border border-slate-200 hover:bg-slate-100'}`} onClick={() => setDay(2)}>Day 2</button>
+          <button className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${day === 3 ? 'bg-amber-500 text-white shadow-md' : 'bg-transparent text-slate-700 border border-slate-200 hover:bg-slate-100'}`} onClick={() => setDay(3)}>Day 3</button>
+        </div>
+
+        <section id="programme-content" className="bg-white rounded-xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 lg:p-12 print:rounded-none print:shadow-none">
+          <header className="text-center mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold">{programme.day} – {programme.date}</h2>
+            <p className="mt-1 sm:mt-2 text-slate-600 text-sm sm:text-base">Theme: <strong>{programme.theme}</strong></p>
+            <p className="mt-1 text-xs sm:text-sm text-slate-500">{programme.focus}</p>
           </header>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="lg:col-span-2">
               {programme.finalPlenary ? (
                 <>
-                  <h3 className="text-lg font-semibold text-slate-800">Final Plenary & Closing Ceremony</h3>
-                  <p className="text-sm text-slate-500 mb-6">{programme.focus}</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-slate-800">Final Plenary & Closing Ceremony</h3>
+                  <p className="text-xs sm:text-sm text-slate-500 mb-4 sm:mb-6">{programme.focus}</p>
 
-                  <div role="list" className="space-y-6">
+                  <div role="list" className="space-y-4 sm:space-y-6">
                     {programme.finalPlenary.items.map((item: any) => (
-                      <div key={item.time} role="listitem" className="flex items-start gap-4">
+                      <div key={item.time} role="listitem" className="flex items-start gap-3 sm:gap-4">
                         <div className="flex-none">
-                          <time className="inline-flex items-center justify-center bg-amber-50 text-amber-700 font-semibold px-3 py-1 rounded-lg text-sm shadow-sm">{item.time}</time>
+                          <time className="inline-flex items-center justify-center bg-amber-50 text-amber-700 font-semibold px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm shadow-sm">{item.time}</time>
                         </div>
                         <div className="flex-1">
-                          <div className="font-semibold text-slate-800">{item.title}</div>
+                          <div className="font-semibold text-slate-800 text-sm sm:text-base">{item.title}</div>
                         </div>
                       </div>
                     ))}
@@ -173,18 +172,18 @@ const Programme: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <h3 className="text-lg font-semibold text-slate-800">Morning Plenary Session</h3>
-                  <p className="text-sm text-slate-500 mb-6">{programme.focus}</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-slate-800">Morning Plenary Session</h3>
+                  <p className="text-xs sm:text-sm text-slate-500 mb-4 sm:mb-6">{programme.focus}</p>
 
-                  <div role="list" className="space-y-6">
+                  <div role="list" className="space-y-4 sm:space-y-6">
                     {programme.morning && programme.morning.map((item: any) => (
-                      <div key={item.time} role="listitem" className="flex items-start gap-4">
+                      <div key={item.time} role="listitem" className="flex items-start gap-3 sm:gap-4">
                         <div className="flex-none">
-                          <time className="inline-flex items-center justify-center bg-amber-50 text-amber-700 font-semibold px-3 py-1 rounded-lg text-sm shadow-sm">{item.time}</time>
+                          <time className="inline-flex items-center justify-center bg-amber-50 text-amber-700 font-semibold px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm shadow-sm">{item.time}</time>
                         </div>
                         <div className="flex-1">
-                          <div className="font-semibold text-slate-800">{item.title}</div>
-                          {item.subtitle && <div className="text-sm text-slate-500">{item.subtitle}</div>}
+                          <div className="font-semibold text-slate-800 text-sm sm:text-base">{item.title}</div>
+                          {item.subtitle && <div className="text-xs sm:text-sm text-slate-500">{item.subtitle}</div>}
                         </div>
                       </div>
                     ))}
@@ -194,27 +193,27 @@ const Programme: React.FC = () => {
             </div>
 
             <aside className="lg:col-span-1">
-              <div className="bg-gradient-to-b from-slate-50 to-white rounded-xl p-6 shadow sticky top-24 print:sticky print:top-0">
+              <div className="bg-gradient-to-b from-slate-50 to-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow sticky top-20 sm:top-24 print:sticky print:top-0">
                   {programme.afternoon ? (
                     <>
-                      <h4 className="text-lg font-semibold">Afternoon Pillar Labs</h4>
-                      <p className="text-sm text-slate-500">{programme.afternoon.time}</p>
-                      <p className="mt-3 text-sm text-slate-600">{programme.afternoon.description}</p>
+                      <h4 className="text-base sm:text-lg font-semibold">Afternoon Pillar Labs</h4>
+                      <p className="text-xs sm:text-sm text-slate-500">{programme.afternoon.time}</p>
+                      <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-slate-600">{programme.afternoon.description}</p>
 
-                      <div className="mt-4 space-y-3">
+                      <div className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
                         {programme.afternoon.tracks.map((t: any) => (
-                          <div key={t.title} className="flex items-start gap-3">
-                            <div className="text-2xl">{t.emoji}</div>
+                          <div key={t.title} className="flex items-start gap-2 sm:gap-3">
+                            <div className="text-xl sm:text-2xl">{t.emoji}</div>
                             <div>
-                              <div className="font-semibold">{t.title}</div>
-                              <div className="text-sm text-slate-500">{t.subtitle}</div>
+                              <div className="font-semibold text-sm sm:text-base">{t.title}</div>
+                              <div className="text-xs sm:text-sm text-slate-500">{t.subtitle}</div>
                             </div>
                           </div>
                         ))}
                       </div>
                     </>
                   ) : (
-                    <div className="text-sm text-slate-500">No Afternoon Pillar Labs for this day.</div>
+                    <div className="text-xs sm:text-sm text-slate-500">No Afternoon Pillar Labs for this day.</div>
                   )}
 
                   {/* No duplicated finalPlenary in sidebar to avoid redundancy for Day 3 */}
