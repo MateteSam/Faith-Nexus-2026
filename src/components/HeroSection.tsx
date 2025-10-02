@@ -1,20 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "./CountdownTimer";
-import heroImage from "@/assets/hero-desert-cameras.jpg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 export const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const navigate = useNavigate();
   
   useEffect(() => {
     setIsLoaded(true);
+    // Preload the hero image
+    const img = new Image();
+    img.src = "/images/background.png";
+    img.onload = () => setImageLoaded(true);
   }, []);
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Hero Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroImage})`
+      {/* Hero Background Image with lazy loading */}
+      <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} style={{
+      backgroundImage: `url(${imageLoaded ? "/images/background.png" : ""})`
     }}>
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
 
@@ -22,14 +30,27 @@ export const HeroSection = () => {
       <div className={`absolute right-0 md:right-10 top-1/4 transform transition-all duration-1000 ${isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`} style={{
       animationDelay: "0.8s"
     }}>
-        <img src="/images/bird-mascot.png" alt="Faith Nexus Mascot" className="w-32 md:w-48 lg:w-64 h-auto drop-shadow-2xl" />
+        <img
+          src="/images/bird-mascot.png"
+          alt="Faith Nexus Mascot"
+          className="w-32 md:w-48 lg:w-64 h-auto drop-shadow-2xl"
+          loading="lazy"
+        />
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
         {/* Floating Logo */}
-        <div className="mb-8">
-          <img src="/images/logo.png" alt="Faith Nexus Logo" className="h-32 md:h-40 lg:h-48 w-auto mx-auto filter drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" />
+        <div className="mb-8 relative h-32 md:h-40 lg:h-48">
+          {!imageLoaded && (
+            <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg mx-auto w-32 md:w-40 lg:w-48"></div>
+          )}
+          <img
+            src="/images/logo.png"
+            alt="Faith Nexus Logo"
+            className={`h-32 md:h-40 lg:h-48 w-auto mx-auto filter drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            loading="lazy"
+          />
         </div>
         
         {/* Main Hero Text - Reordered as requested */}
@@ -77,31 +98,27 @@ export const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Video Player - Side Position */}
+            {/* Video Player - Side Position with lazy loading */}
             <div className="flex-1 max-w-md">
               <div className="relative rounded-lg overflow-hidden bg-black/40 border border-white/10">
-                <video 
-                  controls 
-                  loop 
-                  autoPlay
-                  muted
-                  poster="/images/logo.png" 
-                  preload="metadata" 
-                  className="w-full h-48 md:h-56 object-cover cursor-pointer"
+                <div
+                  className="w-full h-48 md:h-56 bg-black/60 flex items-center justify-center cursor-pointer group"
                   onClick={() => window.open('https://www.youtube.com/watch?v=J2Da93J8MNs', '_blank')}
                 >
-                  <source src="/videos/selimo-thabane-live.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                {/* Click overlay for YouTube redirect */}
-                <div 
-                  className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
-                  onClick={() => window.open('https://www.youtube.com/watch?v=J2Da93J8MNs', '_blank')}
-                >
-                  <div className="bg-red-600 rounded-full p-3 shadow-lg">
-                    <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
+                  <img
+                    src="/images/logo.png"
+                    alt="Video thumbnail"
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="bg-red-600 rounded-full p-4 shadow-lg transform transition-transform group-hover:scale-110">
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-2 left-2 text-white text-xs bg-black/60 px-2 py-1 rounded">
+                    Click to watch on YouTube
                   </div>
                 </div>
               </div>

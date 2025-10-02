@@ -1,10 +1,12 @@
-import React, { useRef, useEffect, useState } from 'react';
-import HTMLFlipBook from 'react-pageflip';
+import React, { useRef, useEffect, useState, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Maximize, X, Download, Search, Layout, ZoomIn, ZoomOut, Share2, RotateCcw, Home, Printer } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Slider } from '@/components/ui/slider';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+
+// Lazy load the heavy HTMLFlipBook component
+const HTMLFlipBook = lazy(() => import('react-pageflip').then(module => ({ default: module.default })));
 
 interface MagazineReaderProps {
   isOpen: boolean;
@@ -265,6 +267,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
     if (pdfRenderCache.current[pageIndex]) return pdfRenderCache.current[pageIndex];
     try {
       setPdfLoading((s) => ({ ...s, [pageIndex]: true }));
+      // Dynamically import PDF.js only when needed
       const pdfjs = await import('pdfjs-dist/build/pdf');
       // Worker
       try {
@@ -550,33 +553,38 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
             <div role="region" aria-label="Magazine viewer" onWheel={onViewerWheel} className="relative w-full h-full max-w-full max-h-full flex items-center justify-center">
               {layoutMode === 'flip' ? (
                 <div className={`flip-zoom ${zoomClass}`}>
-                  <HTMLFlipBook
-                    ref={book}
-                    width={PAGE_WIDTH} // Using standard A4 dimensions for more professional look
-                    height={PAGE_HEIGHT}
-                    size="stretch"
-                    minWidth={PAGE_WIDTH * 0.6}
-                    maxWidth={PAGE_WIDTH * 1.5}
-                    minHeight={PAGE_HEIGHT * 0.6}
-                    maxHeight={PAGE_HEIGHT * 1.5}
-                    maxShadowOpacity={0.5}
-                    showCover={true}
-                    mobileScrollSupport={true}
-                    onFlip={onPageChange}
-                    className="magazine-book mx-auto"
-                    style={{}}
-                    drawShadow={true}
-                    flippingTime={500} // Even faster flipping for better responsiveness
-                    usePortrait={false}
-                    startZIndex={0}
-                    autoSize={true}
-                    clickEventForward={true}
-                    useMouseEvents={true}
-                    swipeDistance={30}
-                    showPageCorners={true}
-                    disableFlipByClick={false}
-                    startPage={0}
-                  >
+                  <Suspense fallback={
+                    <div className="flex items-center justify-center h-96">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                    </div>
+                  }>
+                    <HTMLFlipBook
+                      ref={book}
+                      width={PAGE_WIDTH} // Using standard A4 dimensions for more professional look
+                      height={PAGE_HEIGHT}
+                      size="stretch"
+                      minWidth={PAGE_WIDTH * 0.6}
+                      maxWidth={PAGE_WIDTH * 1.5}
+                      minHeight={PAGE_HEIGHT * 0.6}
+                      maxHeight={PAGE_HEIGHT * 1.5}
+                      maxShadowOpacity={0.5}
+                      showCover={true}
+                      mobileScrollSupport={true}
+                      onFlip={onPageChange}
+                      className="magazine-book mx-auto"
+                      style={{}}
+                      drawShadow={true}
+                      flippingTime={500} // Even faster flipping for better responsiveness
+                      usePortrait={false}
+                      startZIndex={0}
+                      autoSize={true}
+                      clickEventForward={true}
+                      useMouseEvents={true}
+                      swipeDistance={30}
+                      showPageCorners={true}
+                      disableFlipByClick={false}
+                      startPage={0}
+                    >
                     {/* If hydrationPending is true we are preparing pages; the dialog shows a loader overlay above */}
                     {pageSources.map((page, index) => (
                       <div key={index} className="page bg-white shadow-lg">
@@ -623,7 +631,8 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                         </div>
                       </div>
                     ))}
-                  </HTMLFlipBook>
+                    </HTMLFlipBook>
+                  </Suspense>
                   
                   {/* Page turn buttons - only visible on hover */}
                   <div className="absolute inset-y-0 left-0 flex items-center">

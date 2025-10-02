@@ -9,6 +9,13 @@ export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const [activeItem, setActiveItem] = useState<string>("Home");
+  const [logoLoaded, setLogoLoaded] = useState(false);
+  
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/images/logo.png";
+    img.onload = () => setLogoLoaded(true);
+  }, []);
  
   useEffect(() => {
     const path = location.pathname;
@@ -42,11 +49,17 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-3">
-            <img 
-              src="/images/logo.png" 
-              alt="Faith Nexus Logo" 
-              className="h-12 w-auto"
-            />
+            <div className="relative h-12 w-12">
+              {!logoLoaded && (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse rounded"></div>
+              )}
+              <img
+                src="/images/logo.png"
+                alt="Faith Nexus Logo"
+                className={`h-12 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                loading="lazy"
+              />
+            </div>
             <div className="text-2xl font-bold">
               <span className="text-white">FAITH</span>
               <span className="text-yellow-300 ml-1">NEXUS</span>

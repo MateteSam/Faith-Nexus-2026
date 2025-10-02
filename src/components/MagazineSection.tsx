@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Download, BookOpen, Eye } from "lucide-react";
 import { MagazineReader } from "./MagazineReader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 export const MagazineSection = () => {
   const [isReaderOpen, setIsReaderOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/magazine/page_1.jpg";
+    img.onload = () => setImageLoaded(true);
+  }, []);
   const handleDownloadMagazine = () => {
     const link = document.createElement('a');
     link.href = '/NEXUS_MAGAZINE.pdf';
@@ -31,8 +39,16 @@ export const MagazineSection = () => {
           {/* Magazine Preview */}
           <div className="relative">
             <div className="bg-card rounded-2xl shadow-2xl p-6 border border-border">
-              <div className="aspect-[3/4] rounded-lg overflow-hidden mb-6 flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
-                <img src="/magazine/page_1.jpg" alt="NEXUS Magazine Cover" className="w-full h-full object-cover" />
+              <div className="aspect-[3/4] rounded-lg overflow-hidden mb-6 flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20 relative">
+                {!imageLoaded && (
+                  <div className="absolute inset-0 bg-gray-200 animate-pulse"></div>
+                )}
+                <img
+                  src="/magazine/page_1.jpg"
+                  alt="NEXUS Magazine Cover"
+                  className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  loading="lazy"
+                />
               </div>
               <div className="text-center">
                 <h4 className="text-xl font-bold text-foreground mb-2">

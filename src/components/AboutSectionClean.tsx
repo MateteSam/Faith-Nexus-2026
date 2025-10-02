@@ -1,5 +1,15 @@
 import { Users, Globe, Video, Award } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
 export const AboutSectionClean = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/images/Faith Nexus Seven Pillars Icons.png";
+    img.onload = () => setImageLoaded(true);
+  }, []);
+
   const features = [{
     icon: Users,
     title: 'Global Community',
@@ -53,7 +63,18 @@ From tech innovators to educators, podcasters to policymakers, Faith Nexus is th
             At Faith Nexus, we understand that content creation extends far beyond media production—it is a transformative force that shapes culture and drives influence across every sphere of society. To this end, Faith Nexus' annual gathering is anchored in seven strategic pillars. They include:
           </p>
           
-          <img src="/images/Faith Nexus Seven Pillars Icons.png" alt="Seven Strategic Pillars of Faith Nexus" className="mx-auto mb-8 w-full max-w-4xl h-auto object-contain" loading="eager" decoding="async" />
+          <div className="relative h-64 md:h-96 mb-8 flex items-center justify-center">
+            {!imageLoaded && (
+              <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg"></div>
+            )}
+            <img
+              src="/images/Faith Nexus Seven Pillars Icons.png"
+              alt="Seven Strategic Pillars of Faith Nexus"
+              className={`mx-auto w-full max-w-4xl h-auto object-contain transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           
           <div className="grid gap-4 max-w-4xl mx-auto text-left">
             <div className="flex items-start gap-3">
