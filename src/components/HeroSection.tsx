@@ -82,9 +82,9 @@ export const HeroSection = () => {
         <div className="bg-black/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 border border-white/20 mb-6 sm:mb-8 fade-in-up shadow-2xl" style={{
         animationDelay: "0.4s"
       }}>
-          <div className="flex flex-col gap-6 sm:gap-8">
+          <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12">
             {/* Text Content */}
-            <div className="text-center">
+            <div className="text-center md:flex-1">
               <div className="text-primary text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4">
                 FAITH NEXUS 2025
               </div>
@@ -99,28 +99,19 @@ export const HeroSection = () => {
             </div>
 
             {/* Video Player - Mobile Optimized */}
-            <div className="w-full max-w-md mx-auto">
+            <div className="w-full max-w-md mx-auto md:w-1/2">
               <div className="relative rounded-lg overflow-hidden bg-black/40 border border-white/10">
-                <div
-                  className="w-full h-36 sm:h-48 md:h-56 bg-black/60 flex items-center justify-center cursor-pointer group"
-                  onClick={() => window.open('https://www.youtube.com/watch?v=J2Da93J8MNs', '_blank')}
+                <video
+                  className="w-full aspect-square object-cover rounded-lg"
+                  src="/videos/selimo-thabane-live.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
                 >
-                  <img
-                    src="/images/logo.png"
-                    alt="Video thumbnail"
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-red-600 rounded-full p-3 sm:p-4 shadow-lg transform transition-transform group-hover:scale-110">
-                      <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-2 left-2 text-white text-xs bg-black/60 px-2 py-1 rounded">
-                    Click to watch on YouTube
-                  </div>
-                </div>
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>

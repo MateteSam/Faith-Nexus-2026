@@ -14,6 +14,7 @@ const Programme = lazy(() => import("./pages/Programme"));
 const FaithNexus = lazy(() => import("./pages/FaithNexus"));
 const Register = lazy(() => import("./pages/Register"));
 const PartnershipPage = lazy(() => import("./pages/Partnership"));
+const FAQPage = lazy(() => import("./pages/FAQPage")); // Re-enabled
 const CorporatePartnershipPage = lazy(() => import("./pages/partnership/CorporatePartnershipPage"));
 const ChurchPartnershipPage = lazy(() => import("./pages/partnership/ChurchPartnershipPage"));
 const TechnicalPartnershipPage = lazy(() => import("./pages/partnership/TechnicalPartnershipPage"));
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/hospitality/visa" element={<VisaPage />} />
             <Route path="/hospitality/flights" element={<FlightsPage />} />
             <Route path="/hospitality/accommodation" element={<AccommodationPage />} />
+            <Route path="/faqs" element={<FAQPage />} /> {/* Re-enabled */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

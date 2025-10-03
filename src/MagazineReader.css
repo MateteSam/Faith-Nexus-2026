@@ -1,0 +1,89 @@
+/* Styles for MagazineReader component */
+
+/* Fullscreen mode adjustments */
+.magazine-fullscreen .magazine-book {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.magazine-fullscreen .magazine-book .page {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure dialog content takes full screen in fullscreen mode */
+.magazine-fullscreen {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* Adjustments for zoom to prevent overflow and ensure centering */
+.magazine-reader-container {
+  overflow: hidden; /* Hide overflow when zoomed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-book-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Specific styles for the HTMLFlipBook component to ensure it scales correctly within its container */
+.magazine-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* The react-pageflip library handles its own internal scaling,
+     but we ensure its container allows it to grow/shrink */
+}
+
+.magazine-book .page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Important to clip content within the page */
+}
+
+.magazine-book .page-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magazine-book .magazine-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure image fits within its container */
+}
+
+/* Scroll layout adjustments */
+.scroll-zoom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the start for scrolling */
+  padding: 1rem; /* Add some padding */
+}
+
+.scroll-zoom > div {
+  width: 100%; /* Ensure inner container takes full width */
+  max-width: 800px; /* Max width for readability in scroll mode */
+}
+
+.scroll-zoom .bg-white {
+  margin-bottom: 1rem; /* Space between pages in scroll mode */
+}

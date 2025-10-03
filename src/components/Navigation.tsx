@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from 'react-router-dom';
 import { HospitalityDropdown } from '@/components/HospitalityDropdown';
 import { RegisterButton } from '@/components/RegisterButton';
+import { SearchDialog } from '@/components/SearchDialog'; // Re-enabled
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // State for search dialog
   const location = useLocation();
   const [activeItem, setActiveItem] = useState<string>("Home");
   const [logoLoaded, setLogoLoaded] = useState(false);
@@ -19,22 +21,26 @@ export const Navigation = () => {
  
   useEffect(() => {
     const path = location.pathname;
+    console.log('Navigation: Current pathname', path); // Log current path
     if (path === '/programme') setActiveItem('Programme');
     else if (path === '/faith-nexus') setActiveItem('Faith Nexus');
     else if (path === '/partnership') setActiveItem('Partnerships');
-    else if (path === '/register') setActiveItem('Register Now'); // Added for register page
+    else if (path === '/register') setActiveItem('Register Now');
+    else if (path === '/faqs') setActiveItem('FAQs'); // Added for FAQ page
     else setActiveItem('Home');
-  }, [location.pathname]);
+    console.log('Navigation: Active item set to', activeItem);
+  }, [location.pathname, activeItem]);
  
   const navItems = [
     { label: 'Home', to: '/' },
     { label: 'Faith Nexus', to: '/faith-nexus' },
     { label: 'Programme', to: '/programme' },
     { label: 'Partnerships', to: '/partnership' },
-    { label: 'FAQs', to: '#' },
+    { label: 'FAQs', to: '/faqs' }, // Updated FAQs link
   ];
 
   const handleNavClick = (item: any) => {
+    console.log('Navigation: handleNavClick called with item', item); // Log item
     if (item.isScroll) {
       const element = document.getElementById('registration-form');
       if (element) {
@@ -44,10 +50,11 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="bg-blue-900/90 backdrop-blur-md border-b border-blue-700/50 shadow-lg bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMTAiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwNDA5MDIwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+    <> {/* Added React.Fragment to wrap multiple top-level elements */}
+      <nav className="bg-blue-900/90 backdrop-blur-md border-b border-blue-700/50 shadow-lg bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMTAiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwNDA5MDIwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
             <div className="relative h-10 w-10 sm:h-12 sm:w-12">
               {!logoLoaded && (
@@ -94,7 +101,7 @@ export const Navigation = () => {
 
           {/* Search and Mobile menu button */}
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-blue-500/50">
+            <Button variant="ghost" size="icon" className="text-white hover:bg-blue-500/50" onClick={() => setIsSearchOpen(true)}>
               <Search className="h-5 w-5" />
             </Button>
             
@@ -147,5 +154,7 @@ export const Navigation = () => {
         )}
       </div>
     </nav>
+    <SearchDialog isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+  </>
   );
 };

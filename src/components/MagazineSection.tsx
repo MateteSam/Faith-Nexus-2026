@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, BookOpen, Eye } from "lucide-react";
-import { MagazineReader } from "./MagazineReader";
+import { MagazineReader } from "./MagazineReader"; // Re-enabled
 import { useState, useEffect } from "react";
 
 export const MagazineSection = () => {
