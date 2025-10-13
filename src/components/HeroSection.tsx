@@ -86,9 +86,9 @@ export const HeroSection = () => {
             {/* Text Content */}
             <div className="text-center md:flex-1">
               <div className="text-primary text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4">
-                FAITH NEXUS 2025
+                FAITH NEXUS 2026
               </div>
-              <div className="text-base sm:text-lg md:text-xl mb-2">NOV. 27-29, 2025</div>
+              <div className="text-base sm:text-lg md:text-xl mb-2">MAR. 18-21, 2026</div>
               <div className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6">
                 MORELETA CAMPUS PRETORIA, SOUTH AFRICA
               </div>

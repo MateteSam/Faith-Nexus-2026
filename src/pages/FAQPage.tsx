@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: "When and where is Faith Nexus taking place?",
-    answer: "Faith Nexus is scheduled for November 27-29, 2025. The venue details will be announced soon. Please check our homepage for the latest updates."
+  answer: "Faith Nexus is scheduled for March 18-21, 2026. The venue details will be announced soon. Please check our homepage for the latest updates."
   },
   {
     question: "Who should attend Faith Nexus?",

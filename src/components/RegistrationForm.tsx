@@ -40,7 +40,7 @@ const RegistrationForm: React.FC = () => {
     try {
       // Create registration message
       const registrationData = `
-🎉 Faith Nexus 2025 Registration
+🎉 Faith Nexus 2026 Registration
 
 👤 Name: ${formData.firstName} ${formData.lastName}
 📧 Email: ${formData.email}
@@ -49,12 +49,12 @@ const RegistrationForm: React.FC = () => {
 💼 Role: ${formData.role}
 📝 Contribution: ${formData.contribution}
 
-Thank you for registering for Faith Nexus 2025!
+Thank you for registering for Faith Nexus 2026!
       `.trim();
 
       // Submit via email (always required)
       if (submissionMethods.email) {
-        const emailSubject = encodeURIComponent('Faith Nexus 2025 Registration');
+  const emailSubject = encodeURIComponent('Faith Nexus 2026 Registration');
         const emailBody = encodeURIComponent(registrationData);
         window.location.href = `mailto:info@faithnexus.world?subject=${emailSubject}&body=${emailBody}`;
       }
@@ -89,9 +89,9 @@ Thank you for registering for Faith Nexus 2025!
               </svg>
             </div>
             <h1 className="text-4xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
-              Register for Faith Nexus 2025
+              Register for Faith Nexus 2026
             </h1>
-            <p className="text-muted-foreground text-lg">November 27–29, 2025 · Pretoria, South Africa</p>
+            <p className="text-muted-foreground text-lg">March 18–21, 2026 · Pretoria, South Africa</p>
             <p className="text-sm text-muted-foreground mt-2">Reserve your spot — no payment required at this stage</p>
           </div>
 

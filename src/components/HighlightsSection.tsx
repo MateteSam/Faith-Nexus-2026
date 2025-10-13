@@ -6,7 +6,7 @@ const highlights = [
     id: 1,
     icon: Users,
     title: "10k+ Global Delegates",
-    description: "Faith Nexus 2025 will gather over 10,000 Christian content creators, leaders, and innovators from across Africa and the world—both in-person and online. It is a global Kingdom convergence of voices shaping culture and influencing nations for Christ.",
+  description: "Faith Nexus 2026 will gather over 10,000 Christian content creators, leaders, and innovators from across Africa and the world—both in-person and online. It is a global Kingdom convergence of voices shaping culture and influencing nations for Christ.",
     gradient: "from-blue-600 to-purple-600"
   },
   {

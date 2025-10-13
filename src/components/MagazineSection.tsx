@@ -15,7 +15,7 @@ export const MagazineSection = () => {
   const handleDownloadMagazine = () => {
     const link = document.createElement('a');
     link.href = '/NEXUS_MAGAZINE.pdf';
-    link.download = 'NEXUS_Magazine_May_June_2025.pdf';
+  link.download = 'NEXUS_Magazine_May_June_2026.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -32,7 +32,7 @@ export const MagazineSection = () => {
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-6">
             MAY-JUNE EDITION
           </h3>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 px-2">Faith Nexus 2025 is scheduled to take place in South Africa from November 27-30, 2025. Flip through all the updates.</p>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 px-2">Faith Nexus 2026 is scheduled to take place in South Africa from March 18-21, 2026. Flip through all the updates.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">

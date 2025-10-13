@@ -17,8 +17,8 @@ export const CountdownTimer = () => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    // Set the date we're counting down to (November 26, 2025)
-    const countDownDate = new Date("Nov 26, 2025 00:00:00").getTime();
+  // Set the date we're counting down to (March 18, 2026)
+  const countDownDate = new Date("Mar 18, 2026 00:00:00").getTime();
 
     // Update the count down every 1 second
     const interval = setInterval(() => {

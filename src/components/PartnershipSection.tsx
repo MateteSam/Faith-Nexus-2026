@@ -56,9 +56,9 @@ const PartnershipSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Why Sponsor Faith Nexus 2025? */}
+          {/* Why Sponsor Faith Nexus 2026? */}
           <div className="bg-card rounded-xl p-8 border border-border hover:shadow-lg transition-shadow">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Why Sponsor Faith Nexus 2025?</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Why Sponsor Faith Nexus 2026?</h3>
             <p className="text-muted-foreground mb-6">Partnering with Faith Nexus provides a unique opportunity to:</p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">

@@ -14,7 +14,7 @@ const FlightsPage: React.FC = () => {
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground">Faith Nexus Hospitality</h1>
               </div>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                To make travel stress-free for all delegates, Faith Nexus Hospitality is the official travel support service for Faith Nexus 2025. Our team handles flight reservations, bookings, and airport transfers for all registered delegates attending the summit.
+                To make travel stress-free for all delegates, Faith Nexus Hospitality is the official travel support service for Faith Nexus 2026. Our team handles flight reservations, bookings, and airport transfers for all registered delegates attending the summit.
               </p>
             </div>
 
@@ -155,7 +155,7 @@ const FlightsPage: React.FC = () => {
             <div className="text-center mt-12">
               <div className="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-primary/20 max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Ready to Book Your Flights?</h3>
-                <p className="text-muted-foreground mb-6">Register for Faith Nexus 2025 and get access to exclusive flight booking services.</p>
+                <p className="text-muted-foreground mb-6">Register for Faith Nexus 2026 and get access to exclusive flight booking services.</p>
                 <RegisterButton size="lg" text="Register & Book" />
               </div>
             </div>

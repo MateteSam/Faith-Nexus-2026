@@ -110,7 +110,7 @@ const TechnicalPartnershipPage: React.FC = () => {
               Technical Partnerships
             </h1>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              To reduce event costs and ensure excellence in delivery, Faith Nexus 2025 seeks 
+              To reduce event costs and ensure excellence in delivery, Faith Nexus 2026 seeks 
               in-kind technical partnerships with media houses, production providers, and technology firms.
             </p>
           </div>

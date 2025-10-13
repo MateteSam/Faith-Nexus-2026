@@ -14,7 +14,7 @@ const VisaPage: React.FC = () => {
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground">Travel VISA</h1>
               </div>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                Faith Nexus 2025 is a global gathering of Christian content creators, leaders, innovators, and influencers from 30+ nations.
+                Faith Nexus 2026 is a global gathering of Christian content creators, leaders, innovators, and influencers from 30+ nations.
               </p>
               <p className="mt-4 text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                 To ensure a seamless experience for our delegates, Faith Nexus Hospitality has been set up as the dedicated travel and accommodation service for all participants.
@@ -25,7 +25,7 @@ const VisaPage: React.FC = () => {
               <div className="bg-card rounded-2xl p-8 border border-border">
                 <h2 className="text-3xl font-bold text-foreground mb-6">Visa Applications</h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  All registered international delegates for Faith Nexus 2025 will receive comprehensive visa support through our Faith Nexus Hospitality Team.
+                  All registered international delegates for Faith Nexus 2026 will receive comprehensive visa support through our Faith Nexus Hospitality Team.
                 </p>
                 
                 <div className="space-y-4">
@@ -56,7 +56,7 @@ const VisaPage: React.FC = () => {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
-                    <p className="text-muted-foreground">Register for Faith Nexus 2025 summit</p>
+                    <p className="text-muted-foreground">Register for Faith Nexus 2026 summit</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
@@ -103,7 +103,7 @@ const VisaPage: React.FC = () => {
             <div className="text-center mt-12">
               <div className="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-primary/20 max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Ready to Apply for Your Visa?</h3>
-                <p className="text-muted-foreground mb-6">Register now and get personalized visa support for Faith Nexus 2025.</p>
+                <p className="text-muted-foreground mb-6">Register now and get personalized visa support for Faith Nexus 2026.</p>
                 <RegisterButton size="lg" text="Start Registration" />
               </div>
             </div>

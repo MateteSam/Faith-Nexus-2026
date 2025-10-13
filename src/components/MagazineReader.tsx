@@ -74,7 +74,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
     // Create a download link for the PDF
     const link = document.createElement('a');
     link.href = '/NEXUS_MAGAZINE.pdf';
-    link.download = 'NEXUS_Magazine_May_June_2025.pdf';
+  link.download = 'NEXUS_Magazine_May_June_2026.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

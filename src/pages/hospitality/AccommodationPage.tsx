@@ -13,9 +13,9 @@ const AccommodationPage: React.FC = () => {
                 <Bed className="w-12 h-12 text-primary" />
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground">Accommodation Services</h1>
               </div>
-              <h2 className="text-2xl font-semibold text-primary mb-4">Faith Nexus 2025 – Accommodation Services</h2>
+              <h2 className="text-2xl font-semibold text-primary mb-4">Faith Nexus 2026 – Accommodation Services</h2>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                To provide delegates with a stress-free experience, Faith Nexus Hospitality coordinates all accommodation for local and international participants attending the summit at Moreleta Campus, Pretoria, South Africa (26–29 November 2025).
+                To provide delegates with a stress-free experience, Faith Nexus Hospitality coordinates all accommodation for local and international participants attending the summit at Moreleta Campus, Pretoria, South Africa (18–21 March 2026).
               </p>
             </div>
 
@@ -112,7 +112,7 @@ const AccommodationPage: React.FC = () => {
                       <Calendar className="w-5 h-5 text-primary" />
                       <div>
                         <p className="font-semibold text-foreground">Event Dates</p>
-                        <p className="text-muted-foreground">26–29 November 2025</p>
+                        <p className="text-muted-foreground">18–21 March 2026</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -167,7 +167,7 @@ const AccommodationPage: React.FC = () => {
             <div className="text-center mt-12">
               <div className="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-primary/20 max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Ready to Book Your Stay?</h3>
-                <p className="text-muted-foreground mb-6">Register for Faith Nexus 2025 and get access to discounted accommodation rates.</p>
+                <p className="text-muted-foreground mb-6">Register for Faith Nexus 2026 and get access to discounted accommodation rates.</p>
                 <RegisterButton size="lg" text="Register & Book" />
               </div>
             </div>

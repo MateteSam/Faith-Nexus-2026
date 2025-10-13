@@ -88,7 +88,7 @@ const CorporatePartnershipPage: React.FC = () => {
               Corporate Partnership Opportunities
             </h1>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Partner with Faith Nexus 2025 to connect your brand with a high-impact, values-driven audience
+              Partner with Faith Nexus 2026 to connect your brand with a high-impact, values-driven audience
               of Christian content creators, media professionals, and faith-based leaders from around the world.
             </p>
           </div>

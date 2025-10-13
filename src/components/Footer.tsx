@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-4 sm:pt-6 text-xs sm:text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between">
-          <div>© 2025 Faith Nexus</div>
+          <div>© 2026 Faith Nexus</div>
           <div className="flex items-center gap-3 sm:gap-4 mt-3 md:mt-0">
             <a href="#privacy" className="hover:underline">Privacy</a>
             <a href="#terms" className="hover:underline">Terms</a>

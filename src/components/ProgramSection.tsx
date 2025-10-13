@@ -6,7 +6,7 @@ export const ProgramSection: React.FC = () => {
       <div className="bg-gradient-to-r from-white/80 via-slate-50 to-white/95 rounded-3xl shadow-2xl overflow-hidden">
         <div className="p-10 md:p-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">DAY 1 – WEDNESDAY, NOVEMBER 27, 2025</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">DAY 1 – WEDNESDAY, MARCH 18, 2026</h2>
             <p className="mt-3 text-lg text-slate-600 font-medium">Theme: <span className="font-semibold">Equip Voices with Tools – The Great Commission Meets the Algorithm</span></p>
             <p className="mt-2 text-slate-500">Focus: Providing delegates with tools, mindsets, and strategies to maximize Kingdom influence in the digital age.</p>
           </div>

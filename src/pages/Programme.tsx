@@ -91,7 +91,7 @@ const Programme: React.FC = () => {
 
   const programme = data ?? {
     day: 'DAY 1',
-    date: 'WEDNESDAY, NOVEMBER 27, 2025',
+  date: 'WEDNESDAY, MARCH 18, 2026',
     theme: 'Equip Voices with Tools – The Great Commission Meets the Algorithm',
     focus: 'Providing delegates with tools, mindsets, and strategies to maximize Kingdom influence in the digital age.',
     morning: [

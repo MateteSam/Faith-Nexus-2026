@@ -70,7 +70,7 @@ const ChurchPartnershipPage: React.FC = () => {
               Church Partnership
             </h1>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              The Church is central to the success of Faith Nexus 2025. We seek to partner with churches 
+              The Church is central to the success of Faith Nexus 2026. We seek to partner with churches 
               and denominations to mobilise believers and empower ministry teams for Kingdom content creation.
             </p>
           </div>

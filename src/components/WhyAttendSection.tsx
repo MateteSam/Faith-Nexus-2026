@@ -285,7 +285,7 @@ export const WhyAttendSection = () => {
               size="lg"
               className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105"
             >
-              Join Faith Nexus 2025
+              Join Faith Nexus 2026
               <Sparkles className="w-5 h-5 ml-2" />
             </Button>
           </div>
@@ -306,10 +306,10 @@ export const WhyAttendSection = () => {
               </span>
             </h3>
             <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-4">
-              Join other Christian creators, marketplace voices, Kingdom innovators from across the world @Faith Nexus 2025
+              Join other Christian creators, marketplace voices, Kingdom innovators from across the world @Faith Nexus 2026
             </p>
             <p className="text-lg text-amber-300 font-medium">
-              Secure your spot for free today and confirm your participation before October 15th, 2025
+              Secure your spot for free today and confirm your participation before March 1st, 2026
             </p>
           </div>
 
@@ -368,10 +368,10 @@ export const WhyAttendSection = () => {
                   <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
                     <h4 className="text-xl font-bold text-white mb-3">Step 3: Final Confirmation</h4>
                     <p className="text-slate-300 leading-relaxed mb-3">
-                      Confirm your participation by October 15th, 2025. Payment required to secure your final spot.
+                      Confirm your participation by March 1st, 2026. Payment required to secure your final spot.
                     </p>
                     <div className="text-amber-300 text-sm font-medium">
-                      Deadline: October 15th, 2025
+                      Deadline: March 1st, 2026
                     </div>
                   </div>
                 </div>
@@ -410,7 +410,7 @@ export const WhyAttendSection = () => {
             </div>
             <div className="text-center mt-8">
               <p className="text-amber-300 font-semibold text-lg">
-                Final confirmation (by payment) is due by October 15th 2025
+                Final confirmation (by payment) is due by March 1st 2026
               </p>
             </div>
           </div>
