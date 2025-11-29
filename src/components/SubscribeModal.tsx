@@ -46,7 +46,7 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
 
   return (
     <>
-      <button onClick={() => setOpen(true)} className="bg-primary text-primary-foreground font-semibold px-5 py-3 rounded-md">{triggerText}</button>
+      <Button onClick={() => setOpen(true)} className="" aria-haspopup="dialog" aria-expanded={open}>{triggerText}</Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>

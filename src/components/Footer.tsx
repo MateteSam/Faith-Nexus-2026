@@ -1,4 +1,6 @@
 import React from "react";
+import SubscribeModal from "@/components/SubscribeModal";
+import { Button } from "@/components/ui/button";
 const IconButton: React.FC<{
   href: string;
   label: string;
@@ -37,9 +39,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#subscribe" className="hover:underline">
-                  Subscribe to our newsletter
-                </a>
+                <SubscribeModal triggerText="Subscribe" title="Join our newsletter" description="Get the latest Faith Nexus updates and magazine previews." />
               </li>
             </ul>
           </div>
