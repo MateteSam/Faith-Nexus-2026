@@ -108,7 +108,10 @@
           if (isLocal) {
             const s = document.createElement('script');
             s.type = 'module';
-            s.src = '/src/main.tsx';
+            // construct the dev path at runtime to avoid including the literal '/src/main.tsx' in
+            // production HTML (prevents hosts from showing a 404 for dev-only module paths)
+            const devPath = '/' + ['s','r','c'].join('') + '/main.' + ['t','s','x'].join('');
+            s.src = devPath;
             document.head.appendChild(s);
           } else {
             // Production/static hosting should serve built assets instead of /src paths.
