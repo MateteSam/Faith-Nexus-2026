@@ -65,16 +65,16 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
   const toggleFullscreen = () => setIsFullscreen(!isFullscreen);
 
   // Keyboard navigation: left/right arrows to flip, Esc to close
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (!isOpen) return;
-      if (e.key === 'ArrowRight') nextButtonClick();
-      if (e.key === 'ArrowLeft') prevButtonClick();
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, [isOpen]);
+    useEffect(() => {
+      const handler = (e: KeyboardEvent) => {
+        if (!isOpen) return;
+        if (e.key === 'ArrowRight') nextButtonClick();
+        if (e.key === 'ArrowLeft') prevButtonClick();
+        if (e.key === 'Escape') onClose();
+      };
+      window.addEventListener('keydown', handler);
+      return () => window.removeEventListener('keydown', handler);
+    }, [isOpen, onClose]);
 
   // Keep the flipbook centered when zoom changes
   useEffect(() => {
@@ -91,17 +91,17 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
     document.body.removeChild(link);
   };
 
-  const goToPage = (index: number) => {
+  const goToPage = React.useCallback((index: number) => {
     const clamped = Math.max(0, Math.min(magazinePages.length - 1, index));
     if (layoutMode === 'flip') {
-      book.current?.pageFlip()?.flip(clamped);
+      book.current?.pageFlip?.().flip?.(clamped);
       setCurrentPage(clamped);
     } else {
       const el = pageRefs.current[clamped];
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setCurrentPage(clamped);
     }
-  };
+  }, [layoutMode]);
 
   const handleGotoSubmit = () => {
     const num = parseInt(gotoValue, 10);
@@ -162,7 +162,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
         setTimeout(() => goToPage(num - 1), 200);
       }
     }
-  }, [isOpen]);
+  }, [isOpen, goToPage]);
 
   // When reader opens, ensure all page image sources exist; if not, render the PDF page to an image data URL.
   useEffect(() => {
@@ -262,7 +262,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
     return () => {
       cancelled = true;
     };
-  }, [isOpen]);
+  }, [isOpen, pageSources]);
 
   const handleImgError = (index: number) => {
     setImageErrorMap((s) => ({ ...s, [index]: true }));
