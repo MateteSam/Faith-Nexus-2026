@@ -7,11 +7,8 @@ export const MagazineSection = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-1 flex justify-center">
-            <div className="w-56 h-72 rounded-md shadow-lg bg-gradient-to-br from-white/90 to-white/80 flex items-center justify-center overflow-hidden border border-white/10">
-              <div className="text-center">
-                <div className="text-sm text-muted-foreground">Preview</div>
-                <div className="mt-4 text-xs text-muted-foreground">Magazine Cover</div>
-              </div>
+            <div className="w-56 h-72 rounded-md shadow-lg bg-white/80 overflow-hidden border border-white/10">
+              <img src="/magazine/page_1.jpg" alt="Nexus Magazine cover preview" className="w-full h-full object-cover" />
             </div>
           </div>
 
