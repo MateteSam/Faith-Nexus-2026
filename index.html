@@ -60,12 +60,17 @@
         } catch (e) {
           console.warn('Dev: sw cleanup error', e);
         }
-        // Dynamically load the app module after attempting SW cleanup
+        // Dynamically load the app module after attempting SW cleanup (DEV ONLY)
         try {
-          const s = document.createElement('script');
-          s.type = 'module';
-          s.src = '/src/main.tsx';
-          document.head.appendChild(s);
+          if (isLocal) {
+            const s = document.createElement('script');
+            s.type = 'module';
+            s.src = '/src/main.tsx';
+            document.head.appendChild(s);
+          } else {
+            // Production/static hosting should serve built assets instead of /src paths.
+            console.log('Production host detected — not loading dev module.');
+          }
         } catch (e) {
           console.error('Dev: failed to load app module', e);
         }
