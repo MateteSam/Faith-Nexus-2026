@@ -20,11 +20,28 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    // For now store locally — replace with API/Mailchimp later
-    const list = JSON.parse(localStorage.getItem("subscribers") || "[]");
-    list.push({ email, date: new Date().toISOString() });
-    localStorage.setItem("subscribers", JSON.stringify(list));
-    setSubmitted(true);
+    // POST to serverless subscribe endpoint (stub). Replace with real provider integration.
+    (async () => {
+      try {
+        const resp = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        if (resp.ok) {
+          setSubmitted(true);
+        } else {
+          const data = await resp.json().catch(() => ({}));
+          alert(data.error || 'Subscription failed. Please try again later.');
+        }
+      } catch (err) {
+        // Fallback to local storage if network request fails
+        const list = JSON.parse(localStorage.getItem("subscribers") || "[]");
+        list.push({ email, date: new Date().toISOString() });
+        localStorage.setItem("subscribers", JSON.stringify(list));
+        setSubmitted(true);
+      }
+    })();
   };
 
   return (

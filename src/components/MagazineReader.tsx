@@ -48,6 +48,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
 
   const nextButtonClick = () => book.current?.pageFlip?.().flipNext?.();
   const prevButtonClick = () => book.current?.pageFlip?.().flipPrev?.();
+  const viewerRegionRef = useRef<HTMLDivElement | null>(null);
 
   const onPageChange = (e: unknown) => {
     if (typeof e === 'object' && e && 'data' in e) {
@@ -163,6 +164,13 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
       }
     }
   }, [isOpen, goToPage]);
+
+  // When the dialog opens, focus the viewer region for keyboard users
+  useEffect(() => {
+    if (isOpen && viewerRegionRef.current) {
+      try { viewerRegionRef.current.focus(); } catch { /* ignore */ }
+    }
+  }, [isOpen]);
 
   // When reader opens, ensure all page image sources exist; if not, render the PDF page to an image data URL.
   useEffect(() => {
@@ -403,8 +411,9 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="font-bold text-base sm:text-lg text-primary">NEXUS Magazine</div>
                 <div className="text-xs sm:text-sm px-2 py-1 bg-primary/10 rounded-md font-medium text-primary">
-                  Page {currentPage + 1} of {magazinePages.length}
-                </div>
+                    Page {currentPage + 1} of {magazinePages.length}
+                  </div>
+                <div className="sr-only" aria-live="polite">Page {currentPage + 1} of {magazinePages.length}</div>
               </div>
               
               {/* Desktop Actions - Hidden on Mobile */}
@@ -412,7 +421,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={toggleFullscreen} className="h-8 w-8 sm:h-9 sm:w-9">
+                      <Button aria-label="Toggle fullscreen" variant="outline" size="icon" onClick={toggleFullscreen} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Maximize className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -425,7 +434,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={handleShare} className="h-8 w-8 sm:h-9 sm:w-9">
+                      <Button aria-label="Share magazine" variant="outline" size="icon" onClick={handleShare} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Share2 className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -438,7 +447,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={handleDownload} className="h-8 w-8 sm:h-9 sm:w-9">
+                      <Button aria-label="Download PDF" variant="outline" size="icon" onClick={handleDownload} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Download className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -451,7 +460,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant="outline" size="icon" onClick={handlePrint} className="h-8 w-8 sm:h-9 sm:w-9">
+                      <Button aria-label="Print magazine" variant="outline" size="icon" onClick={handlePrint} className="h-8 w-8 sm:h-9 sm:w-9">
                         <Printer className="h-4 w-4" />
                       </Button>
                     </TooltipTrigger>
@@ -549,7 +558,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
 
           {/* Magazine Viewer */}
           <div className="flex-1 flex items-center justify-center relative overflow-hidden group">
-            <div role="region" aria-label="Magazine viewer" onWheel={onViewerWheel} className="relative w-full h-full max-w-full max-h-full flex items-center justify-center">
+            <div role="region" aria-label="Magazine viewer" onWheel={onViewerWheel} ref={viewerRegionRef} tabIndex={-1} className="relative w-full h-full max-w-full max-h-full flex items-center justify-center">
               {layoutMode === 'flip' ? (
                 <div className={`flip-zoom ${zoomClass}`}>
                   <Suspense fallback={
@@ -636,6 +645,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                   {/* Page turn buttons - only visible on hover */}
                   <div className="absolute inset-y-0 left-0 flex items-center">
                     <Button 
+                      aria-label="Previous page"
                       variant="ghost" 
                       size="icon" 
                       onClick={prevButtonClick} 
@@ -648,6 +658,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                   
                   <div className="absolute inset-y-0 right-0 flex items-center">
                     <Button 
+                      aria-label="Next page"
                       variant="ghost" 
                       size="icon" 
                       onClick={nextButtonClick} 
