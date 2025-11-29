@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   return <footer className="bg-gray-900 text-gray-200">
       {/* Accent bar with subtle Jewish motif */}
       <div className="w-full bg-gradient-to-r from-blue-900 to-blue-600 py-1 flex items-center justify-center">
-        <img src="/images/star-of-david.svg" alt="" aria-hidden className="w-6 h-6 opacity-90" />
+        <img src="/images/star-of-david.svg" alt="" aria-hidden loading="lazy" decoding="async" className="w-6 h-6 opacity-90" />
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">

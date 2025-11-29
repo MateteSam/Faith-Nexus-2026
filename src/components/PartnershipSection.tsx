@@ -10,6 +10,8 @@ const PartnershipSection: React.FC = () => {
             src="/images/partnership-south-africa.jpg"
             alt="Partnership meeting with South African business leaders"
             className="w-full h-96 object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 flex items-center">
             <div className="max-w-3xl px-8">

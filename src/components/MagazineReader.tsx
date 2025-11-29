@@ -643,7 +643,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
                       >
                         {!imageErrorMap[index] ? (
                           <div className="relative">
-                            <img src={page} alt={`Magazine page ${index + 1}`} onError={() => handleImgError(index)} className="w-full h-auto object-contain block" />
+                            <img src={page} alt={`Magazine page ${index + 1}`} onError={() => handleImgError(index)} className="w-full h-auto object-contain block" loading="lazy" decoding="async" />
                             <div className="absolute bottom-3 right-3 bg-black/60 text-white text-sm px-3 py-1 rounded-full font-medium shadow-sm">
                               {index + 1}
                             </div>

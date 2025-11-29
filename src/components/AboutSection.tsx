@@ -45,6 +45,8 @@ export const AboutSection = () => {
             src="/images/Faith Nexus Seven Pillars Icons.png"
             alt="Faith Nexus Seven Pillars Icons"
             className="mx-auto mb-6 w-full max-w-3xl h-auto object-contain"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
