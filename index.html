@@ -82,10 +82,10 @@
     <!-- Dev helper: unregister any existing service worker on localhost, then load the app module -->
     <script>
       (async function(){
+        const host = window.location.hostname || '';
+        const port = window.location.port || '';
+        const isLocal = host === 'localhost' || host === '127.0.0.1' || host.startsWith('192.168') || port === '8080' || port === '5173';
         try {
-          const host = window.location.hostname || '';
-          const port = window.location.port || '';
-          const isLocal = host === 'localhost' || host === '127.0.0.1' || host.startsWith('192.168') || port === '8080' || port === '5173';
           if (isLocal && 'serviceWorker' in navigator && !sessionStorage.getItem('sw-unregistered')) {
             try {
               const regs = await navigator.serviceWorker.getRegistrations();
