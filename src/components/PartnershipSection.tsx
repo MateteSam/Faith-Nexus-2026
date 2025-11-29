@@ -6,13 +6,11 @@ const PartnershipSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Image Section */}
         <div className="relative rounded-2xl overflow-hidden mb-16">
-          <img
-            src="/images/partnership-south-africa.jpg"
-            alt="Partnership meeting with South African business leaders"
-            className="w-full h-96 object-cover"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source type="image/avif" srcSet="/optimized/partnership_hero-2000.avif 2000w, /optimized/partnership_hero-1200.avif 1200w, /optimized/partnership_hero-768.avif 768w" sizes="(max-width: 768px) 100vw, 1200px" />
+            <source type="image/webp" srcSet="/optimized/partnership_hero-2000.webp 2000w, /optimized/partnership_hero-1200.webp 1200w, /optimized/partnership_hero-768.webp 768w" sizes="(max-width: 768px) 100vw, 1200px" />
+            <img src="/images/partnership-south-africa.jpg" alt="Partnership meeting with South African business leaders" className="w-full h-96 object-cover" loading="lazy" decoding="async" />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 flex items-center">
             <div className="max-w-3xl px-8">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">

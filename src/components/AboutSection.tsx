@@ -41,13 +41,11 @@ export const AboutSection = () => {
 
         {/* Replaced Seven Pillars section with image */}
         <div className="mt-8 bg-gray-900 rounded-2xl p-8 md:p-12 border border-border text-center">
-          <img
-            src="/images/Faith Nexus Seven Pillars Icons.png"
-            alt="Faith Nexus Seven Pillars Icons"
-            className="mx-auto mb-6 w-full max-w-3xl h-auto object-contain"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source type="image/avif" srcSet="/optimized/seven_pillars-1200.avif 1200w, /optimized/seven_pillars-800.avif 800w, /optimized/seven_pillars-480.avif 480w" sizes="(max-width: 640px) 340px, 800px" />
+            <source type="image/webp" srcSet="/optimized/seven_pillars-1200.webp 1200w, /optimized/seven_pillars-800.webp 800w, /optimized/seven_pillars-480.webp 480w" sizes="(max-width: 640px) 340px, 800px" />
+            <img src="/images/Faith Nexus Seven Pillars Icons.png" alt="Faith Nexus Seven Pillars Icons" className="mx-auto mb-6 w-full max-w-3xl h-auto object-contain" loading="lazy" decoding="async" />
+          </picture>
         </div>
       </div>
     </section>

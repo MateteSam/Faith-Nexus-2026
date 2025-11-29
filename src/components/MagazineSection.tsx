@@ -8,7 +8,11 @@ export const MagazineSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-1 flex justify-center">
             <div className="w-56 h-72 rounded-md shadow-lg bg-white/80 overflow-hidden border border-white/10">
-              <img src="/magazine/page_1.jpg" alt="Nexus Magazine cover preview" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+              <picture>
+                <source type="image/avif" srcSet="/optimized/magazine_page_1-1200.avif 1200w, /optimized/magazine_page_1-800.avif 800w, /optimized/magazine_page_1-480.avif 480w" sizes="(max-width: 640px) 180px, 224px" />
+                <source type="image/webp" srcSet="/optimized/magazine_page_1-1200.webp 1200w, /optimized/magazine_page_1-800.webp 800w, /optimized/magazine_page_1-480.webp 480w" sizes="(max-width: 640px) 180px, 224px" />
+                <img src="/magazine/page_1.jpg" alt="Nexus Magazine cover preview" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
 
