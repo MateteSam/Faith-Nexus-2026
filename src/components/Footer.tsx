@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <SubscribeModal triggerText="Subscribe" title="Join our newsletter" description="Get the latest Faith Nexus updates and magazine previews." />
+                <SubscribeModal triggerText="Subscribe" title="Join our newsletter" description="Get the latest Faith Nexus updates and magazine previews." triggerVariant="default" triggerClassName="px-4 py-2" />
               </li>
             </ul>
           </div>

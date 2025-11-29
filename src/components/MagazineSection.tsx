@@ -22,7 +22,13 @@ export const MagazineSection = () => {
             <p className="text-base text-muted-foreground max-w-2xl mb-6">We're revamping the magazine with a fresh, improved design and richer content — features, interviews, and special sections celebrating the themes of Faith Nexus. Subscribe to receive issue notifications and exclusive previews.</p>
 
             <div className="flex items-center gap-4">
-              <SubscribeModal triggerText="Notify me about the Magazine" title="Magazine Updates" description="Subscribe for issue announcements, previews and exclusive articles." />
+              <SubscribeModal
+                triggerText="Notify me about the Magazine"
+                title="Magazine Updates"
+                description="Subscribe for issue announcements, previews and exclusive articles."
+                triggerVariant="default"
+                triggerClassName="px-5 py-3 text-sm sm:text-base"
+              />
               <a href="/magazine" className="text-sm text-white/80 hover:underline">See archive</a>
             </div>
           </div>

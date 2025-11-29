@@ -6,12 +6,16 @@ type SubscribeModalProps = {
   triggerText?: string;
   title?: string;
   description?: string;
+  triggerVariant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  triggerClassName?: string;
 };
 
 const SubscribeModal: React.FC<SubscribeModalProps> = ({
   triggerText = "Notify Me",
   title = "Get notified",
   description = "We'll let you know when updates are available.",
+  triggerVariant = 'default',
+  triggerClassName = '',
 }) => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -46,7 +50,7 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} className="" aria-haspopup="dialog" aria-expanded={open}>{triggerText}</Button>
+      <Button onClick={() => setOpen(true)} variant={triggerVariant} className={triggerClassName} aria-haspopup="dialog" aria-expanded={open}>{triggerText}</Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
