@@ -40,9 +40,15 @@ export const Navigation = () => {
     { label: 'FAQs', to: '/faqs' }, // Updated FAQs link
   ];
 
-  const handleNavClick = (item: any) => {
-    console.log('Navigation: handleNavClick called with item', item); // Log item
-    if (item.isScroll) {
+  const handleNavClick = (item: unknown) => {
+    // accept unknown and guard access to isScroll to avoid `any`
+    try { console.log('Navigation: handleNavClick called with item', item); } catch (err) { void err; }
+    const hasIsScroll = (x: unknown): x is { isScroll: boolean } => {
+      if (typeof x !== 'object' || x === null) return false;
+      const v = (x as Record<string, unknown>)['isScroll'];
+      return typeof v === 'boolean';
+    };
+    if (hasIsScroll(item) && item.isScroll) {
       const element = document.getElementById('registration-form');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });

@@ -22,8 +22,16 @@ const PAGE_HEIGHT = PAGE_WIDTH * PAGE_ASPECT_RATIO;
 // Generate a list for 52 pages (assumes images are available at /magazine/page_1.jpg ... /magazine/page_52.jpg)
 const magazinePages = Array.from({ length: 52 }, (_, i) => `/magazine/page_${i + 1}.jpg`);
 
+type PageFlipAPI = {
+  pageFlip?: () => {
+    flipNext?: () => void;
+    flipPrev?: () => void;
+    flip?: (n: number) => void;
+  };
+};
+
 export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
-  const book = useRef<any>(null);
+  const book = useRef<PageFlipAPI | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [layoutMode, setLayoutMode] = useState<'flip' | 'scroll'>('flip');
@@ -38,11 +46,14 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
   const [isMuted, setIsMuted] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
 
-  const nextButtonClick = () => book.current?.pageFlip()?.flipNext();
-  const prevButtonClick = () => book.current?.pageFlip()?.flipPrev();
+  const nextButtonClick = () => book.current?.pageFlip?.().flipNext?.();
+  const prevButtonClick = () => book.current?.pageFlip?.().flipPrev?.();
 
-  const onPageChange = (e: any) => {
-    setCurrentPage(e.data);
+  const onPageChange = (e: unknown) => {
+    if (typeof e === 'object' && e && 'data' in e) {
+      const d = (e as Record<string, unknown>).data;
+      setCurrentPage(Number(d));
+    }
     // small visual cue: add class to book container
     const container = document.querySelector('.magazine-book');
     if (container) {
@@ -131,8 +142,9 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
     try {
       pageAudioRef.current = new Audio('/sounds/page-turn.mp3');
       pageAudioRef.current.volume = 0.6;
-    } catch {
+    } catch (err) {
       pageAudioRef.current = null;
+      void err;
     }
   }, []);
 
@@ -269,17 +281,24 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
       setPdfLoading((s) => ({ ...s, [pageIndex]: true }));
       // Dynamically import PDF.js only when needed
       const pdfjs = await import('pdfjs-dist/build/pdf');
-      // Worker
+      // Create a narrow local view of pdfjs to avoid broad `any` usage
+      type PDFJSLike = {
+        GlobalWorkerOptions?: { workerSrc?: string };
+        version?: string;
+        getDocument: (url: string) => { promise: Promise<unknown> };
+      };
+      const pdfjsTyped = pdfjs as unknown as PDFJSLike;
+      // Worker: best-effort assignment if present
       try {
-        // @ts-ignore
-        pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-      } catch {}
+        if (pdfjsTyped.GlobalWorkerOptions) pdfjsTyped.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsTyped.version}/pdf.worker.min.js`;
+      } catch (err) { void err; }
 
-      const loadingTask = pdfjs.getDocument('/NEXUS_MAGAZINE.pdf');
-      const pdf = await loadingTask.promise;
+      const loadingTask = pdfjsTyped.getDocument('/NEXUS_MAGAZINE.pdf');
+      const pdf = await loadingTask.promise as unknown as { getPage: (n:number) => Promise<unknown> };
       const pageNumber = pageIndex + 1;
-      const page = await pdf.getPage(pageNumber);
-      const viewport = page.getViewport({ scale: 1.5 });
+      const page = await pdf.getPage(pageNumber) as unknown;
+      const pageWithViewport = page as unknown as { getViewport: (opts: { scale: number }) => { width: number; height: number } };
+      const viewport = pageWithViewport.getViewport({ scale: 1.5 });
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
       if (!context) throw new Error('Unable to get canvas context');
@@ -288,8 +307,11 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
       const renderContext = {
         canvasContext: context,
         viewport,
-      } as any;
-      await page.render(renderContext).promise;
+      } as unknown;
+      // pdfjs page.render returns a task with a `promise` property. Narrow locally and await it safely.
+      const pageLike = page as unknown as { render?: (ctx: unknown) => { promise?: Promise<unknown> } };
+      const renderTask = pageLike.render?.(renderContext);
+      if (renderTask && renderTask.promise) await renderTask.promise;
       pdfRenderCache.current[pageIndex] = canvas;
       return canvas;
     } finally {
@@ -314,18 +336,25 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
       return next;
     });
     // debounce any heavy recalcs
-    if (wheelTimeout.current) window.clearTimeout(wheelTimeout.current as any);
-    wheelTimeout.current = window.setTimeout(() => {
+    if (wheelTimeout.current != null) window.clearTimeout(wheelTimeout.current);
+    // setTimeout returns a number in browsers; cast from ReturnType to number for TS clarity
+    wheelTimeout.current = (window.setTimeout(() => {
       wheelTimeout.current = null;
-    }, 80);
+    }, 80) as unknown) as number;
   };
 
   // Play page-turn sound when page flips
   useEffect(() => {
     if (!isMuted && pageAudioRef.current) {
-      try { pageAudioRef.current.currentTime = 0; pageAudioRef.current.play(); } catch {};
+      try {
+        pageAudioRef.current.currentTime = 0;
+        // Play may throw in some autoplay-restricted environments
+        void pageAudioRef.current.play();
+      } catch (err) {
+        void err;
+      }
     }
-  }, [currentPage]);
+  }, [currentPage, isMuted]);
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
