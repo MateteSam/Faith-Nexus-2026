@@ -31,7 +31,8 @@ type PaginationLinkProps = {
 } & Pick<ButtonProps, "size"> &
   React.ComponentProps<"a">;
 
-const PaginationLink = ({ className, isActive, size = "icon", ...props }: PaginationLinkProps) => (
+
+const PaginationLink = ({ children, className, isActive, size = "icon", ...props }: PaginationLinkProps & { children?: React.ReactNode }) => (
   <a
     aria-current={isActive ? "page" : undefined}
     className={cn(
@@ -42,7 +43,9 @@ const PaginationLink = ({ className, isActive, size = "icon", ...props }: Pagina
       className,
     )}
     {...props}
-  />
+  >
+    {children ?? <span className="sr-only">Page link</span>}
+  </a>
 );
 PaginationLink.displayName = "PaginationLink";
 

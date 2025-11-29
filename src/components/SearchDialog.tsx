@@ -41,6 +41,7 @@ const allContent: SearchResult[] = [
 export const SearchDialog: React.FC<SearchDialogProps> = ({ isOpen, onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const inputRef = React.useRef<HTMLInputElement | null>(null);
 
   const handleSearch = useCallback((query: string) => {
     if (!query) {
@@ -71,6 +72,13 @@ export const SearchDialog: React.FC<SearchDialogProps> = ({ isOpen, onClose }) =
     }
   }, [isOpen]);
 
+  // Focus the input when dialog opens (avoid autoFocus attribute)
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      setTimeout(() => inputRef.current?.focus(), 50);
+    }
+  }, [isOpen]);
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] md:max-w-2xl lg:max-w-3xl h-[80vh] flex flex-col">
@@ -90,7 +98,7 @@ export const SearchDialog: React.FC<SearchDialogProps> = ({ isOpen, onClose }) =
             className="pl-10 pr-4 py-2 rounded-md border border-input focus-visible:ring-primary"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            autoFocus
+            ref={inputRef}
           />
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         </div>
