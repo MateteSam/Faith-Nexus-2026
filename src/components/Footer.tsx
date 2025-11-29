@@ -12,14 +12,18 @@ const IconButton: React.FC<{
   </a>;
 const Footer: React.FC = () => {
   return <footer className="bg-gray-900 text-gray-200">
+      {/* Accent bar with subtle Jewish motif */}
+      <div className="w-full bg-gradient-to-r from-blue-900 to-blue-600 py-1 flex items-center justify-center">
+        <img src="/images/star-of-david.svg" alt="" aria-hidden className="w-6 h-6 opacity-90" />
+      </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div>
-            <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Company</h4>
+            <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">About</h4>
             <ul className="space-y-1 sm:space-y-2 text-sm">
               <li>
                 <a href="#about" className="hover:underline">
-                  About WCCCS
+                  About Faith Nexus
                 </a>
               </li>
               <li>
@@ -34,7 +38,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#subscribe" className="hover:underline">
-                  Subscribe to our newsletters
+                  Subscribe to our newsletter
                 </a>
               </li>
             </ul>
@@ -126,11 +130,19 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-4 sm:pt-6 text-xs sm:text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between">
-          <div>© 2025 Faith Nexus</div>
-          <div className="flex items-center gap-3 sm:gap-4 mt-3 md:mt-0">
-            <a href="#privacy" className="hover:underline">Privacy</a>
-            <a href="#terms" className="hover:underline">Terms</a>
+        <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-4 sm:pt-6 text-xs sm:text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div>© 2025 Faith Nexus</div>
+              <span className="hidden md:inline">•</span>
+              <div className="ml-2 hidden md:block text-gray-400">All rights reserved.</div>
+            </div>
+
+            <div className="flex items-center gap-3 sm:gap-4 mt-3 md:mt-0">
+              <a href="#privacy" className="hover:underline">Privacy</a>
+              <a href="#terms" className="hover:underline">Terms</a>
+              <a href="/contact" className="hover:underline">Contact</a>
+            </div>
           </div>
         </div>
       </div>
