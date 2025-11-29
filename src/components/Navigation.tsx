@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from 'react-router-dom';
@@ -12,6 +12,7 @@ export const Navigation = () => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState<string>("Home");
   const [logoLoaded, setLogoLoaded] = useState(false);
+  const firstMobileLinkRef = useRef<HTMLAnchorElement | null>(null);
   
   useEffect(() => {
     const img = new Image();
@@ -21,18 +22,18 @@ export const Navigation = () => {
  
   useEffect(() => {
     const path = location.pathname;
-    console.log('Navigation: Current pathname', path); // Log current path
     if (path === '/programme') setActiveItem('Programme');
     else if (path === '/faith-nexus') setActiveItem('Faith Nexus');
     else if (path === '/partnership') setActiveItem('Partnerships');
     else if (path === '/register') setActiveItem('Register Now');
-    else if (path === '/faqs') setActiveItem('FAQs'); // Added for FAQ page
+    else if (path === '/faqs') setActiveItem('FAQs');
+    else if (path === '/covenant') setActiveItem('Covenant');
     else setActiveItem('Home');
-    console.log('Navigation: Active item set to', activeItem);
-  }, [location.pathname, activeItem]);
+  }, [location.pathname]);
  
   const navItems = [
     { label: 'Home', to: '/' },
+    { label: 'Covenant', to: '/covenant' },
     { label: 'Faith Nexus', to: '/faith-nexus' },
     { label: 'Programme', to: '/programme' },
     { label: 'Partnerships', to: '/partnership' },
@@ -49,10 +50,19 @@ export const Navigation = () => {
     }
   };
 
+  useEffect(() => {
+    // When mobile menu opens, focus first link for keyboard users
+    if (isMenuOpen && firstMobileLinkRef.current) {
+      firstMobileLinkRef.current.focus();
+    }
+  }, [isMenuOpen]);
+
   return (
     <> {/* Added React.Fragment to wrap multiple top-level elements */}
-      <nav className="bg-blue-900/90 backdrop-blur-md border-b border-blue-700/50 shadow-lg bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwMTAiPjwvcmVjdD4KPHBhdGggZD0iTTAgNUw1IDBaTTYgNEw0IDZaTS0xIDFMMSAtMVoiIHN0cm9rZT0iIzIwNDA5MDIwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')]">
+      <nav aria-label="Main" className="bg-blue-900/90 backdrop-blur-md border-b border-blue-700/50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Skip link for accessibility */}
+          <a href="#root" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white/10 focus:px-3 focus:py-2 focus:rounded">Skip to content</a>
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
@@ -83,15 +93,18 @@ export const Navigation = () => {
                   onClick={() => {
                     setActiveItem(nav.label);
                   }}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 hover:bg-blue-500/50 ${
+                  className={`px-4 py-2 text-sm font-medium rounded-md transition-all duration-300 hover:bg-blue-500/30 flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 ${
                     nav.label === activeItem
-                      ? "text-white bg-blue-500/40 shadow-[0_0_10px_rgba(59,130,246,0.5)] font-semibold"
+                      ? "text-white bg-blue-500/40 shadow-[0_6px_18px_rgba(59,130,246,0.25)] font-semibold"
                       : "text-blue-100"
                   }`}
                 >
-                  <span className={nav.label === activeItem ? "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-blue-200 after:to-white after:rounded-full" : ""}>
+                  <span className={nav.label === activeItem ? "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-blue-200 after:to-white after:rounded-full" : ""}>
                     {nav.label}
                   </span>
+                  {nav.label === 'Covenant' && (
+                    <span className="ml-2 inline-block bg-yellow-400 text-blue-900 text-xs px-2 py-0.5 rounded-full font-semibold">Theme 2026</span>
+                  )}
                 </Link>
               ))}
               <HospitalityDropdown />
@@ -110,6 +123,9 @@ export const Navigation = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 className="text-white hover:bg-blue-500/50"
               >
                 {isMenuOpen ? (
@@ -124,9 +140,9 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-blue-400/30 bg-blue-700/95 backdrop-blur-md rounded-b-lg shadow-xl">
-              {navItems.map((nav) => (
+          <div id="mobile-menu" className="md:hidden" role="dialog" aria-modal="true">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-blue-400/30 bg-blue-700/95 backdrop-blur-md rounded-b-lg shadow-xl transition-transform transform origin-top">
+              {navItems.map((nav, idx) => (
                 <Link
                   key={nav.label}
                   to={nav.to}
@@ -134,7 +150,13 @@ export const Navigation = () => {
                     setActiveItem(nav.label);
                     setIsMenuOpen(false);
                   }}
-                  className={`block px-3 py-3 text-base font-medium rounded-md transition-all duration-300 hover:bg-blue-500/50 ${
+                  ref={idx === 0 ? firstMobileLinkRef : undefined}
+                  role="menuitem"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') setIsMenuOpen(false);
+                  }}
+                  className={`block px-4 py-3 text-base font-medium rounded-md transition-all duration-300 hover:bg-blue-500/50 ${
                     nav.label === activeItem
                       ? "text-white bg-blue-500/40 shadow-[0_0_10px_rgba(59,130,246,0.5)] font-semibold"
                       : "text-blue-100"

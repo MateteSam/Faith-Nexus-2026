@@ -1,7 +1,7 @@
 // ScrollingBanner and Navigation are now rendered site-wide in App.tsx
 import { HeroSection } from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSectionClean";
-import { MagazineSection } from "@/components/MagazineSection";
+import CovenantSection from "@/components/CovenantSection";
 import { HighlightsSection } from "@/components/HighlightsSection";
 import { WhyAttendSection } from "@/components/WhyAttendSection";
 import { PricingSection } from "@/components/PricingSection";
@@ -14,7 +14,7 @@ const Index = () => {
       <HighlightsSection />
       <AboutSection />
       <WhyAttendSection />
-      <MagazineSection />
+      <CovenantSection />
     </div>
   );
 };

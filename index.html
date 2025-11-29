@@ -36,6 +36,36 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Dev helper: unregister any existing service worker on localhost, then load the app module -->
+    <script>
+      (async function(){
+        try {
+          const host = window.location.hostname || '';
+          const port = window.location.port || '';
+          const isLocal = host === 'localhost' || host === '127.0.0.1' || host.startsWith('192.168') || port === '8080' || port === '5173';
+          if (isLocal && 'serviceWorker' in navigator && !sessionStorage.getItem('sw-unregistered')) {
+            try {
+              const regs = await navigator.serviceWorker.getRegistrations();
+              await Promise.all(regs.map(r => r.unregister()));
+              console.log('Dev: unregistered service workers');
+              sessionStorage.setItem('sw-unregistered','1');
+            } catch (err) {
+              console.warn('Dev: failed to unregister service workers', err);
+            }
+          }
+        } catch (e) {
+          console.warn('Dev: sw cleanup error', e);
+        }
+        // Dynamically load the app module after attempting SW cleanup
+        try {
+          const s = document.createElement('script');
+          s.type = 'module';
+          s.src = '/src/main.tsx';
+          document.head.appendChild(s);
+        } catch (e) {
+          console.error('Dev: failed to load app module', e);
+        }
+      })();
+    </script>
   </body>
 </html>

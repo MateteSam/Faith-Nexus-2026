@@ -9,6 +9,7 @@ import { Navigation } from "@/components/Navigation";
 
 // Lazy load all pages for better performance
 const Index = lazy(() => import("./pages/Index"));
+const Covenant = lazy(() => import("./pages/Covenant"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Programme = lazy(() => import("./pages/Programme"));
 const FaithNexus = lazy(() => import("./pages/FaithNexus"));
@@ -42,6 +43,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/programme" element={<Programme />} />
+            <Route path="/covenant" element={<Covenant />} />
             <Route path="/faith-nexus" element={<FaithNexus />} />
             <Route path="/register" element={<Register />} />
             <Route path="/partnership" element={<PartnershipPage />} />

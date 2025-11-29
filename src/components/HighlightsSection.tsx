@@ -39,7 +39,10 @@ export const HighlightsSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzAwMDAwMDA1Ij48L3JlY3Q+CjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjIiIGZpbGw9IiMwMDAwMDAxMCI+PC9jaXJjbGU+Cjwvc3ZnPg==')] opacity-20"></div>
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{ backgroundImage: "url('/images/highlights-pattern.svg')", backgroundRepeat: 'repeat' }}
+      />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title */}
