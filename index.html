@@ -46,9 +46,13 @@
           if (isLocal && 'serviceWorker' in navigator && !sessionStorage.getItem('sw-unregistered')) {
             try {
               const regs = await navigator.serviceWorker.getRegistrations();
-              await Promise.all(regs.map(r => r.unregister()));
-              console.log('Dev: unregistered service workers');
-              sessionStorage.setItem('sw-unregistered','1');
+              if (regs && regs.length) {
+                await Promise.all(regs.map(r => r.unregister()));
+                console.log('Dev: unregistered service workers');
+                // mark so we don't loop reloads and then reload to drop control immediately
+                sessionStorage.setItem('sw-unregistered','1');
+                try { location.reload(); return; } catch (err) { /* ignore reload error */ }
+              }
             } catch (err) {
               console.warn('Dev: failed to unregister service workers', err);
             }
