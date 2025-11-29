@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -9,10 +9,10 @@
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter var(--motion-medium, 300ms);
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 1.6em #646cffaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -34,7 +34,7 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .read-the-docs {
@@ -46,6 +46,12 @@
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
   background-color: white;
 }
+
+/* Button subtle polish — works with existing button variant classes */
+.btn-polish {
+  transition: transform var(--motion-fast, 160ms) ease, box-shadow var(--motion-fast, 160ms) ease, background var(--motion-fast, 160ms) ease;
+}
+.btn-polish:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.10); }
 
 /* Zoom wrappers (zoom value is applied via inline CSS variable) */
 .flip-zoom {

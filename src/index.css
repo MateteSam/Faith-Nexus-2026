@@ -102,6 +102,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    /* Improve font rendering and base smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improved focus styles for keyboard users */
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Headings contrast and spacing tweaks */
+  h1, h2, h3 {
+    color: hsl(var(--foreground));
+    line-height: 1.15;
+    letter-spacing: -0.01em;
   }
 
   /* Faith Nexus Design System Extensions */
@@ -155,5 +176,11 @@ All colors MUST be HSL.
   
   .flip-card-back {
     transform: rotateY(180deg);
+  }
+  
+  /* Slightly reduce default transition durations for a snappier feel */
+  :root {
+    --motion-fast: 160ms;
+    --motion-medium: 240ms;
   }
 }
