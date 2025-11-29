@@ -25,7 +25,7 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
       </div>
 
-      <div className="relative z-10 px-6 sm:px-8 lg:px-16 w-full max-w-7xl mx-auto">
+      <div className="relative z-10 px-6 sm:px-8 lg:px-16 w-full site-container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Left column */}
           <div className="md:col-span-7 lg:col-span-6 text-left">
@@ -49,8 +49,8 @@ export const HeroSection = () => {
                 <div className="text-lg font-bold text-blue-900 mb-2">Bridging Jewish & Christian Faiths <span className="text-sm text-gray-600 ml-2">(שיחות הברית)</span></div>
                 <p className="text-sm text-gray-700 mb-4">Explore shared roots and celebrate cultural exchange through dialogue, arts, education and creative collaboration.</p>
                 <div className="flex gap-3">
-                  <button onClick={() => { window.location.hash = 'covenant'; }} className="px-4 py-2 bg-blue-800 hover:bg-blue-700 text-white rounded-md font-semibold shadow">Learn More</button>
-                  <button onClick={() => navigate('/register')} className="px-4 py-2 border border-blue-800 text-blue-800 rounded-md font-medium">Register</button>
+                  <Button onClick={() => { window.location.hash = 'covenant'; }} className="px-4 py-2" aria-label="Learn more about Covenant Conversations">Learn More</Button>
+                  <Button variant="outline" onClick={() => navigate('/register')} className="px-4 py-2" aria-label="Register for Faith Nexus 2026">Register</Button>
                 </div>
               </div>
             </div>
