@@ -2,7 +2,17 @@ import React, { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-const SubscribeModal: React.FC = () => {
+type SubscribeModalProps = {
+  triggerText?: string;
+  title?: string;
+  description?: string;
+};
+
+const SubscribeModal: React.FC<SubscribeModalProps> = ({
+  triggerText = "Notify Me",
+  title = "Get notified",
+  description = "We'll let you know when updates are available.",
+}) => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -19,13 +29,13 @@ const SubscribeModal: React.FC = () => {
 
   return (
     <>
-      <button onClick={() => setOpen(true)} className="bg-primary text-primary-foreground font-semibold px-5 py-3 rounded-md">Notify Me</button>
+      <button onClick={() => setOpen(true)} className="bg-primary text-primary-foreground font-semibold px-5 py-3 rounded-md">{triggerText}</button>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Get notified about the Magazine</DialogTitle>
-            <DialogDescription>We'll let you know when the new improved issues are published.</DialogDescription>
+            <DialogTitle>{title}</DialogTitle>
+            <DialogDescription>{description}</DialogDescription>
           </DialogHeader>
 
           {!submitted ? (
@@ -47,7 +57,7 @@ const SubscribeModal: React.FC = () => {
             </form>
           ) : (
             <div className="mt-4">
-              <p className="text-sm">Thanks — we'll notify you when the magazine is available.</p>
+              <p className="text-sm">Thanks — we'll notify you when updates are available.</p>
               <div className="mt-4 flex justify-end">
                 <Button onClick={() => setOpen(false)}>Close</Button>
               </div>

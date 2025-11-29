@@ -1,17 +1,16 @@
 import React from "react";
+import CovenantSection from "@/components/CovenantSection";
+import SubscribeModal from "@/components/SubscribeModal";
 
 const Covenant: React.FC = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <section className="bg-gradient-to-b from-gray-900 to-black text-white py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8">
-            <div className="text-sm text-primary font-semibold uppercase tracking-wider">COVENANT CONVERSATIONS</div>
-            <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold">A Strategic Faith Nexus Project on Jewish-Christian Understanding, Heritage & Cultural Exchange</h1>
-            <p className="mt-4 text-lg text-white/80 mx-auto max-w-3xl">A signature, long-term initiative of the Faith Nexus Movement dedicated to restoring, honouring, and engaging the Jewish foundations of the Christian faith.</p>
-          </div>
+      {/* Polished shared Covenant hero/teaser */}
+      <CovenantSection />
 
-          <article className="prose prose-invert max-w-none text-white/90">
+      <section className="py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="prose prose-invert max-w-none text-white/90">
             <h2>Overview</h2>
             <p>Covenant Conversations is a signature long-term initiative of the Faith Nexus Movement, dedicated to restoring, honouring, and engaging the Jewish foundations of the Christian faith. Envisioned as a multi-dimensional project, Covenant Conversations includes:</p>
             <ul>
@@ -62,9 +61,13 @@ const Covenant: React.FC = () => {
 
             <h2>Communication Channels & Long-Term Vision</h2>
             <p>Microsite, dedicated podcast channel, newsletters, partner briefings — with the long-term vision of evolving Covenant Conversations into a continental and global movement where Jewish and Christian communities co-create and co-steward Kingdom expression.</p>
+          </div>
 
-            <p className="pt-6 text-sm text-white/70">Copyright © 2025 Faith Nexus</p>
-          </article>
+          <div className="mt-10 flex items-center justify-center">
+            <SubscribeModal />
+          </div>
+
+          <p className="pt-6 text-sm text-white/70 text-center">Copyright © 2025 Faith Nexus</p>
         </div>
       </section>
     </main>

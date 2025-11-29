@@ -4,12 +4,27 @@ import SubscribeModal from "@/components/SubscribeModal";
 export const MagazineSection = () => {
   return (
     <section className="py-20 bg-secondary/10">
-      <div className="max-w-5xl mx-auto text-center px-4 sm:px-6">
-        <div className="text-sm text-primary font-semibold uppercase tracking-wider mb-2">NEXUS MAGAZINE</div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">New Issues Coming Soon</h2>
-        <p className="text-base text-muted-foreground max-w-2xl mx-auto mb-6">We're revamping the magazine with a fresh, improved design and richer content. Stay tuned — better issues and special features will appear here soon.</p>
-        <div className="inline-flex items-center gap-3">
-          <SubscribeModal />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <div className="md:col-span-1 flex justify-center">
+            <div className="w-56 h-72 rounded-md shadow-lg bg-gradient-to-br from-white/90 to-white/80 flex items-center justify-center overflow-hidden border border-white/10">
+              <div className="text-center">
+                <div className="text-sm text-muted-foreground">Preview</div>
+                <div className="mt-4 text-xs text-muted-foreground">Magazine Cover</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="md:col-span-2">
+            <div className="text-sm text-primary font-semibold uppercase tracking-wider mb-2">NEXUS MAGAZINE</div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">New Issues Coming Soon</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mb-6">We're revamping the magazine with a fresh, improved design and richer content — features, interviews, and special sections celebrating the themes of Faith Nexus. Subscribe to receive issue notifications and exclusive previews.</p>
+
+            <div className="flex items-center gap-4">
+              <SubscribeModal triggerText="Notify me about the Magazine" title="Magazine Updates" description="Subscribe for issue announcements, previews and exclusive articles." />
+              <a href="/magazine" className="text-sm text-white/80 hover:underline">See archive</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
