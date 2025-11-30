@@ -29,35 +29,62 @@ const CovenantSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right column - feature cards */}
+          {/* Right column - refreshed blue/white cards (improved, non-repetitive) */}
           <div className="lg:col-span-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-6 bg-gradient-to-tr from-white/6 to-white/3 rounded-2xl border border-white/6 shadow-xl">
-                <h3 className="text-lg font-bold text-white">Overview & Mission</h3>
-                <p className="mt-2 text-white/90 text-sm leading-relaxed">We reconnect Christians to Hebraic roots while welcoming Jewish voices, artists and educators — building bridges through dialogue, education, cultural celebration and spiritual alignment.</p>
-              </div>
-
-              <div className="p-6 bg-gradient-to-tr from-white/6 to-white/3 rounded-2xl border border-white/6 shadow-xl">
-                <h3 className="text-lg font-bold text-white">Key Components</h3>
-                <ul className="mt-2 text-white/90 text-sm space-y-2 list-disc list-inside">
-                  <li><strong>Annual Plenary</strong> — Mainstage teachings, interfaith dialogue & arts.</li>
-                  <li><strong>Podcast</strong> — Episodes exploring roots, language and culture.</li>
-                  <li><strong>Showcase</strong> — Music, film and exhibitions amplifying stories.</li>
-                </ul>
-              </div>
-
-              <div className="p-6 bg-gradient-to-tr from-white/6 to-white/3 rounded-2xl border border-white/6 shadow-xl">
-                <h3 className="text-lg font-bold text-white">Impact & Partnerships</h3>
-                <p className="mt-2 text-white/90 text-sm leading-relaxed">We partner with Jewish communities, scholars and cultural organisations to ensure global representation and lasting impact.</p>
-              </div>
-
-              <div className="p-6 bg-gradient-to-r from-blue-800 to-blue-600 rounded-2xl shadow-2xl flex flex-col justify-between">
-                <div>
-                  <h3 className="text-lg font-bold text-white">2026 Theme</h3>
-                  <p className="mt-2 text-white/90 text-sm font-semibold">Roots & Revelation: Rediscovering the Jewish Foundations of the Christian Faith</p>
+            <div className="space-y-5">
+              <div className="p-6 bg-white rounded-2xl border border-sky-100 shadow-lg">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-12 h-12 rounded-md bg-sky-50 flex items-center justify-center border border-sky-100">
+                      <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"></path></svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-sky-800">Overview</h3>
+                    <p className="mt-2 text-slate-700 text-sm leading-relaxed">A signature initiative dedicated to restoring, honouring and engaging the Jewish foundations of the Christian faith. Below are the mission, pillars and components that structure the programme.</p>
+                    <p className="mt-3 inline-block bg-sky-50 text-sky-700 text-xs font-medium px-3 py-1 rounded">Mission: Build bridges of understanding and honour through dialogue, education and cultural collaboration.</p>
+                  </div>
                 </div>
-                <div className="mt-4">
-                  <a href="/podcast" className="inline-block bg-white text-blue-800 font-bold px-4 py-2 rounded-md">Visit Podcast</a>
+              </div>
+
+              <div className="p-6 bg-sky-50 rounded-2xl border border-sky-100 shadow-md">
+                <h3 className="text-lg font-semibold text-sky-800">Strategic Pillars</h3>
+                <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="p-3 bg-white rounded-lg">
+                    <div className="text-sm font-semibold text-sky-700">Faith &amp; Spiritual Life</div>
+                    <div className="text-xs text-slate-600">Core theological and covenantal dialogue.</div>
+                  </div>
+                  <div className="p-3 bg-white rounded-lg">
+                    <div className="text-sm font-semibold text-sky-700">Education &amp; Discipleship</div>
+                    <div className="text-xs text-slate-600">Teaching sessions, podcast episodes, study resources.</div>
+                  </div>
+                  <div className="p-3 bg-white rounded-lg">
+                    <div className="text-sm font-semibold text-sky-700">Arts &amp; Culture</div>
+                    <div className="text-xs text-slate-600">Music, storytelling, visual arts, film, and live performances.</div>
+                  </div>
+                  <div className="p-3 bg-white rounded-lg">
+                    <div className="text-sm font-semibold text-sky-700">Partnerships</div>
+                    <div className="text-xs text-slate-600">Collaboration with Jewish leaders, scholars and cultural organisations.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 bg-white rounded-2xl border border-sky-100 shadow-lg">
+                <h3 className="text-lg font-semibold text-sky-800">Highlighted Components</h3>
+                <ol className="mt-3 list-decimal list-inside text-slate-700 text-sm space-y-2">
+                  <li><strong>Covenant Conversations Plenary</strong> — Annual mainstage with Torah readings, interfaith dialogue and artistic expression.</li>
+                  <li><strong>Covenant Conversations Podcast</strong> — A professional series exploring roots, feasts and covenantal teaching.</li>
+                  <li><strong>Jewish Arts &amp; Culture Showcase</strong> — Concerts, exhibitions and screenings to enrich delegate experience.</li>
+                </ol>
+              </div>
+
+              <div className="p-6 bg-gradient-to-r from-sky-700 to-sky-600 text-white rounded-2xl shadow-2xl flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-bold">2026 Theme</h3>
+                  <p className="mt-1 text-sm font-semibold">Roots &amp; Revelation: Rediscovering the Jewish Foundations of the Christian Faith</p>
+                </div>
+                <div>
+                  <a href="/podcast" className="inline-block bg-white text-sky-800 font-bold px-4 py-2 rounded-md">Visit Podcast</a>
                 </div>
               </div>
             </div>
