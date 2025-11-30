@@ -5,6 +5,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Use relative base so the built site can be served from subpaths (GitHub Pages, CDNs)
+  base: './',
   server: {
     host: "::",
     port: 8080,
