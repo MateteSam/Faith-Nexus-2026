@@ -22,6 +22,10 @@ const PAGE_HEIGHT = PAGE_WIDTH * PAGE_ASPECT_RATIO;
 // Generate a list for 52 pages (assumes images are available at /magazine/page_1.jpg ... /magazine/page_52.jpg)
 const magazinePages = Array.from({ length: 52 }, (_, i) => `/magazine/page_${i + 1}.jpg`);
 
+// PDF URL can be configured via env var `VITE_MAGAZINE_URL`.
+// If not provided, it falls back to the bundled PDF path (useful for local dev).
+const MAGAZINE_URL = import.meta.env.VITE_MAGAZINE_URL || '/NEXUS_MAGAZINE.pdf';
+
 type PageFlipAPI = {
   pageFlip?: () => {
     flipNext?: () => void;
@@ -85,7 +89,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
   const handleDownload = () => {
     // Create a download link for the PDF
     const link = document.createElement('a');
-    link.href = '/NEXUS_MAGAZINE.pdf';
+    link.href = MAGAZINE_URL;
   link.download = 'NEXUS_Magazine_May_June_2026.pdf';
     document.body.appendChild(link);
     link.click();
@@ -134,7 +138,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
 
   const handlePrint = () => {
     // Open PDF in a new tab where user can print
-    window.open('/NEXUS_MAGAZINE.pdf', '_blank');
+    window.open(MAGAZINE_URL, '_blank');
   };
 
   // Audio for page turns
@@ -279,7 +283,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
   const openPdfAtPage = (pageIndex: number) => {
     // Most browsers support page= or #page= anchors depending on viewer; we open the PDF directly.
     const pageNumber = pageIndex + 1;
-    const url = `/NEXUS_MAGAZINE.pdf#page=${pageNumber}`;
+    const url = `${MAGAZINE_URL}#page=${pageNumber}`;
     window.open(url, '_blank');
   };
 
@@ -301,7 +305,7 @@ export const MagazineReader = ({ isOpen, onClose }: MagazineReaderProps) => {
         if (pdfjsTyped.GlobalWorkerOptions) pdfjsTyped.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsTyped.version}/pdf.worker.min.js`;
       } catch (err) { void err; }
 
-      const loadingTask = pdfjsTyped.getDocument('/NEXUS_MAGAZINE.pdf');
+      const loadingTask = pdfjsTyped.getDocument(MAGAZINE_URL);
       const pdf = await loadingTask.promise as unknown as { getPage: (n:number) => Promise<unknown> };
       const pageNumber = pageIndex + 1;
       const page = await pdf.getPage(pageNumber) as unknown;
