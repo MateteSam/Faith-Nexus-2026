@@ -29,19 +29,19 @@ const CovenantSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right column - focused lower panel: mission, quick facts, engagement CTA */}
+          {/* Right column - polished lower panel: mission, quick facts, engagement CTA */}
           <div className="lg:col-span-6">
             <div className="space-y-5">
-              <div className="p-6 bg-white rounded-2xl border border-sky-100 shadow-lg">
+              <div className="p-6 bg-white rounded-2xl border border-sky-100 shadow-lg transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 rounded-md bg-sky-50 flex items-center justify-center border border-sky-100">
-                      <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8c-1.657 0-3 1.343-3 3 0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v2"></path></svg>
+                    <div className="w-12 h-12 rounded-md bg-sky-600 flex items-center justify-center border border-sky-600 text-white">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8c-1.657 0-3 1.343-3 3 0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v2"></path></svg>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-sky-800">Mission</h3>
-                    <p className="mt-2 text-slate-700 text-sm leading-relaxed">To foster honour, learning and cultural exchange that reconnects Christian audiences with the Jewish roots of the faith through dialogue, arts and shared practice.</p>
+                    <h3 className="text-xl font-semibold text-sky-900">Mission</h3>
+                    <p className="mt-2 text-slate-700 text-sm leading-relaxed">Foster honour, learning and cultural exchange that reconnects Christian audiences with the Jewish roots of the faith through dialogue, arts and shared practice.</p>
                     <p className="mt-3 inline-block bg-sky-50 text-sky-700 text-xs font-medium px-3 py-1 rounded">Core aim: Build bridges of understanding and mutual respect.</p>
                   </div>
                 </div>
@@ -50,32 +50,32 @@ const CovenantSection: React.FC = () => {
               <div className="p-6 bg-sky-50 rounded-2xl border border-sky-100 shadow-md">
                 <h3 className="text-lg font-semibold text-sky-800">Quick Facts</h3>
                 <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-700 text-sm">
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-md bg-white flex items-center justify-center text-sky-700 font-bold">1</div>
+                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-sky-50 shadow-sm hover:shadow-md transition">
+                    <div className="w-9 h-9 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold">1</div>
                     <div>
                       <div className="font-semibold text-sky-800">Dialogue Focus</div>
                       <div className="text-xs">Panel sessions, Q&amp;A and small-group seminars.</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-md bg-white flex items-center justify-center text-sky-700 font-bold">2</div>
+                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-sky-50 shadow-sm hover:shadow-md transition">
+                    <div className="w-9 h-9 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold">2</div>
                     <div>
                       <div className="font-semibold text-sky-800">Arts & Culture</div>
                       <div className="text-xs">Concerts, exhibits and storytelling to deepen appreciation.</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-md bg-white flex items-center justify-center text-sky-700 font-bold">3</div>
+                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-sky-50 shadow-sm hover:shadow-md transition">
+                    <div className="w-9 h-9 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold">3</div>
                     <div>
                       <div className="font-semibold text-sky-800">Education</div>
                       <div className="text-xs">Workshops, study guides and podcast resources.</div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-md bg-white flex items-center justify-center text-sky-700 font-bold">4</div>
+                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-sky-50 shadow-sm hover:shadow-md transition">
+                    <div className="w-9 h-9 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold">4</div>
                     <div>
                       <div className="font-semibold text-sky-800">Partnerships</div>
                       <div className="text-xs">Collaborations with rabbis, scholars and cultural partners.</div>
@@ -84,14 +84,14 @@ const CovenantSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-6 bg-white rounded-2xl border border-sky-100 shadow-lg">
+              <div className="p-6 bg-white rounded-2xl border border-sky-100 shadow-lg transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <h3 className="text-lg font-semibold text-sky-800">Get Involved</h3>
                     <p className="mt-2 text-slate-700 text-sm">Join a session, submit questions for panelists, or apply to present a workshop. We welcome churches, educators and cultural leaders.</p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      <a href="/register" className="inline-flex items-center gap-2 bg-sky-700 hover:bg-sky-800 text-white font-semibold px-4 py-2 rounded">Register</a>
-                      <a href="/contact" className="inline-flex items-center gap-2 border border-sky-100 text-sky-800 bg-white/70 px-4 py-2 rounded hover:bg-white">Contact Team</a>
+                      <a href="/register" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 rounded shadow">Register</a>
+                      <a href="/contact" className="inline-flex items-center gap-2 border border-sky-100 text-sky-800 bg-white/90 px-4 py-2 rounded hover:bg-white">Contact Team</a>
                     </div>
                   </div>
                   <div className="hidden sm:block text-right">
