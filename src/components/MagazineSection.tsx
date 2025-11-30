@@ -29,7 +29,7 @@ export const MagazineSection = () => {
                 triggerVariant="default"
                 triggerClassName="px-5 py-3 text-sm sm:text-base"
               />
-              <a href="/magazine" className="text-sm text-white/80 hover:underline">See archive</a>
+              <a href="/magazine" className="text-sm text-primary font-semibold hover:underline">See archive</a>
             </div>
           </div>
         </div>
