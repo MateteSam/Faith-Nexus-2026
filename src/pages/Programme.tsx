@@ -67,7 +67,18 @@ async function generateProgramPdf() {
 }
 
 const Programme: React.FC = () => {
-  const [data, setData] = useState<any | null>(null);
+  type ProgrammeData = {
+    day: string;
+    date?: string;
+    theme?: string;
+    focus?: string;
+    morning?: Array<{ time: string; title: string; subtitle?: string }>;
+    finalPlenary?: { items: Array<{ time: string; title: string; subtitle?: string }> };
+    afternoon?: { time?: string; description?: string; tracks?: Array<{ emoji?: string; title: string; subtitle?: string }> };
+    evening?: string;
+  };
+
+  const [data, setData] = useState<ProgrammeData | null>(null);
   const [day, setDay] = useState<number>(1);
 
   useEffect(() => {
@@ -158,7 +169,7 @@ const Programme: React.FC = () => {
                   <p className="text-xs sm:text-sm text-slate-500 mb-4 sm:mb-6">{programme.focus}</p>
 
                   <div role="list" className="space-y-4 sm:space-y-6">
-                    {programme.finalPlenary.items.map((item: any) => (
+                    {programme.finalPlenary.items.map((item) => (
                       <div key={item.time} role="listitem" className="flex items-start gap-3 sm:gap-4">
                         <div className="flex-none">
                           <time className="inline-flex items-center justify-center bg-amber-50 text-amber-700 font-semibold px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm shadow-sm">{item.time}</time>
@@ -176,7 +187,7 @@ const Programme: React.FC = () => {
                   <p className="text-xs sm:text-sm text-slate-500 mb-4 sm:mb-6">{programme.focus}</p>
 
                   <div role="list" className="space-y-4 sm:space-y-6">
-                    {programme.morning && programme.morning.map((item: any) => (
+                    {programme.morning && programme.morning.map((item) => (
                       <div key={item.time} role="listitem" className="flex items-start gap-3 sm:gap-4">
                         <div className="flex-none">
                           <time className="inline-flex items-center justify-center bg-amber-50 text-amber-700 font-semibold px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm shadow-sm">{item.time}</time>
@@ -201,7 +212,7 @@ const Programme: React.FC = () => {
                       <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-slate-600">{programme.afternoon.description}</p>
 
                       <div className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
-                        {programme.afternoon.tracks.map((t: any) => (
+                        {programme.afternoon.tracks.map((t) => (
                           <div key={t.title} className="flex items-start gap-2 sm:gap-3">
                             <div className="text-xl sm:text-2xl">{t.emoji}</div>
                             <div>

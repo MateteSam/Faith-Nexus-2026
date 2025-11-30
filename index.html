@@ -4,49 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Faith Nexus 2026 - Kingdom Voices Global Reach</title>
-    <!-- redeploy-trigger: 2025-11-29T19:48:00Z -->
-    <script>
-      // Defensive block: prevent production hosts from loading the dev module '/src/main.tsx'
-      (function(){
-        try {
-          var host = (location.hostname || '').toLowerCase();
-          var isLocal = host === 'localhost' || host === '127.0.0.1' || host.indexOf('192.168') === 0 || location.port === '8080' || location.port === '5173';
-          if (!isLocal) {
-            var origCreate = Document.prototype.createElement;
-            Document.prototype.createElement = function() {
-              var el = origCreate.apply(this, arguments);
-              try {
-                if (arguments && arguments[0] && String(arguments[0]).toLowerCase() === 'script') {
-                  var origSet = el.setAttribute.bind(el);
-                  el.setAttribute = function(name, value) {
-                    if (name === 'src' && String(value).indexOf('/src/main.tsx') !== -1) {
-                      console.warn('Blocked dev script setAttribute on production:', value);
-                      return;
-                    }
-                    return origSet(name, value);
-                  };
-                }
-              } catch (e) {}
-              return el;
-            };
-
-            var origAppend = Node.prototype.appendChild;
-            Node.prototype.appendChild = function(node) {
-              try {
-                if (node && node.tagName === 'SCRIPT') {
-                  var src = node.getAttribute && node.getAttribute('src');
-                  if (src && String(src).indexOf('/src/main.tsx') !== -1) {
-                    console.warn('Blocked dev script append on production:', src);
-                    return node;
-                  }
-                }
-              } catch (e) {}
-              return origAppend.apply(this, arguments);
-            };
-          }
-        } catch (e) {}
-      })();
-    </script>
+    <!-- redeploy-trigger: 2025-11-29T19:50:00Z -->
   <meta name="description" content="Join Faith Nexus 2026, the world's largest gathering of Christian content creators. Mar 18-21, 2026 in Pretoria, South Africa. Register now!" />
     <meta name="author" content="Faith Nexus" />
     

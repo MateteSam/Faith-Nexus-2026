@@ -8,7 +8,7 @@ type Programme = {
   morning?: Array<{ time: string; title: string; subtitle?: string }>;
   afternoon?: { time?: string; description?: string; tracks?: Array<{ emoji?: string; title: string; subtitle?: string }> };
   evening?: string;
-  finalPlenary?: any;
+  finalPlenary?: { items: Array<{ time: string; title: string; subtitle?: string }> };
 };
 
 const days = ['programme-day1.json', 'programme-day2.json', 'programme-day3.json'];
