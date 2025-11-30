@@ -10,9 +10,9 @@ export const HeroSection = () => {
   
   useEffect(() => {
     setIsLoaded(true);
-    // Preload the hero image
+    // Preload the optimized hero image
     const img = new Image();
-    img.src = "/images/background2.png";
+    img.src = "/optimized/background2-1200.webp";
     img.onload = () => setImageLoaded(true);
   }, []);
   return (
@@ -20,7 +20,7 @@ export const HeroSection = () => {
       {/* Hero Background Image with lazy loading (unchanged) */}
       <div
         className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-        style={{ backgroundImage: `url(${imageLoaded ? "/images/background2.png" : ""})` }}
+        style={{ backgroundImage: `url(${imageLoaded ? "/optimized/background2-1200.webp" : ""})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
       </div>
