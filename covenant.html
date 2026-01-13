@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covenant Conversations | Faith Nexus 2026</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        .covenant-hero {
+            padding: 240px 0 140px;
+            position: relative;
+            background: url('/Global_Storytellers.png') center/cover no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .hebrew-accent {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .roots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .covenant-card {
+            background: rgba(197, 160, 89, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .covenant-card:hover {
+            border-color: var(--primary-gold);
+            background: rgba(197, 160, 89, 0.08);
+            transform: translateY(-10px);
+        }
+
+        .covenant-card svg {
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Light Mode Specific Overrides */
+        [data-theme="light"] .covenant-hero {
+            background-attachment: scroll;
+            /* Better visibility for light mode scroll */
+        }
+
+        [data-theme="light"] .parallax-overlay {
+            background: linear-gradient(to bottom, rgba(253, 252, 251, 0.5), rgba(253, 252, 251, 0.95)) !important;
+        }
+
+        [data-theme="light"] .covenant-card {
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1);
+        }
+
+        [data-theme="light"] .covenant-card:hover {
+            background: rgba(197, 160, 89, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="covenant-hero">
+            <div class="parallax-overlay"
+                style="background: linear-gradient(to bottom, rgba(10,10,10,0.5), rgba(10,10,10,0.95));"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <span class="hebrew-accent">Shared Spiritual Heritage</span>
+                <h1 style="font-size: 5.5rem; margin-bottom: 30px; line-height: 1.1;">Covenant <br>Conversations</h1>
+                <p class="description" style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.5rem;">
+                    Roots & Revelation within Faith Nexus: A permanent Jewish–Christian engagement platform dedicated to
+                    exploring the foundations of our faith.
+                </p>
+                <div style="margin-top: 50px;">
+                    <a href="#learn-more" class="btn btn-primary" style="padding: 20px 50px;">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission -->
+        <section style="padding: 120px 0;" id="learn-more">
+            <div class="container">
+                <div class="content-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <span class="subtitle">Why Covenant Conversations?</span>
+                        <h2 style="font-size: 3rem; margin-bottom: 30px;">Healing Bridges, <br>Building Honour</h2>
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 30px; font-size: 1.1rem;">
+                            Christianity cannot fully understand itself without the covenantal story of Israel. This
+                            platform creates space to study, heal, and celebrate the rich heritage of the global Church.
+                        </p>
+                        <ul class="session-list" style="list-style: none;">
+                            <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--primary-gold);">✦</span>
+                                Study the Jewish roots of Christian faith
+                            </li>
+                            <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--primary-gold);">✦</span>
+                                Heal misunderstandings and build bridges of honour
+                            </li>
+                            <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--primary-gold);">✦</span>
+                                Celebrate cultural and artistic expressions
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="vision-image-frame" style="height: 600px;">
+                        <img src="/covenant-conversations-hall.jpg" alt="Covenant Conversations Grand Hall">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2026 Theme -->
+        <section class="parallax-section"
+            style="padding: 140px 0; background-image: url('/background.png'); text-align: center;">
+            <div class="parallax-overlay" style="background: rgba(10,10,10,0.85);"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <span class="subtitle">2026 Theme</span>
+                <h2
+                    style="font-size: 4rem; color: var(--primary-gold); font-family: 'Playfair Display', serif; margin-bottom: 20px;">
+                    “Roots & Revelation”</h2>
+                <p style="font-size: 1.5rem; letter-spacing: 2px;">REDISCOVERING THE JEWISH FOUNDATIONS</p>
+            </div>
+        </section>
+
+        <!-- Components -->
+        <section style="padding: 120px 0;">
+            <div class="container">
+                <header style="text-align: center; margin-bottom: 80px;">
+                    <span class="subtitle">Key Components</span>
+                    <h2 style="font-size: 3rem;">Summit Integration</h2>
+                </header>
+
+                <div class="roots-grid">
+                    <div class="covenant-card">
+                        <div class="vision-image-frame" style="height: 200px; margin-bottom: 25px;">
+                            <img src="/covenant-plenary.png" alt="Covenant Plenary">
+                        </div>
+                        <h4>Covenant Plenary</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">High-level sessions led by rabbis
+                            and Christian theologians exploring deep biblical truth.</p>
+                    </div>
+                    <div class="covenant-card">
+                        <div class="vision-image-frame" style="height: 200px; margin-bottom: 25px;">
+                            <img src="/interactive-panels.png" alt="Interactive Panels">
+                        </div>
+                        <h4>Interactive Panels</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Dedicated Jewish–Christian panel
+                            discussions with live audience Q&A sessions.</p>
+                    </div>
+                    <div class="covenant-card">
+                        <div class="vision-image-frame" style="height: 200px; margin-bottom: 25px;">
+                            <img src="/Creative_Artists.png" alt="Cultural Worship">
+                        </div>
+                        <h4>Cultural Worship</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Fusing Jewish and African sounds
+                            and liturgy in a unique expression of unity.</p>
+                    </div>
+                    <div class="covenant-card">
+                        <div class="vision-image-frame" style="height: 200px; margin-bottom: 25px;">
+                            <img src="/content-integration.png" alt="Content Integration">
+                        </div>
+                        <h4>Content Integration</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Roots-focused segments across all
+                            plenary sessions and virtual activation streams.</p>
+                    </div>
+                    <div class="covenant-card">
+                        <div class="vision-image-frame" style="height: 200px; margin-bottom: 25px;">
+                            <img src="/virtual-activation-covenant.png" alt="Virtual Activation">
+                        </div>
+                        <h4>Virtual Activation</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Global featured segments bringing
+                            the Covenant Conversation to nations worldwide.</p>
+                    </div>
+                    <div class="covenant-card">
+                        <div class="vision-image-frame" style="height: 200px; margin-bottom: 25px;">
+                            <img src="/future-collaboration.png" alt="Future Collaboration">
+                        </div>
+                        <h4>Future Collaboration</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Ongoing partnerships in teaching,
+                            resource development, and Kingdom content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="parallax-section"
+            style="padding: 120px 0; background-image: url('/network-partner.png'); text-align: center;">
+            <div class="parallax-overlay" style="background: rgba(197, 160, 89, 0.92);"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 30px; color: #000;">Build Bridges with Us</h2>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="/registration.html" class="btn"
+                        style="background: #000; color: #fff; padding: 20px 50px;">Learn More</a>
+                    <a href="/partners.html" class="btn"
+                        style="background: transparent; color: #000; border: 2px solid #000; padding: 20px 50px; font-weight: 700;">Partner
+                        with Covenant</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

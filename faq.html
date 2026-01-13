@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Faith Nexus 2026</title>
+    <link rel="stylesheet" href="/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --luxury-gold: linear-gradient(135deg, #c5a059 0%, #ecd69c 50%, #c5a059 100%);
+            --sovereign-black: #050505;
+            --primary-gold: #c5a059;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--sovereign-black);
+            color: #fff;
+        }
+
+        .hero-banner {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #000;
+        }
+
+        .luxury-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            background: var(--luxury-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 10;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            padding: 40px;
+            transition: 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-gold);
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        .faq-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            opacity: 0.7;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="hero-banner">
+            <h1 class="luxury-title">Frequently Asked Questions</h1>
+        </section>
+
+        <section class="faq-container">
+            <div class="faq-item reveal">
+                <h3 class="faq-question">Who should attend Faith Nexus 2026?</h3>
+                <p class="faq-answer">Faith Nexus is designed for pastors, media professionals, digital creators,
+                    technologists, and ministry leaders who are passionate about shaping culture through Kingdom-centric
+                    content and innovation.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3 class="faq-question">What is the difference between Plenary and Full Access?</h3>
+                <p class="faq-answer">Plenary Access provides entry to all main sessions and the exhibition. Full Access
+                    (Premium) includes everything in Plenary plus priority booking for Creator Masterclasses and the
+                    Nexus Studio, and preferential access to the FN100 Gala.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3 class="faq-question">How does the Global Virtual Activation work?</h3>
+                <p class="faq-answer">The Virtual Activation on 27 March 2026 is a free global digital broadcast.
+                    Registration will open separately, providing access to curated sessions and TalkWorld digital
+                    resources.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3 class="faq-question">Are group discounts available?</h3>
+                <p class="faq-answer">Yes, we offer specialized rates for church delegations and organizations of 10 or
+                    more people. Please enquire via our Registration hub or email hospitality@faithnexus.digital.</p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

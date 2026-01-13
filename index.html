@@ -1,84 +1,396 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faith Nexus 2026 - Kingdom Voices Global Reach</title>
-    <!-- redeploy-trigger: 2025-11-29T19:50:00Z -->
-  <meta name="description" content="Join Faith Nexus 2026, the world's largest gathering of Christian content creators. Mar 18-21, 2026 in Pretoria, South Africa. Register now!" />
-    <meta name="author" content="Faith Nexus" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-    
-    <!-- Preconnect to fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://faithnexus2026.com/" />
-  <meta property="og:title" content="Faith Nexus 2026 - Kingdom Voices Global Reach" />
-  <meta property="og:description" content="Join the world's largest gathering of Christian content creators. March 18-21, 2026 in Pretoria, South Africa. Register now for this transformative event!" />
-    <meta property="og:image" content="/images/background.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://faithnexus2026.com/" />
-  <meta property="twitter:title" content="Faith Nexus 2026 - Kingdom Voices Global Reach" />
-  <meta property="twitter:description" content="Join the world's largest gathering of Christian content creators. March 18-21, 2026 in Pretoria, South Africa." />
-    <meta property="twitter:image" content="/images/background.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- Dev helper: unregister any existing service worker on localhost, then load the app module -->
-    <script>
-      (async function(){
-        const host = window.location.hostname || '';
-        const port = window.location.port || '';
-        const isLocal = host === 'localhost' || host === '127.0.0.1' || host.startsWith('192.168') || port === '8080' || port === '5173';
-        try {
-          if (isLocal && 'serviceWorker' in navigator && !sessionStorage.getItem('sw-unregistered')) {
-            try {
-              const regs = await navigator.serviceWorker.getRegistrations();
-              if (regs && regs.length) {
-                await Promise.all(regs.map(r => r.unregister()));
-                console.log('Dev: unregistered service workers');
-                // mark so we don't loop reloads and then reload to drop control immediately
-                sessionStorage.setItem('sw-unregistered','1');
-                try { location.reload(); return; } catch (err) { /* ignore reload error */ }
-              }
-            } catch (err) {
-              console.warn('Dev: failed to unregister service workers', err);
-            }
-          }
-        } catch (e) {
-          console.warn('Dev: sw cleanup error', e);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith Nexus 2026 | Roots. Revelation. Renaissance.</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        .hero {
+            position: relative;
+            background: rgba(0, 0, 0, 0.4);
+            /* Base darkening */
         }
-        // Dynamically load the app module after attempting SW cleanup (DEV ONLY)
-        try {
-          if (isLocal) {
-            const s = document.createElement('script');
-            s.type = 'module';
-            // construct the dev path at runtime to avoid including the literal '/src/main.tsx' in
-            // production HTML (prevents hosts from showing a 404 for dev-only module paths)
-            const devPath = '/' + ['s','r','c'].join('') + '/main.' + ['t','s','x'].join('');
-            s.src = devPath;
-            document.head.appendChild(s);
-          } else {
-            // Production/static hosting should serve built assets instead of /src paths.
-            console.log('Production host detected — not loading dev module.');
-          }
-        } catch (e) {
-          console.error('Dev: failed to load app module', e);
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.8) 100%);
+            z-index: 0;
+            transition: var(--transition);
         }
-      })();
-    </script>
-  </body>
+
+        [data-theme="light"] .hero::before {
+            background: linear-gradient(to bottom, rgba(253, 252, 251, 0.4) 0%, rgba(253, 252, 251, 0.7) 100%);
+        }
+
+        .highlight-box {
+            background: rgba(197, 160, 89, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 30px;
+        }
+
+        .why-equip-grid {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <video autoplay muted loop playsinline poster="/hero-bg.png" class="hero-video">
+            <source src="/background.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <div class="hero-content">
+                <span class="subtitle">Faith Nexus 2026</span>
+                <h1 style="font-size: 5rem;">Kingdom Voices.<br>Global Reach.</h1>
+                <p class="description" style="max-width: 750px;">
+                    The global summit for Christian content creators and Kingdom storytellers; a space where pastors,
+                    media professionals, digital creators, technologists, educators and artists gather to grow, fund and
+                    sustain their content mission, and to shape culture for Christ.
+                </p>
+
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <div class="countdown-title">Global Virtual Activation</div>
+                        <div class="timer-digits" id="virtual-timer">
+                            <div class="digit-group"><span class="digit days">00</span><span
+                                    class="digit-label">Days</span></div>
+                            <div class="digit-group"><span class="digit hours">00</span><span
+                                    class="digit-label">Hrs</span></div>
+                            <div class="digit-group"><span class="digit minutes">00</span><span
+                                    class="digit-label">Min</span></div>
+                            <div class="digit-group"><span class="digit seconds">00</span><span
+                                    class="digit-label">Sec</span></div>
+                        </div>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 10px;">27 March 2026 –
+                            Live on TalkWorld</p>
+                    </div>
+
+                    <div class="countdown-box">
+                        <div class="countdown-title">Faith Nexus Summit</div>
+                        <div class="timer-digits" id="summit-timer">
+                            <div class="digit-group"><span class="digit days">00</span><span
+                                    class="digit-label">Days</span></div>
+                            <div class="digit-group"><span class="digit hours">00</span><span
+                                    class="digit-label">Hrs</span></div>
+                            <div class="digit-group"><span class="digit minutes">00</span><span
+                                    class="digit-label">Min</span></div>
+                            <div class="digit-group"><span class="digit seconds">00</span><span
+                                    class="digit-label">Sec</span></div>
+                        </div>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 10px;">20–23 Oct 2026 –
+                            Pretoria, SA</p>
+                    </div>
+                </div>
+
+                <div class="cta-group">
+                    <a href="/virtual.html" class="btn btn-primary">Register for Virtual Activation</a>
+                    <a href="/summit.html" class="btn btn-outline">Explore the October Summit</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="why-nexus">
+        <div class="container">
+            <header style="text-align: center; margin-bottom: 80px;" class="reveal">
+                <span class="subtitle">The Nexus Advantage</span>
+                <h2 style="font-size: 3.5rem;">Why Faith Nexus?</h2>
+                <p class="description" style="max-width: 800px; margin: 20px auto;">
+                    At Faith Nexus 2026, you won’t just sit in sessions—you’ll be equipped as a creator and leader. We
+                    move from inspiration to application.
+                </p>
+            </header>
+
+            <div class="grid why-equip-grid">
+                <div class="why-card reveal">
+                    <img src="/grow-sustain-v2.png" alt="Grow & Sustain" class="why-card-image">
+                    <div class="why-card-overlay"></div>
+                    <div class="why-card-content">
+                        <h3>Grow & Sustain</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Learn how to grow, fund and sustain
+                            your content mission with sustainable and scalable content growth plans.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal">
+                    <img src="/kingdom-funding.png" alt="Kingdom Funding" class="why-card-image">
+                    <div class="why-card-overlay"></div>
+                    <div class="why-card-content">
+                        <h3>Kingdom Funding</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Discover funding and monetisation
+                            pathways intentionally aligned with Kingdom values and ethics.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal">
+                    <img src="/network-partner.png" alt="Network & Partner" class="why-card-image">
+                    <div class="why-card-overlay"></div>
+                    <div class="why-card-content">
+                        <h3>Network & Partner</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Connect with platform partners,
+                            publishers, broadcasters, funders and world-class mentors.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal">
+                    <img src="/practical-systems.png" alt="Practical Systems" class="why-card-image">
+                    <div class="why-card-overlay"></div>
+                    <div class="why-card-content">
+                        <h3>Practical Systems</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Walk away with tangible frameworks,
+                            systems and contacts, not just inspiration and notes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="/about.html" class="btn btn-primary">See How Faith Nexus Equips Creators</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="major-moments">
+        <div class="container">
+            <header style="text-align: center; margin-bottom: 80px;" class="reveal">
+                <span class="subtitle">Join the Movement</span>
+                <h2 style="font-size: 3.5rem;">Two Major Moments in 2026</h2>
+            </header>
+
+            <div class="moment-card reveal">
+                <div class="moment-image-container">
+                    <div class="moment-slideshow">
+                        <div class="moment-slide" style="background-image: url('/virtual-slide-1.jpg');"></div>
+                        <div class="moment-slide" style="background-image: url('/virtual-slide-2.jpg');"></div>
+                        <div class="moment-slide" style="background-image: url('/virtual-slide-3.jpg');"></div>
+                    </div>
+                </div>
+                <div class="moment-content">
+                    <span class="subtitle">Online Event</span>
+                    <h3>1. Global Virtual Activation</h3>
+                    <p style="color: var(--primary-gold); font-weight: bold; margin-bottom: 15px;">27 March 2026 – Free
+                        Online Access</p>
+                    <p>A free, one-day global online event on TalkWorld, giving a first look at:</p>
+                    <ul>
+                        <li>The Faith Nexus 2026 vision and theme: Roots Revelation Renaissance.</li>
+                        <li>The 7 Pillars Framework</li>
+                        <li>Covenant Conversations (Jewish–Christian platform)</li>
+                        <li>FaithNexus100 (100 Most Influential Christians Impacting Africa)</li>
+                        <li>The Faith Nexus Industry Exhibition, Nexus Creators Lounge & Studio</li>
+                        <li>The Global Reels Short-Form Challenge winners and featured entries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="moment-card reverse reveal">
+                <div class="moment-image-container">
+                    <div class="moment-slideshow slides-4">
+                        <div class="moment-slide" style="background-image: url('/summit-slide-1.jpg');"></div>
+                        <div class="moment-slide" style="background-image: url('/summit-slide-2.jpg');"></div>
+                        <div class="moment-slide" style="background-image: url('/summit-slide-3.jpg');"></div>
+                        <div class="moment-slide" style="background-image: url('/summit-slide-4.jpg');"></div>
+                    </div>
+                </div>
+                <div class="moment-content">
+                    <span class="subtitle">In-Person Experience</span>
+                    <h3>2. Faith Nexus 2026 Summit</h3>
+                    <p style="color: var(--primary-gold); font-weight: bold; margin-bottom: 15px;">20–23 October 2026 –
+                        Pretoria, SA</p>
+                    <p>Four days in a 10,000-seat auditorium featuring:</p>
+                    <ul>
+                        <li>Morning & evening plenary sessions</li>
+                        <li>Integrated Creator Masterclass Moments and Pillar Lab spotlights</li>
+                        <li>Covenant Conversations plenary and cultural expressions</li>
+                        <li>FaithNexus100 Honours Gala</li>
+                        <li>Industry Exhibition, Nexus Creators Lounge & Nexus Studio</li>
+                        <li>Live recordings of NexTalks and other podcasts</li>
+                        <li>Worship, prayer and commissioning moments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <header style="text-align: center; margin-bottom: 60px;" class="reveal">
+                <span class="subtitle">Impact Metrics</span>
+                <h2 style="font-size: 3rem;">Faith Nexus by the Numbers</h2>
+            </header>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center;">
+                <div class="stat-item">
+                    <h2 class="number">10000+</h2>
+                    <p>In-Person Delegates</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="number">300000+</h2>
+                    <p>Digital Reach</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="number">20+</h2>
+                    <p>Kingdom Voices</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="number">30+</h2>
+                    <p>Industry Exhibitors</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="number">5M+</h2>
+                    <p>Network Influence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="audience-section">
+        <div class="container audience-container">
+            <header style="text-align: center; margin-bottom: 60px;" class="reveal">
+                <span class="subtitle">Core Community</span>
+                <h2 style="font-size: 3.5rem;">Who Should Attend?</h2>
+                <p class="description" style="max-width: 800px; margin: 20px auto;">
+                    Faith Nexus is for anyone called to communicate, create, lead or build with Kingdom impact.
+                </p>
+            </header>
+
+            <div class="audience-grid">
+                <!-- Media -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+                            <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+                            <circle cx="12" cy="12" r="2" />
+                            <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+                            <path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Media Professionals & Broadcasters</span>
+                </div>
+
+                <!-- Digital Creators -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 7l-7 5 7 5V7z" />
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">YouTubers, Podcasters & Influencers</span>
+                </div>
+
+                <!-- Artists -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="13.5" cy="6.5" r=".5" />
+                            <circle cx="17.5" cy="10.5" r=".5" />
+                            <circle cx="8.5" cy="7.5" r=".5" />
+                            <circle cx="6.5" cy="12.5" r=".5" />
+                            <path
+                                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.5-.6 1.5-1.5 0-.4-.1-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.5 1.5-1.5H16c3.3 0 6-2.7 6-6 0-4.9-4.5-9-10-9z" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Worship Leaders, Artists & Filmmakers</span>
+                </div>
+
+                <!-- Educators -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Educators, Theologians & Leaders</span>
+                </div>
+
+                <!-- Technologists -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                            <rect x="9" y="9" width="6" height="6" />
+                            <path d="M15 2v2" />
+                            <path d="M15 20v2" />
+                            <path d="M2 15h2" />
+                            <path d="M2 9h2" />
+                            <path d="M20 15h2" />
+                            <path d="M20 9h2" />
+                            <path d="M9 2v2" />
+                            <path d="M9 20v2" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Technologists & Entrepreneurs</span>
+                </div>
+
+                <!-- Ministry -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18" />
+                            <path d="M10 21V8l2-2 2 2v13" />
+                            <path d="M4 21v-5l2-2 2 2v5" />
+                            <path d="M16 21v-5l2-2 2 2v5" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Pastors & Ministry Leaders</span>
+                </div>
+
+                <!-- Governance -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Governance, Policy & Civic Leaders</span>
+                </div>
+
+                <!-- NGO -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Mission & NGO Leaders</span>
+                </div>
+
+                <!-- Youth -->
+                <div class="audience-item">
+                    <div class="audience-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                    </div>
+                    <span class="audience-text">Youth & Young Adults Shaping Culture</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 80px;">
+                <a href="/registration.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 20px 50px;">View
+                    Tickets & Registration Options</a>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
 </html>

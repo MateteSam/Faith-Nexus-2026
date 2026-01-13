@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Faith Nexus 2026</title>
+    <link rel="stylesheet" href="/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --luxury-gold: linear-gradient(135deg, #c5a059 0%, #ecd69c 50%, #c5a059 100%);
+            --sovereign-black: #050505;
+            --primary-gold: #c5a059;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--sovereign-black);
+            color: #fff;
+        }
+
+        .hero-banner {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #000;
+        }
+
+        .luxury-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            background: var(--luxury-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 10;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 100px;
+        }
+
+        .contact-card {
+            background: rgba(197, 160, 89, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            padding: 50px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .contact-phone {
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="hero-banner">
+            <h1 class="luxury-title">Connect with Our Team</h1>
+        </section>
+
+        <section style="padding: 100px 0;">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card reveal">
+                        <h3>Partnerships</h3>
+                        <a href="mailto:partners@faithnexus.digital"
+                            class="contact-email">partners@faithnexus.digital</a>
+                        <p class="contact-phone">+27 83 209 1965</p>
+                    </div>
+                    <div class="contact-card reveal">
+                        <h3>Registration</h3>
+                        <a href="mailto:registrations@faithnexus.digital"
+                            class="contact-email">registrations@faithnexus.digital</a>
+                        <p class="contact-phone">+27 83 ... (TBA)</p>
+                    </div>
+                    <div class="contact-card reveal">
+                        <h3>Hospitality</h3>
+                        <a href="mailto:hospitality@faithnexus.digital"
+                            class="contact-email">hospitality@faithnexus.digital</a>
+                        <p class="contact-phone">Travel & Logistics Support</p>
+                    </div>
+                </div>
+
+                <div class="reveal"
+                    style="text-align: center; margin-top: 100px; padding: 60px; border: 1px dashed rgba(197,160,89,0.3);">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 20px;">Social
+                        Media</h3>
+                    <p style="opacity: 0.6; margin-bottom: 40px;">Follow the movement on our global platforms via
+                        TalkWorld.</p>
+                    <div style="display: flex; gap: 20px; justify-content: center;">
+                        <!-- Social Icons Placeholder -->
+                        <span style="color: var(--primary-gold); font-size: 1.5rem;">𝕏</span>
+                        <span style="color: var(--primary-gold); font-size: 1.5rem;">📸</span>
+                        <span style="color: var(--primary-gold); font-size: 1.5rem;">▶</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

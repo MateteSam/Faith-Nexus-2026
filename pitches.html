@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Pitches & Storytellers | Faith Nexus 2026</title>
+    <link rel="stylesheet" href="/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --luxury-gold: linear-gradient(135deg, #c5a059 0%, #ecd69c 50%, #c5a059 100%);
+            --gold-glow: 0 0 30px rgba(197, 160, 89, 0.3);
+            --sovereign-black: #050505;
+            --velvet-red: linear-gradient(to bottom, transparent, rgba(139, 0, 0, 0.2));
+            --primary-gold: #c5a059;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--sovereign-black);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Film Grain Texture Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--luxury-gold);
+            z-index: 10000;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        .pitches-hero-luxury {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            background: #000;
+            padding: 120px 0;
+            overflow: hidden;
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+            filter: brightness(0.2) contrast(1.1) saturate(0.8);
+            transform: scale(1.05);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: 2;
+        }
+
+        .luxury-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            font-weight: 800;
+            line-height: 0.9;
+            letter-spacing: -2px;
+            background: var(--luxury-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+            opacity: 0;
+            transform: translateY(60px) scale(0.95);
+            transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .luxury-title.reveal {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .subtitle-gold {
+            color: var(--primary-gold);
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease 0.5s;
+        }
+
+        .subtitle-gold.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Challenge Cards */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .challenge-card {
+            background: rgba(15, 15, 15, 0.7);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            padding: 50px 40px;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            backdrop-filter: blur(20px);
+        }
+
+        .challenge-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-10px);
+            background: rgba(197, 160, 89, 0.05);
+            box-shadow: var(--gold-glow);
+        }
+
+        .challenge-icon {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            background: var(--luxury-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        /* Lists */
+        .luxury-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .luxury-list li {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .luxury-list li::before {
+            content: '✦';
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+        }
+
+        /* Showcase Section */
+        .showcase-block {
+            padding: 150px 0;
+            background: linear-gradient(to bottom, #000, #080808);
+            position: relative;
+        }
+
+        .showcase-frame {
+            position: relative;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 10px;
+            background: #000;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 1);
+        }
+
+        .showcase-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(0.2);
+            transition: 0.8s;
+        }
+
+        .showcase-frame:hover img {
+            filter: grayscale(0);
+        }
+
+        .btn-cinema {
+            background: var(--luxury-gold);
+            color: #000;
+            font-weight: 800;
+            padding: 24px 50px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: all 0.5s;
+            border: none;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+            text-decoration: none;
+        }
+
+        .btn-cinema:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(197, 160, 89, 0.4);
+            letter-spacing: 4px;
+        }
+
+        .btn-outline-gold {
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 22px 50px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: 0.5s;
+            display: inline-block;
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(197, 160, 89, 0.1);
+        }
+
+        /* Reveal Logic */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .panel-item {
+            padding: 30px;
+            border-left: 2px solid var(--primary-gold);
+            background: rgba(255, 255, 255, 0.02);
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .panel-item:hover {
+            background: rgba(197, 160, 89, 0.05);
+            padding-left: 40px;
+        }
+
+        /* Light Mode Specific Overrides */
+        [data-theme="light"] .pitches-hero-luxury {
+            background: #FDFCFB;
+        }
+
+        [data-theme="light"] .hero-image-bg {
+            filter: brightness(0.9) contrast(1) saturate(0.6);
+        }
+
+        [data-theme="light"] .hero-overlay {
+            background: linear-gradient(to right, rgba(253, 252, 251, 0.8) 0%, rgba(253, 252, 251, 0.4) 100%);
+        }
+
+        [data-theme="light"] .showcase-block {
+            background: #FDFCFB;
+        }
+
+        [data-theme="light"] .showcase-frame {
+            background: #fff;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+            border-color: rgba(197, 160, 89, 0.1);
+        }
+
+        [data-theme="light"] .panel-item {
+            background: rgba(197, 160, 89, 0.02);
+        }
+
+        [data-theme="light"] .panel-item:hover {
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        [data-theme="light"] .challenge-card {
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-color: rgba(197, 160, 89, 0.2) !important;
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1) !important;
+        }
+
+        [data-theme="light"] .challenge-card:hover {
+            background: #fff !important;
+            border-color: var(--primary-gold) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="progressBar"></div>
+
+    <main>
+        <!-- Home of Storytellers Hero -->
+        <section class="pitches-hero-luxury">
+            <img src="/global_storytellers.png" class="hero-image-bg" alt="Pitches & Storytellers Hub">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" style="z-index: 10; position: relative;">
+                <span class="subtitle-gold reveal">Storytelling Hub</span>
+                <h1 class="luxury-title reveal">Nexus Pitches – <br>Kingdom Content Challenge</h1>
+                <p class="reveal"
+                    style="max-width: 800px; line-height: 1.5; font-size: 1.4rem; font-weight: 300; opacity: 0.7; letter-spacing: 0.5px; margin-bottom: 50px;">
+                    Nexus Pitches is a Kingdom content competition for bold new media and digital projects, celebrating
+                    creators who are redefining Africa’s narrative through the lens of faith.
+                </p>
+                <div class="reveal">
+                    <a href="#pitch" class="btn-cinema">Submit Your Pitch</a>
+                    <a href="#learn" class="btn-outline-gold" style="margin-left: 20px;">Learn More About Pitches</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories & Panel -->
+        <section style="padding: 150px 0; background: #080808;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: start;">
+                    <div class="reveal">
+                        <header style="margin-bottom: 60px;">
+                            <span class="subtitle-gold" style="opacity: 1;">The Challenge</span>
+                            <h2
+                                style="font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1.1; margin-bottom: 30px;">
+                                Eligible Digital <br>& Media Projects</h2>
+                        </header>
+                        <div class="challenge-grid" style="grid-template-columns: 1fr; gap: 30px;">
+                            <div class="challenge-card">
+                                <span class="challenge-icon">✦</span>
+                                <h3 class="card-title">Christian YouTube Channels</h3>
+                                <p style="opacity: 0.6; font-weight: 300;">New or scaling channels focused on ministry,
+                                    lifestyle, or education.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <span class="challenge-icon">✦</span>
+                                <h3 class="card-title">Podcast Concepts</h3>
+                                <p style="opacity: 0.6; font-weight: 300;">Innovative audio narratives and
+                                    dialogue-driven Kingdom content.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <span class="challenge-icon">✦</span>
+                                <h3 class="card-title">Faith-based Series or Film Ideas</h3>
+                                <p style="opacity: 0.6; font-weight: 300;">Compelling screenplays and pilots with
+                                    redemptive themes.</p>
+                            </div>
+                            <div class="challenge-card">
+                                <span class="challenge-icon">✦</span>
+                                <h3 class="card-title">Digital Platforms & Apps</h3>
+                                <p style="opacity: 0.6; font-weight: 300;">Tech for discipleship, evangelism, or
+                                    measurable social impact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <header style="margin-bottom: 60px;">
+                            <span class="subtitle-gold" style="opacity: 1;">The Adjudication</span>
+                            <h2
+                                style="font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1.1; margin-bottom: 30px;">
+                                The Panel <br>& Prizes</h2>
+                        </header>
+                        <p style="font-size: 1.2rem; opacity: 0.7; margin-bottom: 40px; font-weight: 300;">Shortlisted
+                            creators will pitch live at Faith Nexus 2026 to a panel of experts including:</p>
+
+                        <div class="panel-item">Media Leaders</div>
+                        <div class="panel-item">Investors & Philanthropists</div>
+                        <div class="panel-item">Technologists</div>
+                        <div class="panel-item">Ministry Strategists</div>
+
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary-gold); margin: 60px 0 30px;">
+                            Prizes Include:</h3>
+                        <ul class="luxury-list">
+                            <li>Seed funding or production support</li>
+                            <li>Mentorship from experienced industry professionals</li>
+                            <li>A feature on NexTalks or other Faith Nexus media</li>
+                            <li>Visibility through global partner networks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Storytellers Showcase -->
+        <section class="showcase-block" style="background: #000;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 100px; align-items: center;">
+                    <div class="reveal">
+                        <div class="showcase-frame" style="transform: rotate(-2deg);">
+                            <img src="/global_storytellers.png" alt="Storytellers Cinema Showcase">
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <span class="subtitle-gold">The Cinema Hub</span>
+                        <h2
+                            style="font-family: 'Playfair Display', serif; font-size: 5rem; line-height: 1; letter-spacing: -2px; margin-bottom: 40px;">
+                            Faith Nexus <br>Storytellers Showcase</h2>
+                        <p
+                            style="font-size: 1.3rem; font-weight: 300; opacity: 0.7; line-height: 1.8; margin-bottom: 40px;">
+                            We will curate and screen 5–10 outstanding short films or series pilots that carry strong
+                            Gospel, justice or redemptive themes. Experience Kingdom storytelling in its most powerful
+                            visual form.
+                        </p>
+                        <h4
+                            style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-gold); margin-bottom: 30px;">
+                            Selected Projects will:</h4>
+                        <ul class="luxury-list" style="margin-bottom: 50px;">
+                            <li>Be screened during a special Storytellers Showcase</li>
+                            <li>Receive recognition on stage as Faith Nexus Storytellers</li>
+                            <li>Be featured across our media channels and partner networks</li>
+                            <li>Be eligible for additional visibility via FaithNexus100</li>
+                        </ul>
+                        <a href="#submit-film" class="btn-cinema">Submit a Short Film / Series Pilot</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section
+            style="padding: 200px 0; text-align: center; background: #050505; border-top: 1px solid rgba(197, 160, 89, 0.1);">
+            <div class="container reveal">
+                <span class="subtitle-gold" style="margin-bottom: 20px;">Voice of the Kingdom</span>
+                <h2
+                    style="font-family: 'Playfair Display', serif; font-size: 6rem; margin-bottom: 80px; letter-spacing: -2px;">
+                    Submit Your Masterpiece</h2>
+                <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn-cinema">Submit Your Pitch</a>
+                    <a href="#" class="btn-outline-gold">Learn More About Categories</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+        // Cinematic Scroll Progress
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+
+</html>

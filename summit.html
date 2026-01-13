@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit Programme | Faith Nexus 2026</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        .summit-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(197, 160, 89, 0.05), transparent);
+        }
+
+        .programme-timeline {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .day-block {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .day-block.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .day-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            transition: var(--transition);
+        }
+
+        .day-card:hover {
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .day-indicator {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            color: var(--primary-gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid rgba(197, 160, 89, 0.1);
+            padding: 40px;
+        }
+
+        .day-number {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .day-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        .day-content {
+            padding: 60px;
+        }
+
+        .day-theme {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .day-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .session-list {
+            list-style: none;
+        }
+
+        .session-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .session-item::before {
+            content: "•";
+            color: var(--primary-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .evening-experience {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(197, 160, 89, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-gold);
+        }
+
+        .evening-label {
+            color: var(--primary-gold);
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .cta-programme {
+            text-align: center;
+            padding: 100px 0;
+            background: #0d0d0d;
+        }
+
+        @media (max-width: 768px) {
+            .day-card {
+                grid-template-columns: 1fr;
+            }
+
+            .day-indicator {
+                border-right: none;
+                border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+                padding: 30px;
+            }
+
+            .day-content {
+                padding: 40px;
+            }
+
+            .day-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="summit-hero">
+            <div class="container">
+                <span class="subtitle">Summit Programme Overview</span>
+                <h1 style="font-size: 4rem; margin-bottom: 20px;">Roots. Revelation. Renaissance.</h1>
+                <p class="description" style="max-width: 800px; margin: 0 auto;">
+                    20–23 October 2026 | Moreleta Campus, Pretoria, South Africa
+                </p>
+            </div>
+        </section>
+
+        <section class="programme-timeline">
+            <div class="container">
+                <!-- Day 1 -->
+                <div class="day-block">
+                    <div class="day-card">
+                        <div class="day-indicator">
+                            <span class="day-number">20</span><span class="day-label">Oct</span>
+                            <span style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Tuesday</span>
+                        </div>
+                        <div class="day-content">
+                            <span class="day-theme">Day 1 – Foundations: Remembering Our Roots</span>
+                            <h2 class="day-title">"The Wells We Forgot: Reclaiming Foundations"</h2>
+                            <ul class="session-list">
+                                <li class="session-item">Spiritual, historical and covenantal foundations.</li>
+                                <li class="session-item">Covenant Conversations Plenary (Jewish & Christian scholars).
+                                </li>
+                                <li class="session-item">Integrated Pillar Lab Spotlights: Faith, Education, Governance,
+                                    Arts & Culture.</li>
+                            </ul>
+                            <div class="evening-experience">
+                                <span class="evening-label">Evening Experience</span>
+                                <p>"Sounds of the Covenant" – Jewish and African worship and storytelling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="day-block">
+                    <div class="day-card">
+                        <div class="day-indicator">
+                            <span class="day-number">21</span><span class="day-label">Oct</span>
+                            <span style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Wednesday</span>
+                        </div>
+                        <div class="day-content">
+                            <span class="day-theme">Day 2 – Revelation: Seeing with New Eyes</span>
+                            <h2 class="day-title">"Voices in the Valley: Prophetic Clarity"</h2>
+                            <ul class="session-list">
+                                <li class="session-item">Prophetic discernment, media, and digital culture.</li>
+                                <li class="session-item">Panels on social media, AI and the creator economy.</li>
+                                <li class="session-item">Masterclass Moments: Media, Tech, Economy and Education.</li>
+                            </ul>
+                            <div class="evening-experience">
+                                <span class="evening-label">Evening Session</span>
+                                <p>"Clothed with Power: Voices for the Nations" – Revival gathering.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="day-block">
+                    <div class="day-card">
+                        <div class="day-indicator">
+                            <span class="day-number">22</span><span class="day-label">Oct</span>
+                            <span style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Thursday</span>
+                        </div>
+                        <div class="day-content">
+                            <span class="day-theme">Day 3 – Renaissance: Creating the Future</span>
+                            <h2 class="day-title">"Called to Create: Platforms & Production"</h2>
+                            <ul class="session-list">
+                                <li class="session-item">Platform building, entrepreneurship, and cross-pillar
+                                    collaboration.</li>
+                                <li class="session-item">Nexus Pitches and Faith Nexus Storytellers Showcase segments.
+                                </li>
+                                <li class="session-item">Emphasis on Economy, Technology, Governance and Arts & Culture.
+                                </li>
+                            </ul>
+                            <div class="evening-experience" style="background: rgba(197, 160, 89, 0.15);">
+                                <span class="evening-label">Majestic Evening</span>
+                                <p><strong>FaithNexus100 Honours Gala</strong> – Celebrating 100 Influential Christians
+                                    Impacting Africa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="day-block">
+                    <div class="day-card">
+                        <div class="day-indicator">
+                            <span class="day-number">23</span><span class="day-label">Oct</span>
+                            <span style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Friday</span>
+                        </div>
+                        <div class="day-content">
+                            <span class="day-theme">Day 4 – Global Commissioning</span>
+                            <h2 class="day-title">"From Nexus to Nations: Sending Out Voices"</h2>
+                            <ul class="session-list">
+                                <li class="session-item">Commissioning and communion service.</li>
+                                <li class="session-item">Prophetic and apostolic charge for all delegates.</li>
+                                <li class="session-item">Final worship, Faith Nexus declaration and sending prayer.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-programme">
+            <div class="container">
+                <h2 style="margin-bottom: 30px;">Carry the Program with You</h2>
+                <button onclick="window.print()" class="btn btn-outline">Download Full Programme PDF</button>
+                <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-secondary);">Version 1.2 | Last updated
+                    Jan 2026</p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.day-block').forEach(block => observer.observe(block));
+    </script>
+</body>
+
+</html>
