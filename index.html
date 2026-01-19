@@ -41,9 +41,30 @@
             margin-top: 60px;
         }
     </style>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR-PIXEL-ID-HERE');
+        fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body>
+    <!-- Meta Pixel Code (Non-JS fallback) -->
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=YOUR-PIXEL-ID-HERE&ev=PageView&noscript=1" /></noscript>
+
     <header class="hero">
         <video autoplay muted loop playsinline poster="/hero-bg.png" class="hero-video">
             <source src="/background.mp4" type="video/mp4">
@@ -59,7 +80,8 @@
                 </p>
 
                 <div class="countdown-container">
-                    <div class="countdown-box">
+                    <div class="countdown-box primary-focus">
+                        <div class="next-event-tag">Next Event</div>
                         <div class="countdown-title">Global Virtual Activation</div>
                         <div class="timer-digits" id="virtual-timer">
                             <div class="digit-group"><span class="digit days">00</span><span
@@ -71,11 +93,12 @@
                             <div class="digit-group"><span class="digit seconds">00</span><span
                                     class="digit-label">Sec</span></div>
                         </div>
-                        <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 10px;">27 March 2026 –
+                        <p style="font-size: 0.85rem; color: var(--text-primary); margin-top: 15px; font-weight: 600;">
+                            27 March 2026 –
                             Live on TalkWorld</p>
                     </div>
 
-                    <div class="countdown-box">
+                    <div class="countdown-box secondary-focus">
                         <div class="countdown-title">Faith Nexus Summit</div>
                         <div class="timer-digits" id="summit-timer">
                             <div class="digit-group"><span class="digit days">00</span><span
@@ -87,7 +110,7 @@
                             <div class="digit-group"><span class="digit seconds">00</span><span
                                     class="digit-label">Sec</span></div>
                         </div>
-                        <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 10px;">20–23 Oct 2026 –
+                        <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 10px;">20–23 Oct 2026 –
                             Pretoria, SA</p>
                     </div>
                 </div>
@@ -99,6 +122,38 @@
             </div>
         </div>
     </header>
+
+    <!-- Partners Scrolling Section -->
+    <section class="partners-section">
+        <div class="partners-track">
+            <!-- Original Set -->
+            <div class="partner-logo"><img src="/partners/partner-1.png" alt="Partner 1"></div>
+            <div class="partner-logo"><img src="/partners/partner-2.png" alt="Partner 2"></div>
+            <div class="partner-logo"><img src="/partners/partner-3.png" alt="Partner 3"></div>
+            <div class="partner-logo"><img src="/partners/partner-4.png" alt="Partner 4"></div>
+            <div class="partner-logo"><img src="/partners/partner-5.png" alt="Partner 5"></div>
+            <div class="partner-logo"><img src="/partners/partner-6.png" alt="Partner 6"></div>
+            <div class="partner-logo"><img src="/partners/partner-7.png" alt="Partner 7"></div>
+
+            <!-- Duplicate Set for Seamless Loop -->
+            <div class="partner-logo"><img src="/partners/partner-1.png" alt="Partner 1"></div>
+            <div class="partner-logo"><img src="/partners/partner-2.png" alt="Partner 2"></div>
+            <div class="partner-logo"><img src="/partners/partner-3.png" alt="Partner 3"></div>
+            <div class="partner-logo"><img src="/partners/partner-4.png" alt="Partner 4"></div>
+            <div class="partner-logo"><img src="/partners/partner-5.png" alt="Partner 5"></div>
+            <div class="partner-logo"><img src="/partners/partner-6.png" alt="Partner 6"></div>
+            <div class="partner-logo"><img src="/partners/partner-7.png" alt="Partner 7"></div>
+
+            <!-- Triplicate Set for Wide Screens -->
+            <div class="partner-logo"><img src="/partners/partner-1.png" alt="Partner 1"></div>
+            <div class="partner-logo"><img src="/partners/partner-2.png" alt="Partner 2"></div>
+            <div class="partner-logo"><img src="/partners/partner-3.png" alt="Partner 3"></div>
+            <div class="partner-logo"><img src="/partners/partner-4.png" alt="Partner 4"></div>
+            <div class="partner-logo"><img src="/partners/partner-5.png" alt="Partner 5"></div>
+            <div class="partner-logo"><img src="/partners/partner-6.png" alt="Partner 6"></div>
+            <div class="partner-logo"><img src="/partners/partner-7.png" alt="Partner 7"></div>
+        </div>
+    </section>
 
     <section class="why-nexus">
         <div class="container">
