@@ -182,6 +182,50 @@
             }
         }
 
+        /* Hero Particles / Floaties */
+        .hero-particle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            pointer-events: none;
+            opacity: 0.15;
+            filter: blur(2px);
+            z-index: 2;
+            will-change: transform;
+        }
+
+        .hero-particle-mic {
+            top: 15%;
+            left: 5%;
+            background: url('public/creative-tools-suite.png') no-repeat;
+            background-size: contain;
+            width: 180px;
+            height: 180px;
+            filter: grayscale(1) brightness(2) blur(1px);
+        }
+
+        .hero-particle-lens {
+            bottom: 20%;
+            right: 5%;
+            background: url('public/faith-nexus-camera.png') no-repeat;
+            background-size: contain;
+            width: 220px;
+            height: 220px;
+            transform: rotate(-20deg);
+            filter: grayscale(1) brightness(1.5) blur(1px);
+        }
+
+        .hero-particle-ring {
+            top: 40%;
+            right: 12%;
+            background: url('public/creative-tools-suite.png') no-repeat;
+            background-size: contain;
+            width: 140px;
+            height: 140px;
+            transform: rotate(15deg);
+            filter: invert(1) brightness(0.5) opacity(0.1);
+        }
+
         @keyframes auraPulse {
 
             0%,
@@ -198,13 +242,13 @@
 
         .luxury-headline {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-size: clamp(3rem, 10vw, 5.5rem);
             font-weight: 800;
-            line-height: 0.95;
-            margin-bottom: 30px;
+            line-height: 1.1;
+            margin-bottom: 25px;
             color: #000;
-            -webkit-text-stroke: 1.5px #c5a059;
-            letter-spacing: -3px;
+            -webkit-text-stroke: 1.2px #c5a059;
+            letter-spacing: -2px;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.05));
         }
 
@@ -260,15 +304,35 @@
         }
 
         .hero-description {
-            font-size: 1.35rem;
-            line-height: 1.6;
+            font-size: 1.15rem;
+            line-height: 1.7;
             color: #1a1a1a;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             font-weight: 500;
-            max-width: 800px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.85;
+            opacity: 0.9;
+        }
+
+        .theme-highlight {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-meta-strip {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
@@ -696,24 +760,32 @@
 
     <!-- 1. HERO SECTION -->
     <header class="vl-hero">
-        <img src="public/vii_launch_v3_hero_editorial_1768777121094.png" class="hero-bg-img"
-            alt="Sovereign Architectural Interior" style="filter: brightness(1.05);">
-        <div class="hero-overlay"></div>
+        <img src="public/fascinating-hero.png" class="hero-bg-img" alt="Fascinating Creator Portal"
+            style="filter: brightness(0.95);">
+
+        <!-- Background Creator Particles -->
+        <div class="hero-particle hero-particle-mic" data-parallax-speed="0.2"></div>
+        <div class="hero-particle hero-particle-lens" data-parallax-speed="0.15"></div>
+        <div class="hero-particle hero-particle-ring" data-parallax-speed="0.25"></div>
+
+        <div class="hero-overlay"
+            style="background: linear-gradient(to bottom, rgba(253, 250, 245, 0.5), rgba(253, 250, 245, 0.9));"></div>
         <div class="cinematic-layer">
             <div class="light-leak"
-                style="top: -10%; left: -10%; background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);">
+                style="top: -10%; left: -10%; background: radial-gradient(circle, rgba(197, 160, 89, 0.2) 0%, transparent 70%);">
             </div>
             <div class="light-leak"
-                style="bottom: -15%; right: -5%; background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 60%);">
+                style="bottom: -15%; right: -5%; background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 60%);">
             </div>
         </div>
 
-        <div class="vl-hero-content">
+        <div class="vl-hero-content" style="max-width: 1000px; z-index: 10;">
             <div class="hero-globe-container reveal"
-                style="animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;">
-                <div style="position: relative; padding: 60px; display: inline-block;">
+                style="animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) both; margin-bottom: 40px;">
+                <div style="position: relative; padding: 40px; display: inline-block;">
                     <div class="globe-aura"></div>
-                    <img src="public/nexus-globe-v3.png" alt="Faith Nexus Globe" class="hero-globe">
+                    <img src="public/nexus-globe-v3.png" alt="Faith Nexus Globe" class="hero-globe"
+                        style="width: 160px; height: 160px;">
                 </div>
             </div>
 
@@ -722,25 +794,44 @@
             </div>
 
             <h1 class="luxury-headline reveal" style="animation: fadeInUp 1s 0.4s both;">
-                THE GLOBAL<br>VIRTUAL LAUNCH
+                Faith Nexus 2026 –<br>Global Virtual Launch
             </h1>
 
-            <div class="reveal" style="animation: fadeInUp 1s 0.6s both;">
-                <div class="pillar-tag">Kingdom Ecosystem &middot; 7 Pillars</div>
+            <div class="reveal" style="animation: fadeInUp 1s 0.6s both; margin-bottom: 25px;">
+                <div class="pillar-tag"
+                    style="background: rgba(0,0,0,0.03); color: #000; border-color: rgba(0,0,0,0.1);">Kingdom Voices ·
+                    Global Reach</div>
+            </div>
+
+            <div class="theme-highlight reveal" style="animation: fadeInUp 1s 0.7s both;">
+                Theme 2026: Roots. Revelation. Renaissance.
             </div>
 
             <p class="hero-description reveal" style="animation: fadeInUp 1s 0.8s both;">
-                Witness the dawn of a new era in Kingdom media and commerce. Join 100,000+ creators, visionaries, and
-                leaders for an immersive digital revelation.
+                Step into the vision, story and strategy behind Faith Nexus 2026; the global summit for Christian
+                content creators and Kingdom storytellers. On 28 March 2026, we’re gathering; creators, media
+                professionals, pastors, educators, writers, technologists and innovators online for a free global
+                activation that will introduce the 2026 theme and open the digital doorway into the October summit in
+                Pretoria.
             </p>
 
             <div class="cta-box reveal" style="animation: fadeInUp 1s 1s both;">
                 <div class="btn-magnetic-wrap" data-magnetic>
-                    <a href="#register" class="btn-gold">Secure Your Portal</a>
+                    <a href="#register" class="btn-gold" style="padding: 22px 45px;">Register Free for the Virtual
+                        Launch</a>
                 </div>
                 <div class="btn-magnetic-wrap" data-magnetic>
-                    <a href="#details" class="btn-outline-gold">Event Details</a>
+                    <a href="#details" class="btn-outline-gold" style="padding: 22px 45px;">Learn About Faith Nexus
+                        2026</a>
                 </div>
+            </div>
+
+            <div class="hero-meta-strip reveal" style="animation: fadeInUp 1s 1.2s both;">
+                <span>Free online event</span>
+                <span>·</span>
+                <span>Registration required</span>
+                <span>·</span>
+                <span>Replay available for all registrants</span>
             </div>
         </div>
     </header>
@@ -1047,8 +1138,10 @@
                         <span style="font-size: 0.9rem; opacity: 0.7;">I agree to receive event-related emails from
                             Faith Nexus and WCCCS and understand I can unsubscribe at any time.</span>
                     </div>
-                    <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer;">Get My
-                        Free Access Link</button>
+                    <div class="btn-magnetic-wrap" data-magnetic style="width: 100%;">
+                        <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer;">Get
+                            My Free Access Link</button>
+                    </div>
                     <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.5;">A confirmation email will be sent
                         within a few minutes.</p>
                 </form>
@@ -1145,8 +1238,10 @@
                 The Faith Nexus 2026 Global Virtual Launch is more than an online event. It is a starting point for a
                 movement—gathering Kingdom voices from across Africa and the nations.
             </p>
-            <a href="#register" class="btn-gold"
-                style="font-size: 1.5rem; padding: 30px 80px; box-shadow: var(--gold-glow);">Register Free Now</a>
+            <div class="btn-magnetic-wrap" data-magnetic>
+                <a href="#register" class="btn-gold"
+                    style="font-size: 1.5rem; padding: 30px 80px; box-shadow: var(--gold-glow);">Register Free Now</a>
+            </div>
             <p style="margin-top: 50px; color: var(--text-light);">
                 Or visit <a href="/" style="color: var(--primary-gold); font-weight: 700;">faithnexus.digital</a> to
                 learn more.
@@ -1261,6 +1356,13 @@
             if (heroImg) {
                 heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
             }
+
+            // Hero Particles Parallax
+            const particles = document.querySelectorAll('.hero-particle');
+            particles.forEach(p => {
+                const speed = p.getAttribute('data-parallax-speed') || 0.2;
+                p.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+            });
         });
     </script>
 </body>
