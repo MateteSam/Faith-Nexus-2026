@@ -1247,124 +1247,280 @@
                 learn more.
             </p>
         </div>
-    </footer>
+        <!-- Integro ProLens Editor UI -->
+        <div id="prolens-editor">
+            <div class="prolens-panel" id="prolens-panel">
+                <div class="prolens-header">
+                    <h3>Live Editor Console</h3>
+                    <span style="font-size: 0.7rem; color: var(--primary-gold);">v1.0 (PROLENS)</span>
+                </div>
 
-    <script>
-        // Reveal on scroll
-        const revealElements = document.querySelectorAll('.reveal');
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
+                <div class="prolens-group">
+                    <label>Theme Primary Color</label>
+                    <div class="prolens-control">
+                        <input type="color" id="color-primary" class="prolens-input-color" value="#c5a059">
+                        <span id="label-primary">#c5a059</span>
+                    </div>
+                </div>
 
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
+                <div class="prolens-group">
+                    <label>Section Rhythm (Gap)</label>
+                    <div class="prolens-control">
+                        <input type="range" id="range-gap" class="prolens-input-range" min="40" max="250" value="180">
+                        <span id="label-gap">180px</span>
+                    </div>
+                </div>
 
-        revealElements.forEach(el => revealObserver.observe(el));
+                <div class="prolens-group">
+                    <label>Typography Weight</label>
+                    <div class="prolens-control">
+                        <input type="range" id="range-weight" class="prolens-input-range" min="300" max="900" step="100"
+                            value="500">
+                        <span id="label-weight">500</span>
+                    </div>
+                </div>
 
-        // 3D Morphing Scroll Logic
-        const morphSection = document.getElementById('morph-experience');
-        const camera = document.querySelector('.morph-camera');
-        const tools = document.querySelector('.morph-tools');
-        const floaties = document.querySelectorAll('.tool-floatie');
-        const captions = document.querySelectorAll('.morph-caption');
+                <div class="prolens-footer">
+                    <button class="prolens-btn prolens-btn-outline" onclick="resetStyles()">Reset</button>
+                    <button class="prolens-btn prolens-btn-primary" onclick="showSyncReport()">Sync to Agent</button>
+                </div>
+                <p style="font-size: 0.7rem; margin-top: 15px; opacity: 0.5;">Click any text on the page to edit
+                    directly.</p>
+            </div>
+            <button class="prolens-badge" id="prolens-toggle" onclick="toggleDesignMode()">
+                <span id="prolens-status-icon">○</span> Design Mode
+            </button>
+        </div>
 
-        window.addEventListener('scroll', () => {
-            if (!morphSection) return;
-            const sectionRect = morphSection.getBoundingClientRect();
-            const sectionHeight = morphSection.offsetHeight;
-            const scrollProgress = Math.max(0, Math.min(1, -sectionRect.top / (sectionHeight - window.innerHeight)));
+        <div id="edit-sync-overlay" onclick="closeSyncOverlay()">
+            <div class="sync-box" onclick="event.stopPropagation()">
+                <h2 style="margin-top: 0;">Export Manual Changes</h2>
+                <p>I have tracked your manual edits. Copy the report below and send it to me in the chat to sync your
+                    live changes back to the codebase.</p>
+                <pre id="sync-report"></pre>
+                <button class="prolens-btn prolens-btn-primary" onclick="copySyncReport()">Copy Report & Close</button>
+            </div>
+        </div>
 
-            // 1. Camera Scaling & Fading
-            if (scrollProgress < 0.4) {
-                const cameraProgress = scrollProgress / 0.4;
-                camera.style.opacity = 1 - (cameraProgress * 0.5);
-                camera.style.transform = `scale(${1 + cameraProgress * 2}) rotate(${cameraProgress * 45}deg)`;
-                camera.style.filter = `blur(${cameraProgress * 15}px)`;
-                tools.style.opacity = 0;
-            } else if (scrollProgress >= 0.4 && scrollProgress < 0.7) {
-                const fadeProgress = (scrollProgress - 0.4) / 0.3;
-                camera.style.opacity = (1 - fadeProgress) * 0.5;
-                camera.style.transform = `scale(${3 + fadeProgress * 2}) rotate(${45 + fadeProgress * 45}deg)`;
+        <script>
+            // Reveal on scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-                tools.style.opacity = fadeProgress;
-                tools.style.filter = `blur(${(1 - fadeProgress) * 20}px)`;
-                tools.style.transform = `scale(${0.5 + fadeProgress * 0.5})`;
-            } else {
-                camera.style.opacity = 0;
-                tools.style.opacity = 1;
-                tools.style.filter = 'none';
-                tools.style.transform = `scale(1)`;
-            }
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
 
-            // 2. Fragment Floaties
-            floaties.forEach((f, i) => {
-                const start = 0.2 + (i * 0.1);
-                const p = Math.max(0, Math.min(1, (scrollProgress - start) / 0.4));
-                f.style.opacity = p * 0.5;
-                f.style.transform = `translateY(${p * -100}px) rotate(${p * 360}deg) scale(${0.5 + p * 0.5})`;
-            });
+            revealElements.forEach(el => revealObserver.observe(el));
 
-            // 3. Captions
-            captions.forEach((c, i) => {
-                const start = i * 0.33;
-                const end = (i + 1) * 0.33;
-                if (scrollProgress > start && scrollProgress < end) {
-                    c.classList.add('active');
+            // 3D Morphing Scroll Logic
+            const morphSection = document.getElementById('morph-experience');
+            const camera = document.querySelector('.morph-camera');
+            const tools = document.querySelector('.morph-tools');
+            const floaties = document.querySelectorAll('.tool-floatie');
+            const captions = document.querySelectorAll('.morph-caption');
+
+            window.addEventListener('scroll', () => {
+                if (!morphSection) return;
+                const sectionRect = morphSection.getBoundingClientRect();
+                const sectionHeight = morphSection.offsetHeight;
+                const scrollProgress = Math.max(0, Math.min(1, -sectionRect.top / (sectionHeight - window.innerHeight)));
+
+                // 1. Camera Scaling & Fading
+                if (scrollProgress < 0.4) {
+                    const cameraProgress = scrollProgress / 0.4;
+                    camera.style.opacity = 1 - (cameraProgress * 0.5);
+                    camera.style.transform = `scale(${1 + cameraProgress * 2}) rotate(${cameraProgress * 45}deg)`;
+                    camera.style.filter = `blur(${cameraProgress * 15}px)`;
+                    tools.style.opacity = 0;
+                } else if (scrollProgress >= 0.4 && scrollProgress < 0.7) {
+                    const fadeProgress = (scrollProgress - 0.4) / 0.3;
+                    camera.style.opacity = (1 - fadeProgress) * 0.5;
+                    camera.style.transform = `scale(${3 + fadeProgress * 2}) rotate(${45 + fadeProgress * 45}deg)`;
+
+                    tools.style.opacity = fadeProgress;
+                    tools.style.filter = `blur(${(1 - fadeProgress) * 20}px)`;
+                    tools.style.transform = `scale(${0.5 + fadeProgress * 0.5})`;
                 } else {
-                    c.classList.remove('active');
+                    camera.style.opacity = 0;
+                    tools.style.opacity = 1;
+                    tools.style.filter = 'none';
+                    tools.style.transform = `scale(1)`;
                 }
-            });
-        });
 
-        // Magnetic Button Interaction
-        const magneticElements = document.querySelectorAll('[data-magnetic]');
+                // 2. Fragment Floaties
+                floaties.forEach((f, i) => {
+                    const start = 0.2 + (i * 0.1);
+                    const p = Math.max(0, Math.min(1, (scrollProgress - start) / 0.4));
+                    f.style.opacity = p * 0.5;
+                    f.style.transform = `translateY(${p * -100}px) rotate(${p * 360}deg) scale(${0.5 + p * 0.5})`;
+                });
 
-        magneticElements.forEach(el => {
-            el.addEventListener('mousemove', (e) => {
-                const rect = el.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-
-                // Pull effect
-                const strength = 60;
-                const tx = (x / rect.width) * strength;
-                const ty = (y / rect.height) * strength;
-
-                el.style.transform = `translate(${tx}px, ${ty}px)`;
-            });
-
-            el.addEventListener('mouseleave', () => {
-                el.style.transform = `translate(0, 0)`;
-                el.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+                // 3. Captions
+                captions.forEach((c, i) => {
+                    const start = i * 0.33;
+                    const end = (i + 1) * 0.33;
+                    if (scrollProgress > start && scrollProgress < end) {
+                        c.classList.add('active');
+                    } else {
+                        c.classList.remove('active');
+                    }
+                });
             });
 
-            el.addEventListener('mouseenter', () => {
-                el.style.transition = 'none';
-            });
-        });
+            // Magnetic Button Interaction
+            const magneticElements = document.querySelectorAll('[data-magnetic]');
 
-        // Parallax Effect for Hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroImg = document.querySelector('.hero-bg-img');
-            if (heroImg) {
-                heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
+            magneticElements.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    // Pull effect
+                    const strength = 60;
+                    const tx = (x / rect.width) * strength;
+                    const ty = (y / rect.height) * strength;
+
+                    el.style.transform = `translate(${tx}px, ${ty}px)`;
+                });
+
+                el.addEventListener('mouseleave', () => {
+                    el.style.transform = `translate(0, 0)`;
+                    el.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+                });
+
+                el.addEventListener('mouseenter', () => {
+                    el.style.transition = 'none';
+                });
+            });
+
+            // Parallax Effect for Hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroImg = document.querySelector('.hero-bg-img');
+                if (heroImg) {
+                    heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
+                }
+
+                // Hero Particles Parallax
+                const particles = document.querySelectorAll('.hero-particle');
+                particles.forEach(p => {
+                    const speed = p.getAttribute('data-parallax-speed') || 0.2;
+                    p.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+                });
+            });
+
+            // Integro ProLens Logic
+            let designModeActive = false;
+            const trackedChanges = { text: {}, styles: {} };
+
+            function toggleDesignMode() {
+                designModeActive = !designModeActive;
+                const toggle = document.getElementById('prolens-toggle');
+                const panel = document.getElementById('prolens-panel');
+                const icon = document.getElementById('prolens-status-icon');
+
+                toggle.classList.toggle('active');
+                panel.classList.toggle('visible');
+                icon.innerText = designModeActive ? '●' : '○';
+
+                // Enable/Disable contenteditable
+                const editableElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, button, .pillar-tag');
+                editableElements.forEach(el => {
+                    if (el.closest('#prolens-editor')) return;
+                    el.contentEditable = designModeActive;
+
+                    if (designModeActive) {
+                        el.addEventListener('input', trackTextChange);
+                    } else {
+                        el.removeEventListener('input', trackTextChange);
+                    }
+                });
             }
 
-            // Hero Particles Parallax
-            const particles = document.querySelectorAll('.hero-particle');
-            particles.forEach(p => {
-                const speed = p.getAttribute('data-parallax-speed') || 0.2;
-                p.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+            function trackTextChange(e) {
+                const el = e.target;
+                const id = el.id || el.className || 'unnamed-el';
+                trackedChanges.text[id] = {
+                    path: getElementPath(el),
+                    content: el.innerText.trim()
+                };
+            }
+
+            function getElementPath(el) {
+                const path = [];
+                let current = el;
+                while (current.parentElement) {
+                    let name = current.tagName.toLowerCase();
+                    if (current.className) name += '.' + current.className.split(' ').join('.');
+                    path.unshift(name);
+                    current = current.parentElement;
+                }
+                return path.join(' > ');
+            }
+
+            // Style Listeners
+            document.getElementById('color-primary').addEventListener('input', (e) => {
+                const val = e.target.value;
+                document.documentElement.style.setProperty('--primary-gold', val);
+                document.getElementById('label-primary').innerText = val;
+                trackedChanges.styles['--primary-gold'] = val;
             });
-        });
-    </script>
+
+            document.getElementById('range-gap').addEventListener('input', (e) => {
+                const val = e.target.value + 'px';
+                document.documentElement.style.setProperty('--section-gap', val);
+                document.getElementById('label-gap').innerText = val;
+                trackedChanges.styles['--section-gap'] = val;
+            });
+
+            document.getElementById('range-weight').addEventListener('input', (e) => {
+                const val = e.target.value;
+                document.body.style.fontWeight = val;
+                document.getElementById('label-weight').innerText = val;
+                trackedChanges.styles['body font-weight'] = val;
+            });
+
+            function resetStyles() {
+                document.documentElement.style.removeProperty('--primary-gold');
+                document.documentElement.style.removeProperty('--section-gap');
+                document.body.style.fontWeight = '500';
+                Object.keys(trackedChanges.styles).forEach(k => delete trackedChanges.styles[k]);
+            }
+
+            function showSyncReport() {
+                const overlay = document.getElementById('edit-sync-overlay');
+                const reportBox = document.getElementById('sync-report');
+
+                const report = {
+                    timestamp: new Date().toISOString(),
+                    changes: trackedChanges
+                };
+
+                reportBox.innerText = JSON.stringify(report, null, 2);
+                overlay.style.display = 'flex';
+            }
+
+            function copySyncReport() {
+                const report = document.getElementById('sync-report').innerText;
+                navigator.clipboard.writeText(report).then(() => {
+                    alert('Changes copied to clipboard! Paste them in the chat.');
+                    closeSyncOverlay();
+                });
+            }
+
+            function closeSyncOverlay() {
+                document.getElementById('edit-sync-overlay').style.display = 'none';
+            }
+        </script>
 </body>
 
 </html>
