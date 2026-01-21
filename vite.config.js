@@ -13,6 +13,10 @@ files.forEach(file => {
 });
 
 export default defineConfig({
+    server: {
+        port: 5180,
+        strictPort: true,
+    },
     build: {
         rollupOptions: {
             input: input
