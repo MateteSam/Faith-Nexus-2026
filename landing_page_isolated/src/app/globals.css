@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080808;
+  /* Deep charcoal instead of pure black */
+  --foreground: #ffffff;
+  --primary-gold: #C5A059;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-gold: var(--primary-gold);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-outfit);
+}
+
+body {
+  background: var(--background);
+  background-image: radial-gradient(circle at top right, #111 0%, transparent 40%),
+    radial-gradient(circle at bottom left, #0a0a0a 0%, transparent 40%);
+  color: var(--foreground);
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), serif;
+}
