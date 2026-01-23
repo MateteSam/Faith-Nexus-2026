@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Pitches & Storytellers | Faith Nexus 2026</title>
+    <title>Nexus Pitches & Storytellers | Faith Nexus 2026</title>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
@@ -273,43 +274,43 @@
         }
 
         /* Light Mode Specific Overrides */
-        [data-theme="light"] .pitches-hero-luxury {
+        [] .pitches-hero-luxury {
             background: #FDFCFB;
         }
 
-        [data-theme="light"] .hero-image-bg {
+        [] .hero-image-bg {
             filter: brightness(0.9) contrast(1) saturate(0.6);
         }
 
-        [data-theme="light"] .hero-overlay {
+        [] .hero-overlay {
             background: linear-gradient(to right, rgba(253, 252, 251, 0.8) 0%, rgba(253, 252, 251, 0.4) 100%);
         }
 
-        [data-theme="light"] .showcase-block {
+        [] .showcase-block {
             background: #FDFCFB;
         }
 
-        [data-theme="light"] .showcase-frame {
+        [] .showcase-frame {
             background: #fff;
             box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
             border-color: rgba(197, 160, 89, 0.1);
         }
 
-        [data-theme="light"] .panel-item {
+        [] .panel-item {
             background: rgba(197, 160, 89, 0.02);
         }
 
-        [data-theme="light"] .panel-item:hover {
+        [] .panel-item:hover {
             background: rgba(197, 160, 89, 0.05);
         }
 
-        [data-theme="light"] .challenge-card {
+        [] .challenge-card {
             background: rgba(255, 255, 255, 0.8) !important;
             border-color: rgba(197, 160, 89, 0.2) !important;
             box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1) !important;
         }
 
-        [data-theme="light"] .challenge-card:hover {
+        [] .challenge-card:hover {
             background: #fff !important;
             border-color: var(--primary-gold) !important;
         }
@@ -321,7 +322,7 @@
 <body>
     <div class="scroll-progress" id="progressBar"></div>
 
-    <main>
+    <main class="bg-blue-premium">
         <!-- Home of Storytellers Hero -->
         <section class="pitches-hero-luxury">
             <img src="/global_storytellers.png" class="hero-image-bg" alt="Pitches & Storytellers Hub">
@@ -459,7 +460,8 @@
             </div>
         </section>
     </main>
-
+
+
     <script>
         // Cinematic Scroll Progress
         window.onscroll = function () {

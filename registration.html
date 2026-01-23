@@ -419,54 +419,54 @@
         }
 
         /* Light Mode Specific Overrides */
-        [data-theme="light"] .registration-hero-luxury {
+        [] .registration-hero-luxury {
             background: #FDFCFB;
         }
 
-        [data-theme="light"] .hero-image-bg {
+        [] .hero-image-bg {
             filter: brightness(0.9) contrast(1);
         }
 
-        [data-theme="light"] .hero-overlay {
+        [] .hero-overlay {
             background: radial-gradient(circle at center, transparent 0%, rgba(253, 252, 251, 0.7) 100%);
         }
 
-        [data-theme="light"] .registration-form-section {
+        [] .registration-form-section {
             background: #FDFCFB;
         }
 
-        [data-theme="light"] .form-card {
+        [] .form-card {
             background: #fff;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
             border-color: rgba(197, 160, 89, 0.1);
         }
 
-        [data-theme="light"] .tier-card {
+        [] .tier-card {
             background: #fff;
             border-color: rgba(197, 160, 89, 0.2);
             box-shadow: 0 10px 40px rgba(197, 160, 89, 0.08);
         }
 
-        [data-theme="light"] .tier-card:hover {
+        [] .tier-card:hover {
             border-color: var(--primary-gold);
         }
 
-        [data-theme="light"] input,
-        [data-theme="light"] select,
-        [data-theme="light"] textarea {
+        [] input,
+        [] select,
+        [] textarea {
             background: #F9F7F4;
             border-color: rgba(197, 160, 89, 0.2);
             color: var(--text-primary);
         }
 
-        [data-theme="light"] input:focus,
-        [data-theme="light"] select:focus,
-        [data-theme="light"] textarea:focus {
+        [] input:focus,
+        [] select:focus,
+        [] textarea:focus {
             background: #fff;
             border-color: var(--primary-gold);
         }
 
-        [data-theme="light"] .order-summary {
+        [] .order-summary {
             background: #F9F7F4;
             border-color: rgba(197, 160, 89, 0.2);
         }
@@ -497,7 +497,7 @@
 
     <div class="scroll-progress" id="progressBar"></div>
 
-    <main>
+    <main class="bg-blue-premium">
         <!-- Luxury Hero -->
         <section class="registration-hero-luxury">
             <img src="/hero-bg.png" class="hero-image-bg" alt="Registration Gateway">
@@ -534,8 +534,9 @@
                             <li>Delegate pack + selected post-event recordings</li>
                         </ul>
 
-                        <a href="#reg-anchor" class="btn-outline-gold" onclick="selectTier('plenary')">Select Plenary
-                            Access</a>
+                        <a href="#reg-anchor" class="btn-glass btn-glass-ghost" onclick="selectTier('plenary')">
+                            <span class="content">Select Plenary Access</span>
+                        </a>
                     </div>
 
                     <!-- Full Access -->
@@ -557,7 +558,10 @@
                             <li>Extended access to TalkWorld content & resources</li>
                         </ul>
 
-                        <a href="#reg-anchor" class="btn-cinema" onclick="selectTier('full')">Select Full Access</a>
+                        <a href="#reg-anchor" class="btn-glass btn-glass-secondary" onclick="selectTier('full')">
+                            <span class="shimmer"></span>
+                            <span class="content">Select Full Access</span>
+                        </a>
                     </div>
                 </div>
 
@@ -819,8 +823,11 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn-cinema" style="width: 100%; margin-top: 40px;">Confirm
-                                    Individual Registration</button>
+                                <button type="submit" class="btn-glass btn-glass-primary"
+                                    style="width: 100%; margin-top: 40px; border-radius: 12px;">
+                                    <span class="shimmer"></span>
+                                    <span class="content">Confirm Individual Registration</span>
+                                </button>
                             </form>
 
                             <!-- B. Group Registration Contact Form -->
@@ -850,8 +857,11 @@
                                     </select>
                                 </div>
 
-                                <button type="submit" class="btn-cinema" style="width: 100%; margin-top: 40px;">Submit
-                                    Group Enquiry</button>
+                                <button type="submit" class="btn-glass btn-glass-secondary"
+                                    style="width: 100%; margin-top: 40px; border-radius: 12px;">
+                                    <span class="shimmer"></span>
+                                    <span class="content">Submit Group Enquiry</span>
+                                </button>
                                 <p style="text-align: center; margin-top: 20px; opacity: 0.5; font-size: 0.85rem;">Our
                                     team will respond with valid group rates and a custom invoice.</p>
                             </form>
@@ -884,7 +894,7 @@
                                 style="font-family: 'Playfair Display', serif; color: var(--primary-gold); margin-bottom: 15px;">
                                 Global Virtual Activation</h4>
                             <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
-                                Registrations for the 27 March 2026 digital event are separate and free. You will
+                                Registrations for the 2nd May 2026 digital event are separate and free. You will
                                 receive an invitation link post-registration.
                             </p>
                         </div>

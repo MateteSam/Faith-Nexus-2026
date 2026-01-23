@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summit Programme | Faith Nexus 2026</title>
+    <title>Summit Programme | Faith Nexus 2026</title>
+
     <style>
         .summit-hero {
             padding: 150px 0 80px;
@@ -155,7 +156,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="bg-blue-premium">
         <section class="summit-hero">
             <div class="container">
                 <span class="subtitle">Summit Programme Overview</span>
@@ -273,7 +274,8 @@
             </div>
         </section>
     </main>
-
+
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });

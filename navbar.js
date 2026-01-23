@@ -28,32 +28,12 @@ export function renderNavbar() {
 
                 <a href="/summit.html">Programme</a>
                 <a href="/virtual.html">Virtual Activation</a>
-                <div class="theme-toggle" id="theme-toggle" style="cursor: pointer; margin-left: 20px; font-size: 1.2rem;">
-                    🌙
-                </div>
                 <a href="/registration.html" class="btn btn-primary" style="padding: 8px 16px; margin-left: 20px;">Tickets</a>
             </div>
         </div>
     `;
 
     document.body.prepend(nav);
-
-    // Theme Toggle Logic
-    const toggle = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-
-    const setTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        toggle.innerText = theme === 'light' ? '🔆' : '🌙';
-    };
-
-    setTheme(savedTheme);
-
-    toggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        setTheme(currentTheme === 'light' ? 'dark' : 'light');
-    });
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {

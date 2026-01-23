@@ -25,10 +25,6 @@
             transition: var(--transition);
         }
 
-        [data-theme="light"] .hero::before {
-            background: linear-gradient(to bottom, rgba(253, 252, 251, 0.4) 0%, rgba(253, 252, 251, 0.7) 100%);
-        }
-
         .highlight-box {
             background: rgba(197, 160, 89, 0.1);
             border-left: 4px solid var(--primary-gold);
@@ -67,34 +63,45 @@
 
     <header class="hero">
         <video autoplay muted loop playsinline poster="/hero-bg.png" class="hero-video">
-            <source src="/background.mp4" type="video/mp4">
+            <source src="/Smooth_slow_dynamic_202601202113_lwh96.mp4" type="video/mp4">
         </video>
-        <div class="container">
-            <div class="hero-content">
-                <span class="subtitle">Faith Nexus 2026</span>
-                <h1 style="font-size: 5rem;">Kingdom Voices.<br>Global Reach.</h1>
-                <p class="description" style="max-width: 750px;">
+        <div class="container" style="position: relative; z-index: 20;">
+            <div class="hero-content"
+                style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+                <h1
+                    style="font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 20px; color: var(--sky-blue); text-shadow: 0 0 30px var(--sky-blue-glow); letter-spacing: -0.01em;">
+                    FAITH NEXUS 2026
+                </h1>
+
+                <span class="subtitle"
+                    style="font-size: 1.2rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; color: white; opacity: 0.9; margin-bottom: 30px;">
+                    Kingdom Voice &bull; Global Connections
+                </span>
+
+                <p class="description" style="max-width: 750px; font-size: 1.1rem; margin-bottom: 40px;">
                     The global summit for Christian content creators and Kingdom storytellers; a space where pastors,
                     media professionals, digital creators, technologists, educators and artists gather to grow, fund and
-                    sustain their content mission, and to shape culture for Christ.
+                    sustain their content mission.
                 </p>
 
                 <div class="countdown-container">
-                    <div class="countdown-box primary-focus">
-                        <div class="next-event-tag">Next Event</div>
-                        <div class="countdown-title">Global Virtual Activation</div>
-                        <div class="timer-digits" id="virtual-timer">
-                            <div class="digit-group"><span class="digit days">00</span><span
-                                    class="digit-label">Days</span></div>
-                            <div class="digit-group"><span class="digit hours">00</span><span
-                                    class="digit-label">Hrs</span></div>
-                            <div class="digit-group"><span class="digit minutes">00</span><span
-                                    class="digit-label">Min</span></div>
-                            <div class="digit-group"><span class="digit seconds">00</span><span
-                                    class="digit-label">Sec</span></div>
+                    <div class="countdown-box primary-focus"
+                        style="border-color: var(--sky-blue); background: rgba(14, 165, 233, 0.05);">
+                        <div class="next-event-tag" style="background: var(--sky-blue); color: #fff;">Next Major Moment
                         </div>
-                        <p style="font-size: 0.85rem; color: var(--text-primary); margin-top: 15px; font-weight: 600;">
-                            27 March 2026 –
+                        <div class="countdown-title" style="color: var(--sky-blue);">Global Virtual Activation</div>
+                        <div class="timer-digits" id="virtual-timer">
+                            <div class="digit-group"><span class="digit days"
+                                    style="color: var(--sky-blue);">00</span><span class="digit-label">Days</span></div>
+                            <div class="digit-group"><span class="digit hours"
+                                    style="color: var(--sky-blue);">00</span><span class="digit-label">Hrs</span></div>
+                            <div class="digit-group"><span class="digit minutes"
+                                    style="color: var(--sky-blue);">00</span><span class="digit-label">Min</span></div>
+                            <div class="digit-group"><span class="digit seconds"
+                                    style="color: var(--sky-blue);">00</span><span class="digit-label">Sec</span></div>
+                        </div>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 10px;">02 May 2026 –
                             Live on TalkWorld</p>
                     </div>
 
@@ -110,52 +117,57 @@
                             <div class="digit-group"><span class="digit seconds">00</span><span
                                     class="digit-label">Sec</span></div>
                         </div>
-                        <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 10px;">20–23 Oct 2026 –
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 10px;">20–23 Oct 2026 –
                             Pretoria, SA</p>
                     </div>
                 </div>
 
-                <div class="cta-group">
-                    <a href="/virtual.html" class="btn btn-primary">Register for Virtual Activation</a>
-                    <a href="/summit.html" class="btn btn-outline">Explore the October Summit</a>
+                <div class="cta-group" style="display: flex; gap: 20px; width: 100%; max-width: 600px;">
+                    <a href="/virtual.html" class="btn-glass btn-glass-primary" style="flex: 1;">
+                        <span class="shimmer"></span>
+                        <span class="content">Register for Virtual Activation</span>
+                    </a>
+                    <a href="/summit.html" class="btn-glass btn-glass-ghost" style="flex: 1;">
+                        <span class="content">Explore the October Summit</span>
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Partners Scrolling Section -->
-    <section class="partners-section">
-        <div class="partners-track">
-            <!-- Original Set -->
-            <div class="partner-logo"><img src="/partners/partner-1.png" alt="Partner 1"></div>
-            <div class="partner-logo"><img src="/partners/partner-2.png" alt="Partner 2"></div>
-            <div class="partner-logo"><img src="/partners/partner-3.png" alt="Partner 3"></div>
-            <div class="partner-logo"><img src="/partners/partner-4.png" alt="Partner 4"></div>
-            <div class="partner-logo"><img src="/partners/partner-5.png" alt="Partner 5"></div>
-            <div class="partner-logo"><img src="/partners/partner-6.png" alt="Partner 6"></div>
-            <div class="partner-logo"><img src="/partners/partner-7.png" alt="Partner 7"></div>
+    <section class="partners-elegant bg-blue-premium">
+        <div class="container">
+            <header class="partners-header">
+                <span class="partners-tagline">In Strategic Collaboration With</span>
+                <h2 class="partners-title">Partners and Sponsors</h2>
+                <div class="partners-separator"></div>
+            </header>
 
-            <!-- Duplicate Set for Seamless Loop -->
-            <div class="partner-logo"><img src="/partners/partner-1.png" alt="Partner 1"></div>
-            <div class="partner-logo"><img src="/partners/partner-2.png" alt="Partner 2"></div>
-            <div class="partner-logo"><img src="/partners/partner-3.png" alt="Partner 3"></div>
-            <div class="partner-logo"><img src="/partners/partner-4.png" alt="Partner 4"></div>
-            <div class="partner-logo"><img src="/partners/partner-5.png" alt="Partner 5"></div>
-            <div class="partner-logo"><img src="/partners/partner-6.png" alt="Partner 6"></div>
-            <div class="partner-logo"><img src="/partners/partner-7.png" alt="Partner 7"></div>
+            <div class="partners-marquee-container">
+                <div class="partners-marquee-track">
+                    <!-- Original Set -->
+                    <div class="partner-card-premium"><img src="/partners/partner-3.png" alt="Integro"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-4.png" alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-3.png" alt="Integro"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-4.png" alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
 
-            <!-- Triplicate Set for Wide Screens -->
-            <div class="partner-logo"><img src="/partners/partner-1.png" alt="Partner 1"></div>
-            <div class="partner-logo"><img src="/partners/partner-2.png" alt="Partner 2"></div>
-            <div class="partner-logo"><img src="/partners/partner-3.png" alt="Partner 3"></div>
-            <div class="partner-logo"><img src="/partners/partner-4.png" alt="Partner 4"></div>
-            <div class="partner-logo"><img src="/partners/partner-5.png" alt="Partner 5"></div>
-            <div class="partner-logo"><img src="/partners/partner-6.png" alt="Partner 6"></div>
-            <div class="partner-logo"><img src="/partners/partner-7.png" alt="Partner 7"></div>
+                    <!-- Duplicate for infinite loop -->
+                    <div class="partner-card-premium"><img src="/partners/partner-3.png" alt="Integro"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-4.png" alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-3.png" alt="Integro"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-4.png" alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
+                </div>
+            </div>
+
+            <p class="partners-footer-text">Powering the Future of the Faith Nexus Ecosystem</p>
         </div>
     </section>
 
-    <section class="why-nexus">
+    <section class="why-nexus bg-blue-premium">
         <div class="container">
             <header style="text-align: center; margin-bottom: 80px;" class="reveal">
                 <span class="subtitle">The Nexus Advantage</span>
@@ -229,7 +241,7 @@
                 <div class="moment-content">
                     <span class="subtitle">Online Event</span>
                     <h3>1. Global Virtual Activation</h3>
-                    <p style="color: var(--primary-gold); font-weight: bold; margin-bottom: 15px;">27 March 2026 – Free
+                    <p style="color: var(--primary-gold); font-weight: bold; margin-bottom: 15px;">2nd May 2026 – Free
                         Online Access</p>
                     <p>A free, one-day global online event on TalkWorld, giving a first look at:</p>
                     <ul>
@@ -303,7 +315,7 @@
         </div>
     </section>
 
-    <section class="audience-section">
+    <section class="audience-section bg-blue-premium">
         <div class="container audience-container">
             <header style="text-align: center; margin-bottom: 60px;" class="reveal">
                 <span class="subtitle">Core Community</span>

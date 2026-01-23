@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covenant Conversations | Faith Nexus 2026</title>
+    <title>Covenant Conversations | Faith Nexus 2026</title>
+
     <style>
         .covenant-hero {
             padding: 240px 0 140px;
@@ -55,21 +56,21 @@
         }
 
         /* Light Mode Specific Overrides */
-        [data-theme="light"] .covenant-hero {
+        [] .covenant-hero {
             background-attachment: scroll;
             /* Better visibility for light mode scroll */
         }
 
-        [data-theme="light"] .parallax-overlay {
+        [] .parallax-overlay {
             background: linear-gradient(to bottom, rgba(253, 252, 251, 0.5), rgba(253, 252, 251, 0.95)) !important;
         }
 
-        [data-theme="light"] .covenant-card {
+        [] .covenant-card {
             background: #fff;
             box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1);
         }
 
-        [data-theme="light"] .covenant-card:hover {
+        [] .covenant-card:hover {
             background: rgba(197, 160, 89, 0.05);
         }
     </style>
@@ -78,7 +79,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="bg-blue-premium">
         <section class="covenant-hero">
             <div class="parallax-overlay"
                 style="background: linear-gradient(to bottom, rgba(10,10,10,0.5), rgba(10,10,10,0.95));"></div>
@@ -220,7 +221,8 @@
             </div>
         </section>
     </main>
-
+
+
 </body>
 
 </html>

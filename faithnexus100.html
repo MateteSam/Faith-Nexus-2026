@@ -294,39 +294,39 @@
         }
 
         /* Light Mode Specific Overrides */
-        [data-theme="light"] .hero-video-bg {
+        [] .hero-video-bg {
             filter: brightness(0.8) contrast(1) saturate(0.6);
         }
 
-        [data-theme="light"] .hero-overlay {
+        [] .hero-overlay {
             background: radial-gradient(circle at center, transparent 0%, rgba(253, 252, 251, 0.7) 100%);
         }
 
-        [data-theme="light"] .hero-red-carpet {
+        [] .hero-red-carpet {
             background: linear-gradient(to top, rgba(197, 160, 89, 0.2) 0%, transparent 100%);
         }
 
-        [data-theme="light"] .medallion-card {
+        [] .medallion-card {
             background: rgba(255, 255, 255, 0.8) !important;
             border-color: rgba(197, 160, 89, 0.2) !important;
             box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1) !important;
         }
 
-        [data-theme="light"] .medallion-card:hover {
+        [] .medallion-card:hover {
             background: #fff !important;
             border-color: var(--primary-gold) !important;
         }
 
-        [data-theme="light"] .medallion-text {
+        [] .medallion-text {
             color: var(--text-secondary);
         }
 
-        [data-theme="light"] .gala-moment {
+        [] .gala-moment {
             background: #fff;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
         }
 
-        [data-theme="light"] .gala-overlay-luxury {
+        [] .gala-overlay-luxury {
             background: linear-gradient(45deg, rgba(253, 252, 251, 0.8) 0%, rgba(253, 252, 251, 0.4) 100%);
         }
     </style>
@@ -335,7 +335,7 @@
 <body>
     <div class="scroll-progress" id="progressBar"></div>
 
-    <main>
+    <main class="bg-blue-premium">
         <!-- Luxury Cinema Hero -->
         <section class="fn100-hero-luxury">
             <video autoplay muted loop playsinline class="hero-video-bg">

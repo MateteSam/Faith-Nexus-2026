@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration & Tickets | Faith Nexus 2026</title>
+    <title>Registration & Tickets | Faith Nexus 2026</title>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
@@ -418,54 +419,54 @@
         }
 
         /* Light Mode Specific Overrides */
-        [data-theme="light"] .registration-hero-luxury {
+        [] .registration-hero-luxury {
             background: #FDFCFB;
         }
 
-        [data-theme="light"] .hero-image-bg {
+        [] .hero-image-bg {
             filter: brightness(0.9) contrast(1);
         }
 
-        [data-theme="light"] .hero-overlay {
+        [] .hero-overlay {
             background: radial-gradient(circle at center, transparent 0%, rgba(253, 252, 251, 0.7) 100%);
         }
 
-        [data-theme="light"] .registration-form-section {
+        [] .registration-form-section {
             background: #FDFCFB;
         }
 
-        [data-theme="light"] .form-card {
+        [] .form-card {
             background: #fff;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
             border-color: rgba(197, 160, 89, 0.1);
         }
 
-        [data-theme="light"] .tier-card {
+        [] .tier-card {
             background: #fff;
             border-color: rgba(197, 160, 89, 0.2);
             box-shadow: 0 10px 40px rgba(197, 160, 89, 0.08);
         }
 
-        [data-theme="light"] .tier-card:hover {
+        [] .tier-card:hover {
             border-color: var(--primary-gold);
         }
 
-        [data-theme="light"] input,
-        [data-theme="light"] select,
-        [data-theme="light"] textarea {
+        [] input,
+        [] select,
+        [] textarea {
             background: #F9F7F4;
             border-color: rgba(197, 160, 89, 0.2);
             color: var(--text-primary);
         }
 
-        [data-theme="light"] input:focus,
-        [data-theme="light"] select:focus,
-        [data-theme="light"] textarea:focus {
+        [] input:focus,
+        [] select:focus,
+        [] textarea:focus {
             background: #fff;
             border-color: var(--primary-gold);
         }
 
-        [data-theme="light"] .order-summary {
+        [] .order-summary {
             background: #F9F7F4;
             border-color: rgba(197, 160, 89, 0.2);
         }
@@ -477,7 +478,7 @@
 <body>
     <div class="scroll-progress" id="progressBar"></div>
 
-    <main>
+    <main class="bg-blue-premium">
         <!-- Luxury Hero -->
         <section class="registration-hero-luxury">
             <img src="/hero-bg.png" class="hero-image-bg" alt="Registration Gateway">
@@ -874,7 +875,8 @@
         </section>
     </main>
 
-    <script src="/registration.js"></script>
+    <script src="/registration.js"></script>
+
     <script>
         // Reveal & Progress
         const observer = new IntersectionObserver((entries) => {
