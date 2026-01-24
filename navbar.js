@@ -5,6 +5,14 @@ export function renderNavbar() {
             <a href="/" class="logo">
                 <img src="/logo.png" alt="Faith Nexus Logo">
             </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <div class="nav-links">
                 <a href="/">Home</a>
                 <a href="/about.html">About</a>
@@ -34,6 +42,27 @@ export function renderNavbar() {
     `;
 
     document.body.prepend(nav);
+
+    // Mobile Menu Logic
+    const toggle = nav.querySelector('.mobile-toggle');
+    const links = nav.querySelector('.nav-links');
+
+    if (toggle && links) {
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            links.classList.toggle('mobile-active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Close menu when a link is clicked
+        links.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggle.classList.remove('active');
+                links.classList.remove('mobile-active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
