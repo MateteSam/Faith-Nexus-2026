@@ -1726,67 +1726,97 @@ footer {
         width: 100%;
     }
 
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
     .hero-title {
-        font-size: clamp(2.2rem, 11vw, 3.2rem) !important;
-        line-height: 1.05;
-        letter-spacing: -0.04em;
-        width: 100%;
-        margin-bottom: 30px !important;
-        text-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+        font-size: clamp(2rem, 10vw, 3rem) !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.02em !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        text-align: center !important;
     }
 
     .hero-subtitle {
-        font-size: 0.85rem !important;
-        letter-spacing: 0.3em !important;
-        margin-bottom: 25px !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 0.2em !important;
+        margin-bottom: 20px !important;
         width: auto !important;
         background: rgba(197, 160, 89, 0.15);
-        padding: 6px 18px;
+        padding: 6px 14px;
         border-radius: 4px;
         display: inline-block;
         border: 1px solid rgba(197, 160, 89, 0.2);
     }
 
     .hero-description {
-        font-size: 0.95rem !important;
-        padding: 0 15px;
+        font-size: 0.9rem !important;
+        padding: 0 10px !important;
         line-height: 1.5;
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin-bottom: 25px !important;
     }
 
     .countdown-container {
+        display: flex !important;
+        flex-direction: column !important;
         gap: 15px !important;
-        margin: 30px 0 !important;
-        width: 100%;
+        margin: 20px 0 !important;
+        width: 100% !important;
+        align-items: center !important;
     }
 
     .countdown-box {
         min-width: 0 !important;
         width: 100% !important;
-        padding: 25px 20px !important;
+        max-width: 100% !important;
+        padding: 20px 15px !important;
         backdrop-filter: blur(15px) !important;
-        border-radius: 15px !important;
+        border-radius: 12px !important;
+    }
+
+    .countdown-box.primary-focus {
+        padding: 25px 15px !important;
     }
 
     .timer-digits {
-        gap: 10px !important;
-        justify-content: center;
+        gap: 8px !important;
+        justify-content: center !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    .digit-group {
+        min-width: 50px !important;
     }
 
     .digit {
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
     }
 
     .primary-focus .digit {
-        font-size: 2.2rem !important;
+        font-size: 1.8rem !important;
     }
 
     .hero {
-        padding-top: 120px !important;
-        padding-bottom: 60px !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-top: 100px !important;
+        padding-bottom: 50px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
+
 
     .container {
         padding: 0 15px !important;
