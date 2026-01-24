@@ -55,23 +55,23 @@
             height: 40px;
         }
 
-        /* Light Mode Specific Overrides */
-        [] .covenant-hero {
+        /* Theme Specific Overrides */
+        .covenant-hero {
             background-attachment: scroll;
-            /* Better visibility for light mode scroll */
+            /* Better visibility for mobile/scroll */
         }
 
-        [] .parallax-overlay {
-            background: linear-gradient(to bottom, rgba(253, 252, 251, 0.5), rgba(253, 252, 251, 0.95)) !important;
+        .parallax-overlay {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.95)) !important;
         }
 
-        [] .covenant-card {
-            background: #fff;
-            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1);
+        .covenant-card {
+            background: rgba(197, 160, 89, 0.03);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
-        [] .covenant-card:hover {
-            background: rgba(197, 160, 89, 0.05);
+        .covenant-card:hover {
+            background: rgba(197, 160, 89, 0.08);
         }
     </style>
 </head>
@@ -83,6 +83,10 @@
                 style="background: linear-gradient(to bottom, rgba(10,10,10,0.5), rgba(10,10,10,0.95));"></div>
             <div class="container" style="position: relative; z-index: 2;">
                 <span class="hebrew-accent">Shared Spiritual Heritage</span>
+                <div class="powered-by-logo-container">
+                    <span class="powered-by-text">Powered by</span>
+                    <img src="/partners/partner-6.png" alt="Powered by Partner" class="powered-by-item">
+                </div>
                 <h1 style="font-size: 5.5rem; margin-bottom: 30px; line-height: 1.1;">Covenant <br>Conversations</h1>
                 <p class="description" style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.5rem;">
                     Roots & Revelation within Faith Nexus: A permanent Jewish–Christian engagement platform dedicated to

@@ -14,6 +14,78 @@
     --transition: all 0.3s ease;
 }
 
+/* Powered By Branding */
+.powered-by-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.powered-by-text {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-gold);
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.powered-by-item {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.3));
+    transition: transform 0.4s ease;
+}
+
+.powered-by-item:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   Hero Section Refined
+   ========================================= */
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-bottom: 20px;
+    color: var(--sky-blue);
+    text-shadow: 0 0 30px var(--sky-blue-glow);
+    letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.hero-description {
+    max-width: 750px;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.countdown-box.blue-theme {
+    border-color: var(--sky-blue) !important;
+    background: rgba(14, 165, 233, 0.05) !important;
+}
+
+.countdown-box.blue-theme .next-event-tag {
+    background: var(--sky-blue) !important;
+    color: #fff !important;
+}
+
+.countdown-box.blue-theme .countdown-title,
+.countdown-box.blue-theme .digit {
+    color: var(--sky-blue) !important;
+}
+
 /* Premium Glass Buttons */
 .btn-glass {
     position: relative;
@@ -1627,6 +1699,24 @@ footer {
     background: radial-gradient(circle at center, #102a4a 0%, #050b14 100%);
     position: relative;
     overflow: hidden;
+}
+
+.section-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.section-video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    filter: saturate(1.5) brightness(1.2);
 }
 
 .bg-blue-premium::before {
