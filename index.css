@@ -1143,6 +1143,19 @@ footer {
     background: rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) {
+
+    .hero,
+    .section-video-container {
+        background: url('/hero-bg.png') center/cover no-repeat !important;
+    }
+
+    .hero-video,
+    .section-video-bg {
+        display: none !important;
+    }
+}
+
 .hero::before {
     content: '';
     position: absolute;
