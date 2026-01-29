@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faith Nexus 2026 | Roots. Revelation. Renaissance.</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <link rel='stylesheet' href='/index.css'>
     <!-- Meta Pixel Code -->
     <script>
@@ -25,9 +28,11 @@
         fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
-        <link rel="preload" href="/index.css" as="style">
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
+    <link rel="preload" href="/index.css" as="style">
+    <link rel="preload" href="/hero-bg.png" as="image" fetchpriority="high">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;800&family=Playfair+Display:wght@700&display=swap"
+        as="style">
 </head>
 
 <body>
@@ -36,7 +41,7 @@
             src="https://www.facebook.com/tr?id=YOUR-PIXEL-ID-HERE&ev=PageView&noscript=1" /></noscript>
 
     <header class="hero">
-        <video autoplay muted loop playsinline poster="/hero-bg.png" class="hero-video">
+        <video autoplay muted loop playsinline poster="/hero-bg.png" class="hero-video" preload="none">
             <source src="/Smooth_slow_dynamic_202601202113_lwh96.mp4" type="video/mp4">
         </video>
         <div class="container container-hero">
@@ -115,20 +120,32 @@
             <div class="partners-marquee-container">
                 <div class="partners-marquee-track">
                     <!-- Original Set -->
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png" alt="Integro"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png" alt="OnixOne"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png" alt="Integro"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png" alt="OnixOne"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png"
+                            alt="Integro"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png"
+                            alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png"
+                            alt="ProLense AI Studio"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png"
+                            alt="Integro"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png"
+                            alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png"
+                            alt="ProLense AI Studio"></div>
 
                     <!-- Duplicate for infinite loop -->
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png" alt="Integro"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png" alt="OnixOne"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png" alt="Integro"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png" alt="OnixOne"></div>
-                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png" alt="ProLense AI Studio"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png"
+                            alt="Integro"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png"
+                            alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png"
+                            alt="ProLense AI Studio"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-3.png"
+                            alt="Integro"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-4.png"
+                            alt="OnixOne"></div>
+                    <div class="partner-card-premium"><img loading="lazy" decoding="async" src="/partners/partner-5.png"
+                            alt="ProLense AI Studio"></div>
                 </div>
             </div>
 
@@ -149,7 +166,8 @@
 
             <div class="grid why-equip-grid">
                 <div class="why-card reveal">
-                    <img loading="lazy" decoding="async" src="/grow-sustain-v2.png" alt="Grow & Sustain" class="why-card-image">
+                    <img loading="lazy" decoding="async" src="/grow-sustain-v2.png" alt="Grow & Sustain"
+                        class="why-card-image" width="800" height="600">
                     <div class="why-card-overlay"></div>
                     <div class="why-card-content">
                         <h3>Grow & Sustain</h3>
@@ -158,7 +176,8 @@
                     </div>
                 </div>
                 <div class="why-card reveal">
-                    <img loading="lazy" decoding="async" src="/kingdom-funding.png" alt="Kingdom Funding" class="why-card-image">
+                    <img loading="lazy" decoding="async" src="/kingdom-funding.png" alt="Kingdom Funding"
+                        class="why-card-image" width="800" height="600">
                     <div class="why-card-overlay"></div>
                     <div class="why-card-content">
                         <h3>Kingdom Funding</h3>
@@ -167,7 +186,8 @@
                     </div>
                 </div>
                 <div class="why-card reveal">
-                    <img loading="lazy" decoding="async" src="/network-partner.png" alt="Network & Partner" class="why-card-image">
+                    <img loading="lazy" decoding="async" src="/network-partner.png" alt="Network & Partner"
+                        class="why-card-image" width="800" height="600">
                     <div class="why-card-overlay"></div>
                     <div class="why-card-content">
                         <h3>Network & Partner</h3>
@@ -176,7 +196,8 @@
                     </div>
                 </div>
                 <div class="why-card reveal">
-                    <img loading="lazy" decoding="async" src="/practical-systems.png" alt="Practical Systems" class="why-card-image">
+                    <img loading="lazy" decoding="async" src="/practical-systems.png" alt="Practical Systems"
+                        class="why-card-image" width="800" height="600">
                     <div class="why-card-overlay"></div>
                     <div class="why-card-content">
                         <h3>Practical Systems</h3>
@@ -426,7 +447,8 @@
         </div>
     </section>
 
-    <script type="module" src="/main.js"></script>
+    <script src="/optimize-video.js"></script>
+    <script type="module" src="/main.js" defer></script>
 </body>
 
 </html>
