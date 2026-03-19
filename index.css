@@ -1187,11 +1187,11 @@ footer {
     background: url('/hand-hologram-bg.png') center/cover no-repeat;
     border: 1px solid rgba(255, 123, 0, 0.2);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 123, 0, 0.2);
-    padding: 80px 40px;
+    padding: 220px 20px 50px 20px;
     min-height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     overflow: hidden;
@@ -1226,11 +1226,15 @@ footer {
 }
 
 .hero-bright .primary-focus .next-event-tag {
+    position: relative;
+    top: auto;
+    left: auto;
     background: #ff7b00;
     color: #000;
     box-shadow: 0 0 20px #ff7b00;
-    align-self: flex-start;
-    margin-bottom: auto;
+    align-self: center;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .hero-bright .countdown-title {
@@ -1258,14 +1262,14 @@ footer {
 
 .hero-bright .primary-focus .countdown-graphic-container {
     filter: drop-shadow(0 0 15px rgba(255, 123, 0, 0.8));
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .hero-bright .primary-focus .timer-digits {
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 260px;
-    margin: 0 auto;
+    max-width: 280px;
+    margin: 15px auto 0 auto;
     gap: 10px 40px;
 }
 
@@ -1279,8 +1283,8 @@ footer {
 .hero-bright .primary-focus .digit {
     color: #fff;
     font-weight: 500;
-    font-size: 5rem;
-    line-height: 1;
+    font-size: 4.5rem;
+    line-height: 1.1;
     text-shadow: 0 0 10px #ff7b00, 0 0 20px #ff7b00, 0 0 40px #ff7b00, 0 0 80px #ff7b00;
 }
 
@@ -1297,8 +1301,10 @@ footer {
 .hero-bright .primary-focus p {
     color: #fff !important;
     text-shadow: 0 0 8px #ff7b00;
-    font-weight: 500;
-    margin-top: auto;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-top: 25px;
+    margin-bottom: 0;
 }
 
 .hero-bright .secondary-focus p {
