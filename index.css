@@ -1184,10 +1184,31 @@ footer {
 }
 
 .hero-bright .countdown-box.primary-focus {
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.5);
-    padding: 40px;
+    background: url('/hand-hologram-bg.png') center/cover no-repeat;
+    border: 1px solid rgba(255, 123, 0, 0.2);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 123, 0, 0.2);
+    padding: 120px 40px 160px 40px;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bright .countdown-box.primary-focus::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle at center, rgba(255,123,0,0.05) 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-bright .countdown-box.primary-focus > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-bright .countdown-box.secondary-focus {
@@ -1202,6 +1223,14 @@ footer {
     color: #0F172A;
     box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
     font-weight: 800;
+}
+
+.hero-bright .primary-focus .next-event-tag {
+    background: #ff7b00;
+    color: #000;
+    box-shadow: 0 0 20px #ff7b00;
+    align-self: flex-start;
+    margin-bottom: auto;
 }
 
 .hero-bright .countdown-title {
@@ -1227,6 +1256,11 @@ footer {
     font-weight: 800;
 }
 
+.hero-bright .primary-focus .countdown-graphic-container {
+    filter: drop-shadow(0 0 15px rgba(255, 123, 0, 0.8));
+    margin-top: 20px;
+}
+
 .hero-bright .digit {
     color: #0F172A;
     text-shadow: none;
@@ -1235,9 +1269,10 @@ footer {
 }
 
 .hero-bright .primary-focus .digit {
-    color: var(--primary-gold);
-    font-weight: 400;
-    font-size: 4.5rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 5.5rem;
+    text-shadow: 0 0 10px #ff7b00, 0 0 20px #ff7b00, 0 0 40px #ff7b00, 0 0 80px #ff7b00;
 }
 
 .hero-bright .digit-label {
@@ -1245,7 +1280,18 @@ footer {
     font-weight: 700;
 }
 
-.hero-bright .primary-focus p,
+.hero-bright .primary-focus .digit-label {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 8px #ff7b00;
+}
+
+.hero-bright .primary-focus p {
+    color: #fff !important;
+    text-shadow: 0 0 8px #ff7b00;
+    font-weight: 500;
+    margin-top: auto;
+}
+
 .hero-bright .secondary-focus p {
     color: #475569 !important;
     font-weight: 500;
