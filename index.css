@@ -1209,6 +1209,19 @@ footer {
     letter-spacing: 2px;
 }
 
+.hero-bright .countdown-graphic-container {
+    margin-bottom: 25px;
+    line-height: 0;
+    text-align: center;
+}
+
+.hero-bright .countdown-graphic {
+    max-height: 100px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
 .hero-bright .primary-focus .countdown-title {
     color: #0F172A;
     font-weight: 800;
