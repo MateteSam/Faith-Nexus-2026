@@ -1172,13 +1172,70 @@ footer {
     color: #334155;
 }
 
+.hero-bright .countdown-container {
+    gap: 40px;
+}
+
 .hero-bright .countdown-box {
-    background: rgba(15, 23, 42, 0.85);
-    color: #fff;
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+    border-radius: 20px;
+    color: #1E293B;
+}
+
+.hero-bright .countdown-box.primary-focus {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.5);
+    padding: 40px;
+}
+
+.hero-bright .countdown-box.secondary-focus {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.hero-bright .next-event-tag {
+    background: var(--primary-gold);
+    color: #0F172A;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+    font-weight: 800;
+}
+
+.hero-bright .countdown-title {
+    color: #0F172A;
+    letter-spacing: 2px;
+}
+
+.hero-bright .primary-focus .countdown-title {
+    color: #0F172A;
+    font-weight: 800;
 }
 
 .hero-bright .digit {
-    color: #fff;
+    color: #0F172A;
+    text-shadow: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+}
+
+.hero-bright .primary-focus .digit {
+    color: var(--primary-gold);
+    font-weight: 400;
+    font-size: 4.5rem;
+}
+
+.hero-bright .digit-label {
+    color: #64748B;
+    font-weight: 700;
+}
+
+.hero-bright .primary-focus p,
+.hero-bright .secondary-focus p {
+    color: #475569 !important;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
