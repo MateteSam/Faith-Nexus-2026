@@ -1140,14 +1140,52 @@ footer {
     padding-top: 160px;
     padding-bottom: 80px;
     overflow: hidden;
-    background: rgba(15, 23, 42, 0.3);
+    background: #0F172A;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/hero-bg-bright.png') center/cover no-repeat;
+    z-index: 0;
+}
+
+.hero-bright {
+    background: #F8F6F0;
+}
+
+.hero-bright .hero-title {
+    color: #0F172A;
+    text-shadow: none;
+}
+
+.hero-bright .hero-subtitle {
+    color: var(--primary-gold);
+    border-color: rgba(197, 160, 89, 0.4);
+    background: rgba(197, 160, 89, 0.1);
+}
+
+.hero-bright .hero-description {
+    color: #334155;
+}
+
+.hero-bright .countdown-box {
+    background: rgba(15, 23, 42, 0.85);
+    color: #fff;
+}
+
+.hero-bright .digit {
+    color: #fff;
 }
 
 @media (max-width: 768px) {
 
     .hero,
     .section-video-container {
-        background: url('/hero-bg.png') center/cover no-repeat, #0F172A !important;
+        background: url('/hero-bg-bright.png') center/cover no-repeat, #F8F6F0 !important;
     }
 
     .hero-video,
@@ -1164,9 +1202,9 @@ footer {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom,
-            rgba(15, 23, 42, 0.3) 0%,
-            rgba(15, 23, 42, 0.5) 50%,
-            rgba(15, 23, 42, 0.75) 100%);
+            rgba(248, 246, 240, 0.1) 0%,
+            rgba(248, 246, 240, 0.3) 50%,
+            rgba(248, 246, 240, 0.5) 100%);
     z-index: 0;
     pointer-events: none;
 }
