@@ -1187,11 +1187,11 @@ footer {
     background: url('/hand-hologram-bg.png') center/cover no-repeat;
     border: 1px solid rgba(255, 123, 0, 0.2);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 123, 0, 0.2);
-    padding: 120px 40px 160px 40px;
-    min-height: 700px;
+    padding: 80px 40px;
+    min-height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
@@ -1261,6 +1261,14 @@ footer {
     margin-top: 20px;
 }
 
+.hero-bright .primary-focus .timer-digits {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 260px;
+    margin: 0 auto;
+    gap: 10px 40px;
+}
+
 .hero-bright .digit {
     color: #0F172A;
     text-shadow: none;
@@ -1271,7 +1279,8 @@ footer {
 .hero-bright .primary-focus .digit {
     color: #fff;
     font-weight: 500;
-    font-size: 5.5rem;
+    font-size: 5rem;
+    line-height: 1;
     text-shadow: 0 0 10px #ff7b00, 0 0 20px #ff7b00, 0 0 40px #ff7b00, 0 0 80px #ff7b00;
 }
 
