@@ -1,16 +1,16 @@
 :root {
-    --primary-gold: #C5A059;
-    --accent-gold: #E5C78B;
-    --sky-blue: #0ea5e9;
-    --sky-blue-glow: rgba(14, 165, 233, 0.4);
-    --gold-glow: rgba(197, 160, 89, 0.4);
-    --bg-dark: #0F172A;
-    --bg-card: #1E293B;
-    --footer-bg: #0B1120;
+    --primary-gold: #ff7b00;
+    --accent-gold: #ffaa44;
+    --sky-blue: #ff7b00;
+    --sky-blue-glow: rgba(255, 123, 0, 0.4);
+    --gold-glow: rgba(255, 123, 0, 0.4);
+    --bg-dark: #0A0E17;
+    --bg-card: #111827;
+    --footer-bg: #060A12;
     --text-primary: #F1F5F9;
     --text-secondary: #94A3B8;
-    --nav-bg: rgba(15, 23, 42, 0.85);
-    --border-color: rgba(197, 160, 89, 0.25);
+    --nav-bg: rgba(10, 14, 23, 0.92);
+    --border-color: rgba(255, 123, 0, 0.2);
     --transition: all 0.3s ease;
 }
 
@@ -330,6 +330,12 @@ h4,
     overflow: hidden;
     border: 1px solid var(--border-color);
     margin-bottom: 60px;
+    transition: var(--transition);
+}
+
+.moment-card:hover {
+    border-color: rgba(255, 123, 0, 0.4);
+    box-shadow: 0 20px 50px rgba(255, 123, 0, 0.1);
 }
 
 .moment-card.reverse {
@@ -842,8 +848,8 @@ h4,
 .audience-icon-box {
     width: 60px;
     height: 60px;
-    background: rgba(197, 160, 89, 0.1);
-    border: 1px solid rgba(197, 160, 89, 0.2);
+    background: rgba(255, 123, 0, 0.08);
+    border: 1px solid rgba(255, 123, 0, 0.25);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -913,14 +919,16 @@ section {
 }
 
 .btn-primary {
-    background-color: var(--primary-gold);
+    background: linear-gradient(135deg, #ff7b00, #ffaa44);
     color: #000;
-    border: 1px solid var(--primary-gold);
+    border: 1px solid #ff7b00;
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-gold);
+    background: linear-gradient(135deg, #ffaa44, #ff7b00);
     transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 123, 0, 0.5);
 }
 
 .btn-outline {
@@ -1149,17 +1157,17 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/hero-bg-bright.png') center/cover no-repeat;
+    background: radial-gradient(ellipse at center, rgba(255, 123, 0, 0.05) 0%, transparent 70%);
     z-index: 0;
 }
 
 .hero-bright {
-    background: transparent;
+    background: #0A0E17;
 }
 
 .hero-bright .hero-title {
-    color: #0F172A;
-    text-shadow: none;
+    color: #fff;
+    text-shadow: 0 0 30px rgba(255,123,0,0.3);
 }
 
 .hero-bright .hero-subtitle {
@@ -1169,12 +1177,13 @@ footer {
 }
 
 .hero-bright .hero-description {
-    color: #334155;
+    color: #CBD5E1;
     text-shadow: none;
 }
 
 .hero-bright .countdown-container {
     gap: 40px;
+    justify-content: center;
 }
 
 .hero-bright .countdown-box {
@@ -1185,14 +1194,15 @@ footer {
 }
 
 .hero-bright .countdown-box.primary-focus {
-    background: url('/hand-hologram-bg.png') center/cover no-repeat;
+    background: url('/hand-hologram-landscape.png') center/cover no-repeat;
     border: 1px solid rgba(255, 123, 0, 0.2);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 123, 0, 0.2);
-    padding: 220px 20px 50px 20px;
-    min-height: 800px;
+    padding: 60px 40px;
+    min-height: 450px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
@@ -1267,11 +1277,11 @@ footer {
 }
 
 .hero-bright .primary-focus .timer-digits {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    max-width: 280px;
+    max-width: 600px;
     margin: 15px auto 0 auto;
-    gap: 10px 40px;
+    gap: 30px;
 }
 
 .hero-bright .digit {
@@ -1313,7 +1323,31 @@ footer {
     font-weight: 500;
 }
 
+/* Mobile: Portrait phone holographic countdown */
+@media (max-width: 768px) {
+    .hero-bright .countdown-box.primary-focus {
+        background: url('/hand-hologram-bg.png') center/cover no-repeat;
+        min-height: 700px;
+        max-width: 100%;
+        padding: 180px 20px 60px 20px;
+        justify-content: flex-start;
+    }
 
+    .hero-bright .primary-focus .timer-digits {
+        flex-wrap: wrap;
+        max-width: 260px;
+        gap: 10px 40px;
+    }
+
+    .hero-bright .primary-focus .digit {
+        font-size: 4rem;
+    }
+
+    .hero-bright .countdown-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 .hero::before {
     content: '';
@@ -1606,7 +1640,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.8) 70%, rgba(15, 23, 42, 0.95) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(10, 14, 23, 0.8) 70%, rgba(10, 14, 23, 0.95) 100%);
     z-index: 1;
 }
 
@@ -1647,9 +1681,10 @@ footer {
 }
 
 .why-card:hover {
-    background: rgba(197, 160, 89, 0.05);
-    border-color: rgba(197, 160, 89, 0.2);
+    background: rgba(255, 123, 0, 0.05);
+    border-color: rgba(255, 123, 0, 0.3);
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 123, 0, 0.1);
 }
 
 .why-card:hover::before {
@@ -1686,6 +1721,7 @@ footer {
     font-size: 3.5rem;
     color: var(--primary-gold);
     margin-bottom: 5px;
+    text-shadow: 0 0 20px rgba(255, 123, 0, 0.5);
 }
 
 .stat-item p {
@@ -2162,7 +2198,7 @@ footer {
    Premium Blue Backgrounds & Sections
    ========================================= */
 .bg-blue-premium {
-    background: radial-gradient(circle at center, #102a4a 0%, #050b14 100%);
+    background: radial-gradient(circle at center, #0f1729 0%, #060a12 100%);
     position: relative;
     overflow: hidden;
 }
