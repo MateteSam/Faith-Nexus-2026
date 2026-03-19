@@ -1154,7 +1154,7 @@ footer {
 }
 
 .hero-bright {
-    background: #F8F6F0;
+    background: transparent;
 }
 
 .hero-bright .hero-title {
@@ -1170,6 +1170,7 @@ footer {
 
 .hero-bright .hero-description {
     color: #334155;
+    text-shadow: none;
 }
 
 .hero-bright .countdown-container {
@@ -1312,18 +1313,7 @@ footer {
     font-weight: 500;
 }
 
-@media (max-width: 768px) {
 
-    .hero,
-    .section-video-container {
-        background: url('/hero-bg-bright.png') center/cover no-repeat, #F8F6F0 !important;
-    }
-
-    .hero-video,
-    .section-video-bg {
-        display: none !important;
-    }
-}
 
 .hero::before {
     content: '';
@@ -1348,9 +1338,19 @@ footer {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
+    z-index: -2;
     transform: translate(-50%, -50%);
     object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 .container-hero {
