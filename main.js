@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize Countdowns
-    startCountdown('virtual-timer', '2026-05-02T00:00:00');
+    startCountdown('virtual-timer', '2026-06-10T00:00:00');
     startCountdown('summit-timer', '2026-10-20T00:00:00');
 
     // Global Scroll Reveal
