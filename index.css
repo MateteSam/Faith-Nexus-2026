@@ -1336,21 +1336,45 @@ footer {
 /* Mobile: Portrait phone holographic countdown */
 @media (max-width: 768px) {
     .hero-bright .countdown-box.primary-focus {
-        background: url('/hand-hologram-bg.png') center/cover no-repeat;
-        min-height: 700px;
+        background: url('/hand-hologram-bg.png') center top / cover no-repeat;
+        min-height: 800px;
         max-width: 100%;
-        padding: 180px 20px 60px 20px;
+        padding: 240px 20px 50px 20px;
         justify-content: flex-start;
     }
 
+    .hero-bright .primary-focus .next-event-tag {
+        margin-bottom: 10px;
+    }
+
+    .hero-bright .primary-focus .countdown-graphic-container {
+        margin-bottom: 5px;
+    }
+
+    .hero-bright .countdown-graphic {
+        max-height: 70px;
+    }
+
     .hero-bright .primary-focus .timer-digits {
-        flex-wrap: wrap;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
         max-width: 260px;
-        gap: 10px 40px;
+        gap: 5px 30px;
+        flex-wrap: unset;
     }
 
     .hero-bright .primary-focus .digit {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        line-height: 1.1;
+    }
+
+    .hero-bright .primary-focus .digit-label {
+        font-size: 0.65rem;
+    }
+
+    .countdown-date-text {
+        font-size: 0.75rem;
+        margin-top: 12px;
     }
 
     .hero-bright .countdown-container {
