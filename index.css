@@ -1337,32 +1337,33 @@ footer {
 @media (max-width: 768px) {
     .hero-bright .countdown-box.primary-focus {
         background: url('/hand-hologram-bg.png') center top / cover no-repeat;
-        min-height: 800px;
+        min-height: 900px;
         max-width: 100%;
-        padding: 200px 15px 40px 15px;
+        padding: 240px 15px 80px 15px;
         justify-content: flex-start;
         border-radius: 16px;
     }
 
     .hero-bright .primary-focus .next-event-tag {
-        margin-bottom: 20px;
-        font-size: 0.85rem;
-        padding: 10px 28px;
+        margin-bottom: 40px;
+        font-size: 0.9rem;
+        padding: 12px 30px;
+        border-radius: 30px;
     }
 
     .hero-bright .primary-focus .countdown-graphic-container {
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
     .hero-bright .countdown-graphic {
-        max-height: 90px;
+        max-height: 110px;
     }
 
     .hero-bright .primary-focus .timer-digits {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
         max-width: 320px;
-        gap: 10px 50px;
+        gap: 60px 40px;
         flex-wrap: unset;
         margin: 0 auto;
     }
@@ -1372,19 +1373,22 @@ footer {
     }
 
     .hero-bright .primary-focus .digit {
-        font-size: 9rem;
+        font-size: 6.5rem !important;
         line-height: 1;
     }
 
     .hero-bright .primary-focus .digit-label {
-        font-size: 0.75rem;
-        letter-spacing: 3px;
-        margin-top: 2px;
+        font-size: 0.85rem;
+        letter-spacing: 4px;
+        margin-top: 10px;
+        display: block;
     }
 
     .countdown-date-text {
-        font-size: 0.85rem;
-        margin-top: 25px;
+        font-size: 0.9rem;
+        margin-top: 50px;
+        font-weight: 800;
+        letter-spacing: 1px;
     }
 
     .hero-bright .countdown-container {
