@@ -11,81 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --luxury-gold: linear-gradient(135deg, #c5a059 0%, #ecd69c 50%, #c5a059 100%);
-            --sovereign-black: #0B1120;
-            --primary-gold: #c5a059;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--sovereign-black);
-            color: #fff;
-        }
-
-        .hero-banner {
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: #0F172A;
-        }
-
-        .luxury-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            background: var(--luxury-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            z-index: 10;
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 100px auto;
-            padding: 0 20px;
-        }
-
-        .faq-item {
-            margin-bottom: 30px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(197, 160, 89, 0.1);
-            padding: 40px;
-            transition: 0.3s;
-        }
-
-        .faq-item:hover {
-            border-color: var(--primary-gold);
-            background: rgba(197, 160, 89, 0.05);
-        }
-
-        .faq-question {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary-gold);
-            margin-bottom: 15px;
-        }
-
-        .faq-answer {
-            opacity: 0.7;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    
         <link rel="preload" href="/index.css" as="style">
     <link rel="preload" href="/hero-bg.png" as="image">
     <link rel="preload" href="/logo.png" as="image">
@@ -138,3 +64,4 @@
 </body>
 
 </html>
+

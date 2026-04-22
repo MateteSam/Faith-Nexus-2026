@@ -11,121 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --luxury-gold: linear-gradient(135deg, #c5a059 0%, #ecd69c 50%, #c5a059 100%);
-            --sovereign-black: #050505;
-            --primary-gold: #c5a059;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--sovereign-black);
-            color: #fff;
-        }
-
-        .hero-banner {
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: #000;
-            overflow: hidden;
-        }
-
-        .hero-banner img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-            filter: contrast(1.1);
-        }
-
-        .hero-banner .content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-        }
-
-        .luxury-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            background: var(--luxury-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
-
-        /* Hospitality Cards */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(197, 160, 89, 0.1);
-            padding: 50px;
-            transition: 0.4s;
-        }
-
-        .info-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-5px);
-        }
-
-        .info-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary-gold);
-            margin-bottom: 25px;
-        }
-
-        .info-card p {
-            opacity: 0.7;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        .cta-box {
-            background: var(--luxury-gold);
-            color: #000;
-            padding: 80px;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Light Mode Specific Overrides */
-        [] .hero-banner {
-            background: #FDFCFB;
-        }
-
-        [] .hero-banner img {
-            opacity: 0.6;
-            filter: brightness(1.1);
-        }
-
-        [] .info-card {
-            background: #fff;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-        }
-
-        [] .cta-box {
-            background: #FDFCFB;
-            border-top: 1px solid rgba(197, 160, 89, 0.2);
-        }
-    </style>
+    
         <link rel="preload" href="/index.css" as="style">
     <link rel="preload" href="/hero-bg.png" as="image">
     <link rel="preload" href="/logo.png" as="image">
@@ -185,3 +71,4 @@
 </body>
 
 </html>
+

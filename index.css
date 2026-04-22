@@ -1,17 +1,21 @@
 :root {
     --primary-gold: #ff7b00;
     --accent-gold: #ffaa44;
-    --sky-blue: #ff7b00;
-    --sky-blue-glow: rgba(255, 123, 0, 0.4);
-    --gold-glow: rgba(255, 123, 0, 0.4);
-    --bg-dark: #0A0E17;
-    --bg-card: #111827;
-    --footer-bg: #060A12;
-    --text-primary: #F1F5F9;
-    --text-secondary: #94A3B8;
-    --nav-bg: rgba(10, 14, 23, 0.92);
-    --border-color: rgba(255, 123, 0, 0.2);
-    --transition: all 0.3s ease;
+    --sky-blue: #0ea5e9;
+    --sky-blue-glow: rgba(14, 165, 233, 0.3);
+    --gold-glow: rgba(255, 123, 0, 0.3);
+    
+    /* Brighter Mode Colors */
+    --bg-dark: #0A0A0A;
+    --bg-card: #151515;
+    --footer-bg: #050505;
+    --text-primary: #FDFDFD;
+    --text-secondary: #AAAAAA;
+    --nav-bg: rgba(10, 10, 10, 0.8);
+    --border-color: rgba(197, 160, 89, 0.2);
+    --navy-blue: #f8fafc;
+    --navy-blue-dark: #f1f5f9;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Powered By Branding */
@@ -46,6 +50,48 @@
 /* =========================================
    Hero Section Refined
    ========================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/vii_launch_v3_light_refraction_bg_1768777605320.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 1;
+}
+
+/* Very light overlay, keeping it bright, blending smoothly into dark at the very bottom */
+.hero-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.05) 60%, var(--bg-dark) 95%, var(--bg-dark) 100%);
+}
+
+.container-hero {
+    position: relative;
+    z-index: 10;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 120px 20px 60px;
+}
+
 .hero-title {
     font-size: clamp(2.5rem, 8vw, 5rem);
     margin-bottom: 15px;
@@ -108,11 +154,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 40px;
-    border-radius: 15px;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-decoration: none;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -164,7 +211,7 @@
 /* Variant: Ghost */
 .btn-glass-ghost {
     background: rgba(255, 255, 255, 0.05);
-    color: #fff;
+    color: var(--text-primary);
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -261,7 +308,7 @@ body {
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background: rgba(15, 15, 15, 0.95);
+    background: var(--nav-bg); color: var(--text-primary); border-bottom: 1px solid var(--border-color);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
     min-width: 240px;
@@ -961,7 +1008,7 @@ nav {
 
 nav.scrolled {
     padding: 15px 0;
-    background: var(--nav-bg);
+    background: var(--nav-bg); color: var(--text-primary); border-bottom: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
@@ -1166,7 +1213,7 @@ footer {
 }
 
 .hero-bright .hero-title {
-    color: #fff;
+    color: var(--text-primary);
     text-shadow: 0 0 30px rgba(255,123,0,0.3);
 }
 
@@ -1302,7 +1349,7 @@ footer {
 }
 
 .hero-bright .primary-focus .digit {
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 500;
     font-size: 4.5rem;
     line-height: 1.1;
@@ -1547,7 +1594,7 @@ footer {
 
 .primary-focus .countdown-title {
     font-size: 1rem;
-    color: #fff;
+    color: var(--text-primary);
     letter-spacing: 3px;
 }
 
@@ -1688,7 +1735,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(10, 14, 23, 0.8) 70%, rgba(10, 14, 23, 0.95) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.2) 70%, var(--bg-dark) 100%);
     z-index: 1;
 }
 
@@ -1819,7 +1866,7 @@ footer {
     background: #1E293B;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #fff;
+    color: var(--text-primary);
     font-family: inherit;
     transition: var(--transition);
 }
@@ -2245,11 +2292,7 @@ footer {
 /* =========================================
    Premium Blue Backgrounds & Sections
    ========================================= */
-.bg-blue-premium {
-    background: radial-gradient(circle at center, #0f1729 0%, #060a12 100%);
-    position: relative;
-    overflow: hidden;
-}
+.bg-blue-premium { background: var(--bg-dark); position: relative; overflow: hidden; }
 
 .section-video-container {
     position: absolute;
@@ -2269,17 +2312,7 @@ footer {
     filter: saturate(1.5) brightness(1.2);
 }
 
-.bg-blue-premium::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/vii_launch_v3_digital_fabric_bg_1768777621425.png') center/cover no-repeat;
-    opacity: 0.1;
-    pointer-events: none;
-}
+
 
 /* =========================================
    High-Fidelity Partners Section
@@ -2305,7 +2338,7 @@ footer {
 
 .partners-title {
     font-size: clamp(2rem, 5vw, 4rem);
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 30px;
     font-family: 'Playfair Display', serif;
 }
@@ -2458,5 +2491,307 @@ footer {
         transform: translateX(calc(-100% / 3));
         /* Shift by one set of logos */
     }
-}/ *   T r i g g e r   d e p l o y   0 3 / 2 0 / 2 0 2 6   0 2 : 1 5 : 4 6   * /  
- 
+}
+/* =========================================
+   Navy Hero Redesign Overrides
+   ========================================= */
+
+.hero-bg-navy {
+    background-image: url('/hero_bg_blue_gold.png') !important;
+    background-position: center center !important;
+    background-size: cover !important;
+}
+
+.hero-bg-navy::after {
+    background: linear-gradient(to bottom, transparent 0%, rgba(5, 8, 20, 0.1) 60%, rgba(5, 8, 20, 0.9) 95%, var(--navy-blue-dark)) !important;
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.hero-navy {
+    background-color: var(--navy-blue-dark) !important;
+}
+
+.hero-bg-navy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.02) 75%, rgba(255, 255, 255, 0.02)), 
+                      linear-gradient(135deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.02) 75%, rgba(255, 255, 255, 0.02));
+    background-size: 80px 80px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    text-align: left !important;
+    max-width: 1300px !important;
+}
+
+.hero-column-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 20;
+}
+
+.hero-column-right {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 15;
+}
+
+.orb-visual {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    animation: orb-float 8s ease-in-out infinite;
+    filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.8));
+    z-index: 5;
+    position: relative;
+}
+
+@keyframes orb-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.02); }
+}
+
+.floating-glass-card {
+    position: absolute !important;
+    bottom: -60px;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 450px;
+    background: rgba(10, 17, 40, 0.3) !important;
+    backdrop-filter: blur(25px) saturate(120%);
+    -webkit-backdrop-filter: blur(25px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    z-index: 20;
+}
+
+.metallic-silver-text {
+    background: linear-gradient(180deg, #FFFFFF 0%, #D0D0D0 40%, #808080 100%);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));
+    text-shadow: none !important;
+    font-size: clamp(3rem, 7vw, 6rem) !important;
+}
+
+.gold-gradient-text {
+    color: var(--primary-gold) !important;
+    text-shadow: 0 0 10px rgba(255, 123, 0, 0.2);
+    font-weight: 800;
+}
+
+.luxury-title {
+    color: #ffaa44 !important; /* Brighter gold replacing gradient */
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(255, 123, 0, 0.1);
+}
+
+.metallic-silver-text {
+    color: #f8fafc !important; /* Bright silver / white */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+    .hero-column-left {
+        align-items: center;
+    }
+    .hero-column-right {
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .floating-glass-card {
+        position: relative !important;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        margin: -40px auto 30px auto;
+        max-width: 100%;
+    }
+    .orb-visual {
+        max-width: 400px;
+    }
+}
+
+/* =========================================
+   User Feedback Overrides
+   ========================================= */
+
+/* Use the new navy colors for premium blue sections */
+.bg-blue-premium { background: var(--bg-dark); position: relative; overflow: hidden; }
+
+/* Remove diamond pattern as requested */
+.hero-bg-navy::before {
+    display: none !important;
+}
+
+/* Make countdown logo bigger */
+.countdown-graphic-container .countdown-graphic {
+    max-height: 120px !important;
+    max-width: 100% !important;
+    width: auto !important;
+}
+
+/* Button Redesign */
+.btn-glass {
+    border-radius: 100px !important; /* Pill shape for smoother, premium feel */
+    border: none !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
+    letter-spacing: 1px !important;
+    padding: 18px 45px !important;
+}
+.btn-glass::before {
+    display: none !important; /* Remove messy glass glare */
+}
+.shimmer {
+    opacity: 0.5 !important;
+}
+
+.btn-glass-primary {
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a) !important; /* Deep bright blue */
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.btn-glass-primary:hover {
+    box-shadow: 0 15px 35px rgba(29, 78, 216, 0.6) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+}
+
+.btn-glass-ghost {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #f1f5f9 !important;
+}
+.btn-glass-ghost:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #fff !important;
+}
+
+/* Change header font to Montserrat */
+h1.hero-title, .hero-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+}
+
+
+/* =========================================
+   Global Navy & Gold Redesign (Removing Pattern)
+   ========================================= */
+:root {
+    --bg-dark: #050814 !important;
+    --bg-card: #0A1128 !important;
+    --footer-bg: #03050c !important;
+    --nav-bg: rgba(5, 8, 20, 0.92) !important;
+    
+    /* Fixing the gold and blue semantic colors */
+    --primary-gold: #D4AF37 !important;
+    --accent-gold: #FDE68A !important;
+    --gold-glow: rgba(212, 175, 55, 0.4) !important;
+    
+    --sky-blue: #60a5fa !important;
+    --sky-blue-glow: rgba(96, 165, 250, 0.4) !important;
+}
+
+/* Apply deep navy background globally */
+body {
+    background: radial-gradient(circle at top center, #0A1128 0%, #050814 100%) !important;
+    background-attachment: fixed !important;
+}
+.bg-blue-premium { background: var(--bg-dark); position: relative; overflow: hidden; }
+
+/* Purge the patterned image from the hero, use pure rich CSS gradient */
+.hero-bg-navy {
+    background-image: radial-gradient(circle at top center, #0d1b3f 0%, #050814 100%) !important;
+    background-color: #050814 !important;
+}
+.hero-bg-navy::after, .hero-bg-image::after {
+    display: none !important;
+}
+
+
+/* =========================================
+   Magic View Transitions
+   ========================================= */
+::view-transition-old(root) {
+    animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+               0.4s cubic-bezier(0.4, 0, 0.2, 1) both slide-out-to-top;
+}
+
+::view-transition-new(root) {
+    animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both fade-in,
+               0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both slide-in-from-bottom;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slide-in-from-bottom {
+    from { transform: translateY(30px); filter: blur(10px); }
+    to { transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes slide-out-to-top {
+    from { transform: translateY(0); }
+    to { transform: translateY(-30px); filter: blur(10px); }
+}
+
+
+/* Force backgrounds of sections */
+.bg-blue-premium, .partners-elegant, .why-nexus, .audience-section, .stats-section, footer {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Fix generic card colors */
+.card, .why-card, .moment-card, .countdown-box {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.why-card-content p, .why-card-content h3 {
+    color: var(--text-primary) !important;
+}
+
+/* Ensure buttons pop */
+.btn-glass-primary {
+    color: #000 !important;
+}
+.btn-glass-ghost {
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+
+

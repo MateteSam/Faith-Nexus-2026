@@ -36,6 +36,7 @@ export function renderFooter() {
                         <li><a href="/hospitality.html">Travel & Hospitality</a></li>
                         <li><a href="/faq.html">FAQ</a></li>
                         <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/legal.html">Legal & Policies</a></li>
                     </ul>
                 </div>
             </div>
