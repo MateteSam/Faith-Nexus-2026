@@ -15,26 +15,38 @@ export function renderNavbar() {
 
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/creators.html">Creators</a>
-                <a href="/covenant.html">Covenant</a>
-                <a href="/exhibition.html">Exhibition</a>
-                <a href="/pitches.html">Pitches</a>
-                <a href="/partners.html">Partners</a>
-                <a href="/faithnexus100.html">FN100</a>
                 
                 <div class="nav-dropdown">
-                    <a href="#" class="dropdown-trigger">Summit Info <span class="caret">▾</span></a>
+                    <a href="#" class="dropdown-trigger">Vision <span class="caret">▾</span></a>
                     <div class="dropdown-content">
-                        <a href="/hospitality.html">Travel & Hospitality</a>
+                        <a href="/about.html">About</a>
+                        <a href="/covenant.html">Covenant</a>
+                        <a href="/faithnexus100.html">FN100</a>
+                        <a href="/partners.html">Partners</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-trigger">The Summit <span class="caret">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="/summit.html">Programme</a>
                         <a href="/speakers.html">Speakers</a>
-                        <a href="/media.html">Media & Resources</a>
+                        <a href="/hospitality.html">Travel & Hospitality</a>
                         <a href="/faq.html">FAQ</a>
                         <a href="/contact.html">Contact</a>
                     </div>
                 </div>
 
-                <a href="/summit.html">Programme</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-trigger">Opportunities <span class="caret">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="/creators.html">Creators</a>
+                        <a href="/exhibition.html">Exhibition</a>
+                        <a href="/pitches.html">Pitches</a>
+                        <a href="/media.html">Media & Resources</a>
+                    </div>
+                </div>
+
                 <a href="/virtual.html">Virtual Activation</a>
                 <a href="/registration.html" class="btn btn-primary" style="padding: 8px 16px; margin-left: 20px;">Tickets</a>
             </div>
