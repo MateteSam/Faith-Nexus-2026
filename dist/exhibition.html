@@ -1,259 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industry Exhibition | Faith Nexus 2026</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
-  <script type="module" crossorigin src="/assets/main-Bcl5jMcv.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Dn_ZbAm1.css">
+    <title>Industry Exhibition | Faith Nexus 2027</title>
+    <meta name="description" content="Where Faith, Media, Technology and Enterprise Meet. Showcase your organisation, technology, and products at Faith Nexus 2027.">
+    <link rel="icon" type="image/png" href="/fn-logo-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <style>
+        .exhib-reason-card {
+            background: #FFFFFF;
+            border: 1px solid var(--fn-border-subtle);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/main-Fcv_LdsE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DKJ9VGMK.css">
 </head>
+<body class="bg-cream">
 
-<body>
-    <div class="scroll-progress" id="progressBar"></div>
+    <!-- Dynamic Particle Backdrop Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
-    <main class="bg-blue-premium">
-        <!-- Luxury Exhibition Hero -->
-        <section class="exhibition-hero-luxury">
-            <img loading="lazy" decoding="async" src="/Tech_Innovators.png" class="hero-image-bg" alt="Industry Exhibition Framework">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content" style="z-index: 10; position: relative;">
-                <span class="subtitle-gold reveal">MARKETPLACE OF IMPACT</span>
-                <h1 class="luxury-title reveal">Faith Nexus <br>Industry Exhibition</h1>
-                <p class="reveal"
-                    style="max-width: 800px; line-height: 1.4; font-size: 2.5rem; font-weight: 200; font-family: 'Playfair Display', serif; font-style: italic; color: var(--primary-gold); margin-bottom: 30px;">
-                    Where faith, media & innovation meet.
+    <!-- TOP ANNOUNCEMENT STRIP -->
+    <div class="announcement-bar">
+        <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+        <a href="/virtual.html">Learn More</a>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="nav-brand" style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em; color: #111; text-transform: uppercase;">
+                FAITH NEXUS
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Programme</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="/exhibition.html" class="nav-link dropdown-trigger active">Experiences <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/exhibition.html">Industry Exhibition</a></li>
+                        <li><a href="/summit.html#workshops">Workshops & Masterclasses</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/faithnexus100.html" class="nav-link">FN100</a></li>
+
+                <li class="nav-dropdown">
+                    <a href="/registration.html" class="nav-link dropdown-trigger">Get Involved <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/registration.html">Attend</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">More <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/registration.html" class="btn-pdf-black">
+                        Register Interest
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="bg-dark-grid" style="padding: 120px 0 90px;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle gold">7. Industry Exhibition</span>
+            <h1 class="pdf-title-large" style="margin-bottom: 1.25rem;">
+                Where Faith, Media, Technology and Enterprise Meet
+            </h1>
+            <p style="font-size: 1.35rem; color: #EEEEEE; line-height: 1.5; margin-bottom: 2.5rem;">
+                The Faith Nexus Industry Exhibition connects delegates with the organisations, platforms and solutions shaping the future.
+            </p>
+            <div>
+                <a href="#enquiries" class="btn-pdf-cream">
+                    REQUEST EXHIBITOR INFORMATION &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO SHOULD EXHIBIT? -->
+    <section class="bg-cream" style="padding: 90px 0;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle forest">Target Organizations</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 1.5rem;">
+                Who Should Exhibit?
+            </h2>
+            <p style="font-size: 1.15rem; color: #333333; line-height: 1.7; margin-bottom: 1.5rem;">
+                The exhibition is ideal for:
+            </p>
+            <p style="font-size: 1.2rem; font-weight: 700; color: var(--fn-forest); line-height: 1.8; background: #FFFFFF; border: 1px solid var(--fn-border-subtle); padding: 2rem; border-radius: 12px;">
+                technology companies, broadcasters, production equipment brands, AI and software companies, publishers, universities, financial institutions, telecommunications companies, media platforms, Christian organisations and creative businesses.
+            </p>
+        </div>
+    </section>
+
+    <!-- WHY EXHIBIT? (5 CARDS) -->
+    <section class="bg-cream" style="padding: 20px 0 100px; border-top: 1px solid var(--fn-border-subtle);">
+        <div class="container">
+            <span class="pdf-subtitle rust">Exhibitor Value</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 2.5rem;">
+                Why Exhibit?
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+                
+                <div class="exhib-reason-card">
+                    <div>
+                        <span class="pdf-pillar-num">01</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Showcase Your Brand
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Build visibility among a cross-sector African audience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exhib-reason-card">
+                    <div>
+                        <span class="pdf-pillar-num">02</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Demonstrate Products
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Give delegates direct access to your technology, platforms or services.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exhib-reason-card">
+                    <div>
+                        <span class="pdf-pillar-num">03</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Generate Leads
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Meet potential customers, partners and institutional decision-makers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exhib-reason-card">
+                    <div>
+                        <span class="pdf-pillar-num">04</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Connect with Creators
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Engage media professionals and creators looking for tools, platforms and opportunities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exhib-reason-card">
+                    <div>
+                        <span class="pdf-pillar-num">05</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Build Relationships
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Connect with Christian organisations, businesses, educational institutions and leaders.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO WILL YOU MEET & ENQUIRIES -->
+    <section id="enquiries" class="bg-dark-grid" style="padding: 100px 0;">
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <span class="pdf-subtitle gold">Audience & Reach</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 1.5rem;">
+                Who Will You Meet?
+            </h2>
+            <p style="font-size: 1.25rem; color: #DDDDDD; line-height: 1.6; margin-bottom: 3rem;">
+                Faith Nexus expects approximately <strong>2,000 delegates</strong> spanning ministry, media, technology, enterprise, education, culture, public life and emerging leadership.
+            </p>
+
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 3rem;">
+                <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; color: var(--fn-gold);">
+                    Exhibitor Enquiries
+                </h3>
+                <p style="font-size: 1.1rem; color: #CCCCCC; margin-bottom: 1.5rem;">
+                    We will share exhibition packages and participation information with interested organisations.
                 </p>
-                <p class="reveal"
-                    style="max-width: 700px; line-height: 1.8; font-size: 1.25rem; font-weight: 300; opacity: 0.6; letter-spacing: 0.5px; margin-bottom: 50px;">
-                    The Industry Exhibition is the marketplace of Faith Nexus, a curated hub for ministries, media
-                    houses, tech companies, educational institutions, NGOs and creative enterprises.
-                </p>
-                <div class="reveal">
-                    <a href="#prospectus" class="btn-cinema">Download Exhibitor Prospectus</a>
-                    <a href="#apply" class="btn-outline-gold" style="margin-left: 20px;">Apply to Exhibit</a>
+                <div style="font-size: 1.2rem; font-weight: 800;">
+                    Email: <a href="mailto:exhibition@faithnexus.digital" style="color: #FFFFFF; text-decoration: underline;">exhibition@faithnexus.digital</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Why Exhibit -->
-        <section style="padding: 150px 0; background: #080808;">
-            <div class="container">
-                <header style="text-align: center; margin-bottom: 100px;">
-                    <span class="subtitle-gold reveal">Competitive Advantage</span>
-                    <h2 class="reveal"
-                        style="font-family: 'Playfair Display', serif; font-size: 5rem; letter-spacing: -2px;">Why
-                        Exhibit?</h2>
-                </header>
+    <!-- FOOTER (PDF Page 35 Format) -->
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="pdf-footer-grid">
+                <div class="footer-col-brand">
+                    <h3 class="footer-brand-title">FAITH NEXUS</h3>
+                    <p class="footer-tagline">Kingdom Voices. Global Reach.</p>
+                    <p class="footer-subtext">
+                        Africa’s convergence platform for Faith, Media, Technology, Leadership and Culture.
+                    </p>
+                    <p class="footer-event-date">
+                        14–16 April 2027 &middot; Johannesburg, South Africa
+                    </p>
+                </div>
 
-                <div class="why-exhibit-grid">
-                    <div class="benefit-card reveal">
-                        <span class="benefit-icon">01</span>
-                        <h3 class="card-title">Showcase Platforms</h3>
-                        <p class="card-text">Showcase your platforms, products, tools and services to a targeted
-                            high-impact audience.</p>
-                    </div>
-                    <div class="benefit-card reveal">
-                        <span class="benefit-icon">02</span>
-                        <h3 class="card-title">Direct Engagement</h3>
-                        <p class="card-text">Engage directly with pastors, creators, educators and decision-makers from
-                            across the continent.</p>
-                    </div>
-                    <div class="benefit-card reveal">
-                        <span class="benefit-icon">03</span>
-                        <h3 class="card-title">Launch Initiatives</h3>
-                        <p class="card-text">Launch new initiatives in front of a pan-African and global audience of
-                            kingdom-minded leaders.</p>
-                    </div>
-                    <div class="benefit-card reveal">
-                        <span class="benefit-icon">04</span>
-                        <h3 class="card-title">Build Partnerships</h3>
-                        <p class="card-text">Build strategic partnerships, recruit collaborators and customers for
-                            long-term kingdom impact.</p>
-                    </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/summit.html">Programme</a></li>
+                        <li><a href="/covenant.html">Experiences</a></li>
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/faithnexus100.html">FN100</a></li>
+                        <li><a href="/about.html#leadership">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration.html">Register</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Who Should Exhibit -->
-        <section style="padding: 150px 0; background: #000;">
-            <div class="container">
-                <header style="margin-bottom: 80px;">
-                    <span class="subtitle-gold reveal">The Ecosystem</span>
-                    <h2 class="reveal"
-                        style="font-family: 'Playfair Display', serif; font-size: 5rem; letter-spacing: -2px;">Who
-                        Should Exhibit?</h2>
-                </header>
-
-                <div class="industry-grid">
-                    <div class="industry-tag reveal">Christian TV, radio & digital networks</div>
-                    <div class="industry-tag reveal">Streaming platforms & content aggregators</div>
-                    <div class="industry-tag reveal">Publishers, book distributors & edtech</div>
-                    <div class="industry-tag reveal">Church tech suppliers & production houses</div>
-                    <div class="industry-tag reveal">Seminaries, universities & faith-based schools</div>
-                    <div class="industry-tag reveal">NGOs, missions & advocacy organisations</div>
-                    <div class="industry-tag reveal">Creative brands & merch platforms</div>
-                    <div class="industry-tag reveal">Tech startups & innovation labs</div>
+            <div class="pdf-footer-bottom">
+                <div class="footer-convened">
+                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                </div>
+                <div class="footer-socials">
+                    <a href="#">LinkedIn</a> &middot; 
+                    <a href="#">Instagram</a> &middot; 
+                    <a href="#">YouTube</a> &middot; 
+                    <a href="#">Facebook</a>
+                </div>
+                <div class="footer-legal">
+                    <span>&copy; 2027 Faith Nexus</span> &middot; 
+                    <a href="/legal.html">Privacy</a> &middot; 
+                    <a href="/legal.html">Terms</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </footer>
 
-        <!-- Hubs: Lounge & Studio -->
-        <section class="hub-section" style="background: linear-gradient(to bottom, #000, #0a0a0a);">
-            <div class="container">
-                <header style="text-align: center; margin-bottom: 120px;">
-                    <span class="subtitle-gold reveal">Creator-Centric Spaces</span>
-                    <h2 class="reveal"
-                        style="font-family: 'Playfair Display', serif; font-size: 5rem; letter-spacing: -2px;">Nexus
-                        Lounge & Studio</h2>
-                </header>
-
-                <div class="hub-content-luxury">
-                    <div class="reveal">
-                        <div class="luxury-frame" style="transform: rotate(-1deg);">
-                            <img loading="lazy" decoding="async" src="/creators_lounge_photo_1768262360942.png" alt="Nexus Creators Lounge">
-                        </div>
-                    </div>
-                    <div class="reveal">
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary-gold); margin-bottom: 30px;">
-                            Nexus Creators Lounge</h3>
-                        <p
-                            style="font-size: 1.4rem; font-weight: 300; opacity: 0.8; line-height: 1.6; margin-bottom: 40px;">
-                            The definitive space for networking, collaboration corners, and exclusive mentor office
-                            hours. Connect with industry leaders in an environment designed for breakthroughs.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="hub-content-luxury" style="margin-top: 150px; direction: rtl;">
-                    <div class="reveal" style="direction: ltr;">
-                        <div class="luxury-frame" style="transform: rotate(1deg);">
-                            <img loading="lazy" decoding="async" src="/studio_booth_photo_1768262376297.png" alt="Nexus Studio Booth">
-                        </div>
-                    </div>
-                    <div class="reveal" style="direction: ltr;">
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary-gold); margin-bottom: 30px;">
-                            Nexus Studio Booth</h3>
-                        <p
-                            style="font-size: 1.4rem; font-weight: 300; opacity: 0.8; line-height: 1.6; margin-bottom: 40px;">
-                            State-of-the-art facility for recording short-form content, conducting professional
-                            interviews, and capturing high-fidelity features for global distribution.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="hub-content-luxury" style="margin-top: 150px;">
-                    <div class="reveal">
-                        <div class="luxury-frame" style="transform: rotate(-1deg);">
-                            <img loading="lazy" decoding="async" src="/market_tables_photo_1768262391751.png" alt="Creators Market Tables">
-                        </div>
-                    </div>
-                    <div class="reveal">
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary-gold); margin-bottom: 30px;">
-                            Creators Market Tables</h3>
-                        <p
-                            style="font-size: 1.4rem; font-weight: 300; opacity: 0.8; line-height: 1.6; margin-bottom: 40px;">
-                            Tailored micro-booths for independent creators to showcase their portfolios, engage with the
-                            community, and sell their creative works.
-                        </p>
-                        <a href="#market" class="btn-outline-gold">Apply for Market Table</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ecosystem Partners -->
-        <section style="padding: 150px 0; background: #000; position: relative;">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: start;">
-                    <div class="reveal">
-                        <span class="subtitle-gold">Global Bridge</span>
-                        <h2
-                            style="font-family: 'Playfair Display', serif; font-size: 5rem; letter-spacing: -2px; margin-bottom: 40px;">
-                            Platform & <br>Ecosystem Partners</h2>
-                        <p
-                            style="font-size: 1.3rem; font-weight: 300; opacity: 0.7; line-height: 1.8; margin-bottom: 40px;">
-                            Faith Nexus is building a bridge between Christian creators and the wider digital content
-                            ecosystem. We actively seek collaboration with streaming platforms, tech companies, and
-                            innovation labs.
-                        </p>
-                        <div style="margin-top: 50px;">
-                            <a href="#partner" class="btn-cinema">Become a Platform Partner</a>
-                        </div>
-                    </div>
-
-                    <div class="reveal">
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary-gold); margin-bottom: 40px;">
-                            Together, we want to:</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li
-                                style="font-size: 1.2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 20px;">
-                                <span style="color: var(--primary-gold); font-size: 1.5rem;">✦</span> Host
-                                platform-facing dialogues for faith creators
-                            </li>
-                            <li
-                                style="font-size: 1.2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 20px;">
-                                <span style="color: var(--primary-gold); font-size: 1.5rem;">✦</span> Offer follow-on
-                                mentorship for Nexus Pitch winners
-                            </li>
-                            <li
-                                style="font-size: 1.2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 20px;">
-                                <span style="color: var(--primary-gold); font-size: 1.5rem;">✦</span> Pilot a Kingdom
-                                Content Incubator after Faith Nexus 2026
-                            </li>
-                        </ul>
-                        <div
-                            style="margin-top: 60px; padding: 40px; background: rgba(197, 160, 89, 0.05); border: 1px solid rgba(197, 160, 89, 0.2);">
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px;">
-                                Incubator & Investment</h4>
-                            <p style="opacity: 0.7; margin-bottom: 30px;">Seeking Christian VCs, philanthropic
-                                foundations & business incubators to join the movement.</p>
-                            <a href="#invest" class="btn-outline-gold"
-                                style="padding: 15px 30px; font-size: 0.9rem;">Discuss Partnerships</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section
-            style="padding: 200px 0; text-align: center; background: #050505; border-top: 1px solid rgba(197, 160, 89, 0.1);">
-            <div class="container reveal">
-                <span class="subtitle-gold" style="margin-bottom: 20px;">Final Call to Exhibit</span>
-                <h2
-                    style="font-family: 'Playfair Display', serif; font-size: 6rem; margin-bottom: 80px; letter-spacing: -2px;">
-                    Secure Your Space</h2>
-                <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;">
-                    <a href="#" class="btn-cinema">Apply to Exhibit</a>
-                    <a href="#" class="btn-outline-gold">Download Exhibitor Prospectus</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Cinematic Scroll Progress
-        window.onscroll = function () {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
-        };
-    </script>
+    <!-- Main JS -->
 </body>
-
 </html>
-

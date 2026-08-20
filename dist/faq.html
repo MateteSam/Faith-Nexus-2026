@@ -1,66 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | Faith Nexus 2026</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
-  <script type="module" crossorigin src="/assets/main-Bcl5jMcv.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Dn_ZbAm1.css">
+    <title>FAQ | Faith Nexus 2027</title>
+    <meta name="description" content="Frequently Asked Questions about Faith Nexus 2027 in Johannesburg, South Africa.">
+    <link rel="icon" type="image/png" href="/fn-logo-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <style>
+        .faq-accordion-item {
+            background: #FFFFFF;
+            border: 1px solid var(--fn-border-subtle);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            padding: 1.5rem 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .faq-accordion-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+        .faq-q {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #111111;
+            margin-bottom: 0.5rem;
+        }
+        .faq-a {
+            font-size: 1rem;
+            color: #555555;
+            line-height: 1.6;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/main-Fcv_LdsE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DKJ9VGMK.css">
 </head>
+<body class="bg-cream">
 
-<body>
-    <main class="bg-blue-premium">
-        <section class="hero-banner">
-            <h1 class="luxury-title">Frequently Asked Questions</h1>
-        </section>
+    <!-- Dynamic Particle Backdrop Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
-        <section class="faq-container">
-            <div class="faq-item reveal">
-                <h3 class="faq-question">Who should attend Faith Nexus 2026?</h3>
-                <p class="faq-answer">Faith Nexus is designed for pastors, media professionals, digital creators,
-                    technologists, and ministry leaders who are passionate about shaping culture through Kingdom-centric
-                    content and innovation.</p>
+    <!-- TOP ANNOUNCEMENT STRIP -->
+    <div class="announcement-bar">
+        <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+        <a href="/virtual.html">Learn More</a>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="nav-brand" style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em; color: #111; text-transform: uppercase;">
+                FAITH NEXUS
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Programme</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="/covenant.html" class="nav-link dropdown-trigger">Experiences <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/exhibition.html">Industry Exhibition</a></li>
+                        <li><a href="/summit.html#workshops">Workshops & Masterclasses</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/faithnexus100.html" class="nav-link">FN100</a></li>
+
+                <li class="nav-dropdown">
+                    <a href="/registration.html" class="nav-link dropdown-trigger">Get Involved <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/registration.html">Attend</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">More <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html" class="active">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/registration.html" class="btn-pdf-black">
+                        Register Interest
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER SECTION -->
+    <section class="bg-cream" style="padding: 90px 0 40px;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle rust">Information & Support</span>
+            <h1 class="pdf-title-large" style="color: #111111; margin-bottom: 1rem;">
+                Frequently Asked Questions
+            </h1>
+            <p style="font-size: 1.25rem; color: #555555;">
+                Everything you need to know about Faith Nexus 2027, the Soft Launch, venue, themes, and participation.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ LIST SECTION -->
+    <section class="bg-cream" style="padding: 20px 0 100px;">
+        <div class="container" style="max-width: 900px;">
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">When is Faith Nexus 2027?</div>
+                <div class="faq-a">Faith Nexus 2027 takes place from <strong>14–16 April 2027</strong>.</div>
             </div>
-            <div class="faq-item reveal">
-                <h3 class="faq-question">What is the difference between Plenary and Full Access?</h3>
-                <p class="faq-answer">Plenary Access provides entry to all main sessions and the exhibition. Full Access
-                    (Premium) includes everything in Plenary plus priority booking for Creator Masterclasses and the
-                    Nexus Studio, and preferential access to the FN100 Gala.</p>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">Where is Faith Nexus 2027?</div>
+                <div class="faq-a">Royal Majestic Hotel, Rosebank, Johannesburg, South Africa.</div>
             </div>
-            <div class="faq-item reveal">
-                <h3 class="faq-question">How does the Global Virtual Activation work?</h3>
-                <p class="faq-answer">The Virtual Activation on 10th June 2026 is a free global digital broadcast.
-                    Registration will open separately, providing access to curated sessions and TalkWorld digital
-                    resources.</p>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">How many delegates are expected?</div>
+                <div class="faq-a">Approximately 2,000 delegates are expected to attend in person from across Africa and beyond.</div>
             </div>
-            <div class="faq-item reveal">
-                <h3 class="faq-question">Are group discounts available?</h3>
-                <p class="faq-answer">Yes, we offer specialized rates for church delegations and organizations of 10 or
-                    more people. Please enquire via our Registration hub or email hospitality@faithnexus.digital.</p>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">Who should attend?</div>
+                <div class="faq-a">Faith Nexus is designed for Christian leaders, pastors, creators, media professionals, broadcasters, filmmakers, educators, technology professionals, entrepreneurs, corporate leaders, artists, public-sector leaders, NGOs, students and emerging leaders.</div>
             </div>
-        </section>
-    </main>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">What are the seven strategic pillars?</div>
+                <div class="faq-a">01 Faith & Spiritual Life, 02 Media & Communication, 03 Technology & Innovation, 04 Governance & Public Life, 05 Education & Discipleship, 06 Economy & Enterprise, and 07 Arts & Culture.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">What is Roots. Revelation. Renaissance.?</div>
+                <div class="faq-a">It is the central theme of Faith Nexus 2027. <strong>Roots</strong> explores foundations and identity. <strong>Revelation</strong> explores the changing world around us. <strong>Renaissance</strong> focuses on what we must build for the future.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">What is Covenant Conversations?</div>
+                <div class="faq-a">Covenant Conversations is a permanent Jewish–Christian education and bridge-building platform within Faith Nexus.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">What is CW100 / FN100?</div>
+                <div class="faq-a">CW100 (FaithNexus100) is a recognition platform celebrating 100 Christian leaders and voices making meaningful contributions across Africa.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">Will there be opportunities for creators?</div>
+                <div class="faq-a">Yes. Faith Nexus will include the Nexus Creators Lounge, Nexus Studio, Creator Masterclasses, Creators Market, Nexus Pitches and Storytellers Showcase.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">Can organisations exhibit?</div>
+                <div class="faq-a">Yes. Faith Nexus will host an Industry Exhibition for organisations serving the faith, media, technology, education, enterprise and creative sectors.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">Can organisations sponsor or partner with Faith Nexus?</div>
+                <div class="faq-a">Yes. A range of sponsorship and strategic partnership opportunities is available across headline, programme, pillar, and venue partnerships.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">What is the Faith Nexus Soft Launch?</div>
+                <div class="faq-a">The Soft Launch is the formal unveiling of Faith Nexus 2027 and takes place on <strong>29 October 2026</strong> in Johannesburg.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">Will the Soft Launch be available online?</div>
+                <div class="faq-a">Yes. The event is planned to be broadcast across multiple virtual platforms worldwide.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">When will the full programme be released?</div>
+                <div class="faq-a">Programme details will be published as sessions and speakers are confirmed. You can register your interest to receive official updates.</div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <div class="faq-q">How can I stay updated?</div>
+                <div class="faq-a">
+                    Register your interest to receive official Faith Nexus announcements and programme updates directly to your inbox.
+                    <div style="margin-top: 1rem;">
+                        <a href="/registration.html" class="btn-pdf-black">Register Your Interest &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER (PDF Page 35 Format) -->
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="pdf-footer-grid">
+                <div class="footer-col-brand">
+                    <h3 class="footer-brand-title">FAITH NEXUS</h3>
+                    <p class="footer-tagline">Kingdom Voices. Global Reach.</p>
+                    <p class="footer-subtext">
+                        Africa’s convergence platform for Faith, Media, Technology, Leadership and Culture.
+                    </p>
+                    <p class="footer-event-date">
+                        14–16 April 2027 &middot; Johannesburg, South Africa
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/summit.html">Programme</a></li>
+                        <li><a href="/covenant.html">Experiences</a></li>
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/faithnexus100.html">FN100</a></li>
+                        <li><a href="/about.html#leadership">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration.html">Register</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pdf-footer-bottom">
+                <div class="footer-convened">
+                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                </div>
+                <div class="footer-socials">
+                    <a href="#">LinkedIn</a> &middot; 
+                    <a href="#">Instagram</a> &middot; 
+                    <a href="#">YouTube</a> &middot; 
+                    <a href="#">Facebook</a>
+                </div>
+                <div class="footer-legal">
+                    <span>&copy; 2027 Faith Nexus</span> &middot; 
+                    <a href="/legal.html">Privacy</a> &middot; 
+                    <a href="/legal.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
 </body>
-
 </html>
-

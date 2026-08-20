@@ -1,494 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration & Tickets | Faith Nexus 2026</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Attend / Register | Faith Nexus 2027</title>
+    <meta name="description" content="Be part of Faith Nexus 2027 in Rosebank, Johannesburg from 14–16 April 2027. Register interest, partner, exhibit, or request media accreditation.">
+    <link rel="icon" type="image/png" href="/fn-logo-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel='stylesheet' href='/index.css'>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR-PIXEL-ID-HERE');
-        fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-        <link rel="preload" href="/index.css" as="style">
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        .involve-option-card {
+            background: #FFFFFF;
+            border: 1px solid var(--fn-border-subtle);
+            border-radius: 16px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .involve-option-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
+<body class="bg-cream">
 
-<body>
-    <!-- Meta Pixel Code (Non-JS fallback) -->
-    <noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=YOUR-PIXEL-ID-HERE&ev=PageView&noscript=1" /></noscript>
+    <!-- Dynamic Particle Backdrop Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
-    <div class="scroll-progress" id="progressBar"></div>
+    <!-- TOP ANNOUNCEMENT STRIP -->
+    <div class="announcement-bar">
+        <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+        <a href="/virtual.html">Learn More</a>
+    </div>
 
-    <main class="bg-blue-premium">
-        <!-- Luxury Hero -->
-        <section class="registration-hero-luxury">
-            <img loading="lazy" decoding="async" src="/hero-bg.png" class="hero-image-bg" alt="Registration Gateway">
-            <div class="hero-overlay"></div>
-            <div class="container" style="z-index: 10; position: relative;">
-                <span class="subtitle-gold">Secure Your Excellence</span>
-                <h1 class="luxury-title">Registration <br>& Tickets</h1>
-                <p
-                    style="max-width: 800px; margin: 0 auto; font-size: 1.4rem; font-weight: 300; opacity: 0.8; line-height: 1.8;">
-                    Faith Nexus 2026 offers two in-person delegate options so that you can choose the experience that
-                    best serves your calling and budget.
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="nav-brand" style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em; color: #111; text-transform: uppercase;">
+                FAITH NEXUS
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Programme</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="/covenant.html" class="nav-link dropdown-trigger">Experiences <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/exhibition.html">Industry Exhibition</a></li>
+                        <li><a href="/summit.html#workshops">Workshops & Masterclasses</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/faithnexus100.html" class="nav-link">FN100</a></li>
+
+                <li class="nav-dropdown">
+                    <a href="/registration.html" class="nav-link dropdown-trigger active">Get Involved <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/registration.html">Attend</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">More <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/registration.html" class="btn-pdf-black">
+                        Register Interest
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="bg-dark-grid" style="padding: 120px 0 90px;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle gold">10. Get Involved &middot; 11. Attend / Register</span>
+            <h1 class="pdf-title-large" style="margin-bottom: 1.25rem;">
+                Be Part of Faith Nexus 2027
+            </h1>
+            <p style="font-size: 1.35rem; color: #EEEEEE; line-height: 1.5; margin-bottom: 1.5rem;">
+                Three days. Seven pillars. One connected Kingdom ecosystem.
+            </p>
+            <div style="font-size: 1.15rem; color: var(--fn-gold); font-weight: 800;">
+                14–16 April 2027 &middot; Royal Majestic Hotel, Rosebank, Johannesburg
+            </div>
+        </div>
+    </section>
+
+    <!-- GET INVOLVED OPTIONS GRID -->
+    <section class="bg-cream" style="padding: 90px 0;">
+        <div class="container">
+            <span class="pdf-subtitle rust">Participation Channels</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 2.5rem;">
+                Find Your Place at Faith Nexus
+            </h2>
+            <p style="font-size: 1.15rem; color: #555555; margin-bottom: 3rem;">
+                There are several ways to participate in Faith Nexus 2027.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                
+                <!-- ATTEND -->
+                <div class="involve-option-card">
+                    <div>
+                        <span class="pdf-pillar-num">01</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.75rem;">
+                            Attend
+                        </h3>
+                        <p style="font-size: 1.05rem; color: #555555; line-height: 1.6; margin-bottom: 2rem;">
+                            Join approximately <strong>2,000 delegates</strong> for three days of learning, relationships and collaboration.
+                        </p>
+                    </div>
+                    <div>
+                        <button class="btn-pdf-black open-register-form" style="width: 100%;">
+                            REGISTER YOUR INTEREST &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PARTNER -->
+                <div class="involve-option-card">
+                    <div>
+                        <span class="pdf-pillar-num">02</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.75rem;">
+                            Partner
+                        </h3>
+                        <p style="font-size: 1.05rem; color: #555555; line-height: 1.6; margin-bottom: 2rem;">
+                            Connect your organisation with the Faith Nexus ecosystem through sponsorship or strategic partnership.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="/partners.html" class="btn-pdf-black" style="display: block; text-align: center;">
+                            EXPLORE PARTNERSHIPS &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- EXHIBIT -->
+                <div class="involve-option-card">
+                    <div>
+                        <span class="pdf-pillar-num">03</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.75rem;">
+                            Exhibit
+                        </h3>
+                        <p style="font-size: 1.05rem; color: #555555; line-height: 1.6; margin-bottom: 2rem;">
+                            Present your products, services and platforms to delegates and decision-makers.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="/exhibition.html" class="btn-pdf-black" style="display: block; text-align: center;">
+                            EXHIBIT AT FAITH NEXUS &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MEDIA -->
+                <div class="involve-option-card">
+                    <div>
+                        <span class="pdf-pillar-num">04</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.75rem;">
+                            Media
+                        </h3>
+                        <p style="font-size: 1.05rem; color: #555555; line-height: 1.6; margin-bottom: 2rem;">
+                            Apply for accreditation and access Faith Nexus media resources.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="/media.html" class="btn-pdf-black" style="display: block; text-align: center;">
+                            VISIT THE MEDIA CENTRE &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INLINE REGISTRATION FORM MODAL / SECTION -->
+    <section id="register-form-section" class="bg-dark-grid" style="padding: 90px 0;">
+        <div class="container" style="max-width: 720px;">
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <span class="pdf-subtitle gold">Delegate Registration</span>
+                <h2 class="pdf-title-med" style="margin-bottom: 0.75rem;">
+                    Register Your Interest
+                </h2>
+                <p style="font-size: 1.05rem; color: #CCCCCC;">
+                    14–16 April 2027 &middot; Royal Majestic Hotel, Rosebank, Johannesburg
                 </p>
             </div>
-        </section>
 
-        <!-- Tickets at a Glance -->
-        <section style="padding: 0 0 150px; background: #0F172A;">
-            <div class="container">
-                <div class="tier-grid">
-                    <!-- Plenary Access -->
-                    <div class="tier-card reveal">
-                        <span class="subtitle-gold" style="letter-spacing: 5px;">Option 01</span>
-                        <h2 class="tier-title">Plenary Access <br>Delegate</h2>
-                        <p class="tier-best-for">Best for: Pastors, leaders, teams and general delegates who want the
-                            full conference atmosphere.</p>
-
-                        <div class="tier-price">R350 <span>/ Standard</span></div>
-
-                        <ul class="feature-list">
-                            <li>All morning & evening plenary sessions</li>
-                            <li>Covenant Conversations Plenary</li>
-                            <li>Access to the Faith Nexus Industry Exhibition</li>
-                            <li>General access to the Nexus Creators Lounge</li>
-                            <li>Delegate pack + selected post-event recordings</li>
-                        </ul>
-
-                        <a href="#reg-anchor" class="btn-glass btn-glass-ghost" onclick="selectTier('plenary')">
-                            <span class="content">Select Plenary Access</span>
-                        </a>
-                    </div>
-
-                    <!-- Full Access -->
-                    <div class="tier-card premium reveal">
-                        <span class="subtitle-gold" style="letter-spacing: 5px; color: #fff;">Option 02</span>
-                        <h2 class="tier-title">Full Access <br>Delegate (Premium)</h2>
-                        <p class="tier-best-for">Best for: Creators, media practitioners, innovators and serious
-                            learners who want maximum value.</p>
-
-                        <div class="tier-price">R550 <span>/ Standard</span></div>
-
-                        <ul class="feature-list">
-                            <li class="plus">Everything in Plenary Access, plus:</li>
-                            <li>Enhanced experience of Creator Masterclass Moments</li>
-                            <li>Priority access and mentor “office hours” in the Lounge</li>
-                            <li>Priority booking for the Nexus Studio Booth</li>
-                            <li>Curated networking and strategy meetups</li>
-                            <li>Preferential access to the FaithNexus100 Gala</li>
-                            <li>Extended access to TalkWorld content & resources</li>
-                        </ul>
-
-                        <a href="#reg-anchor" class="btn-glass btn-glass-secondary" onclick="selectTier('full')">
-                            <span class="shimmer"></span>
-                            <span class="content">Select Full Access</span>
-                        </a>
-                    </div>
+            <form id="delegateRegForm" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2.5rem;">
+                <div style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Full Name</label>
+                    <input type="text" id="dName" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="Dr. Jane Doe" required>
                 </div>
 
-                <div class="reveal" style="text-align: center; margin-top: 100px; opacity: 0.7;">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary-gold);">
-                        Group & Church Packages</h3>
-                    <p style="margin-top: 20px; font-size: 1.1rem;">Special packages are available for 10+ delegates.
+                <div style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Email Address</label>
+                    <input type="email" id="dEmail" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="you@domain.org" required>
+                </div>
+
+                <div style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Primary Sector</label>
+                    <select id="dSector" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
+                        <option value="Faith & Ministry">Faith & Ministry</option>
+                        <option value="Creators & Media">Creators & Media</option>
+                        <option value="Technology & Enterprise">Technology & Enterprise</option>
+                        <option value="Education & Leadership">Education & Leadership</option>
+                        <option value="Arts & Culture">Arts & Culture</option>
+                        <option value="Next Generation">Next Generation</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Pass Preference</label>
+                    <select id="dPass" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
+                        <option value="Main Summit Delegate Pass (14–16 April 2027)">Main Summit Delegate Pass (14–16 April 2027)</option>
+                        <option value="Soft Launch Invitation (29 Oct 2026)">Soft Launch Invitation (29 Oct 2026)</option>
+                        <option value="Global Virtual Livestream Pass">Global Virtual Livestream Pass</option>
+                        <option value="FN100 Gala VIP Pass">FN100 Gala VIP Pass</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-pdf-cream" style="width: 100%; padding: 14px; font-size: 1rem;">
+                    SUBMIT REGISTRATION INTEREST &rarr;
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER (PDF Page 35 Format) -->
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="pdf-footer-grid">
+                <div class="footer-col-brand">
+                    <h3 class="footer-brand-title">FAITH NEXUS</h3>
+                    <p class="footer-tagline">Kingdom Voices. Global Reach.</p>
+                    <p class="footer-subtext">
+                        Africa’s convergence platform for Faith, Media, Technology, Leadership and Culture.
                     </p>
-                    <a href="mailto:registrations@faithnexus.digital"
-                        style="color: var(--primary-gold); text-decoration: none; font-weight: 800; display: block; margin-top: 15px;">registrations@faithnexus.digital</a>
+                    <p class="footer-event-date">
+                        14–16 April 2027 &middot; Johannesburg, South Africa
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/summit.html">Programme</a></li>
+                        <li><a href="/covenant.html">Experiences</a></li>
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/faithnexus100.html">FN100</a></li>
+                        <li><a href="/about.html#leadership">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration.html">Register</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- How it Works (Visual Script) -->
-        <section style="padding: 150px 0; background: #0B1120; border-top: 1px solid rgba(197, 160, 89, 0.1);">
-            <div class="container">
-                <header style="text-align: center;">
-                    <span class="subtitle-gold">Secure Your Seat</span>
-                    <h2 style="font-family: 'Playfair Display', serif; font-size: 4.5rem;">How to Register</h2>
-                    <p style="opacity: 0.6; font-size: 1.2rem; margin-top: 20px;">Simple steps to secure your seat in
-                        Pretoria, 20–23 October 2026</p>
-                </header>
-
-                <div class="steps-container reveal">
-                    <div class="step-item">
-                        <span class="step-number">1</span>
-                        <h4>Visit Website</h4>
-                        <p style="opacity: 0.5; font-size: 0.85rem;">Go to [www.faithnexus.digital] and click on
-                            “Register / Tickets”</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">2</span>
-                        <h4>Choose Ticket</h4>
-                        <p style="opacity: 0.5; font-size: 0.85rem;">Select Plenary Access or Full Access (Premium)</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">3</span>
-                        <h4>Complete Details</h4>
-                        <p style="opacity: 0.5; font-size: 0.85rem;">Fill in personal, ministry, and logistics info</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">4</span>
-                        <h4>Make Payment</h4>
-                        <p style="opacity: 0.5; font-size: 0.85rem;">Confirm & pay securely via card / EFT</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">5</span>
-                        <h4>Check Email</h4>
-                        <p style="opacity: 0.5; font-size: 0.85rem;">Receive your confirmation and arrival guide</p>
-                    </div>
+            <div class="pdf-footer-bottom">
+                <div class="footer-convened">
+                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                </div>
+                <div class="footer-socials">
+                    <a href="#">LinkedIn</a> &middot; 
+                    <a href="#">Instagram</a> &middot; 
+                    <a href="#">YouTube</a> &middot; 
+                    <a href="#">Facebook</a>
+                </div>
+                <div class="footer-legal">
+                    <span>&copy; 2027 Faith Nexus</span> &middot; 
+                    <a href="/legal.html">Privacy</a> &middot; 
+                    <a href="/legal.html">Terms</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </footer>
 
-        <!-- Form Anchor -->
-        <div id="reg-anchor" style="height: 100px;"></div>
-
-        <!-- The Advanced Registration Form -->
-        <section class="registration-form-section">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 60px; align-items: start;">
-                    <div class="reveal">
-                        <!-- Switchable Forms Container -->
-                        <div id="form-container">
-                            <!-- A. Individual Delegate Registration Form -->
-                            <form id="individual-form" class="form-card">
-                                <h3 class="form-section-title" style="margin-top: 0;">SECTION 1: <span>Registration
-                                        Type</span></h3>
-                                <div class="form-group">
-                                    <label>Registration Type</label>
-                                    <select id="reg-type-select" required>
-                                        <option value="individual">Individual Delegate</option>
-                                        <option value="group">Group Registration Contact (for 10+ delegates)</option>
-                                    </select>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 2: <span>Delegate Category & Ticket Choice</span>
-                                </h3>
-                                <div class="form-group">
-                                    <label>Ticket Category</label>
-                                    <select id="ticket-category" required>
-                                        <option value="plenary">Plenary Access Delegate</option>
-                                        <option value="full">Full Access Delegate (Premium)</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Ticket Price Option</label>
-                                    <select id="ticket-price-option" required></select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Add-ons (Optional)</label>
-                                    <div class="checkbox-grid">
-                                        <label class="checkbox-item"><input type="checkbox" name="addon"
-                                                data-price="800" data-label="FaithNexus100 Honours Gala Ticket">
-                                            FaithNexus100 Gala (R800)</label>
-                                        <label class="checkbox-item"><input type="checkbox" name="addon"
-                                                data-price="350" data-label="Airport Shuttle Service"> Airport Shuttle
-                                            Service (R350)</label>
-                                        <label class="checkbox-item"><input type="checkbox" name="addon" data-price="0"
-                                                data-label="Accommodation Assistance"> Accommodation Assistance
-                                            (Free)</label>
-                                    </div>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 3: <span>Personal Details</span></h3>
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <select required>
-                                        <option>Rev</option>
-                                        <option>Pastor</option>
-                                        <option>Bishop</option>
-                                        <option>Apostle</option>
-                                        <option>Dr</option>
-                                        <option>Prof</option>
-                                        <option>Mr</option>
-                                        <option>Mrs</option>
-                                        <option>Ms</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                                    <div class="form-group"><label>First Name</label><input type="text" required></div>
-                                    <div class="form-group"><label>Last Name / Surname</label><input type="text"
-                                            required></div>
-                                </div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                                    <div class="form-group"><label>Preferred Name (for badge)</label><input type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Gender</label>
-                                        <select>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Prefer not to say</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Age Group</label>
-                                    <select>
-                                        <option>Under 18</option>
-                                        <option>18–24</option>
-                                        <option>25–34</option>
-                                        <option>35–44</option>
-                                        <option>45–54</option>
-                                        <option>55–64</option>
-                                        <option>65+</option>
-                                    </select>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 4: <span>Ministry / Organisation Details</span>
-                                </h3>
-                                <div class="form-group"><label>Church / Organisation / Company Name</label><input
-                                        type="text" required></div>
-                                <div class="form-group"><label>Role / Position</label><input type="text"
-                                        placeholder="Senior Pastor, Media Director, etc." required></div>
-                                <div class="form-group">
-                                    <label>Ministry / Sector Focus (Select all that apply)</label>
-                                    <div class="checkbox-grid">
-                                        <label class="checkbox-item"><input type="checkbox"> Pastoral /
-                                            Leadership</label>
-                                        <label class="checkbox-item"><input type="checkbox"> Media &
-                                            Broadcasting</label>
-                                        <label class="checkbox-item"><input type="checkbox"> Digital Content</label>
-                                        <label class="checkbox-item"><input type="checkbox"> Tech & Innovation</label>
-                                        <label class="checkbox-item"><input type="checkbox"> Education /
-                                            Discipleship</label>
-                                        <label class="checkbox-item"><input type="checkbox"> Arts & Creative</label>
-                                    </div>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 5: <span>Contact Information</span></h3>
-                                <div class="form-group"><label>Email Address</label><input type="email" required></div>
-                                <div class="form-group"><label>Mobile / WhatsApp Number</label><input type="text"
-                                        required></div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                                    <div class="form-group"><label>Country of Residence</label><input type="text"
-                                            required></div>
-                                    <div class="form-group"><label>City / Town</label><input type="text" required></div>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 6: <span>Logistics & Hospitality</span></h3>
-                                <div class="form-group">
-                                    <label>Will you travel from outside South Africa?</label>
-                                    <div class="input-group-horizontal">
-                                        <label class="radio-item"><input type="radio" name="travel_intl" value="yes">
-                                            Yes</label>
-                                        <label class="radio-item"><input type="radio" name="travel_intl" value="no"
-                                                checked> No</label>
-                                    </div>
-                                </div>
-                                <div class="form-group" id="visa-conditional" style="display: none;">
-                                    <label>Do you require a visa support letter?</label>
-                                    <div class="input-group-horizontal">
-                                        <label class="radio-item"><input type="radio" name="visa_needed" value="yes">
-                                            Yes</label>
-                                        <label class="radio-item"><input type="radio" name="visa_needed" value="no"
-                                                checked> No</label>
-                                    </div>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 7: <span>Creator / Professional Details</span>
-                                </h3>
-                                <div class="form-group">
-                                    <label>Are you a content creator / media professional?</label>
-                                    <div class="input-group-horizontal">
-                                        <label class="radio-item"><input type="radio" name="is_creator" value="yes">
-                                            Yes</label>
-                                        <label class="radio-item"><input type="radio" name="is_creator" value="no"
-                                                checked> No</label>
-                                    </div>
-                                </div>
-                                <div id="creator-conditional" style="display: none;">
-                                    <div class="form-group">
-                                        <label>Primary Content Format</label>
-                                        <div class="checkbox-grid">
-                                            <label class="checkbox-item"><input type="checkbox"> YouTube / Video</label>
-                                            <label class="checkbox-item"><input type="checkbox"> Podcast / Audio</label>
-                                            <label class="checkbox-item"><input type="checkbox"> Social Media</label>
-                                            <label class="checkbox-item"><input type="checkbox"> Film / Series</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group"><label>Main Platform / Channel Link</label><input
-                                            type="text" placeholder="YouTube.com/@..."></div>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 8: <span>Group / Church Delegation</span></h3>
-                                <div class="form-group">
-                                    <label>Are you attending as part of a group/church delegation?</label>
-                                    <div class="input-group-horizontal">
-                                        <label class="radio-item"><input type="radio" name="is_group_part" value="yes">
-                                            Yes</label>
-                                        <label class="radio-item"><input type="radio" name="is_group_part" value="no"
-                                                checked> No</label>
-                                    </div>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 9: <span>Consent & Agreements</span></h3>
-                                <div class="form-group">
-                                    <label class="checkbox-item" style="font-size: 0.9rem;"><input type="checkbox"
-                                            required> I consent to Faith Nexus/WCCCS storing my details for event
-                                        communication.</label>
-                                    <label class="checkbox-item" style="font-size: 0.9rem; margin-top: 15px;"><input
-                                            type="checkbox" required> I consent to media recording & reasonable use of
-                                        my image.</label>
-                                    <label class="checkbox-item" style="font-size: 0.9rem; margin-top: 15px;"><input
-                                            type="checkbox" required> I agree to the terms, refund policy and code of
-                                        conduct.</label>
-                                </div>
-
-                                <h3 class="form-section-title">SECTION 10: <span>Payment Method</span></h3>
-                                <div class="form-group">
-                                    <div class="input-group-horizontal">
-                                        <label class="radio-item"><input type="radio" name="payment" value="card"
-                                                checked> Credit/Debit Card</label>
-                                        <label class="radio-item"><input type="radio" name="payment" value="eft"> EFT /
-                                            Bank Transfer</label>
-                                    </div>
-                                </div>
-
-                                <button type="submit" class="btn-glass btn-glass-primary"
-                                    style="width: 100%; margin-top: 40px; border-radius: 12px;">
-                                    <span class="shimmer"></span>
-                                    <span class="content">Confirm Individual Registration</span>
-                                </button>
-                            </form>
-
-                            <!-- B. Group Registration Contact Form -->
-                            <form id="group-form" class="form-card" style="display: none;">
-                                <h3 class="form-section-title" style="margin-top: 0;">SECTION 1: <span>Group
-                                        Details</span></h3>
-                                <div class="form-group"><label>Church / Organisation Name</label><input type="text"
-                                        required></div>
-                                <div class="form-group"><label>Estimated Number of Delegates (Min 10)</label><input
-                                        type="number" min="10" required></div>
-
-                                <h3 class="form-section-title">SECTION 2: <span>Group Contact Person</span></h3>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                                    <div class="form-group"><label>First Name</label><input type="text" required></div>
-                                    <div class="form-group"><label>Last Name</label><input type="text" required></div>
-                                </div>
-                                <div class="form-group"><label>Position / Role</label><input type="text" required></div>
-                                <div class="form-group"><label>Email Address</label><input type="email" required></div>
-
-                                <h3 class="form-section-title">SECTION 3: <span>Group Logistics</span></h3>
-                                <div class="form-group">
-                                    <label>Prefered Method for Submitting Delegate Names</label>
-                                    <select>
-                                        <option>Upload Excel Template</option>
-                                        <option>Complete names individually online</option>
-                                        <option>Discuss with Registration Team</option>
-                                    </select>
-                                </div>
-
-                                <button type="submit" class="btn-glass btn-glass-secondary"
-                                    style="width: 100%; margin-top: 40px; border-radius: 12px;">
-                                    <span class="shimmer"></span>
-                                    <span class="content">Submit Group Enquiry</span>
-                                </button>
-                                <p style="text-align: center; margin-top: 20px; opacity: 0.5; font-size: 0.85rem;">Our
-                                    team will respond with valid group rates and a custom invoice.</p>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Sidebar Summary -->
-                    <div class="reveal">
-                        <div class="summary-box">
-                            <h3
-                                style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary-gold); margin-bottom: 30px;">
-                                Order Summary</h3>
-                            <div id="summary-items">
-                                <!-- JS Populated -->
-                            </div>
-                            <div class="summary-total">
-                                <span>Total Due</span>
-                                <span id="grand-total">R0</span>
-                            </div>
-                            <p style="margin-top: 40px; font-size: 0.85rem; opacity: 0.6; line-height: 1.6;">
-                                Review your selection before processing. Payment is handled via secure WCCCS portals.
-                                Confirmation will be sent to your primary email address.
-                            </p>
-                        </div>
-
-                        <!-- Important Note -->
-                        <div
-                            style="margin-top: 40px; padding: 30px; border: 1px solid rgba(197, 160, 89, 0.2); background: rgba(0,0,0,0.5);">
-                            <h4
-                                style="font-family: 'Playfair Display', serif; color: var(--primary-gold); margin-bottom: 15px;">
-                                Global Virtual Activation</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
-                                Registrations for the 10th June 2026 digital event are separate and free. You will
-                                receive an invitation link post-registration.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script src="/registration.js"></script>
+    <!-- Main JS -->
     <script type="module" src="/main.js"></script>
     <script>
-        // Reveal & Progress
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+        document.querySelectorAll('.open-register-form').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('register-form-section')?.scrollIntoView({ behavior: 'smooth' });
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Form Toggling
-        const regTypeSelect = document.getElementById('reg-type-select');
-        const individualForm = document.getElementById('individual-form');
-        const groupForm = document.getElementById('group-form');
-        const summaryBox = document.querySelector('.summary-box');
-
-        regTypeSelect.addEventListener('change', (e) => {
-            if (e.target.value === 'group') {
-                individualForm.style.display = 'none';
-                groupForm.style.display = 'block';
-                summaryBox.style.display = 'none';
-            } else {
-                individualForm.style.display = 'block';
-                groupForm.style.display = 'none';
-                summaryBox.style.display = 'block';
-            }
         });
 
-        function selectTier(tier) {
-            regTypeSelect.value = 'individual';
-            regTypeSelect.dispatchEvent(new Event('change'));
-            const ticketCat = document.getElementById('ticket-category');
-            ticketCat.value = tier;
-            ticketCat.dispatchEvent(new Event('change'));
-            document.getElementById('reg-anchor').scrollIntoView({ behavior: 'smooth' });
-        }
+        document.getElementById('delegateRegForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('dName').value;
+            const email = document.getElementById('dEmail').value;
+            const pass = document.getElementById('dPass').value;
+
+            alert(`Thank you ${name}!\n\nYour registration interest for [${pass}] has been recorded. Confirmation details will be sent to ${email}.`);
+            e.target.reset();
+        });
     </script>
 </body>
-
 </html>
-

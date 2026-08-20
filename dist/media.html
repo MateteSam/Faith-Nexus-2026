@@ -1,70 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media & Resources | Faith Nexus 2026</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
-  <script type="module" crossorigin src="/assets/main-Bcl5jMcv.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Dn_ZbAm1.css">
+    <title>Media Centre | Faith Nexus 2027</title>
+    <meta name="description" content="Resources, accreditation, and press information for journalists, broadcasters, publishers, and media platforms covering Faith Nexus 2027.">
+    <link rel="icon" type="image/png" href="/fn-logo-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <style>
+        .media-res-card {
+            background: #FFFFFF;
+            border: 1px solid var(--fn-border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #111111;
+        }
+        .media-res-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--fn-rust);
+            flex-shrink: 0;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/main-Fcv_LdsE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DKJ9VGMK.css">
 </head>
+<body class="bg-cream">
 
-<body>
-    <main class="bg-blue-premium">
-        <section class="hero-banner">
-            <img loading="lazy" decoding="async" src="/hero-bg.png" alt="Resources">
-            <h1 class="luxury-title">Media & Resources</h1>
-        </section>
+    <!-- Dynamic Particle Backdrop Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
-        <section style="padding: 120px 0;">
-            <div class="container">
-                <div class="resource-grid">
-                    <div class="resource-card reveal">
-                        <div class="resource-icon">❖</div>
-                        <h3 class="resource-title">Summit Prospectus 2026</h3>
-                        <p style="opacity: 0.6; font-size: 0.9rem;">Comprehensive guide for partners, sponsors and
-                            exhibitors detailing the full Faith Nexus architecture.</p>
-                        <a href="#" class="btn-download">Download PDF <span>→</span></a>
-                    </div>
-                    <div class="resource-card reveal">
-                        <div class="resource-icon">✦</div>
-                        <h3 class="resource-title">Press & Media Kit</h3>
-                        <h3 class="resource-title">TalkWorld Digital Hub</h3>
-                        <p style="opacity: 0.6; font-size: 0.9rem;">Access high-resolution brand assets, official press
-                            releases and cinematic media packs.</p>
-                        <a href="#" class="btn-download">Access Files <span>→</span></a>
-                    </div>
-                    <div class="resource-card reveal">
-                        <div class="resource-icon">◈</div>
-                        <h3 class="resource-title">NexTalks Courses</h3>
-                        <p style="opacity: 0.6; font-size: 0.9rem;">Preview the online masterclass series equipping
-                            creators for the digital Kingdom landscape.</p>
-                        <a href="#" class="btn-download">Explore Courses <span>→</span></a>
-                    </div>
+    <!-- TOP ANNOUNCEMENT STRIP -->
+    <div class="announcement-bar">
+        <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+        <a href="/virtual.html">Learn More</a>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="nav-brand" style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em; color: #111; text-transform: uppercase;">
+                FAITH NEXUS
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Programme</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="/covenant.html" class="nav-link dropdown-trigger">Experiences <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/exhibition.html">Industry Exhibition</a></li>
+                        <li><a href="/summit.html#workshops">Workshops & Masterclasses</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/faithnexus100.html" class="nav-link">FN100</a></li>
+
+                <li class="nav-dropdown">
+                    <a href="/media.html" class="nav-link dropdown-trigger active">Get Involved <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/registration.html">Attend</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">More <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/registration.html" class="btn-pdf-black">
+                        Register Interest
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="bg-dark-grid" style="padding: 120px 0 90px;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle gold">14. Media</span>
+            <h1 class="pdf-title-large" style="margin-bottom: 1.25rem;">
+                Faith Nexus Media Centre
+            </h1>
+            <p style="font-size: 1.35rem; color: #EEEEEE; line-height: 1.5; margin-bottom: 2rem;">
+                Resources, accreditation and information for journalists, broadcasters, publishers, podcasters and digital media platforms.
+            </p>
+        </div>
+    </section>
+
+    <!-- MEDIA ACCREDITATION -->
+    <section class="bg-cream" style="padding: 90px 0;">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div>
+                <span class="pdf-subtitle rust">Press Access</span>
+                <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 1.25rem;">
+                    Media Accreditation
+                </h2>
+                <p style="font-size: 1.15rem; color: #555555; line-height: 1.6; margin-bottom: 2rem;">
+                    Applications for Faith Nexus 2027 media accreditation will be available to qualifying media organisations and independent media professionals.
+                </p>
+                <div>
+                    <a href="/contact.html?enquiry=Media" class="btn-pdf-black">
+                        APPLY FOR MEDIA ACCREDITATION &rarr;
+                    </a>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+
+            <!-- INTERVIEW REQUESTS -->
+            <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 16px; padding: 2.5rem;">
+                <span class="pdf-subtitle forest">Interviews</span>
+                <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: #111111; margin-bottom: 1rem;">
+                    Interview Requests
+                </h3>
+                <p style="font-size: 1rem; color: #555555; line-height: 1.6; margin-bottom: 2rem;">
+                    Media organisations interested in interviews with Faith Nexus leadership, speakers or programme participants can submit an interview request through the Media Centre.
+                </p>
+                <div>
+                    <a href="/contact.html?enquiry=Interview" class="btn-pdf-black" style="background: var(--fn-forest);">
+                        REQUEST AN INTERVIEW &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA RESOURCES GRID -->
+    <section class="bg-cream" style="padding: 20px 0 100px; border-top: 1px solid var(--fn-border-subtle);">
+        <div class="container">
+            <span class="pdf-subtitle rust">Press Assets</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 2.5rem;">
+                Media Resources
+            </h2>
+            <p style="font-size: 1.1rem; color: #666666; margin-bottom: 2rem;">
+                The Faith Nexus Media Centre will provide:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 900px;">
+                <div class="media-res-card"><span class="media-res-dot"></span> Press releases</div>
+                <div class="media-res-card"><span class="media-res-dot"></span> Speaker information</div>
+                <div class="media-res-card"><span class="media-res-dot"></span> Summit photography</div>
+                <div class="media-res-card"><span class="media-res-dot"></span> Faith Nexus brand assets</div>
+                <div class="media-res-card"><span class="media-res-dot"></span> FN100 announcements</div>
+                <div class="media-res-card"><span class="media-res-dot"></span> Covenant Conversations updates</div>
+                <div class="media-res-card"><span class="media-res-dot"></span> Programme announcements</div>
+                <div class="media-res-card"><span class="media-res-dot"></span> Interview information</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA CONTACT SECTION -->
+    <section class="bg-dark-grid" style="padding: 100px 0;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <span class="pdf-subtitle gold">Press Office</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 1.5rem;">
+                Media Enquiries
+            </h2>
+            <p style="font-size: 1.2rem; color: #CCCCCC; margin-bottom: 1.5rem;">
+                For press releases, photo requests, and accredited media enquiries:
+            </p>
+            <div style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF;">
+                Email: <a href="mailto:media@faithnexus.digital" style="color: var(--fn-gold); text-decoration: underline;">media@faithnexus.digital</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (PDF Page 35 Format) -->
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="pdf-footer-grid">
+                <div class="footer-col-brand">
+                    <h3 class="footer-brand-title">FAITH NEXUS</h3>
+                    <p class="footer-tagline">Kingdom Voices. Global Reach.</p>
+                    <p class="footer-subtext">
+                        Africa’s convergence platform for Faith, Media, Technology, Leadership and Culture.
+                    </p>
+                    <p class="footer-event-date">
+                        14–16 April 2027 &middot; Johannesburg, South Africa
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/summit.html">Programme</a></li>
+                        <li><a href="/covenant.html">Experiences</a></li>
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/faithnexus100.html">FN100</a></li>
+                        <li><a href="/about.html#leadership">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration.html">Register</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pdf-footer-bottom">
+                <div class="footer-convened">
+                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                </div>
+                <div class="footer-socials">
+                    <a href="#">LinkedIn</a> &middot; 
+                    <a href="#">Instagram</a> &middot; 
+                    <a href="#">YouTube</a> &middot; 
+                    <a href="#">Facebook</a>
+                </div>
+                <div class="footer-legal">
+                    <span>&copy; 2027 Faith Nexus</span> &middot; 
+                    <a href="/legal.html">Privacy</a> &middot; 
+                    <a href="/legal.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
 </body>
-
 </html>
-

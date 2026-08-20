@@ -1,227 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FaithNexus100 | Faith Nexus 2026</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
-  <script type="module" crossorigin src="/assets/main-Bcl5jMcv.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Dn_ZbAm1.css">
+    <title>FaithNexus100 (CW100) | Celebrating Christian Influence Impacting Africa</title>
+    <meta name="description" content="Recognising 100 Christian leaders and voices making meaningful contributions across Africa across 10 recognition sectors.">
+    <link rel="icon" type="image/png" href="/fn-logo-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <style>
+        .recog-area-card {
+            background: #FFFFFF;
+            border: 1px solid var(--fn-border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #111111;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .recog-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--fn-rust);
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/main-Fcv_LdsE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DKJ9VGMK.css">
 </head>
+<body class="bg-cream">
 
-<body>
-    <div class="scroll-progress" id="progressBar"></div>
+    <!-- Dynamic Particle Backdrop Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
-    <main class="bg-blue-premium">
-        <!-- Luxury Cinema Hero -->
-        <section class="fn100-hero-luxury">
-            <video autoplay muted loop playsinline class="hero-video-bg">
-                <source src="/Smooth_slow_dynamic_202601202113_lwh96.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-            <div class="hero-red-carpet"></div>
-            <div class="container hero-content" style="z-index: 10; margin-left: 0;">
-                <span class="subtitle-gold reveal">FAITHNEXUS100</span>
-                <h1 class="luxury-title reveal">The Century <br>of Impact</h1>
-                <p class="reveal-luxury reveal"
-                    style="max-width: 800px; line-height: 1.4; font-size: 2.2rem; font-weight: 200; font-family: 'Playfair Display', serif; font-style: italic; color: var(--primary-gold); margin-bottom: 30px;">
-                    FaithNexus100 – 100 Most Influential Christians Impacting Africa
-                </p>
-                <p class="reveal-luxury reveal"
-                    style="max-width: 700px; line-height: 1.8; font-size: 1.25rem; font-weight: 300; opacity: 0.6; letter-spacing: 0.5px; margin-bottom: 50px;">
-                    FaithNexus100 is the official honours platform of Faith Nexus, recognising 100 Christian leaders,
-                    creators, innovators and servants whose work is significantly shaping Africa’s spiritual, cultural,
-                    social and economic landscape.
-                </p>
-                <div class="reveal-luxury reveal">
-                    <a href="#nominate" class="btn-cinema">Submit a Nomination</a>
+    <!-- TOP ANNOUNCEMENT STRIP -->
+    <div class="announcement-bar">
+        <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+        <a href="/virtual.html">Learn More</a>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="nav-brand" style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em; color: #111; text-transform: uppercase;">
+                FAITH NEXUS
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Programme</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="/covenant.html" class="nav-link dropdown-trigger">Experiences <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/exhibition.html">Industry Exhibition</a></li>
+                        <li><a href="/summit.html#workshops">Workshops & Masterclasses</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/faithnexus100.html" class="nav-link active">FN100</a></li>
+
+                <li class="nav-dropdown">
+                    <a href="/registration.html" class="nav-link dropdown-trigger">Get Involved <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/registration.html">Attend</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">More <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/registration.html" class="btn-pdf-black">
+                        Register Interest
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH GIANT WATERMARK -->
+    <section class="bg-cream fn100-watermark-wrap" style="padding: 110px 0 80px;">
+        <div class="fn100-watermark-bg">100</div>
+
+        <div class="container" style="position: relative; z-index: 2; max-width: 900px;">
+            <span class="pdf-subtitle rust">8. CW100 / FaithNexus100</span>
+            <h1 class="pdf-title-large" style="color: #111111; margin-bottom: 1.25rem;">
+                Celebrating Christian Influence Impacting Africa
+            </h1>
+            <p style="font-size: 1.35rem; color: #444444; line-height: 1.6; margin-bottom: 2rem;">
+                ContentWorld100 (FN100) will recognise 100 Christian leaders and voices making meaningful contributions across Africa.
+            </p>
+            <div style="font-size: 1.05rem; font-weight: 800; color: #111111;">
+                Official Announcement &middot; 29 October 2026
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CW100? -->
+    <section class="bg-cream" style="padding: 80px 0;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle rust">Vision & Purpose</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 1.5rem;">
+                Why CW100?
+            </h2>
+            <p style="font-size: 1.2rem; color: #333333; line-height: 1.6; margin-bottom: 1.25rem;">
+                Influence takes many forms.
+            </p>
+            <p style="font-size: 1.1rem; color: #555555; line-height: 1.7; margin-bottom: 1.5rem;">
+                It can be expressed through ministry, business, storytelling, education, innovation, social impact, leadership and institution-building.
+            </p>
+            <p style="font-size: 1.15rem; font-weight: 700; color: #111111; line-height: 1.6;">
+                FN100 exists to recognise Christian voices whose work helps shape communities, industries, and the continent.
+            </p>
+        </div>
+    </section>
+
+    <!-- RECOGNITION AREAS GRID (10 SECTORS) -->
+    <section class="bg-cream" style="padding: 20px 0 100px; border-top: 1px solid var(--fn-border-subtle);">
+        <div class="container">
+            <span class="pdf-subtitle rust">Categories</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 2.5rem;">
+                Recognition Areas
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 960px;">
+                <div class="recog-area-card"><span class="recog-num">01</span> Faith & Ministry</div>
+                <div class="recog-area-card"><span class="recog-num">02</span> Media & Communication</div>
+                <div class="recog-area-card"><span class="recog-num">03</span> Arts & Entertainment</div>
+                <div class="recog-area-card"><span class="recog-num">04</span> Education</div>
+                <div class="recog-area-card"><span class="recog-num">05</span> Technology & Innovation</div>
+                <div class="recog-area-card"><span class="recog-num">06</span> Business & Enterprise</div>
+                <div class="recog-area-card"><span class="recog-num">07</span> Governance</div>
+                <div class="recog-area-card"><span class="recog-num">08</span> Social Impact</div>
+                <div class="recog-area-card"><span class="recog-num">09</span> Youth & Emerging Influence</div>
+                <div class="recog-area-card"><span class="recog-num">10</span> Continental & Global Impact</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANNOUNCEMENT CTA -->
+    <section class="bg-dark-grid" style="padding: 100px 0;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <span class="pdf-subtitle gold">Presentation Ceremony</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 1.5rem;">
+                Faith Nexus 2027 Presentation
+            </h2>
+            <p style="font-size: 1.25rem; color: #DDDDDD; line-height: 1.6; margin-bottom: 2.5rem;">
+                The inaugural CW100 will be presented during Faith Nexus 2027 in Johannesburg. Further information regarding nominations, eligibility and the recognition process will be announced through official Faith Nexus channels on <strong>29 October 2026</strong>.
+            </p>
+            <div>
+                <a href="/registration.html" class="btn-pdf-cream">
+                    REGISTER FOR FN100 UPDATES &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (PDF Page 35 Format) -->
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="pdf-footer-grid">
+                <div class="footer-col-brand">
+                    <h3 class="footer-brand-title">FAITH NEXUS</h3>
+                    <p class="footer-tagline">Kingdom Voices. Global Reach.</p>
+                    <p class="footer-subtext">
+                        Africa’s convergence platform for Faith, Media, Technology, Leadership and Culture.
+                    </p>
+                    <p class="footer-event-date">
+                        14–16 April 2027 &middot; Johannesburg, South Africa
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/summit.html">Programme</a></li>
+                        <li><a href="/covenant.html">Experiences</a></li>
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/faithnexus100.html">FN100</a></li>
+                        <li><a href="/about.html#leadership">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration.html">Register</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Purpose Overhaul -->
-        <section class="feature-hall-luxury">
-            <div class="container">
-                <div class="content-grid"
-                    style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 140px; align-items: center;">
-                    <div class="reveal-luxury">
-                        <header style="margin-bottom: 80px;">
-                            <span class="subtitle-gold" style="opacity: 1;">Mission & Vision</span>
-                            <h2 style="font-family: 'Playfair Display', serif; font-size: 6rem; line-height: 1;">Purpose
-                            </h2>
-                        </header>
-
-                        <div class="purpose-item">
-                            <span class="purpose-title">Recognise</span>
-                            <p class="purpose-text">Recognise and celebrate Christian excellence in diverse sectors</p>
-                        </div>
-                        <div class="purpose-item">
-                            <span class="purpose-title">Document</span>
-                            <p class="purpose-text">Document the stories and contribution of key Kingdom influencers</p>
-                        </div>
-                        <div class="purpose-item">
-                            <span class="purpose-title">Inspire</span>
-                            <p class="purpose-text">Inspire emerging generations across Africa and the diaspora</p>
-                        </div>
-                        <div class="purpose-item">
-                            <span class="purpose-title">Build</span>
-                            <p class="purpose-text">Build a network of honourees for collaboration and shared impact</p>
-                        </div>
-                    </div>
-
-                    <div class="reveal-luxury">
-                        <div class="luxury-gallery-frame">
-                            <div class="luxury-frame" style="transform: scale(1.1) rotate(1deg);">
-                                <img loading="lazy" decoding="async" src="/fn100-mascot-gala.jpg" alt="FaithNexus100 Sovereign Mascot Seal">
-                            </div>
-                        </div>
-                    </div>
+            <div class="pdf-footer-bottom">
+                <div class="footer-convened">
+                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                </div>
+                <div class="footer-socials">
+                    <a href="#">LinkedIn</a> &middot; 
+                    <a href="#">Instagram</a> &middot; 
+                    <a href="#">YouTube</a> &middot; 
+                    <a href="#">Facebook</a>
+                </div>
+                <div class="footer-legal">
+                    <span>&copy; 2027 Faith Nexus</span> &middot; 
+                    <a href="/legal.html">Privacy</a> &middot; 
+                    <a href="/legal.html">Terms</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </footer>
 
-        <!-- Categories Medallion Overhaul -->
-        <section
-            style="padding: 200px 0; background: #000; position: relative; border-top: 1px solid rgba(197, 160, 89, 0.1);">
-            <div class="container">
-                <header style="text-align: center; margin-bottom: 150px;">
-                    <span class="subtitle-gold" style="opacity: 1;">The Elite Framework</span>
-                    <h2 style="font-family: 'Playfair Display', serif; font-size: 7rem; letter-spacing: -3px;">
-                        Categories</h2>
-                    <p style="font-size: 1.8rem; font-weight: 200; opacity: 0.4; letter-spacing: 5px;">10 Categories
-                        &bull; 100 Honourees</p>
-                </header>
-
-                <div class="medallion-grid">
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">I</span>
-                        <h4>Faith & Discipleship Impact</h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">II</span>
-                        <h4>Media & Communication Innovation</h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">III</span>
-                        <h4>Education & Theological Excellence</h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">IV</span>
-                        <h4>Redemptive Technology & Innovation</h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">V</span>
-                        <h4>Creative Arts & Cultural Expression</h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">VI</span>
-                        <h4>Christian Public Leadership</h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">VII</span>
-                        <h4>Missions & Humanitarian Engagement</h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">VIII</span>
-                        <h4>Covenant Honour <br><small style="font-size: 0.9rem; opacity: 0.5;">(Jewish–Christian
-                                engagement)</small></h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">IX</span>
-                        <h4>Youth Rising Voices <br><small style="font-size: 0.9rem; opacity: 0.5;">(Under 35)</small>
-                        </h4>
-                    </div>
-                    <div class="medallion-card reveal-luxury">
-                        <span class="medallion-icon">X</span>
-                        <h4>Lifetime Legacy Honours</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cinematic Gala Experience -->
-        <section class="gala-bg-luxury" style="padding: 0;">
-            <div class="gala-overlay-luxury"></div>
-            <div class="container" style="position: relative; z-index: 10; padding: 250px 0;">
-                <div class="gala-content-luxury reveal-luxury" style="border-radius: 0;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center;">
-                        <div>
-                            <span class="subtitle-gold" style="opacity: 1;">October 22, 2026</span>
-                            <h2
-                                style="font-family: 'Playfair Display', serif; font-size: 6rem; line-height: 1; margin-bottom: 50px;">
-                                FaithNexus100 <br>Honours Gala</h2>
-                            <p
-                                style="font-size: 1.8rem; font-weight: 200; line-height: 1.6; margin-bottom: 50px; opacity: 0.8; font-style: italic;">
-                                A red-carpet gala event at Faith Nexus 2026 featuring:
-                            </p>
-                            <ul style="list-style: none; padding: 0;">
-                                <li
-                                    style="font-size: 1.4rem; margin-bottom: 25px; display: flex; align-items: center; gap: 20px;">
-                                    <span style="color: var(--primary-gold); font-size: 2rem;">✦</span> Worship, live
-                                    music & artistic performances
-                                </li>
-                                <li
-                                    style="font-size: 1.4rem; margin-bottom: 25px; display: flex; align-items: center; gap: 20px;">
-                                    <span style="color: var(--primary-gold); font-size: 2rem;">✦</span> Storytelling
-                                    segments from honourees
-                                </li>
-                                <li
-                                    style="font-size: 1.4rem; margin-bottom: 25px; display: flex; align-items: center; gap: 20px;">
-                                    <span style="color: var(--primary-gold); font-size: 2rem;">✦</span> Award
-                                    presentations in each category
-                                </li>
-                                <li style="font-size: 1.4rem; display: flex; align-items: center; gap: 20px;">
-                                    <span style="color: var(--primary-gold); font-size: 2rem;">✦</span> A continental
-                                    prophetic declaration and blessing
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="reveal-luxury">
-                            <div class="luxury-frame" style="box-shadow: 0 40px 100px rgba(0,0,0,1);">
-                                <img loading="lazy" decoding="async" src="/honours-gala.png" alt="Gala Excellence Red Carpet">
-                            </div>
-                        </div>
-                        <div style="margin-top: 100px; text-align: center; padding-bottom: 50px;">
-                            <a href="#" class="btn-cinema">View Full Gala Itinerary</a>
-                            <p style="margin-top: 30px; font-weight: 200; opacity: 0.5; letter-spacing: 1px;">Secure
-                                your place at the pinnacle of Kingdom influence.</p>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section style="padding: 250px 0; text-align: center; background: #000;">
-            <div class="container reveal-luxury">
-                <span class="subtitle-gold" style="opacity: 1; margin-bottom: 20px;">Join the Elite</span>
-                <h2
-                    style="font-family: 'Playfair Display', serif; font-size: 7rem; margin-bottom: 80px; letter-spacing: -2px;">
-                    Submit a Nomination</h2>
-                <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;">
-                    <a href="#" class="btn-cinema">Submit a Nomination</a>
-                    <a href="#" class="btn-outline-gold">Learn About Categories & Criteria</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Cinematic Scroll Progress
-        window.onscroll = function () {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
-        };
-    </script>
+    <!-- Main JS -->
 </body>
-
 </html>

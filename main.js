@@ -285,9 +285,27 @@ function initRegistrationModal() {
             const email = document.getElementById('regEmail').value;
             const pass = document.getElementById('passTypeSelect').value;
 
-            alert(`Welcome to Faith Nexus 2026, ${name}!\n\nYour pass [${pass.toUpperCase()}] has been reserved. A confirmation delegate badge will be sent to ${email}.`);
+            alert(`Welcome to Faith Nexus, ${name}!\n\nYour interest [${pass ? pass.toUpperCase() : 'DELEGATE'}] has been recorded. A confirmation will be sent to ${email}.`);
             modal.classList.remove('active');
             form.reset();
         });
     }
 }
+
+/* 9. SCROLL REVEAL OBSERVER */
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
+});
+

@@ -1,172 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partners & Sponsors | Faith Nexus 2026</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Partners & Sponsors | Faith Nexus 2027</title>
+    <meta name="description" content="Connect your organisation with an influential cross-sector audience spanning faith, media, technology, business, education, leadership and culture.">
+    <link rel="icon" type="image/png" href="/fn-logo-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel='stylesheet' href='/index.css'>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-        <link rel="preload" href="/index.css" as="style">
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        .part-opp-card {
+            background: #FFFFFF;
+            border: 1px solid var(--fn-border-subtle);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
 </head>
+<body class="bg-cream">
 
-<body>
-    <main class="bg-blue-premium" style="min-height: 100vh;">
-        <div class="section-video-container">
-            <video autoplay muted loop playsinline class="section-video-bg">
-                <source src="/Smooth_slow_dynamic_202601202113_lwh96.mp4" type="video/mp4">
-            </video>
+    <!-- Dynamic Particle Backdrop Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- TOP ANNOUNCEMENT STRIP -->
+    <div class="announcement-bar">
+        <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+        <a href="/virtual.html">Learn More</a>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="nav-brand" style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em; color: #111; text-transform: uppercase;">
+                FAITH NEXUS
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Programme</a></li>
+                
+                <li class="nav-dropdown">
+                    <a href="/covenant.html" class="nav-link dropdown-trigger">Experiences <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/exhibition.html">Industry Exhibition</a></li>
+                        <li><a href="/summit.html#workshops">Workshops & Masterclasses</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/faithnexus100.html" class="nav-link">FN100</a></li>
+
+                <li class="nav-dropdown">
+                    <a href="/partners.html" class="nav-link dropdown-trigger active">Get Involved <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/registration.html">Attend</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">More <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/registration.html" class="btn-pdf-black">
+                        Register Interest
+                    </a>
+                </li>
+            </ul>
         </div>
+    </nav>
 
-        <section class="partners-elegant reveal">
-            <div class="container">
-                <div class="partners-header">
-                    <span class="partners-tagline">Empowering Visionary Collaborations</span>
-                    <h1 class="partners-title">Strategic Partners & Sponsors</h1>
-                    <div class="partners-separator"></div>
-                    <p class="description"
-                        style="max-width: 800px; margin: 0 auto; color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.6;">
-                        Faith Nexus is more than an event; it's a global ecosystem. Our partners and sponsors are the
-                        vital catalyst
-                        raising the resources and releasing the platforms that allow Christian creators to storytell
-                        with excellence,
-                        reach with impact, and sustain with integrity.
+    <!-- HERO SECTION -->
+    <section class="bg-dark-grid" style="padding: 120px 0 90px;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle gold">9. Partners & Sponsors</span>
+            <h1 class="pdf-title-large" style="margin-bottom: 1.25rem;">
+                Partner with Faith Nexus
+            </h1>
+            <p style="font-size: 1.35rem; color: #EEEEEE; line-height: 1.5; margin-bottom: 2rem;">
+                Connect your organisation with an influential cross-sector audience spanning faith, media, technology, business, education, leadership and culture.
+            </p>
+            <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1.25rem 2rem; display: inline-block;">
+                <span style="color: #CCCCCC; font-size: 0.95rem;">Request Partnership Information:</span>
+                <a href="mailto:partnersponsor@faithnexus.digital" style="color: var(--fn-gold); font-weight: 800; text-decoration: underline; margin-left: 8px;">partnersponsor@faithnexus.digital</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY PARTNER? -->
+    <section class="bg-cream" style="padding: 90px 0;">
+        <div class="container" style="max-width: 900px;">
+            <span class="pdf-subtitle rust">Strategic Alignment</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 1.5rem;">
+                Why Partner?
+            </h2>
+            <p style="font-size: 1.2rem; color: #333333; line-height: 1.6; margin-bottom: 1.25rem;">
+                Faith Nexus gives partners an opportunity to engage leaders, creators, institutions, and emerging voices from across Africa.
+            </p>
+            <p style="font-size: 1.1rem; color: #555555; line-height: 1.7;">
+                Partnership can provide brand visibility, thought-leadership opportunities, relationship-building, programme integration and direct engagement with delegates.
+            </p>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIP OPPORTUNITIES GRID (9 PACKAGES) -->
+    <section class="bg-cream" style="padding: 20px 0 100px; border-top: 1px solid var(--fn-border-subtle);">
+        <div class="container">
+            <span class="pdf-subtitle rust">Engagement Tiers</span>
+            <h2 class="pdf-title-med" style="color: #111111; margin-bottom: 2.5rem;">
+                Partnership Opportunities
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">01</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Headline Partnership
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            High-level event association and visibility across all platforms and main stage plenaries.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">02</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Programme Partnership
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Support major conversations, keynote panels, and programme environments.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">03</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Pillar Partnership
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Align your organization with one of the seven Faith Nexus strategic pillars.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">04</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Industry Exhibition Partnership
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Support the exhibition hall and corporate business engagement environment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">05</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Nexus Studio
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Partner with Faith Nexus' live media and digital content production environment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">06</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Nexus Creators Lounge
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Support one of the summit's primary creator networking and hospitality spaces.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">07</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            CW100 Partnership
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Associate with a premier platform recognising Christian influence impacting Africa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">08</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Covenant Conversations
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Support Jewish–Christian educational programming and bridge-building initiatives.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="part-opp-card">
+                    <div>
+                        <span class="pdf-pillar-num">09</span>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #111111; margin: 0.75rem 0 0.5rem;">
+                            Broadcast & Technology
+                        </h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.5;">
+                            Provide technology, connectivity, production, media or distribution support.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILD SOMETHING MEANINGFUL WITH US -->
+    <section class="bg-dark-grid" style="padding: 100px 0;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <span class="pdf-subtitle gold">Collaboration</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 1.5rem;">
+                Build Something Meaningful with Us
+            </h2>
+            <p style="font-size: 1.25rem; color: #DDDDDD; line-height: 1.6; margin-bottom: 2.5rem;">
+                Faith Nexus welcomes conversations with organisations whose values and objectives align with the platform.
+            </p>
+            <div>
+                <a href="mailto:partnersponsor@faithnexus.digital" class="btn-pdf-cream">
+                    REQUEST PARTNERSHIP INFORMATION &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (PDF Page 35 Format) -->
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="pdf-footer-grid">
+                <div class="footer-col-brand">
+                    <h3 class="footer-brand-title">FAITH NEXUS</h3>
+                    <p class="footer-tagline">Kingdom Voices. Global Reach.</p>
+                    <p class="footer-subtext">
+                        Africa’s convergence platform for Faith, Media, Technology, Leadership and Culture.
+                    </p>
+                    <p class="footer-event-date">
+                        14–16 April 2027 &middot; Johannesburg, South Africa
                     </p>
                 </div>
 
-                <!-- Strategic Ecosystem Partners -->
-                <div class="partners-category reveal" style="margin-top: 80px;">
-                    <h2 class="section-subtitle"
-                        style="color: var(--primary-gold); font-size: 1.5rem; margin-bottom: 40px; letter-spacing: 0.2em; text-transform: uppercase;">
-                        Strategic Ecosystem Partners</h2>
-                    <div class="partners-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-items: center;">
-                        <div class="partner-card-premium">
-                            <img loading="lazy" decoding="async" src="/logo.png" alt="WCCCS" style="filter: brightness(0) invert(1);">
-                        </div>
-                        <div class="partner-card-premium">
-                            <span
-                                style="color: #fff; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.1em;">TALKWORLD</span>
-                        </div>
-                        <div class="partner-card-premium">
-                            <span
-                                style="color: #fff; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.1em;">AFRICA
-                                ON PARS</span>
-                        </div>
-                    </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/summit.html">Programme</a></li>
+                        <li><a href="/covenant.html">Experiences</a></li>
+                        <li><a href="/covenant.html">Covenant Conversations</a></li>
+                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/faithnexus100.html">FN100</a></li>
+                        <li><a href="/about.html#leadership">Leadership</a></li>
+                    </ul>
                 </div>
 
-                <!-- Media & Technology Partners -->
-                <div class="partners-category reveal" style="margin-top: 100px;">
-                    <h2 class="section-subtitle"
-                        style="color: var(--primary-gold); font-size: 1.5rem; margin-bottom: 40px; letter-spacing: 0.2em; text-transform: uppercase;">
-                        Media & Technology Partners</h2>
-                    <div class="partners-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-items: center;">
-                        <div class="partner-card-premium">
-                            <span style="color: rgba(255,255,255,0.4);">Coming Soon</span>
-                        </div>
-                        <div class="partner-card-premium">
-                            <span style="color: rgba(255,255,255,0.4);">Coming Soon</span>
-                        </div>
-                        <div class="partner-card-premium">
-                            <span style="color: rgba(255,255,255,0.4);">Coming Soon</span>
-                        </div>
-                    </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="/registration.html">Register</a></li>
+                        <li><a href="/partners.html">Partner</a></li>
+                        <li><a href="/exhibition.html">Exhibit</a></li>
+                        <li><a href="/media.html">Media</a></li>
+                    </ul>
                 </div>
 
-                <!-- Summit Sponsors -->
-                <div class="partners-category reveal" style="margin-top: 100px; padding-bottom: 100px;">
-                    <h2 class="section-subtitle"
-                        style="color: var(--primary-gold); font-size: 1.5rem; margin-bottom: 40px; letter-spacing: 0.2em; text-transform: uppercase;">
-                        Summit Sponsors</h2>
-                    <div class="partners-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-items: center;">
-                        <div class="partner-card-premium">
-                            <span style="color: rgba(255,255,255,0.4);">Coming Soon</span>
-                        </div>
-                        <div class="partner-card-premium">
-                            <span style="color: rgba(255,255,255,0.4);">Coming Soon</span>
-                        </div>
-                        <div class="partner-card-premium">
-                            <span style="color: rgba(255,255,255,0.4);">Coming Soon</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Why Partner? Section (The Focus) -->
-                <div class="partners-focus reveal"
-                    style="margin-top: 120px; text-align: left; background: rgba(0,0,0,0.3); padding: 60px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05);">
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: start;">
-                        <div>
-                            <h2
-                                style="font-size: 2.5rem; color: #fff; margin-bottom: 20px; font-family: 'Playfair Display', serif;">
-                                The Strategic Importance of Partnership</h2>
-                            <p style="color: rgba(255,255,255,0.6); line-height: 1.8; font-size: 1.1rem;">
-                                In an era where story is the primary currency of influence, the mission to disciple
-                                nations through
-                                media cannot be achieved in isolation. We believe in the power of the "Triple Thread"
-                                partnership
-                                model: Resourcing, Releasing, and Renaissance.
-                            </p>
-                        </div>
-                        <div style="display: grid; gap: 30px;">
-                            <div
-                                style="background: rgba(14, 165, 233, 0.1); padding: 25px; border-radius: 15px; border-left: 4px solid var(--sky-blue);">
-                                <h4
-                                    style="color: var(--sky-blue); margin-bottom: 10px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em;">
-                                    01. Raising Resources</h4>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Closing the gap between
-                                    God-given visions and the capital required to build world-class infrastructure.</p>
-                            </div>
-                            <div
-                                style="background: rgba(197, 160, 89, 0.1); padding: 25px; border-radius: 15px; border-left: 4px solid var(--primary-gold);">
-                                <h4
-                                    style="color: var(--primary-gold); margin-bottom: 10px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em;">
-                                    02. Releasing Platforms</h4>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Leveraging global networks
-                                    to ensure the Kingdom message has the reach and resonance it deserves.</p>
-                            </div>
-                            <div
-                                style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #fff;">
-                                <h4
-                                    style="color: #fff; margin-bottom: 10px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em;">
-                                    03. Cultural Renaissance</h4>
-                                <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Restoring excellence as the
-                                    hallmark of Christian creativity, establishing a new standard for the global stage.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cta-section reveal"
-                    style="margin-top: 100px; margin-bottom: 100px; padding: 60px; background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(197, 160, 89, 0.1)); border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
-                    <h3
-                        style="color: #fff; margin-bottom: 20px; font-size: 2.22rem; font-family: 'Playfair Display', serif;">
-                        Partner with the Movement</h3>
-                    <p
-                        style="color: rgba(255,255,255,0.7); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
-                        Join our strategic ecosystem of partners and sponsors who are committed to resourcing the next
-                        generation
-                        of Spirit-filled storytellers.
-                    </p>
-                    <a href="/contact.html" class="btn btn-primary"
-                        style="padding: 18px 50px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">Request
-                        Partnership Deck</a>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="/virtual.html">Soft Launch</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </main>
 
+            <div class="pdf-footer-bottom">
+                <div class="footer-convened">
+                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                </div>
+                <div class="footer-socials">
+                    <a href="#">LinkedIn</a> &middot; 
+                    <a href="#">Instagram</a> &middot; 
+                    <a href="#">YouTube</a> &middot; 
+                    <a href="#">Facebook</a>
+                </div>
+                <div class="footer-legal">
+                    <span>&copy; 2027 Faith Nexus</span> &middot; 
+                    <a href="/legal.html">Privacy</a> &middot; 
+                    <a href="/legal.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
     <script type="module" src="/main.js"></script>
 </body>
-
 </html>
