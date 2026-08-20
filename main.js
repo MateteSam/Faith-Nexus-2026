@@ -71,32 +71,38 @@ function initParticles() {
 /* 2. NAVBAR SCROLL & MOBILE TOGGLE */
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    const mobileToggle = document.querySelector('.mobile-nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (mobileToggle && navLinks) {
-        mobileToggle.addEventListener('click', () => {
-            const isFlex = navLinks.style.display === 'flex';
-            navLinks.style.display = isFlex ? 'none' : 'flex';
-            if (!isFlex) {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '90px';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'rgba(3, 6, 17, 0.96)';
-                navLinks.style.padding = '2.5rem';
-                navLinks.style.borderBottom = '1px solid rgba(0, 240, 255, 0.3)';
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
+
+        const mobileToggle = navbar.querySelector('.mobile-nav-toggle');
+        const navLinks = navbar.querySelector('.nav-links');
+
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('mobile-active');
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navbar.contains(e.target) && navLinks.classList.contains('mobile-active')) {
+                    navLinks.classList.remove('mobile-active');
+                }
+            });
+
+            // Close when clicking any nav link
+            navLinks.querySelectorAll('a:not(.dropdown-trigger)').forEach(a => {
+                a.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-active');
+                });
+            });
+        }
     }
 }
 

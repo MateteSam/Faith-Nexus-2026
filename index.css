@@ -1276,28 +1276,37 @@ img {
     }
 }
 
-@media (max-width: 768px) {
+/* ==========================================================================
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS (TABLETS & PHONES)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
     /* Container & Base Spacing */
     .container {
         padding: 0 1.25rem;
     }
 
     section {
-        padding: 65px 0 !important;
+        padding: 60px 0 !important;
     }
 
     /* Top Announcement Strip */
     .announcement-bar {
-        padding: 8px 12px;
-        font-size: 0.78rem;
+        padding: 8px 14px;
+        font-size: 0.8rem;
         flex-direction: column;
         gap: 4px;
         line-height: 1.35;
+        text-align: center;
     }
 
-    /* Mobile Navigation */
+    /* Mobile Navigation Bar */
     .navbar {
         height: 68px;
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+        background: #F6F4EE !important;
     }
 
     .nav-brand img {
@@ -1305,126 +1314,173 @@ img {
     }
 
     .mobile-nav-toggle {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         width: 44px;
         height: 44px;
         border-radius: 8px;
-        background: rgba(0, 0, 0, 0.04);
+        background: rgba(0, 0, 0, 0.05);
+        color: #111111 !important;
+        cursor: pointer;
+        border: none;
     }
 
+    .mobile-nav-toggle svg {
+        stroke: #111111 !important;
+    }
+
+    /* Ensure Nav Links are STRICTLY HIDDEN until toggled */
     .nav-links {
-        display: none;
+        display: none !important;
     }
 
+    /* Solid High-Contrast Mobile Fullscreen Drawer */
     .nav-links.mobile-active {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 68px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(246, 244, 238, 0.98);
-        backdrop-filter: blur(20px);
-        padding: 2rem 1.5rem;
-        gap: 1.25rem;
-        overflow-y: auto;
-        z-index: 999;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed !important;
+        top: 68px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: calc(100vh - 68px) !important;
+        background: #F6F4EE !important;
+        color: #111111 !important;
+        padding: 1.75rem 1.5rem 3rem !important;
+        gap: 0.75rem !important;
+        overflow-y: auto !important;
+        z-index: 999999 !important;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25) !important;
     }
 
     .nav-links.mobile-active .nav-link {
-        font-size: 1.15rem;
-        font-weight: 700;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        width: 100%;
-        display: block;
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        color: #111111 !important;
+        padding: 0.75rem 0 !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+        width: 100% !important;
+        display: block !important;
+        text-align: left !important;
     }
 
-    .nav-dropdown .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: rgba(0, 0, 0, 0.03);
-        border: none;
-        border-radius: 8px;
-        margin-top: 0.5rem;
-        padding: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
+    .nav-links.mobile-active .nav-dropdown {
+        width: 100% !important;
+    }
+
+    .nav-links.mobile-active .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        background: #EBE8E0 !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 10px !important;
+        margin-top: 0.5rem !important;
+        padding: 0.75rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+
+    .nav-links.mobile-active .dropdown-menu a {
+        color: #111111 !important;
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        padding: 6px 10px !important;
+        border-radius: 6px !important;
+        display: block !important;
+    }
+
+    .nav-links.mobile-active .dropdown-menu a:hover {
+        background: #FFFFFF !important;
+        color: var(--fn-rust) !important;
     }
 
     .nav-links.mobile-active .btn-pdf-black {
-        width: 100%;
-        text-align: center;
-        padding: 14px;
-        font-size: 1rem;
-        margin-top: 1rem;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 14px !important;
+        font-size: 1rem !important;
+        margin-top: 1rem !important;
+        color: #FFFFFF !important;
+        background: #111111 !important;
+        border-radius: 8px !important;
     }
 
-    /* Hero Section */
+    /* Hero & Typography Mobile Scaling */
     .bg-dark-grid {
         background-size: 32px 32px;
     }
 
     .pdf-title-large {
-        font-size: clamp(2.3rem, 8.5vw, 3.2rem);
-        line-height: 1.08;
-        margin-bottom: 1.25rem;
+        font-size: clamp(2.2rem, 8vw, 3.2rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1.25rem !important;
     }
 
     .pdf-title-med {
-        font-size: clamp(1.85rem, 6.5vw, 2.3rem);
-        line-height: 1.15;
+        font-size: clamp(1.75rem, 6vw, 2.2rem) !important;
+        line-height: 1.18 !important;
     }
 
-    /* Hero Stacked Grid */
-    section.bg-dark-grid > .container {
+    /* Responsive Grids */
+    .hero-grid,
+    .find-place-grid,
+    .fn100-grid,
+    .cta-grid,
+    .schedule-grid,
+    .leadership-grid,
+    .expectations-grid,
+    .pillars-grid,
+    .pdf-footer-3col {
         grid-template-columns: 1fr !important;
-        gap: 2.5rem !important;
+        gap: 2rem !important;
+    }
+
+    .summit-stats-ribbon {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem !important;
     }
 
     /* Hero Video Portal on Mobile */
     .hero-video-portal {
-        height: 280px;
+        height: 260px;
         border-radius: 16px;
     }
 
     .hero-portal-badge {
-        top: 12px;
-        left: 12px;
-        font-size: 0.72rem;
-        padding: 4px 10px;
+        top: 10px;
+        left: 10px;
+        font-size: 0.7rem;
+        padding: 3px 8px;
     }
 
     .hero-portal-controls {
-        padding: 12px;
+        padding: 10px;
     }
 
     .portal-ctrl-btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
+        padding: 4px 8px;
+        font-size: 0.72rem;
     }
 
     /* Bauhaus Artworks on Mobile */
     .geo-art-container {
-        height: 300px;
+        height: 280px;
         border-radius: 16px;
     }
 
     .geo-circle {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         margin-bottom: 16px;
     }
 
     .geo-arch {
-        width: 120px;
+        width: 100px;
         height: 140px;
-        border-radius: 60px 60px 0 0;
+        border-radius: 50px 50px 0 0;
     }
 
     .geo-art-gold-section {
