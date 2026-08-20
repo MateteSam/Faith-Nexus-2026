@@ -2,14 +2,7 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]}
-
-# SPA-style fallback for clean URLs
-[[redirects]]
-  from = "/*.html"
-  to = "/:splat.html"
-  status = 200
+# Vite is pinned to port 5180 (vite.config.js / package.json),
+# so point `netlify dev` at it instead of Vite's default 5173.
+[dev]
+  targetPort = 5180
