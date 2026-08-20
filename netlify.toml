@@ -1,15 +1,3 @@
 [build]
   command = "npm run build"
   publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]}
-
-# SPA-style fallback for clean URLs
-[[redirects]]
-  from = "/*.html"
-  to = "/:splat.html"
-  status = 200
