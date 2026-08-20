@@ -340,8 +340,92 @@ img {
 }
 
 /* ==========================================================================
-   SIGNATURE BAUHAUS ARTWORK BOXES (Hero, Find Your Place, Footer CTA)
+   HERO VIDEO PORTAL & BAUHAUS ARTWORK (Hero, Find Your Place, Footer CTA)
    ========================================================================== */
+
+.hero-video-portal {
+    background-color: #0E1217;
+    border: 1px solid rgba(198, 138, 39, 0.35);
+    border-radius: 20px;
+    height: 480px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.hero-portal-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-portal-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(18, 20, 19, 0.2) 0%, rgba(18, 20, 19, 0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-portal-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    background: rgba(18, 20, 19, 0.85);
+    border: 1px solid rgba(198, 138, 39, 0.4);
+    border-radius: 999px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    backdrop-filter: blur(8px);
+}
+
+.hero-portal-controls {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portal-ctrl-btn {
+    background: rgba(18, 20, 19, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.portal-ctrl-btn:hover {
+    background: #FFFFFF;
+    color: #111111;
+    border-color: #FFFFFF;
+}
 
 .geo-art-container {
     background-color: var(--fn-forest);
