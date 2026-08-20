@@ -888,43 +888,333 @@ img {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATION
    ========================================================================== */
 
 @media (max-width: 1024px) {
-    .pdf-pillars-grid { grid-template-columns: repeat(2, 1fr); }
-    .leadership-grid { grid-template-columns: repeat(3, 1fr); }
-    .pdf-expect-grid { grid-template-columns: repeat(2, 1fr); }
+    .container {
+        padding: 0 1.5rem;
+    }
+    .pdf-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    .leadership-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+    .pdf-expect-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .pdf-title-large { font-size: 2.5rem; }
-    .pdf-title-med { font-size: 2rem; }
-    .pdf-pillars-grid { grid-template-columns: 1fr; }
-    .pdf-days-grid { grid-template-columns: 1fr; }
-    .pdf-day-card { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding: 2.5rem 1.5rem; }
-    .pdf-expect-grid { grid-template-columns: 1fr; }
-    .leadership-grid { grid-template-columns: repeat(2, 1fr); }
-    .pdf-footer-3col { grid-template-columns: 1fr; text-align: left; }
-    .footer-convened-col { text-align: left; }
-    
+    /* Container & Base Spacing */
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    section {
+        padding: 65px 0 !important;
+    }
+
+    /* Top Announcement Strip */
+    .announcement-bar {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+        flex-direction: column;
+        gap: 4px;
+        line-height: 1.35;
+    }
+
+    /* Mobile Navigation */
+    .navbar {
+        height: 68px;
+    }
+
+    .nav-brand img {
+        height: 32px !important;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.04);
+    }
+
     .nav-links {
         display: none;
     }
-    
+
     .nav-links.mobile-active {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 76px;
+        position: fixed;
+        top: 68px;
         left: 0;
         right: 0;
-        background: var(--fn-bg-cream);
-        padding: 2rem;
-        border-bottom: 1px solid var(--fn-border-subtle);
+        bottom: 0;
+        background: rgba(246, 244, 238, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 2rem 1.5rem;
+        gap: 1.25rem;
+        overflow-y: auto;
+        z-index: 999;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
-    
-    .mobile-nav-toggle {
+
+    .nav-links.mobile-active .nav-link {
+        font-size: 1.15rem;
+        font-weight: 700;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        width: 100%;
         display: block;
     }
+
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.03);
+        border: none;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .nav-links.mobile-active .btn-pdf-black {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    /* Hero Section */
+    .bg-dark-grid {
+        background-size: 32px 32px;
+    }
+
+    .pdf-title-large {
+        font-size: clamp(2.3rem, 8.5vw, 3.2rem);
+        line-height: 1.08;
+        margin-bottom: 1.25rem;
+    }
+
+    .pdf-title-med {
+        font-size: clamp(1.85rem, 6.5vw, 2.3rem);
+        line-height: 1.15;
+    }
+
+    /* Hero Stacked Grid */
+    section.bg-dark-grid > .container {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+    }
+
+    /* Hero Video Portal on Mobile */
+    .hero-video-portal {
+        height: 280px;
+        border-radius: 16px;
+    }
+
+    .hero-portal-badge {
+        top: 12px;
+        left: 12px;
+        font-size: 0.72rem;
+        padding: 4px 10px;
+    }
+
+    .hero-portal-controls {
+        padding: 12px;
+    }
+
+    .portal-ctrl-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    /* Bauhaus Artworks on Mobile */
+    .geo-art-container {
+        height: 300px;
+        border-radius: 16px;
+    }
+
+    .geo-circle {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 16px;
+    }
+
+    .geo-arch {
+        width: 120px;
+        height: 140px;
+        border-radius: 60px 60px 0 0;
+    }
+
+    .geo-art-gold-section {
+        transform: scale(0.85);
+        margin: 1rem 0;
+    }
+
+    /* 7 Pillars Grid (2-Column on Mobile) */
+    .pdf-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .pdf-pillar-card {
+        padding: 1.1rem;
+        min-height: 210px;
+        border-radius: 12px;
+    }
+
+    .pdf-pillar-img-wrap {
+        height: 90px;
+        margin-bottom: 0.75rem;
+    }
+
+    .pdf-pillar-title {
+        font-size: 0.95rem;
+    }
+
+    /* 3 Days Grid (1-Column Stacked on Mobile) */
+    .pdf-days-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        border: none;
+        margin-top: 1.5rem;
+    }
+
+    .pdf-day-card {
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 14px;
+        padding: 1.75rem 1.25rem;
+        min-height: auto;
+    }
+
+    .pdf-day-img-wrap {
+        height: 130px;
+        margin-bottom: 1.25rem;
+    }
+
+    .pdf-day-title {
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .pdf-day-tags {
+        font-size: 0.88rem;
+        margin-bottom: 1.25rem;
+    }
+
+    /* What To Expect (1-Column on Mobile) */
+    .pdf-expect-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .pdf-expect-card {
+        padding: 1.4rem;
+        min-height: auto;
+        border-radius: 12px;
+    }
+
+    .pdf-expect-img-wrap {
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    /* Find Your Place Section */
+    section.bg-ochre-gold > .container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center;
+    }
+
+    /* FN100 Watermark Section */
+    .fn100-watermark-wrap {
+        padding: 4rem 0;
+    }
+
+    .fn100-watermark-wrap > .container {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        text-align: center;
+    }
+
+    .fn100-watermark-wrap > .container > div:first-child {
+        font-size: 5rem !important;
+        margin: 0 auto;
+    }
+
+    /* Leadership 10 Cards (2-Column Grid on Phones) */
+    .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .leader-card {
+        padding: 0.85rem;
+        border-radius: 12px;
+    }
+
+    .leader-avatar-wrap {
+        height: 145px;
+        border-radius: 8px;
+        margin-bottom: 0.65rem;
+    }
+
+    .leader-name {
+        font-size: 0.92rem;
+    }
+
+    .leader-role {
+        font-size: 0.74rem;
+    }
+
+    /* 3-Column Minimalist Footer on Mobile */
+    .pdf-footer {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .pdf-footer-3col {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        text-align: center;
+    }
+
+    .footer-convened-col {
+        text-align: center;
+        border-top: 1px solid var(--fn-border-subtle);
+        padding-top: 1.25rem;
+    }
+
+    .footer-links-row {
+        gap: 0.75rem;
+    }
 }
+
+@media (max-width: 400px) {
+    .pdf-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+    .leader-avatar-wrap {
+        height: 180px;
+    }
+}
+
