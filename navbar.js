@@ -1,23 +1,23 @@
 export function renderNavbar() {
-    // Top Announcement Bar (Glowing Dark Space Glass Ribbon)
+    // Top Announcement Bar (PDF Page 1 Style)
     if (!document.querySelector('.announcement-bar')) {
         const topBar = document.createElement('div');
         topBar.className = 'announcement-bar';
         topBar.innerHTML = `
-            <span>✨ FAITH NEXUS 2027 SOFT LAUNCH &middot; 29 OCTOBER 2026 &middot; JOHANNESBURG</span>
-            <a href="/virtual.html" class="announcement-link">EXPLORE SOFT LAUNCH &rarr;</a>
+            <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+            <a href="/virtual.html" class="announcement-link">Explore</a>
         `;
         document.body.prepend(topBar);
     }
 
-    // Main Navigation (Dark Glass Navigation Bar)
+    // Main Navigation
     if (!document.querySelector('.navbar')) {
         const nav = document.createElement('nav');
         nav.className = 'navbar';
         nav.innerHTML = `
             <div class="container navbar-container">
                 <a href="/" class="nav-brand">
-                    <img src="/fn-logo-full.png" alt="Faith Nexus" class="nav-logo-img">
+                    FAITH NEXUS
                 </a>
 
                 <ul class="nav-links">
@@ -46,17 +46,8 @@ export function renderNavbar() {
                         </ul>
                     </li>
 
-                    <li class="nav-dropdown">
-                        <a href="#" class="nav-link dropdown-trigger">More <span class="caret">▾</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/virtual.html">Soft Launch</a></li>
-                            <li><a href="/faq.html">FAQ</a></li>
-                            <li><a href="/contact.html">Contact</a></li>
-                        </ul>
-                    </li>
-
                     <li>
-                        <a href="/registration.html" class="btn-nexus btn-nexus-primary" style="padding: 0.65rem 1.6rem; font-size: 0.85rem;">
+                        <a href="/registration.html" class="btn-pdf-black">
                             Register Interest
                         </a>
                     </li>
