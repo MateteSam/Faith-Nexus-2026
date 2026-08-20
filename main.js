@@ -292,20 +292,214 @@ function initRegistrationModal() {
     }
 }
 
-/* 9. SCROLL REVEAL OBSERVER */
-function initScrollReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+/* 10. CW100 NOMINATION MODAL */
+window.openNominationModal = function() {
+    let modal = document.getElementById('nominationModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'nominationModal';
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `
+            <div class="modal-box">
+                <button class="modal-close-btn" onclick="document.getElementById('nominationModal').classList.remove('active')">&times;</button>
+                <span class="pdf-subtitle rust">Content World 100 &middot; CW100</span>
+                <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: #111111; margin-bottom: 0.5rem;">Nominate a Kingdom Voice</h3>
+                <p style="font-size: 0.9rem; color: #666666; margin-bottom: 1.5rem;">
+                    Nominate a visionary Christian leader, creator, innovator, or educator impacting Africa & the global diaspora.
+                </p>
+
+                <form id="cw100NominationForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #333333; margin-bottom: 4px;">Nominee Full Name *</label>
+                        <input type="text" id="nomineeName" required placeholder="e.g. Grace Adebayo" style="width: 100%; padding: 10px 14px; border: 1px solid #DDD; border-radius: 6px; font-family: inherit; font-size: 0.9rem;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #333333; margin-bottom: 4px;">Pillar / Sector *</label>
+                        <select id="nomineeSector" required style="width: 100%; padding: 10px 14px; border: 1px solid #DDD; border-radius: 6px; font-family: inherit; font-size: 0.9rem;">
+                            <option value="Media & Communication">Media & Communication</option>
+                            <option value="Technology & Innovation">Technology & Innovation (AI, FinTech)</option>
+                            <option value="Faith & Spiritual Life">Faith & Spiritual Life</option>
+                            <option value="Economy & Enterprise">Economy & Enterprise / Capital</option>
+                            <option value="Education & Discipleship">Education & Discipleship</option>
+                            <option value="Governance & Public Life">Governance & Public Life</option>
+                            <option value="Arts & Culture">Arts & Culture</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #333333; margin-bottom: 4px;">Country / Region *</label>
+                        <input type="text" id="nomineeRegion" required placeholder="e.g. South Africa, UK, Kenya, BVI, Nigeria" style="width: 100%; padding: 10px 14px; border: 1px solid #DDD; border-radius: 6px; font-family: inherit; font-size: 0.9rem;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #333333; margin-bottom: 4px;">Why are you nominating this voice? *</label>
+                        <textarea id="nomineeReason" required rows="3" placeholder="Briefly describe their impact, initiatives, or reach..." style="width: 100%; padding: 10px 14px; border: 1px solid #DDD; border-radius: 6px; font-family: inherit; font-size: 0.9rem;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-pdf-black" style="padding: 12px; margin-top: 0.5rem; width: 100%;">
+                        Submit CW100 Nomination
+                    </button>
+                </form>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        modal.querySelector('#cw100NominationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nominee = document.getElementById('nomineeName').value;
+            alert(`Thank you!\n\nYour CW100 nomination for [${nominee}] has been submitted for review by the WCCCS Advisory Committee.`);
+            modal.classList.remove('active');
+            e.target.reset();
+        });
+    }
+
+    modal.classList.add('active');
+};
+
+/* 11. FAITH NEXUS CONCIERGE (SMART FAQ & TRAVEL ASSISTANT) */
+function initConcierge() {
+    if (document.getElementById('conciergeBtn')) return;
+
+    const btn = document.createElement('button');
+    btn.id = 'conciergeBtn';
+    btn.className = 'concierge-float-btn';
+    btn.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        <span>Nexus Concierge</span>
+    `;
+
+    const panel = document.createElement('div');
+    panel.id = 'conciergePanel';
+    panel.className = 'concierge-panel';
+    panel.innerHTML = `
+        <div class="concierge-header">
+            <div>
+                <div style="font-weight: 800; font-size: 1rem; color: #111111;">Faith Nexus Concierge</div>
+                <div style="font-size: 0.75rem; color: #777777;">Quick Answers & Summit Support</div>
+            </div>
+            <button onclick="document.getElementById('conciergePanel').classList.remove('open')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">&times;</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div class="concierge-faq-item" onclick="alert('🇿🇦 VISA ADVISORY:\nDelegates requiring entry visas for South Africa will receive an official Invitation & Accreditation Letter upon registering interest.')">
+                <strong>🛂 South Africa Visa Guidance</strong>
+            </div>
+
+            <div class="concierge-faq-item" onclick="alert('🏨 ACCOMMODATION:\nPartner hotels in Sandton & Rosebank, Johannesburg with exclusive Faith Nexus summit rates will be published with registration.')">
+                <strong>🏨 Summit Hotels & Lodging</strong>
+            </div>
+
+            <div class="concierge-faq-item" onclick="alert('🚀 SOFT LAUNCH:\nJoin the hybrid soft launch on 29 October 2026 in Johannesburg ahead of the main summit in April 2027.')">
+                <strong>✨ Soft Launch: 29 Oct 2026</strong>
+            </div>
+
+            <div class="concierge-faq-item" onclick="alert('🏆 CW100 NOMINATIONS:\nNominations are officially open for Christian leaders impacting Africa, UK, Europe, BVI, and Asia.')">
+                <strong>🏆 CW100 (Content World 100)</strong>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--fn-border-subtle); padding-top: 10px; display: flex; gap: 8px;">
+            <a href="/contact.html" class="btn-pdf-black" style="flex: 1; text-align: center; font-size: 0.78rem; padding: 8px;">
+                Contact Desk
+            </a>
+            <a href="/registration.html" class="btn-pdf-outline-dark" style="flex: 1; text-align: center; font-size: 0.78rem; padding: 8px;">
+                Register
+            </a>
+        </div>
+    `;
+
+    document.body.appendChild(btn);
+    document.body.appendChild(panel);
+
+    btn.addEventListener('click', () => {
+        panel.classList.toggle('open');
+    });
+}
+
+/* 13. INTERACTIVE SECTOR HUB (FIND YOUR PLACE) */
+function initSectorHub() {
+    const pills = document.querySelectorAll('.sector-pill-btn');
+    const badgeEl = document.getElementById('sectorBadge');
+    const titleEl = document.getElementById('sectorTitle');
+    const descEl = document.getElementById('sectorDesc');
+    const tagsEl = document.getElementById('sectorTags');
+
+    if (!pills.length || !titleEl) return;
+
+    const sectorData = {
+        media: {
+            badge: "Pillar 02 &middot; Storytelling & Broadcast",
+            title: "Broadcasting, Cinema & Christian IP",
+            desc: "Uniting Africa's foremost filmmakers, digital storytellers, television executives, and streaming platforms to pioneer sovereign distribution models and global Christian media.",
+            tags: ["Distribution Networks", "Film Pitches", "Studio Masterclasses", "Streaming Tech"]
+        },
+        tech: {
+            badge: "Pillar 03 &middot; Frontier Innovation & AI",
+            title: "Artificial Intelligence, Cloud & FinTech",
+            desc: "Gathering Christian CTOs, software architects, AI researchers, and tech founders building sovereign digital infrastructure, church management systems, and ethical AI tools for the continent.",
+            tags: ["Ethical AI", "Fintech & Capital", "Cloud Architecture", "Product Showcases"]
+        },
+        faith: {
+            badge: "Pillar 01 &middot; Foundations & Covenant",
+            title: "Apostolic Alignment & Ministry Leadership",
+            desc: "Bringing senior bishops, apostles, ministry executives, and church networks together for deep theological reflection, cross-continental fellowship, and strategic collaboration.",
+            tags: ["Covenant Alignment", "Apostolic Networks", "Church Growth", "Global Missions"]
+        },
+        enterprise: {
+            badge: "Pillar 06 &middot; Capital & Marketplace",
+            title: "Kingdom Capital, Venture & Enterprise",
+            desc: "Connecting Christian entrepreneurs, angel investors, family offices, and wealth stewards to mobilize capital for high-impact African and global Kingdom ventures.",
+            tags: ["Venture Capital", "Angel Syndicates", "Marketplace Impact", "Enterprise Growth"]
+        },
+        governance: {
+            badge: "Pillar 04 &middot; Public Life & Policy",
+            title: "Public Leadership, Law & Civic Influence",
+            desc: "Equipping Christian jurists, public servants, diplomats, and policy shapers to advance integrity, justice, and nation-building across Africa.",
+            tags: ["Public Policy", "Judicial Integrity", "Civic Strategy", "Diplomatic Relations"]
+        },
+        youth: {
+            badge: "Pillar 07 &middot; Arts, Culture & Next-Gen",
+            title: "Youth Renaissance & Cultural Transformation",
+            desc: "Empowering the next generation of creative artists, worship pioneers, digital native influencers, and young entrepreneurs to carry Kingdom influence into tomorrow.",
+            tags: ["Emerging Voices", "Creative Labs", "Mentorship Circles", "Digital Ministry"]
+        }
+    };
+
+    pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            pills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const key = pill.getAttribute('data-sector');
+            const data = sectorData[key];
+
+            if (data) {
+                const card = document.getElementById('dynamicSectorCard');
+                if (card) {
+                    card.style.opacity = '0.5';
+                    card.style.transform = 'translateY(6px)';
+                    setTimeout(() => {
+                        badgeEl.innerHTML = data.badge;
+                        titleEl.textContent = data.title;
+                        descEl.textContent = data.desc;
+                        tagsEl.innerHTML = data.tags.map(t => `<span class="sector-mini-tag">${t}</span>`).join('');
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 150);
+                }
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
+    initConcierge();
+    initSectorHub();
 });
+
+
 
