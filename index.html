@@ -391,37 +391,62 @@
         </div>
     </section>
 
-    <!-- SECTION 6: FIND YOUR PLACE (PDF Page 6) -->
+    <!-- SECTION 6: FIND YOUR PLACE (UPGRADED INTERACTIVE SECTOR HUB) -->
     <section class="bg-ochre-gold" style="padding: 100px 0;">
         <div class="container find-place-grid">
             <div>
                 <span class="pdf-subtitle" style="color: #111111; font-weight: 800;">Find Your Place</span>
-                <h2 class="pdf-title-large" style="margin-bottom: 2rem; color: #111111;">
-                    One gathering. Multiple industries.<br>
+                <h2 class="pdf-title-large" style="margin-bottom: 1.25rem; color: #111111;">
+                    One gathering.<br>
+                    Multiple industries.<br>
                     Shared purpose.
                 </h2>
                 
-                <div style="margin-bottom: 2rem;">
-                    <a href="/registration.html" class="btn-pdf-black">
-                        Register Your Interest
-                    </a>
+                <p style="font-size: 1.15rem; color: #222222; line-height: 1.6; margin-bottom: 1.5rem; max-width: 540px;">
+                    Whether you are an apostolic statesman, film director, cloud architect, or enterprise investor, Faith Nexus connects you directly with your ecosystem.
+                </p>
+
+                <!-- Interactive Sector Selector Pills -->
+                <div class="sector-pills-list">
+                    <button class="sector-pill-btn active" data-sector="media">Creators & Media</button>
+                    <button class="sector-pill-btn" data-sector="tech">Technology & AI</button>
+                    <button class="sector-pill-btn" data-sector="faith">Faith & Ministry</button>
+                    <button class="sector-pill-btn" data-sector="enterprise">Economy & Capital</button>
+                    <button class="sector-pill-btn" data-sector="governance">Governance & Public Life</button>
+                    <button class="sector-pill-btn" data-sector="youth">Next-Gen Leaders</button>
                 </div>
 
-                <div style="font-size: 0.95rem; font-weight: 700; color: #111111; line-height: 1.8;">
-                    Faith & Ministry &middot; Creators & Media &middot; Technology & Enterprise<br>
-                    Education & Leadership &middot; Arts & Culture &middot; Next Generation
+                <div>
+                    <a href="/registration.html" class="btn-pdf-black">
+                        Register Your Interest &rarr;
+                    </a>
                 </div>
             </div>
 
-            <!-- Signature Bauhaus Disc + Striped Box Graphic -->
-            <div class="geo-art-gold-section">
-                <div class="geo-target-disc">
-                    <div class="geo-target-inner"></div>
+            <!-- Dynamic Interactive Sector Card -->
+            <div id="dynamicSectorCard" class="sector-dynamic-card">
+                <div>
+                    <div class="sector-card-badge" id="sectorBadge">
+                        <span>Pillar 02</span> &middot; <span>Storytelling & Broadcast</span>
+                    </div>
+                    <h3 class="sector-card-title" id="sectorTitle">Broadcasting, Cinema & Christian IP</h3>
+                    <p class="sector-card-desc" id="sectorDesc">
+                        Uniting Africa's foremost filmmakers, digital storytellers, television executives, and streaming platforms to pioneer sovereign distribution models and global Christian media.
+                    </p>
+
+                    <div class="sector-card-tags" id="sectorTags">
+                        <span class="sector-mini-tag">Distribution Networks</span>
+                        <span class="sector-mini-tag">Film Pitches</span>
+                        <span class="sector-mini-tag">Studio Masterclasses</span>
+                        <span class="sector-mini-tag">Streaming Tech</span>
+                    </div>
                 </div>
-                <div class="geo-striped-box">
-                    <div class="geo-stripe-line"></div>
-                    <div class="geo-stripe-line"></div>
-                    <div class="geo-stripe-line"></div>
+
+                <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-size: 0.85rem; font-weight: 700; color: #555555;">Expected Delegates: 450+</span>
+                    <a href="/creators.html" style="font-weight: 800; font-size: 0.88rem; color: #111111; display: inline-flex; align-items: center; gap: 4px;">
+                        Explore Track &rarr;
+                    </a>
                 </div>
             </div>
         </div>
@@ -606,37 +631,89 @@
         </div>
     </section>
 
-    <!-- SECTION 9: FINAL CTA (PDF Page 9) -->
-    <section class="bg-dark-grid" style="padding: 100px 0;">
+    <!-- SECTION 9: FINAL CTA & CONVENTION SHOWCASE (UPGRADED) -->
+    <section class="bg-dark-grid" style="padding: 110px 0 90px;">
         <div class="container cta-grid">
             <div>
-                <span class="pdf-subtitle gold">Faith Nexus 2027</span>
+                <!-- Gold Tag with Icon -->
+                <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 1.25rem;">
+                    <img src="/fn-logo-icon.png" alt="Faith Nexus" style="height: 22px; width: 22px; object-fit: contain;">
+                    <span class="pdf-subtitle gold" style="margin-bottom: 0; font-size: 0.85rem;">FAITH NEXUS 2027</span>
+                </div>
+
                 <h2 class="pdf-title-large" style="margin-bottom: 1.25rem;">
                     Kingdom Voices.<br>
                     Global Reach.
                 </h2>
                 
-                <p style="font-size: 1.15rem; color: #FFFFFF; font-weight: 700; margin-bottom: 2.25rem;">
-                    14–16 April 2027 &middot; Johannesburg, South Africa
+                <p style="font-size: 1.15rem; color: #CCCCCC; max-width: 580px; line-height: 1.6; margin-bottom: 2rem;">
+                    Join 2,000 global leaders, media executives, tech builders, and innovators in Johannesburg as we shape the convergence of faith, media, and culture.
                 </p>
 
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <!-- Premium 3-Tier Button Bar -->
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
                     <a href="/registration.html" class="btn-pdf-white">
-                        Register Your Interest
+                        Register Your Interest &rarr;
                     </a>
                     <a href="/partners.html" class="btn-pdf-outline-light">
-                        Become a Partner
+                        Become a Partner ↗
                     </a>
                     <a href="/exhibition.html" class="btn-pdf-outline-light">
-                        Exhibit
+                        Exhibit at Summit ↗
                     </a>
+                </div>
+
+                <!-- Summit Stats Metric Ribbon -->
+                <div class="summit-stats-ribbon">
+                    <div>
+                        <div class="stat-metric-num">3</div>
+                        <div class="stat-metric-label">Summit Days</div>
+                    </div>
+                    <div>
+                        <div class="stat-metric-num">7</div>
+                        <div class="stat-metric-label">Strategic Pillars</div>
+                    </div>
+                    <div>
+                        <div class="stat-metric-num">2,000+</div>
+                        <div class="stat-metric-label">Leaders Expected</div>
+                    </div>
+                    <div>
+                        <div class="stat-metric-num">50+</div>
+                        <div class="stat-metric-label">Nations</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Signature Bauhaus Artwork Container -->
-            <div class="geo-art-container">
-                <div class="geo-circle"></div>
-                <div class="geo-arch"></div>
+            <!-- Johannesburg Convention Showcase & Venue Card -->
+            <div class="venue-showcase-card">
+                <div class="venue-img-wrap">
+                    <img src="/covenant-conversations-hall.jpg" alt="Johannesburg Summit Venue" class="venue-img">
+                    <div class="venue-coordinates-pill">
+                        📍 Sandton, Johannesburg &middot; 26.1076° S, 28.0567° E
+                    </div>
+                </div>
+
+                <div class="venue-details-body">
+                    <div>
+                        <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--fn-gold); letter-spacing: 0.05em; margin-bottom: 4px;">
+                            Host City &amp; Venue Precinct
+                        </div>
+                        <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 6px;">
+                            Johannesburg, South Africa
+                        </h4>
+                        <p style="font-size: 0.88rem; color: #AAAAAA; line-height: 1.5;">
+                            Main Summit: <strong>14–16 April 2027</strong><br>
+                            Soft Launch: <strong>29 October 2026</strong>
+                        </p>
+                    </div>
+
+                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-size: 0.8rem; color: #888888;">Accreditation open</span>
+                        <button onclick="addSummitToCalendar()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #FFFFFF; padding: 6px 12px; border-radius: 4px; font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                            📅 Add to Calendar
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

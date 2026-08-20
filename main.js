@@ -419,20 +419,87 @@ function initConcierge() {
     });
 }
 
-/* 12. 1-CLICK CALENDAR SYNC HELPER */
-window.addSummitToCalendar = function() {
-    const title = encodeURIComponent("Faith Nexus 2027: Kingdom Voices. Global Reach.");
-    const details = encodeURIComponent("Africa's convergence platform for Faith, Media, Technology, Leadership and Culture. Convened by WCCCS.");
-    const location = encodeURIComponent("Johannesburg, South Africa");
-    const dates = "20270414T070000Z/20270416T170000Z";
+/* 13. INTERACTIVE SECTOR HUB (FIND YOUR PLACE) */
+function initSectorHub() {
+    const pills = document.querySelectorAll('.sector-pill-btn');
+    const badgeEl = document.getElementById('sectorBadge');
+    const titleEl = document.getElementById('sectorTitle');
+    const descEl = document.getElementById('sectorDesc');
+    const tagsEl = document.getElementById('sectorTags');
 
-    const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
-    window.open(googleUrl, '_blank');
-};
+    if (!pills.length || !titleEl) return;
+
+    const sectorData = {
+        media: {
+            badge: "Pillar 02 &middot; Storytelling & Broadcast",
+            title: "Broadcasting, Cinema & Christian IP",
+            desc: "Uniting Africa's foremost filmmakers, digital storytellers, television executives, and streaming platforms to pioneer sovereign distribution models and global Christian media.",
+            tags: ["Distribution Networks", "Film Pitches", "Studio Masterclasses", "Streaming Tech"]
+        },
+        tech: {
+            badge: "Pillar 03 &middot; Frontier Innovation & AI",
+            title: "Artificial Intelligence, Cloud & FinTech",
+            desc: "Gathering Christian CTOs, software architects, AI researchers, and tech founders building sovereign digital infrastructure, church management systems, and ethical AI tools for the continent.",
+            tags: ["Ethical AI", "Fintech & Capital", "Cloud Architecture", "Product Showcases"]
+        },
+        faith: {
+            badge: "Pillar 01 &middot; Foundations & Covenant",
+            title: "Apostolic Alignment & Ministry Leadership",
+            desc: "Bringing senior bishops, apostles, ministry executives, and church networks together for deep theological reflection, cross-continental fellowship, and strategic collaboration.",
+            tags: ["Covenant Alignment", "Apostolic Networks", "Church Growth", "Global Missions"]
+        },
+        enterprise: {
+            badge: "Pillar 06 &middot; Capital & Marketplace",
+            title: "Kingdom Capital, Venture & Enterprise",
+            desc: "Connecting Christian entrepreneurs, angel investors, family offices, and wealth stewards to mobilize capital for high-impact African and global Kingdom ventures.",
+            tags: ["Venture Capital", "Angel Syndicates", "Marketplace Impact", "Enterprise Growth"]
+        },
+        governance: {
+            badge: "Pillar 04 &middot; Public Life & Policy",
+            title: "Public Leadership, Law & Civic Influence",
+            desc: "Equipping Christian jurists, public servants, diplomats, and policy shapers to advance integrity, justice, and nation-building across Africa.",
+            tags: ["Public Policy", "Judicial Integrity", "Civic Strategy", "Diplomatic Relations"]
+        },
+        youth: {
+            badge: "Pillar 07 &middot; Arts, Culture & Next-Gen",
+            title: "Youth Renaissance & Cultural Transformation",
+            desc: "Empowering the next generation of creative artists, worship pioneers, digital native influencers, and young entrepreneurs to carry Kingdom influence into tomorrow.",
+            tags: ["Emerging Voices", "Creative Labs", "Mentorship Circles", "Digital Ministry"]
+        }
+    };
+
+    pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            pills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+
+            const key = pill.getAttribute('data-sector');
+            const data = sectorData[key];
+
+            if (data) {
+                const card = document.getElementById('dynamicSectorCard');
+                if (card) {
+                    card.style.opacity = '0.5';
+                    card.style.transform = 'translateY(6px)';
+                    setTimeout(() => {
+                        badgeEl.innerHTML = data.badge;
+                        titleEl.textContent = data.title;
+                        descEl.textContent = data.desc;
+                        tagsEl.innerHTML = data.tags.map(t => `<span class="sector-mini-tag">${t}</span>`).join('');
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 150);
+                }
+            }
+        });
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initConcierge();
+    initSectorHub();
 });
+
 
 

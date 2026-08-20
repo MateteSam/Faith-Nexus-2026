@@ -673,45 +673,183 @@ img {
 }
 
 /* Bauhaus Art on Gold Section */
-.geo-art-gold-section {
+/* ==========================================================================
+   INTERACTIVE SECTOR HUB (FIND YOUR PLACE)
+   ========================================================================== */
+
+.sector-pills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.sector-pill-btn {
+    background: rgba(18, 20, 19, 0.08);
+    border: 1px solid rgba(18, 20, 19, 0.2);
+    color: #111111;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.sector-pill-btn:hover,
+.sector-pill-btn.active {
+    background: #111111;
+    color: #FFFFFF;
+    border-color: #111111;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.sector-dynamic-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(18, 20, 19, 0.1);
+    border-radius: 20px;
+    padding: 2.25rem;
+    color: #111111;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    min-height: 380px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.geo-target-disc {
-    width: 170px;
-    height: 170px;
-    background-color: #111111;
-    border-radius: 50%;
+.sector-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--fn-rust);
+    margin-bottom: 0.75rem;
+}
+
+.sector-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #111111;
+}
+
+.sector-card-desc {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.sector-card-tags {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.5rem;
 }
 
-.geo-target-inner {
-    width: 90px;
-    height: 90px;
-    background-color: var(--fn-rust);
-    border-radius: 50%;
+.sector-mini-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #F6F4EE;
+    color: #333333;
+    padding: 4px 10px;
+    border-radius: 6px;
 }
 
-.geo-striped-box {
-    width: 200px;
-    height: 110px;
-    background-color: var(--fn-forest);
-    border-radius: 8px;
-    padding: 18px;
+/* ==========================================================================
+   VENUE SHOWCASE PORTAL & FINAL CTA STATS
+   ========================================================================== */
+
+.venue-showcase-card {
+    background: #0E1217;
+    border: 1px solid rgba(198, 138, 39, 0.35);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    min-height: 440px;
 }
 
-.geo-stripe-line {
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.3);
+.venue-img-wrap {
+    height: 240px;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.venue-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.venue-showcase-card:hover .venue-img {
+    transform: scale(1.05);
+}
+
+.venue-coordinates-pill {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(18, 20, 19, 0.85);
+    border: 1px solid rgba(198, 138, 39, 0.4);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    backdrop-filter: blur(8px);
+}
+
+.venue-details-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    background: #12151A;
+    color: #FFFFFF;
+}
+
+.summit-stats-ribbon {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat-metric-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--fn-gold);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-metric-label {
+    font-size: 0.78rem;
+    color: #AAAAAA;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
 /* ==========================================================================
