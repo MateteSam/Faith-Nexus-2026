@@ -377,13 +377,13 @@
 
                 <div class="pdf-expect-card">
                     <div class="pdf-expect-img-wrap">
-                        <img src="/honours-gala.png" alt="FN100" class="pdf-expect-img">
+                        <img src="/honours-gala.png" alt="CW100" class="pdf-expect-img">
                     </div>
                     <span class="pdf-pillar-num">06</span>
                     <div>
-                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">FN100</h3>
+                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">CW100</h3>
                         <p style="font-size: 0.95rem; color: #666666; line-height: 1.5;">
-                            Recognising 100 Christian leaders and voices impacting Africa.
+                            Content World 100 — Recognising 100 Christian leaders and voices impacting Africa & beyond.
                         </p>
                     </div>
                 </div>
@@ -427,34 +427,61 @@
         </div>
     </section>
 
-    <!-- SECTION 7: FAITHNEXUS100 (FN100) (PDF Page 7) -->
-    <section class="bg-cream fn100-watermark-wrap">
+    <!-- SECTION 7: CW100 (CONTENT WORLD 100) WITH GLOBAL VIDEO EMBED -->
+    <section class="bg-cream fn100-watermark-wrap" style="padding: 90px 0;">
         <div class="fn100-watermark-bg">100</div>
         
         <div class="container fn100-grid">
-            <div style="font-family: 'Outfit', sans-serif; font-size: 8rem; font-weight: 900; color: var(--fn-rust); line-height: 0.85;">
-                100
+            <!-- Left Side: Large 100 and Video Container -->
+            <div>
+                <div style="font-family: 'Outfit', sans-serif; font-size: clamp(5rem, 10vw, 7.5rem); font-weight: 900; color: var(--fn-rust); line-height: 0.85; margin-bottom: 1.5rem;">
+                    100
+                </div>
+
+                <!-- CW100 Video Player Box -->
+                <div class="cw100-video-card" style="border-radius: 16px; overflow: hidden; position: relative; background: #0E1217; border: 1px solid rgba(110, 62, 46, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.15);">
+                    <video id="cw100Video" class="cw100-video-element" controls loop muted playsinline style="width: 100%; height: 260px; object-fit: cover; display: block;" poster="/honours-gala.png">
+                        <source src="/cw100-global-video.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                    <div style="padding: 10px 16px; background: rgba(18, 20, 19, 0.95); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #FFFFFF;">
+                        <span style="font-weight: 700; color: var(--fn-gold);">CW100 Global Showcase</span>
+                        <span style="color: #AAAAAA;">UK &middot; Europe &middot; BVI &middot; Africa &middot; Asia</span>
+                    </div>
+                </div>
             </div>
 
+            <!-- Right Side: Narrative, Regions & Actions -->
             <div>
-                <span class="pdf-subtitle rust">FaithNexus100</span>
+                <span class="pdf-subtitle rust">Content World 100 &middot; CW100</span>
                 <h2 class="pdf-title-med" style="margin-bottom: 1.25rem; color: #111111;">
                     Celebrating Christian Influence<br>
-                    Impacting Africa
+                    Impacting Africa & Beyond
                 </h2>
                 
-                <p style="font-size: 1.2rem; color: #444444; margin-bottom: 1.5rem; line-height: 1.5;">
-                    100 leaders and voices. Multiple sectors. One continental recognition platform.
+                <p style="font-size: 1.15rem; color: #444444; margin-bottom: 1.25rem; line-height: 1.6;">
+                    <strong>CW100</strong> recognizes 100 pioneering leaders, creators, educators, innovators, and changemakers across Africa, the UK, Europe, the British Virgin Islands, and Asia.
                 </p>
+
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                    <span class="badge-chip">Africa</span>
+                    <span class="badge-chip">United Kingdom</span>
+                    <span class="badge-chip">Europe</span>
+                    <span class="badge-chip">British Virgin Islands</span>
+                    <span class="badge-chip">Asia</span>
+                </div>
 
                 <p style="font-size: 0.95rem; font-weight: 700; color: #111111; margin-bottom: 2rem;">
                     Official announcement &middot; 29 October 2026
                 </p>
 
-                <div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <a href="/faithnexus100.html" class="btn-pdf-black">
-                        Discover FN100
+                        Discover CW100
                     </a>
+                    <button class="btn-pdf-outline-dark" onclick="openNominationModal()">
+                        Nominate a Voice &rarr;
+                    </button>
                 </div>
             </div>
         </div>

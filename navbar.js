@@ -34,7 +34,7 @@ export function renderNavbar() {
                         </ul>
                     </li>
 
-                    <li><a href="/faithnexus100.html" class="nav-link">FN100</a></li>
+                    <li><a href="/faithnexus100.html" class="nav-link">CW100</a></li>
 
                     <li class="nav-dropdown">
                         <a href="/registration.html" class="nav-link dropdown-trigger">Get Involved <span class="caret">▾</span></a>

@@ -18,7 +18,7 @@ export function renderFooter() {
                         <a href="/covenant.html">Experiences</a>
                     </div>
                     <div>
-                        <a href="/faithnexus100.html">FN100</a> &middot; 
+                        <a href="/faithnexus100.html">CW100</a> &middot; 
                         <a href="/partners.html">Partners</a> &middot; 
                         <a href="/exhibition.html">Exhibit</a> &middot; 
                         <a href="/media.html">Media</a>
