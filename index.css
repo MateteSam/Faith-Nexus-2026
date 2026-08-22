@@ -1754,6 +1754,21 @@ img {
         font-size: 0.74rem;
     }
 
+    .covenant-tag-badge {
+        display: inline-block;
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #C68A27;
+        background: rgba(198, 138, 39, 0.12);
+        border: 1px solid rgba(198, 138, 39, 0.35);
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-top: 6px;
+        text-transform: uppercase;
+    }
+
     /* 3-Column Minimalist Footer on Mobile */
     .pdf-footer {
         padding: 2.5rem 0 2rem;
