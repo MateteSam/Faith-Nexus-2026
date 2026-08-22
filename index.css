@@ -1443,7 +1443,11 @@ img {
         line-height: 1.18 !important;
     }
 
-    /* Responsive Grids & Media Containers on Mobile */
+    /* Responsive Grids & Media Containers on Mobile Across ALL Pages */
+    [style*="grid-template-columns"],
+    .container[style*="display: grid"],
+    div[style*="display: grid"],
+    div[style*="display:grid"],
     .hero-grid,
     .pdf-two-col-grid,
     .find-place-grid,
@@ -1453,9 +1457,12 @@ img {
     .leadership-grid,
     .expectations-grid,
     .pillars-grid,
-    .pdf-footer-3col {
+    .pdf-footer-3col,
+    .pdf-pillars-grid,
+    .pdf-days-grid,
+    .cw100-stats-grid {
         grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
     }
 
     .pdf-cards-two-col {
@@ -1463,18 +1470,37 @@ img {
         gap: 1rem !important;
     }
 
-    /* Force mobile height & full width on all media frame boxes */
-    .pdf-two-col-grid div[style*="height"],
-    .pdf-two-col-grid > div > div[style*="height"],
+    /* Force 1 column on span items on mobile */
+    [style*="grid-column: span 2"],
+    [style*="grid-column:span 2"] {
+        grid-column: span 1 !important;
+    }
+
+    /* Force mobile height & 100% width on all media frame boxes */
+    [style*="height: 260px"],
+    [style*="height: 310px"],
+    [style*="height: 320px"],
+    [style*="height: 350px"],
+    [style*="height: 360px"],
+    [style*="height: 380px"],
+    [style*="height: 440px"],
+    [style*="height: 460px"],
     .hero-video-portal {
         height: 240px !important;
+        max-height: 260px !important;
         width: 100% !important;
         margin-top: 0.5rem;
     }
 
+    [style*="height"] img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
     /* Programme Banner Mobile Text */
     .programme-top-banner {
-        font-size: 1.25rem !important;
+        font-size: 1.2rem !important;
         padding: 1.5rem 1rem !important;
         text-align: center;
     }
@@ -1484,7 +1510,9 @@ img {
     .btn-pdf-black,
     .btn-pdf-cream,
     .btn-pdf-outline-dark,
-    .btn-pdf-outline-light {
+    .btn-pdf-outline-light,
+    .btn-primary,
+    .btn-secondary {
         display: block !important;
         width: 100% !important;
         text-align: center !important;
@@ -1543,26 +1571,32 @@ img {
         margin: 1rem 0;
     }
 
-    /* 7 Pillars Grid (2-Column on Mobile) */
+    /* 7 Pillars Grid (1-Column on Mobile Phones, 2-Column on Tablet) */
     .pdf-pillars-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
         margin-top: 1.5rem;
+    }
+
+    @media (min-width: 550px) and (max-width: 900px) {
+        .pdf-pillars-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
     }
 
     .pdf-pillar-card {
         padding: 1.1rem;
-        min-height: 210px;
+        min-height: auto;
         border-radius: 12px;
     }
 
     .pdf-pillar-img-wrap {
-        height: 90px;
+        height: 110px;
         margin-bottom: 0.75rem;
     }
 
     .pdf-pillar-title {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
     }
 
     /* 3 Days Grid (1-Column Stacked on Mobile) */
