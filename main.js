@@ -109,11 +109,20 @@ function initNavbar() {
 
 /* 3. HERO VIDEO CONTROLS */
 function initHeroVideo() {
+    const topVideo = document.getElementById('topLogoAnimVideo');
+    if (topVideo) {
+        topVideo.muted = true;
+        topVideo.play().catch(err => console.log('Top video autoplay handled:', err));
+    }
+
     const video = document.getElementById('heroPortalVideo') || document.getElementById('heroVideo');
     const playBtn = document.getElementById('portalPlayBtn') || document.getElementById('playPauseBtn');
     const muteBtn = document.getElementById('portalMuteBtn') || document.getElementById('muteToggleBtn');
 
     if (!video) return;
+
+    video.muted = true;
+    video.play().catch(err => console.log('Hero portal video autoplay handled:', err));
 
     const playSvg = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
     const pauseSvg = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
