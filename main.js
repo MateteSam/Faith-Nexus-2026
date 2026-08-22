@@ -1,5 +1,6 @@
 /**
- * FAITH NEXUS 2026 - CINEMATIC INTERACTIVE ENGINE
+ * FAITH NEXUS 2027 - CINEMATIC INTERACTIVE ENGINE
+ * 14–16 April 2027 · Rosebank, Johannesburg, South Africa
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -141,7 +142,7 @@ function initHeroVideo() {
 
 /* 4. LIVE SUMMIT COUNTDOWN */
 function initCountdown() {
-    const targetDate = new Date('2026-10-24T09:00:00+02:00').getTime();
+    const targetDate = new Date('2027-04-14T09:00:00+02:00').getTime();
 
     const daysEl = document.getElementById('countDays');
     const hoursEl = document.getElementById('countHours');

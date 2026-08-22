@@ -1,76 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Confirmed | Faith Nexus 2026</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Registration Confirmed | Faith Nexus 2027</title>
+    <meta name="description" content="Thank you for registering your interest for Faith Nexus 2027 in Johannesburg, South Africa.">
+    <link rel="icon" type="image/png" href="/fn-logo-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel='stylesheet' href='/index.css'>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR-PIXEL-ID-HERE');
-        fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-        <link rel="preload" href="/index.css" as="style">
-    <link rel="preload" href="/hero-bg.png" as="image">
-    <link rel="preload" href="/logo.png" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/index.css">
 </head>
+<body class="bg-cream">
 
-<body>
-    <!-- Meta Pixel Code (Non-JS fallback) -->
-    <noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=YOUR-PIXEL-ID-HERE&ev=PageView&noscript=1" /></noscript>
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="nav-brand" style="display: flex; align-items: center; gap: 10px;">
+                <img src="/fn-logo-full.png" alt="Faith Nexus" style="height: 38px; width: auto; object-fit: contain;">
+            </a>
 
-    <div class="success-card reveal">
-        <div class="success-glow"></div>
-        <span class="ref-number">Order Reference: FN2026-NEXUS</span>
-        <h1 class="luxury-title">Your Journey <br>has Begun</h1>
-        <p style="font-size: 1.2rem; opacity: 0.7; line-height: 1.8; margin-bottom: 40px;">
-            Thank you for registering for Faith Nexus 2026. A confirmation email with your ticket details and arrival
-            guide has been dispatched to your inbox.
-        </p>
-
-        <div style="display: flex; gap: 20px; justify-content: center;">
-            <a href="/" class="btn-cinema" style="text-decoration: none; padding: 18px 30px; font-size: 0.8rem;">Return
-                Home</a>
-            <a href="/faq.html" class="btn-outline-gold"
-                style="text-decoration: none; padding: 18px 30px; font-size: 0.8rem;">Travel FAQ</a>
+            <ul class="nav-links">
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Programme</a></li>
+                <li><a href="/faithnexus100.html" class="nav-link">CW100</a></li>
+                <li><a href="/registration.html" class="nav-link">Attend</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div id="group-notice"
-            style="display: none; margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
-            <p style="color: var(--primary-gold); font-weight: 600;">Group Enquiry Received</p>
-            <p style="opacity: 0.5; font-size: 0.9rem;">Our registrations team will contact you within 24 hours with
-                your custom package.</p>
+    <!-- CONFIRMATION CARD -->
+    <section class="bg-dark-grid" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 120px 20px 80px;">
+        <div class="container" style="max-width: 680px;">
+            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 3.5rem 2.5rem; text-align: center;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background: var(--fn-gold); color: #000; display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; margin-bottom: 1.5rem;">
+                    ✓
+                </div>
+                
+                <span class="pdf-subtitle gold" style="display: block; margin-bottom: 0.5rem;" id="orderRef">
+                    Registration Reference: FN2027-NEXUS
+                </span>
+
+                <h1 class="pdf-title-med" style="color: #FFFFFF; margin-bottom: 1.25rem;">
+                    Your Journey to Nexus 2027 Has Begun
+                </h1>
+
+                <p style="font-size: 1.15rem; color: #EEEEEE; line-height: 1.7; margin-bottom: 2rem;">
+                    Thank you for registering your interest for <strong>Faith Nexus 2027</strong> (14–16 April 2027, Rosebank, Johannesburg). An official acknowledgement and briefing pack has been recorded.
+                </p>
+
+                <div id="group-notice" style="display: none; background: rgba(197, 160, 89, 0.1); border: 1px solid var(--fn-gold); border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem;">
+                    <p style="color: var(--fn-gold); font-weight: 700; margin-bottom: 0.25rem;">Institutional / Group Enquiry Received</p>
+                    <p style="font-size: 0.95rem; color: #DDDDDD; margin: 0;">Our executive delegations desk will reach out within 48 hours with customized accommodation and seating coordination.</p>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/" class="btn-pdf-cream">Return to Homepage &rarr;</a>
+                    <a href="/summit.html" class="btn-pdf-black" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #FFF;">Explore Programme</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- FOOTER (PDF Page 35 Format) -->
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="pdf-footer-bottom" style="border-top: none; padding-top: 0;">
+                <div class="footer-convened">
+                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                </div>
+                <div class="footer-legal">
+                    <span>&copy; 2027 Faith Nexus</span> &middot; 
+                    <a href="/legal.html">Privacy & Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('type') === 'group') {
             document.getElementById('group-notice').style.display = 'block';
-            document.querySelector('.luxury-title').innerHTML = "Group Enquiry <br>Submitted";
         }
+        // Generate pseudo unique reference
+        const randomHex = Math.random().toString(36).substring(2, 8).toUpperCase();
+        document.getElementById('orderRef').innerText = `Registration Reference: FN2027-${randomHex}`;
     </script>
 </body>
-
 </html>
-

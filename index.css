@@ -1641,3 +1641,202 @@ img {
     }
 }
 
+/* ==========================================================================
+   PDF MASTER SPECIFICATION STYLES & LAYOUT HELPER CLASSES
+   ========================================================================== */
+
+/* PDF Top Metadata Bar */
+.pdf-top-strip {
+    background-color: var(--fn-bg-dark);
+    color: #888888;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 6px 0;
+}
+
+.pdf-top-strip-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Cream Button for Dark Backgrounds */
+.btn-pdf-cream {
+    background: var(--fn-bg-cream);
+    color: #111111 !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    display: inline-block;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-pdf-cream:hover {
+    background: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Slide 2: Why Faith Nexus Elements */
+.pdf-dark-callout {
+    background: #111111;
+    color: #FFFFFF;
+    padding: 1.75rem 2rem;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.core-needs-card {
+    background: #FFFFFF;
+    border: 1px solid var(--fn-border-subtle);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.core-needs-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--fn-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+}
+
+.pdf-bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.pdf-bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222222;
+}
+
+.pdf-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.pdf-dot.brown { background: #6E3E2E; }
+.pdf-dot.dark { background: #111111; }
+.pdf-dot.gold { background: #C68A27; }
+.pdf-dot.green { background: #1C4436; }
+.pdf-dot.red { background: #C85038; }
+
+/* Slide 3: Pillar Accent Bars */
+.pdf-pillar-card {
+    position: relative;
+    border-top: 4px solid transparent !important;
+}
+
+.pdf-pillar-card.accent-brown { border-top-color: #6E3E2E !important; }
+.pdf-pillar-card.accent-dark { border-top-color: #111111 !important; }
+.pdf-pillar-card.accent-gold { border-top-color: #C68A27 !important; }
+.pdf-pillar-card.accent-red { border-top-color: #C85038 !important; }
+.pdf-pillar-card.accent-green { border-top-color: #1C4436 !important; }
+
+/* Slide 5: Full Width Programme Brown Banner */
+.programme-top-banner {
+    background: #6E3E2E;
+    color: #FFFFFF;
+    padding: 2.25rem 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+/* Slide 8: CW100 Stats Cards */
+.cw100-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.cw100-stat-card {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+}
+
+.cw100-stat-card.brown-bg { background: #5E3224; }
+.cw100-stat-card.gold-bg { background: #B88022; }
+
+.cw100-stat-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.cw100-stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Slide 11: Ecosystem Access Card */
+.ecosystem-access-card {
+    background: #121413;
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: #FFFFFF;
+    margin-top: 1.25rem;
+}
+
+.ecosystem-access-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--fn-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+}
+
+.ecosystem-access-card .pdf-bullet-item {
+    color: #FFFFFF;
+}
+
+/* Hero Media Image Frame with Teal Bar */
+.hero-media-frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #111111;
+    border-left: 6px solid #1C4436;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.hero-media-img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    display: block;
+}
+
+

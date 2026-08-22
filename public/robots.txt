@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow legacy parameters or internal directories
+Disallow: /verify_hostinger/
+Disallow: /scratch/
+Disallow: /dist/
+
+# Host and Sitemap
+Sitemap: https://faithnexus.digital/sitemap.xml
+Host: https://faithnexus.digital

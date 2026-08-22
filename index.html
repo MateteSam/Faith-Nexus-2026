@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faith Nexus 2027 | Kingdom Voices. Global Reach.</title>
-    <meta name="description" content="Faith Nexus 2027 brings Christian leaders, creators, media professionals, innovators, educators, entrepreneurs and culture-shapers together in Johannesburg, South Africa, from 14–16 April 2027.">
+    <meta name="description" content="Faith Nexus 2027 is the Pan-African Summit and Ecosystem for Christian Content Creators, taking place 14–16 April 2027 in Rosebank, Johannesburg, South Africa.">
     <link rel="icon" type="image/png" href="/fn-logo-icon.png">
 
     <!-- Google Fonts -->
@@ -14,17 +14,58 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/index.css">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faithnexus.digital/">
+    <meta property="og:title" content="Faith Nexus 2027 | Kingdom Voices. Global Reach.">
+    <meta property="og:description" content="Pan-African Summit & Ecosystem connecting Christian content creators with faith, knowledge, technology, relationships and opportunities.">
+    <meta property="og:image" content="https://faithnexus.digital/fn-logo-full.png">
+
+    <!-- Structured Data (Schema.org Event) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Faith Nexus 2027",
+      "description": "Pan-African Summit and Ecosystem for Christian Content Creators.",
+      "startDate": "2027-04-14T09:00:00+02:00",
+      "endDate": "2027-04-16T18:00:00+02:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Royal Majestic Hotel",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rosebank",
+          "addressLocality": "Johannesburg",
+          "addressRegion": "Gauteng",
+          "addressCountry": "ZA"
+        }
+      },
+      "image": [
+        "https://faithnexus.digital/fn-logo-full.png"
+      ],
+      "organizer": {
+        "@type": "Organization",
+        "name": "World Christian Content Creators Summit (WCCCS)",
+        "url": "https://www.wcccs.io"
+      }
+    }
+    </script>
 </head>
 <body class="bg-cream">
 
-    <!-- TOP ANNOUNCEMENT STRIP (PDF Page 1) -->
-    <div class="announcement-bar">
-        <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
-        <a href="/virtual.html" class="announcement-link">Explore</a>
+    <!-- TOP METADATA STRIP (PDF Master Header) -->
+    <div class="pdf-top-strip">
+        <div class="container pdf-top-strip-inner">
+            <div>14–16 April 2027 &middot; Royal Majestic Hotel &middot; Rosebank &middot; Johannesburg</div>
+            <div>Kingdom Voices. Global Reach.</div>
+        </div>
     </div>
 
-    <!-- MAIN NAVBAR (PDF Page 1) -->
-        <!-- MAIN NAVBAR -->
+    <!-- MAIN NAVBAR -->
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="/" class="nav-brand" style="display: flex; align-items: center; gap: 10px;">
@@ -32,34 +73,27 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="/about.html" class="nav-link ">About</a></li>
-                <li><a href="/summit.html" class="nav-link ">Programme</a></li>
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/summit.html" class="nav-link">Summit 2027</a></li>
+                <li><a href="/summit.html#programme" class="nav-link">Programme</a></li>
                 
                 <li class="nav-dropdown">
-                    <a href="/covenant.html" class="nav-link dropdown-trigger ">Experiences <span class="caret">▾</span></a>
+                    <a href="/creators.html" class="nav-link dropdown-trigger">Experiences <span class="caret">▾</span></a>
                     <ul class="dropdown-menu">
+                        <li><a href="/creators.html">Creator Experiences</a></li>
                         <li><a href="/covenant.html">Covenant Conversations</a></li>
-                        <li><a href="/creators.html">Creators</a></li>
+                        <li><a href="/pitches.html">Nexus Pitches</a></li>
                         <li><a href="/exhibition.html">Industry Exhibition</a></li>
-                        <li><a href="/summit.html#workshops">Workshops & Masterclasses</a></li>
                     </ul>
                 </li>
 
-                <li><a href="/faithnexus100.html" class="nav-link ">CW100</a></li>
-
-                <li class="nav-dropdown">
-                    <a href="/registration.html" class="nav-link dropdown-trigger ">Get Involved <span class="caret">▾</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/registration.html">Attend</a></li>
-                        <li><a href="/partners.html">Partner</a></li>
-                        <li><a href="/exhibition.html">Exhibit</a></li>
-                        <li><a href="/media.html">Media</a></li>
-                    </ul>
-                </li>
+                <li><a href="/covenant.html" class="nav-link">Covenant Conversations</a></li>
+                <li><a href="/faithnexus100.html" class="nav-link">CW100</a></li>
+                <li><a href="/partners.html" class="nav-link">Partners</a></li>
 
                 <li>
                     <a href="/registration.html" class="btn-pdf-black">
-                        Register Interest
+                        REGISTER
                     </a>
                 </li>
             </ul>
@@ -74,65 +108,50 @@
         </div>
     </nav>
 
-    <!-- SECTION 1: HERO SECTION (Enhanced with Video Portal & Official Logos) -->
-    <section class="bg-dark-grid" style="padding: 100px 0 80px; position: relative;">
+    <!-- SLIDE 1: HERO SECTION -->
+    <section class="bg-dark-grid" style="padding: 90px 0 80px; position: relative;">
         <div class="container hero-grid">
             <div>
-                <!-- Brand Badge with Official Icon Logo -->
-                <div style="display: inline-flex; align-items: center; gap: 10px; padding: 4px 14px 4px 6px; background: rgba(198, 138, 39, 0.12); border: 1px solid rgba(198, 138, 39, 0.35); border-radius: 999px; margin-bottom: 1.5rem;">
-                    <img src="/fn-logo-icon.png" alt="Faith Nexus" style="height: 24px; width: 24px; object-fit: contain;">
-                    <span class="pdf-subtitle gold" style="margin-bottom: 0; font-size: 0.82rem;">Faith Nexus 2027</span>
+                <span class="pdf-subtitle gold" style="margin-bottom: 1.25rem;">FAITH NEXUS 2027</span>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1.5rem;">
+                    Kingdom Voices. Global Reach.
                 </div>
                 
-                <h1 class="pdf-title-large" style="margin-bottom: 1.5rem; line-height: 1.05;">
-                    Kingdom<br>
-                    Voices.<br>
-                    Global Reach.
+                <h1 class="pdf-title-large" style="color: var(--fn-gold); line-height: 1.02; margin-bottom: 1.5rem; text-transform: uppercase;">
+                    ROOTS.<br>
+                    REVELATION.<br>
+                    RENAISSANCE.
                 </h1>
 
-                <p style="font-size: 1.25rem; color: #CCCCCC; max-width: 620px; line-height: 1.5; margin-bottom: 1.75rem;">
-                    Africa’s convergence platform for Faith, Media, Technology, Leadership and Culture.
+                <p style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; color: #FFFFFF; line-height: 1.4; margin-bottom: 1rem;">
+                    The Pan-African Summit and Ecosystem for Christian Content Creators
                 </p>
 
-                <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 2.25rem;">
-                    <div style="font-weight: 700; font-size: 1.05rem; color: #FFFFFF;">
-                        14–16 April 2027 &middot; Johannesburg, South Africa
-                    </div>
-                    <span style="color: rgba(255, 255, 255, 0.3);">|</span>
-                    <div style="font-size: 0.9rem; color: var(--fn-gold); font-weight: 700;">
-                        Soft Launch: 29 Oct 2026
-                    </div>
+                <div style="font-weight: 700; font-size: 1.05rem; color: #FFFFFF; margin-bottom: 1rem;">
+                    14–16 April 2027 &middot; Royal Majestic Hotel &middot; Rosebank &middot; Johannesburg, South Africa
                 </div>
 
-                <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem; color: #CCCCCC; max-width: 620px; line-height: 1.6; margin-bottom: 2.25rem;">
+                    Three days connecting Christian creators with the faith, knowledge, technology, relationships and opportunities needed to build meaningful, sustainable global influence.
+                </p>
+
+                <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
                     <a href="/registration.html" class="btn-pdf-white">
-                        Register Your Interest
+                        REGISTER YOUR INTEREST
                     </a>
-                    <a href="/about.html" style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
-                        Explore Faith Nexus &rarr;
+                    <a href="/about.html" class="btn-pdf-outline-light">
+                        EXPLORE FAITH NEXUS &rarr;
                     </a>
-                </div>
-
-                <div style="font-size: 0.88rem; color: #888888; display: flex; align-items: center; gap: 8px;">
-                    <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #00FF87;"></span>
-                    Approximately 2,000 delegates expected
                 </div>
             </div>
 
-            <!-- Signature Hero Video Portal (Featuring Video inside the placeholder with Logos & Controls) -->
+            <!-- Hero Media Portal / Photography -->
             <div class="hero-video-portal">
-                <video id="heroPortalVideo" class="hero-portal-video" autoplay loop muted playsinline poster="/hero_bg_blue_gold.png">
+                <video id="heroPortalVideo" class="hero-portal-video" autoplay loop muted playsinline poster="/pdf_hero_photography.jpg">
                     <source src="/fn-nexus-hero.mp4" type="video/mp4">
                 </video>
                 <div class="hero-portal-overlay"></div>
 
-                <!-- Floating Logo Badge inside Video -->
-                <div class="hero-portal-badge">
-                    <img src="/fn-logo-icon.png" alt="Faith Nexus" style="height: 20px; width: 20px; object-fit: contain;">
-                    <span>KINGDOM VOICES</span>
-                </div>
-
-                <!-- Video Controls -->
                 <div class="hero-portal-controls">
                     <button id="portalPlayBtn" class="portal-ctrl-btn">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
@@ -145,581 +164,662 @@
                 </div>
             </div>
         </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.3); font-weight: 700;">01</div>
     </section>
 
-    <!-- SECTION 2: THE BIG IDEA (PDF Page 2) -->
-    <section class="bg-cream" style="padding: 110px 0; text-align: center;">
-        <div class="container" style="max-width: 960px;">
-            <span class="pdf-subtitle rust">The Big Idea</span>
-            <h2 class="pdf-title-med" style="margin-bottom: 1.5rem; color: #111111;">
-                Roots. Revelation. Renaissance.
-            </h2>
-            <p style="font-size: 1.35rem; color: #555555; line-height: 1.6; margin-bottom: 2.5rem;">
-                Faith Nexus brings together Christian leaders, creators, innovators, educators, entrepreneurs and culture-shapers from across Africa and beyond.
-            </p>
-            <p style="font-family: 'Outfit', sans-serif; font-size: 1.15rem; font-weight: 800; color: #111111; letter-spacing: 0.02em;">
-                Three Days. Seven Pillars. One Connected Kingdom Ecosystem.
-            </p>
-        </div>
-    </section>
-
-    <!-- SECTION 3: SEVEN STRATEGIC PILLARS MATRIX (PDF Page 3 WITH IMAGE HEADERS) -->
-    <section class="bg-cream" style="padding: 0 0 110px;">
+    <!-- SLIDE 2: WHY FAITH NEXUS -->
+    <section class="bg-cream" style="padding: 100px 0; position: relative;">
         <div class="container">
-            <span class="pdf-subtitle rust">Our Ecosystem</span>
-            <h2 class="pdf-title-med" style="margin-bottom: 0.5rem; color: #111111;">
-                Seven Strategic Pillars
+            <span class="pdf-subtitle rust">WHY FAITH NEXUS</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 2rem; color: #111111;">
+                Creators Need More Than Reach.
             </h2>
-            <p style="font-size: 1.1rem; color: #666666; margin-bottom: 2rem;">
-                Faith shaping society across sectors.
+
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: start;">
+                <!-- Left Text Column -->
+                <div>
+                    <p style="font-size: 1.35rem; font-weight: 700; color: #111111; margin-bottom: 1.25rem;">
+                        The creator landscape has changed.
+                    </p>
+
+                    <p style="font-size: 1.15rem; color: #555555; line-height: 1.6; margin-bottom: 2rem;">
+                        Today, a single voice can reach audiences across cities, countries and continents.
+                    </p>
+
+                    <p style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--fn-rust); line-height: 1.35; margin-bottom: 1rem;">
+                        But influence requires more than visibility.
+                    </p>
+
+                    <p style="font-size: 1.15rem; font-weight: 700; color: #222222; line-height: 1.5; margin-bottom: 3rem;">
+                        It requires foundation, excellence, technology, sustainability, responsibility and meaningful relationships.
+                    </p>
+
+                    <!-- Dark Callout Box -->
+                    <div class="pdf-dark-callout">
+                        Faith Nexus brings that ecosystem together.
+                    </div>
+                </div>
+
+                <!-- Right Media & Core Needs Box -->
+                <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+                    <!-- Creator-at-work Photography -->
+                    <div style="border-radius: 16px; overflow: hidden; height: 310px; border: 1px solid var(--fn-border-subtle); box-shadow: 0 10px 30px rgba(0,0,0,0.06); position: relative; background: #FFFFFF;">
+                        <img src="/pdf_creator_at_work.jpg" alt="Creator at work" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+
+                    <!-- Core Needs Card -->
+                    <div class="core-needs-card">
+                        <div class="core-needs-title">CORE NEEDS</div>
+                        <ul class="pdf-bullet-list">
+                            <li class="pdf-bullet-item"><span class="pdf-dot brown"></span> Foundation</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot dark"></span> Excellence</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot gold"></span> Technology</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot green"></span> Sustainability</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot red"></span> Responsibility</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot brown"></span> Relationships</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(0,0,0,0.3); font-weight: 700;">02</div>
+    </section>
+
+    <!-- SLIDE 3: THE CREATOR AT THE CENTRE / SEVEN PILLARS -->
+    <section class="bg-cream" style="padding: 90px 0; border-top: 1px solid var(--fn-border-subtle); position: relative;">
+        <div class="container">
+            <span class="pdf-subtitle rust">THE CREATOR AT THE CENTRE</span>
+            
+            <h2 class="pdf-title-med" style="margin-bottom: 1rem; color: #111111; max-width: 950px;">
+                Christian creators are shaping how people encounter faith, understand culture, discover ideas and engage the world around them.
+            </h2>
+
+            <p style="font-size: 1.15rem; color: #666666; margin-bottom: 2rem;">
+                Faith Nexus brings together seven strategic pillars that influence the modern creator journey.
             </p>
 
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+                <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.85rem; font-weight: 800; color: #111111;">
+                    Seven Pillars. One Connected Ecosystem.
+                </h3>
+            </div>
+
+            <!-- 7 Pillars Grid -->
             <div class="pdf-pillars-grid">
-                <div class="pdf-pillar-card">
+                <!-- 01 -->
+                <div class="pdf-pillar-card accent-brown">
                     <div class="pdf-pillar-img-wrap">
                         <img src="/Church_Leaders2.png" alt="Faith & Spiritual Life" class="pdf-pillar-img">
                     </div>
                     <span class="pdf-pillar-num">01</span>
-                    <h3 class="pdf-pillar-title">Faith & Spiritual Life</h3>
+                    <div>
+                        <h3 class="pdf-pillar-title">Faith &amp; Spiritual Life</h3>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #6E3E2E; margin-top: 4px;">Foundation</div>
+                    </div>
                 </div>
 
-                <div class="pdf-pillar-card">
+                <!-- 02 -->
+                <div class="pdf-pillar-card accent-dark">
                     <div class="pdf-pillar-img-wrap">
                         <img src="/Content_Creators.png" alt="Media & Communication" class="pdf-pillar-img">
                     </div>
                     <span class="pdf-pillar-num">02</span>
-                    <h3 class="pdf-pillar-title">Media & Communication</h3>
+                    <div>
+                        <h3 class="pdf-pillar-title">Media &amp; Communication</h3>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #111111; margin-top: 4px;">Craft</div>
+                    </div>
                 </div>
 
-                <div class="pdf-pillar-card">
+                <!-- 03 -->
+                <div class="pdf-pillar-card accent-gold">
                     <div class="pdf-pillar-img-wrap">
                         <img src="/Tech_Innovators.png" alt="Technology & Innovation" class="pdf-pillar-img">
                     </div>
                     <span class="pdf-pillar-num">03</span>
-                    <h3 class="pdf-pillar-title">Technology & Innovation</h3>
+                    <div>
+                        <h3 class="pdf-pillar-title">Technology &amp; Innovation</h3>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #C68A27; margin-top: 4px;">Capability</div>
+                    </div>
                 </div>
 
-                <div class="pdf-pillar-card">
+                <!-- 04 -->
+                <div class="pdf-pillar-card accent-red">
                     <div class="pdf-pillar-img-wrap">
                         <img src="/Kingdom_Professionals.png" alt="Governance & Public Life" class="pdf-pillar-img">
                     </div>
                     <span class="pdf-pillar-num">04</span>
-                    <h3 class="pdf-pillar-title">Governance & Public Life</h3>
+                    <div>
+                        <h3 class="pdf-pillar-title">Governance &amp; Public Life</h3>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #C85038; margin-top: 4px;">Responsibility</div>
+                    </div>
                 </div>
 
-                <div class="pdf-pillar-card">
+                <!-- 05 -->
+                <div class="pdf-pillar-card accent-brown">
                     <div class="pdf-pillar-img-wrap">
                         <img src="/leader-07-academic.jpg" alt="Education & Discipleship" class="pdf-pillar-img">
                     </div>
                     <span class="pdf-pillar-num">05</span>
-                    <h3 class="pdf-pillar-title">Education & Discipleship</h3>
+                    <div>
+                        <h3 class="pdf-pillar-title">Education &amp; Discipleship</h3>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #6E3E2E; margin-top: 4px;">Formation</div>
+                    </div>
                 </div>
 
-                <div class="pdf-pillar-card">
+                <!-- 06 -->
+                <div class="pdf-pillar-card accent-green">
                     <div class="pdf-pillar-img-wrap">
                         <img src="/kingdom-funding.png" alt="Economy & Enterprise" class="pdf-pillar-img">
                     </div>
                     <span class="pdf-pillar-num">06</span>
-                    <h3 class="pdf-pillar-title">Economy & Enterprise</h3>
+                    <div>
+                        <h3 class="pdf-pillar-title">Economy &amp; Enterprise</h3>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #1C4436; margin-top: 4px;">Sustainability</div>
+                    </div>
                 </div>
 
-                <div class="pdf-pillar-card">
+                <!-- 07 -->
+                <div class="pdf-pillar-card accent-gold">
                     <div class="pdf-pillar-img-wrap">
                         <img src="/Creative_Artists.png" alt="Arts & Culture" class="pdf-pillar-img">
                     </div>
                     <span class="pdf-pillar-num">07</span>
-                    <h3 class="pdf-pillar-title">Arts & Culture</h3>
+                    <div>
+                        <h3 class="pdf-pillar-title">Arts &amp; Culture</h3>
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #C68A27; margin-top: 4px;">Influence</div>
+                    </div>
                 </div>
 
-                <div class="pdf-pillar-card dark-card">
-                    <div class="pdf-pillar-img-wrap">
-                        <img src="/nexus-globe.png" alt="One Connected Ecosystem" class="pdf-pillar-img">
-                    </div>
-                    <span class="pdf-pillar-num">&infin;</span>
-                    <h3 class="pdf-pillar-title">One Connected Ecosystem</h3>
+                <!-- CTA Cell -->
+                <div style="display: flex; align-items: flex-end; justify-content: flex-end; padding: 1rem;">
+                    <a href="/summit.html#pillars" class="btn-pdf-black">
+                        EXPLORE THE SEVEN PILLARS
+                    </a>
                 </div>
             </div>
         </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(0,0,0,0.3); font-weight: 700;">03</div>
     </section>
 
-    <!-- SECTION 4: THREE DAYS. ONE JOURNEY (PDF Page 4 WITH IMAGE BANNERS) -->
-    <section class="bg-dark-grid" style="padding: 100px 0;">
+    <!-- SLIDE 4: SUMMIT 2027 (THREE DAYS. ONE CREATOR JOURNEY.) -->
+    <section class="bg-dark-grid" style="padding: 100px 0; position: relative;">
         <div class="container">
-            <span class="pdf-subtitle gold">Three Days. One Journey.</span>
+            <span class="pdf-subtitle gold">SUMMIT 2027</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 2rem;">
+                Three Days. One Creator Journey.
+            </h2>
 
             <div class="pdf-days-grid">
-                <div class="pdf-day-card">
-                    <div class="pdf-day-img-wrap">
-                        <img src="/covenant-conversations-hall.jpg" alt="Day 01 Roots" class="pdf-day-img">
-                    </div>
+                <!-- Day One -->
+                <div class="pdf-day-card" style="border-top: 4px solid #6E3E2E;">
                     <div>
-                        <div class="pdf-day-num">DAY 01</div>
-                        <h3 class="pdf-day-title roots">Roots</h3>
+                        <div class="pdf-day-num">DAY ONE</div>
+                        <h3 class="pdf-day-title roots">ROOTS</h3>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1rem;">14 April 2027</div>
+                        <p style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1.25rem;">
+                            Know what grounds you.
+                        </p>
                         <p class="pdf-day-tags">
-                            Faith &middot; Identity &middot; Covenant &middot; Foundations
+                            Faith &middot; Scripture &middot; Calling &middot; Identity &middot; Character &middot; Spiritual Formation
                         </p>
                     </div>
-                    <a href="/summit.html#day1" class="pdf-day-link">Explore Day 01 &rarr;</a>
+                    <div>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: #C87864; margin-bottom: 1rem;">Grounded creators.</div>
+                        <a href="/summit.html#day1" class="btn-pdf-white" style="width: 100%; text-align: center;">EXPLORE ROOTS</a>
+                    </div>
                 </div>
 
-                <div class="pdf-day-card">
-                    <div class="pdf-day-img-wrap">
-                        <img src="/interactive-panels.png" alt="Day 02 Revelation" class="pdf-day-img">
-                    </div>
+                <!-- Day Two -->
+                <div class="pdf-day-card" style="border-top: 4px solid #C68A27;">
                     <div>
-                        <div class="pdf-day-num">DAY 02</div>
-                        <h3 class="pdf-day-title revelation">Revelation</h3>
+                        <div class="pdf-day-num">DAY TWO</div>
+                        <h3 class="pdf-day-title revelation">REVELATION</h3>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1rem;">15 April 2027</div>
+                        <p style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1.25rem;">
+                            Understand the world you are creating in.
+                        </p>
                         <p class="pdf-day-tags">
-                            Media &middot; Technology &middot; AI &middot; Influence
+                            Media &middot; AI &middot; Technology &middot; Audiences &middot; Platforms &middot; Culture &middot; Governance
                         </p>
                     </div>
-                    <a href="/summit.html#day2" class="pdf-day-link">Explore Day 02 &rarr;</a>
+                    <div>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: var(--fn-gold); margin-bottom: 1rem;">Informed creators.</div>
+                        <a href="/summit.html#day2" class="btn-pdf-white" style="width: 100%; text-align: center;">EXPLORE REVELATION</a>
+                    </div>
                 </div>
 
-                <div class="pdf-day-card">
-                    <div class="pdf-day-img-wrap">
-                        <img src="/future-collaboration.png" alt="Day 03 Renaissance" class="pdf-day-img">
-                    </div>
+                <!-- Day Three -->
+                <div class="pdf-day-card" style="border-top: 4px solid #1C4436;">
                     <div>
-                        <div class="pdf-day-num">DAY 03</div>
-                        <h3 class="pdf-day-title renaissance">Renaissance</h3>
+                        <div class="pdf-day-num">DAY THREE</div>
+                        <h3 class="pdf-day-title renaissance">RENAISSANCE</h3>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1rem;">16 April 2027</div>
+                        <p style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1.25rem;">
+                            Build what comes next.
+                        </p>
                         <p class="pdf-day-tags">
-                            Enterprise &middot; Innovation &middot; Leadership &middot; Culture
+                            Enterprise &middot; Intellectual Property &middot; Investment &middot; Innovation &middot; Partnerships &middot; Global Distribution
                         </p>
                     </div>
-                    <a href="/summit.html#day3" class="pdf-day-link">Explore Day 03 &rarr;</a>
+                    <div>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: #5CB8A0; margin-bottom: 1rem;">Sustainable creators.</div>
+                        <a href="/summit.html#day3" class="btn-pdf-white" style="width: 100%; text-align: center;">EXPLORE RENAISSANCE</a>
+                    </div>
                 </div>
-            </div>
-
-            <div style="margin-top: 3rem;">
-                <a href="/summit.html" class="btn-pdf-white">
-                    View Programme
-                </a>
             </div>
         </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.3); font-weight: 700;">04</div>
     </section>
 
-    <!-- SECTION 5: WHAT TO EXPECT ("More than a conference.") (PDF Page 5 WITH IMAGE HEADERS) -->
-    <section class="bg-cream" style="padding: 110px 0;">
-        <div class="container">
-            <span class="pdf-subtitle rust">What To Expect</span>
-            <h2 class="pdf-title-med" style="margin-bottom: 0.5rem; color: #111111;">
-                More than a conference.
+    <!-- SLIDE 5: PROGRAMME CONVERSATIONS -->
+    <section class="bg-cream" style="padding: 0 0 100px; position: relative;">
+        <!-- Top Full Width Banner -->
+        <div class="programme-top-banner">
+            <div class="container">
+                Grounded in Truth. Fluent in the Present. Equipped to Build the Future.
+            </div>
+        </div>
+
+        <div class="container" style="padding-top: 80px;">
+            <span class="pdf-subtitle rust">PROGRAMME CONVERSATIONS</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 1rem; color: #111111;">
+                Conversations for the World Creators Are Entering
             </h2>
-            <p style="font-size: 1.1rem; color: #666666; margin-bottom: 2.5rem;">
-                A connected environment for learning, dialogue, creativity, collaboration and opportunity.
+            <p style="font-size: 1.15rem; color: #666666; margin-bottom: 3rem;">
+                Faith Nexus explores some of the defining questions shaping faith, creativity and influence today.
             </p>
 
-            <div class="pdf-expect-grid">
-                <div class="pdf-expect-card">
-                    <div class="pdf-expect-img-wrap">
-                        <img src="/covenant-plenary.png" alt="Main Plenaries" class="pdf-expect-img">
-                    </div>
-                    <span class="pdf-pillar-num">01</span>
-                    <div>
-                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">Main Plenaries</h3>
-                        <p style="font-size: 0.95rem; color: #666666; line-height: 1.5;">
-                            Big conversations shaping faith, media, leadership and Africa’s future.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="pdf-expect-card card-rust">
-                    <div class="pdf-expect-img-wrap">
-                        <img src="/vii_launch_covenant_conversations_1768775836493.png" alt="Covenant Conversations" class="pdf-expect-img">
-                    </div>
-                    <span class="pdf-pillar-num">02</span>
-                    <div>
-                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">Covenant Conversations</h3>
-                        <p style="font-size: 0.95rem; line-height: 1.5;">
-                            Jewish–Christian education, engagement and bridge-building.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="pdf-expect-card">
-                    <div class="pdf-expect-img-wrap">
-                        <img src="/creators_lounge_photo_1768262360942.png" alt="Creator Experiences" class="pdf-expect-img">
-                    </div>
-                    <span class="pdf-pillar-num">03</span>
-                    <div>
-                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">Creator Experiences</h3>
-                        <p style="font-size: 0.95rem; color: #666666; line-height: 1.5;">
-                            Studios, masterclasses, pitches, markets and new connections.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="pdf-expect-card">
-                    <div class="pdf-expect-img-wrap">
-                        <img src="/masterclass_moment_photo_1768262405710.png" alt="Workshops" class="pdf-expect-img">
-                    </div>
-                    <span class="pdf-pillar-num">04</span>
-                    <div>
-                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">Workshops</h3>
-                        <p style="font-size: 0.95rem; color: #666666; line-height: 1.5;">
-                            Practical learning for leaders, ministries, educators and professionals.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="pdf-expect-card card-forest">
-                    <div class="pdf-expect-img-wrap">
-                        <img src="/studio_booth_photo_1768262376297.png" alt="Industry Exhibition" class="pdf-expect-img">
-                    </div>
-                    <span class="pdf-pillar-num">05</span>
-                    <div>
-                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">Industry Exhibition</h3>
-                        <p style="font-size: 0.95rem; line-height: 1.5;">
-                            Discover platforms, organisations and technologies serving the ecosystem.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="pdf-expect-card">
-                    <div class="pdf-expect-img-wrap">
-                        <img src="/honours-gala.png" alt="CW100" class="pdf-expect-img">
-                    </div>
-                    <span class="pdf-pillar-num">06</span>
-                    <div>
-                        <h3 class="pdf-pillar-title" style="margin-bottom: 0.75rem;">CW100</h3>
-                        <p style="font-size: 0.95rem; color: #666666; line-height: 1.5;">
-                            Content World 100 — Recognising 100 Christian leaders and voices impacting Africa & beyond.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6: FIND YOUR PLACE (UPGRADED INTERACTIVE SECTOR HUB) -->
-    <section class="bg-ochre-gold" style="padding: 100px 0;">
-        <div class="container find-place-grid">
-            <div>
-                <span class="pdf-subtitle" style="color: #111111; font-weight: 800;">Find Your Place</span>
-                <h2 class="pdf-title-large" style="margin-bottom: 1.25rem; color: #111111;">
-                    One gathering.<br>
-                    Multiple industries.<br>
-                    Shared purpose.
-                </h2>
-                
-                <p style="font-size: 1.15rem; color: #222222; line-height: 1.6; margin-bottom: 1.5rem; max-width: 540px;">
-                    Whether you are an apostolic statesman, film director, cloud architect, or enterprise investor, Faith Nexus connects you directly with your ecosystem.
-                </p>
-
-                <!-- Interactive Sector Selector Pills -->
-                <div class="sector-pills-list">
-                    <button class="sector-pill-btn active" data-sector="media">Creators & Media</button>
-                    <button class="sector-pill-btn" data-sector="tech">Technology & AI</button>
-                    <button class="sector-pill-btn" data-sector="faith">Faith & Ministry</button>
-                    <button class="sector-pill-btn" data-sector="enterprise">Economy & Capital</button>
-                    <button class="sector-pill-btn" data-sector="governance">Governance & Public Life</button>
-                    <button class="sector-pill-btn" data-sector="youth">Next-Gen Leaders</button>
-                </div>
-
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
+                <!-- Left Bullet List -->
                 <div>
-                    <a href="/registration.html" class="btn-pdf-black">
-                        Register Your Interest &rarr;
+                    <ul class="pdf-bullet-list" style="gap: 1.25rem; margin-bottom: 2.5rem;">
+                        <li class="pdf-bullet-item" style="font-size: 1.1rem;"><span class="pdf-dot brown"></span> The State of Christian Content in Africa</li>
+                        <li class="pdf-bullet-item" style="font-size: 1.1rem;"><span class="pdf-dot gold"></span> Kingdom Voices in the Age of AI</li>
+                        <li class="pdf-bullet-item" style="font-size: 1.1rem;"><span class="pdf-dot green"></span> The Creator Economy and Christian Mission</li>
+                        <li class="pdf-bullet-item" style="font-size: 1.1rem;"><span class="pdf-dot brown"></span> The Future of African Christian Storytelling</li>
+                        <li class="pdf-bullet-item" style="font-size: 1.1rem;"><span class="pdf-dot gold"></span> Faith, Culture and the Battle for Meaning</li>
+                        <li class="pdf-bullet-item" style="font-size: 1.1rem;"><span class="pdf-dot green"></span> Renaissance: What Must Christian Creators Build?</li>
+                    </ul>
+
+                    <a href="/summit.html" class="btn-pdf-black">
+                        EXPLORE THE PROGRAMME
                     </a>
                 </div>
-            </div>
 
-            <!-- Dynamic Interactive Sector Card -->
-            <div id="dynamicSectorCard" class="sector-dynamic-card">
-                <div>
-                    <div class="sector-card-badge" id="sectorBadge">
-                        <span>Pillar 02</span> &middot; <span>Storytelling & Broadcast</span>
-                    </div>
-                    <h3 class="sector-card-title" id="sectorTitle">Broadcasting, Cinema & Christian IP</h3>
-                    <p class="sector-card-desc" id="sectorDesc">
-                        Uniting Africa's foremost filmmakers, digital storytellers, television executives, and streaming platforms to pioneer sovereign distribution models and global Christian media.
-                    </p>
-
-                    <div class="sector-card-tags" id="sectorTags">
-                        <span class="sector-mini-tag">Distribution Networks</span>
-                        <span class="sector-mini-tag">Film Pitches</span>
-                        <span class="sector-mini-tag">Studio Masterclasses</span>
-                        <span class="sector-mini-tag">Streaming Tech</span>
-                    </div>
-                </div>
-
-                <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
-                    <span style="font-size: 0.85rem; font-weight: 700; color: #555555;">Expected Delegates: 450+</span>
-                    <a href="/creators.html" style="font-weight: 800; font-size: 0.88rem; color: #111111; display: inline-flex; align-items: center; gap: 4px;">
-                        Explore Track &rarr;
-                    </a>
+                <!-- Right Side Photography -->
+                <div style="border-radius: 16px; overflow: hidden; height: 360px; border: 1px solid var(--fn-border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08); position: relative; background: #FFFFFF;">
+                    <img src="/pdf_programme_panel.jpg" alt="Programme Photography" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(0,0,0,0.3); font-weight: 700;">05</div>
     </section>
 
-    <!-- SECTION 7: CW100 (CONTENT WORLD 100) WITH GLOBAL VIDEO EMBED -->
-    <section class="bg-cream fn100-watermark-wrap" style="padding: 90px 0;">
-        <div class="fn100-watermark-bg">100</div>
-        
-        <div class="container fn100-grid">
-            <!-- Left Side: Large 100 and Video Container -->
-            <div>
-                <div style="font-family: 'Outfit', sans-serif; font-size: clamp(5rem, 10vw, 7.5rem); font-weight: 900; color: var(--fn-rust); line-height: 0.85; margin-bottom: 1.5rem;">
-                    100
-                </div>
-
-                <!-- CW100 Video Player Box -->
-                <div class="cw100-video-card" style="border-radius: 16px; overflow: hidden; position: relative; background: #0E1217; border: 1px solid rgba(110, 62, 46, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.15);">
-                    <video id="cw100Video" class="cw100-video-element" controls loop muted playsinline style="width: 100%; height: 260px; object-fit: cover; display: block;" poster="/honours-gala.png">
-                        <source src="/cw100-global-video.mp4" type="video/mp4">
-                        Your browser does not support video playback.
-                    </video>
-                    <div style="padding: 10px 16px; background: rgba(18, 20, 19, 0.95); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: #FFFFFF;">
-                        <span style="font-weight: 700; color: var(--fn-gold);">CW100 Global Showcase</span>
-                        <span style="color: #AAAAAA;">UK &middot; Europe &middot; BVI &middot; Africa &middot; Asia</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side: Narrative, Regions & Actions -->
-            <div>
-                <span class="pdf-subtitle rust">Content World 100 &middot; CW100</span>
-                <h2 class="pdf-title-med" style="margin-bottom: 1.25rem; color: #111111;">
-                    Celebrating Christian Influence<br>
-                    Impacting Africa & Beyond
-                </h2>
-                
-                <p style="font-size: 1.15rem; color: #444444; margin-bottom: 1.25rem; line-height: 1.6;">
-                    <strong>CW100</strong> recognizes 100 pioneering leaders, creators, educators, innovators, and changemakers across Africa, the UK, Europe, the British Virgin Islands, and Asia.
-                </p>
-
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <span class="badge-chip">Africa</span>
-                    <span class="badge-chip">United Kingdom</span>
-                    <span class="badge-chip">Europe</span>
-                    <span class="badge-chip">British Virgin Islands</span>
-                    <span class="badge-chip">Asia</span>
-                </div>
-
-                <p style="font-size: 0.95rem; font-weight: 700; color: #111111; margin-bottom: 2rem;">
-                    Official announcement &middot; 29 October 2026
-                </p>
-
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="/faithnexus100.html" class="btn-pdf-black">
-                        Discover CW100
-                    </a>
-                    <button class="btn-pdf-outline-dark" onclick="openNominationModal()">
-                        Nominate a Voice &rarr;
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 8: FAITH NEXUS LEADERSHIP (PDF Page 8 WITH ALL 10 REAL PORTRAITS) -->
-    <section class="bg-cream" style="padding: 100px 0; border-top: 1px solid var(--fn-border-subtle);">
+    <!-- SLIDE 6: CREATOR EXPERIENCES -->
+    <section class="bg-cream" style="padding: 90px 0; border-top: 1px solid var(--fn-border-subtle); position: relative;">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2.5rem;">
+            <span class="pdf-subtitle rust">CREATOR EXPERIENCES</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 1rem; color: #111111;">
+                More Than a Conference.
+            </h2>
+            <p style="font-size: 1.15rem; color: #666666; margin-bottom: 3rem;">
+                Faith Nexus is designed as a connected environment for learning, dialogue, creativity, collaboration and opportunity.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+                <!-- 6 Cards Grid -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem;">
+                    <!-- Card 1 -->
+                    <div class="pdf-expect-card accent-brown" style="border-top: 4px solid #6E3E2E;">
+                        <div>
+                            <h3 class="pdf-pillar-title" style="margin-bottom: 4px;">Nexus Creators Lounge</h3>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #6E3E2E; margin-bottom: 1rem;">Connect</div>
+                            <p style="font-size: 0.92rem; color: #666666;">
+                                Curated relationships across the creator and industry ecosystem.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="pdf-expect-card accent-gold" style="border-top: 4px solid #C68A27;">
+                        <div>
+                            <h3 class="pdf-pillar-title" style="margin-bottom: 4px;">Nexus Studio</h3>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #C68A27; margin-bottom: 1rem;">Create</div>
+                            <p style="font-size: 0.92rem; color: #666666;">
+                                Live conversations, interviews, podcasts and summit storytelling.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="pdf-expect-card accent-green" style="border-top: 4px solid #1C4436;">
+                        <div>
+                            <h3 class="pdf-pillar-title" style="margin-bottom: 4px;">Creator Masterclasses</h3>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #1C4436; margin-bottom: 1rem;">Learn</div>
+                            <p style="font-size: 0.92rem; color: #666666;">
+                                Focused practical learning with experienced creators and specialists.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="pdf-expect-card accent-red" style="border-top: 4px solid #C85038;">
+                        <div>
+                            <h3 class="pdf-pillar-title" style="margin-bottom: 4px;">Nexus Pitches</h3>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #C85038; margin-bottom: 1rem;">Build</div>
+                            <p style="font-size: 0.92rem; color: #666666;">
+                                Selected creator ventures meeting potential partners and opportunity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="pdf-expect-card accent-brown" style="border-top: 4px solid #6E3E2E;">
+                        <div>
+                            <h3 class="pdf-pillar-title" style="margin-bottom: 4px;">Creators Market</h3>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #6E3E2E; margin-bottom: 1rem;">Discover</div>
+                            <p style="font-size: 0.92rem; color: #666666;">
+                                Creator-led products, services, intellectual property and businesses.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="pdf-expect-card accent-gold" style="border-top: 4px solid #C68A27;">
+                        <div>
+                            <h3 class="pdf-pillar-title" style="margin-bottom: 4px;">Storytellers Showcase</h3>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #C68A27; margin-bottom: 1rem;">Experience</div>
+                            <p style="font-size: 0.92rem; color: #666666;">
+                                Film, photography, music, animation, spoken word and digital storytelling.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Experience Photo & CTA -->
+                <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                    <div style="border-radius: 16px; overflow: hidden; height: 350px; border: 1px solid var(--fn-border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08); position: relative; background: #FFFFFF; margin-bottom: 2rem;">
+                        <img src="/pdf_experience_lounge.jpg" alt="Experience Photography" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+
+                    <div style="text-align: right;">
+                        <a href="/creators.html" class="btn-pdf-black">
+                            DISCOVER CREATOR EXPERIENCES
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(0,0,0,0.3); font-weight: 700;">06</div>
+    </section>
+
+    <!-- SLIDE 7: SIGNATURE PLATFORM (COVENANT CONVERSATIONS) -->
+    <section style="background-color: #5E3224; color: #FFFFFF; padding: 100px 0; position: relative;">
+        <div class="container">
+            <span class="pdf-subtitle" style="color: var(--fn-gold);">SIGNATURE PLATFORM</span>
+            
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
                 <div>
-                    <span class="pdf-subtitle" style="color: #666666;">FAITH NEXUS 2027</span>
-                    <h2 class="pdf-title-med" style="margin-bottom: 0.5rem; color: #111111;">
-                        Faith Nexus Leadership
+                    <h2 class="pdf-title-large" style="color: #FFFFFF; margin-bottom: 1rem;">
+                        Covenant Conversations
                     </h2>
-                    <p style="font-size: 1.05rem; color: #666666;">
-                        Ten leaders. One shared vision for Kingdom voices, global reach.
+
+                    <p style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--fn-gold); margin-bottom: 2rem;">
+                        Roots. Relationship. Responsible Communication.
+                    </p>
+
+                    <p style="font-size: 1.2rem; color: #F0EAE1; line-height: 1.6; margin-bottom: 3rem; max-width: 640px;">
+                        A signature Faith Nexus platform strengthening understanding of the Jewish foundations of Christianity and encouraging informed, responsible engagement with Scripture, Judaism, Jewish identity, history and contemporary public narratives.
+                    </p>
+
+                    <a href="/covenant.html" class="btn-pdf-cream">
+                        DISCOVER COVENANT CONVERSATIONS
+                    </a>
+                </div>
+
+                <!-- Right Side Dialogue Photography -->
+                <div style="border-radius: 16px; overflow: hidden; height: 380px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 45px rgba(0,0,0,0.3); position: relative;">
+                    <img src="/pdf_dialogue_roundtable.jpg" alt="Dialogue Photography" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 700;">07</div>
+    </section>
+
+    <!-- SLIDE 8: CONTENT WORLD 100 (CW100) -->
+    <section class="bg-dark-grid" style="padding: 100px 0; position: relative;">
+        <div class="container">
+            <span class="pdf-subtitle gold">CONTENT WORLD 100</span>
+            
+            <div style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 4rem; align-items: center;">
+                <div>
+                    <h2 class="pdf-title-large" style="margin-bottom: 1.25rem;">
+                        The Creators Shaping Africa.
+                    </h2>
+
+                    <p style="font-size: 1.2rem; color: #DDDDDD; line-height: 1.6; margin-bottom: 2rem; max-width: 660px;">
+                        Content World 100 — CW100 is an annual editorial property of Content World Magazine, presented at Faith Nexus.
+                    </p>
+
+                    <!-- 50 / 50 Stats Cards -->
+                    <div class="cw100-stats-grid" style="max-width: 600px;">
+                        <div class="cw100-stat-card brown-bg">
+                            <div class="cw100-stat-num">50</div>
+                            <div class="cw100-stat-label">Christian Creators</div>
+                        </div>
+
+                        <div class="cw100-stat-card gold-bg">
+                            <div class="cw100-stat-num">50</div>
+                            <div class="cw100-stat-label">Secular Creators</div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 1.05rem; color: #CCCCCC; line-height: 1.6; margin-bottom: 1rem; max-width: 640px;">
+                        One editorial list documenting creators shaping faith, culture, audiences, technology, business and public conversation across Africa.
+                    </p>
+
+                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--fn-gold); margin-bottom: 2rem;">
+                        CW100 Class of 2027 &middot; 16 April 2027
+                    </div>
+
+                    <a href="/faithnexus100.html" class="btn-pdf-white">
+                        DISCOVER CW100
+                    </a>
+                </div>
+
+                <!-- Editorial Cover Image Frame -->
+                <div style="border-radius: 16px; overflow: hidden; height: 440px; border: 1px solid rgba(198,138,39,0.4); box-shadow: 0 25px 50px rgba(0,0,0,0.45); position: relative; background: #0E1217;">
+                    <img src="/pdf_editorial_cover.jpg" alt="CW100 Editorial Cover" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.3); font-weight: 700;">08</div>
+    </section>
+
+    <!-- SLIDE 9: AUDIENCE / FIND YOUR PLACE -->
+    <section class="bg-cream" style="padding: 100px 0; position: relative;">
+        <div class="container">
+            <span class="pdf-subtitle rust">AUDIENCE</span>
+            <h2 class="pdf-title-med" style="margin-bottom: 0.75rem; color: #111111;">
+                Find Your Place
+            </h2>
+            <p style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--fn-rust); margin-bottom: 0.75rem;">
+                One gathering. Multiple industries. Shared purpose.
+            </p>
+            <p style="font-size: 1.15rem; color: #555555; margin-bottom: 3rem;">
+                Faith Nexus brings creators together with the wider ecosystem surrounding their work.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+                <!-- Left Sector Pills Grid -->
+                <div>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 2.5rem;">
+                        <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 12px; padding: 1.25rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #111111;">
+                            Faith &amp; Ministry
+                        </div>
+                        <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 12px; padding: 1.25rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #111111;">
+                            Creators &amp; Media
+                        </div>
+                        <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 12px; padding: 1.25rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #111111;">
+                            Technology &amp; Enterprise
+                        </div>
+                        <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 12px; padding: 1.25rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #111111;">
+                            Education &amp; Leadership
+                        </div>
+                        <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 12px; padding: 1.25rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #111111;">
+                            Arts &amp; Culture
+                        </div>
+                        <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 12px; padding: 1.25rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #111111;">
+                            Brands &amp; Platforms
+                        </div>
+                        <div style="background: #FFFFFF; border: 1px solid var(--fn-border-subtle); border-radius: 12px; padding: 1.25rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #111111; grid-column: span 2;">
+                            Next Generation
+                        </div>
+                    </div>
+
+                    <p style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--fn-forest); margin-bottom: 2rem;">
+                        If you shape stories, audiences, ideas or culture, there is a place for you here.
                     </p>
                 </div>
 
-                <div style="width: 52px; height: 52px; border-radius: 50%; background: #111111; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center;">
-                    FN
-                </div>
-            </div>
-
-            <!-- 10 Leadership Profile Cards -->
-            <div class="leadership-grid">
-                <!-- Leader 1: Contemplative Leader (Man holding mouth - FIRST) -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-01-visionary.png" alt="Apostolic Statesman" class="leader-img">
+                <!-- Right Community Photography & CTA -->
+                <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                    <div style="border-radius: 16px; overflow: hidden; height: 320px; border: 1px solid var(--fn-border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08); position: relative; background: #FFFFFF; margin-bottom: 2rem;">
+                        <img src="/pdf_cross_sector_audience.jpg" alt="Community Photography" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="leader-name">Leader Name 01</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 01</div>
-                </div>
 
-                <!-- Leader 2: Samuel Matete (SECOND) -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-02-architect.jpg" alt="Samuel Matete" class="leader-img">
+                    <div style="text-align: right;">
+                        <a href="/registration.html" class="btn-pdf-black">
+                            REGISTER YOUR INTEREST
+                        </a>
                     </div>
-                    <div class="leader-name">Samuel Matete</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 02</div>
                 </div>
-
-                <!-- Leader 3: Digital Media Executive -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-03-tech-exec.jpg" alt="Digital Media Lead" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 03</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 03</div>
-                </div>
-
-                <!-- Leader 4: Senior Bishop -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-04-bishop.jpg" alt="Senior Bishop" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 04</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 04</div>
-                </div>
-
-                <!-- Leader 5: Creative Film Director -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-05-creative.jpg" alt="Creative Producer" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 05</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 05</div>
-                </div>
-
-                <!-- Leader 6: Venture Capitalist -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-06-investor.jpg" alt="Venture Investor" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 06</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 06</div>
-                </div>
-
-                <!-- Leader 7: Academic Dean -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-07-academic.jpg" alt="University Dean" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 07</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 07</div>
-                </div>
-
-                <!-- Leader 8: Global Broadcaster -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/leader-08-broadcaster.jpg" alt="Global Broadcaster" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 08</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 08</div>
-                </div>
-
-                <!-- Leader 9: Covenant Directorate -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/Global_Storytellers.png" alt="Covenant Directorate" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 09</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 09</div>
-                </div>
-
-                <!-- Leader 10: Youth Renaissance Lead -->
-                <div class="leader-card">
-                    <div class="leader-avatar-wrap">
-                        <img src="/Media_Teams.png" alt="Next-Gen Lead" class="leader-img">
-                    </div>
-                    <div class="leader-name">Leader Name 10</div>
-                    <div class="leader-role">Faith Nexus Leadership &middot; 10</div>
-                </div>
-            </div>
-
-            <div style="margin-top: 3.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--fn-border-subtle); padding-top: 1.5rem; font-size: 0.85rem; color: #777777;">
-                <div>Photography placeholders are ready to be replaced with the final approved leadership portraits and names.</div>
-                <div style="font-weight: 800; letter-spacing: 0.05em; color: #111111;">KINGDOM VOICES. GLOBAL REACH.</div>
             </div>
         </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(0,0,0,0.3); font-weight: 700;">09</div>
     </section>
 
-    <!-- SECTION 9: FINAL CTA & CONVENTION SHOWCASE (UPGRADED) -->
-    <section class="bg-dark-grid" style="padding: 110px 0 90px;">
-        <div class="container cta-grid">
+    <!-- SLIDE 10: JOHANNESBURG 2027 -->
+    <section style="background-color: #1C4436; color: #FFFFFF; padding: 100px 0; position: relative;">
+        <div class="container">
+            <span class="pdf-subtitle" style="color: var(--fn-gold);">JOHANNESBURG 2027</span>
+            
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;">
+                <div>
+                    <h2 class="pdf-title-large" style="color: #FFFFFF; margin-bottom: 1rem;">
+                        Africa Meets Here.
+                    </h2>
+
+                    <p style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 800; color: #A0D8C8; margin-bottom: 1.5rem;">
+                        Three days of ideas, relationships and opportunity in Rosebank, Johannesburg.
+                    </p>
+
+                    <p style="font-size: 1.15rem; color: #E0F2EC; line-height: 1.6; margin-bottom: 3rem; max-width: 620px;">
+                        For delegates travelling from across South Africa, Africa and beyond, Faith Nexus will provide dedicated information on travel, accommodation and attending the summit.
+                    </p>
+
+                    <a href="/hospitality.html" class="btn-pdf-cream">
+                        PLAN YOUR VISIT
+                    </a>
+                </div>
+
+                <!-- Right Destination Photography -->
+                <div style="border-radius: 16px; overflow: hidden; height: 380px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 45px rgba(0,0,0,0.3); position: relative;">
+                    <img src="/pdf_johannesburg_skyline.jpg" alt="Johannesburg Destination Photography" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 700;">10</div>
+    </section>
+
+    <!-- SLIDE 11: PARTNERSHIPS -->
+    <section class="bg-cream" style="padding: 100px 0; position: relative;">
+        <div class="container">
+            <span class="pdf-subtitle rust">PARTNERSHIPS</span>
+            
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+                <div>
+                    <h2 class="pdf-title-large" style="color: #111111; margin-bottom: 1rem;">
+                        Partner With Faith Nexus
+                    </h2>
+
+                    <p style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--fn-forest); margin-bottom: 1.5rem;">
+                        Invest in the Voices Shaping the Next Generation.
+                    </p>
+
+                    <p style="font-size: 1.15rem; color: #555555; line-height: 1.6; margin-bottom: 3rem; max-width: 620px;">
+                        Connect your organisation with Christian creators and the wider ecosystem of media, technology, culture, education and enterprise surrounding them.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="/partners.html" class="btn-pdf-black">
+                            BECOME A PARTNER
+                        </a>
+                        <a href="/exhibition.html" class="btn-pdf-outline-dark">
+                            EXHIBIT AT FAITH NEXUS
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side Photography & Ecosystem Access Box -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="border-radius: 16px; overflow: hidden; height: 260px; border: 1px solid var(--fn-border-subtle); box-shadow: 0 15px 35px rgba(0,0,0,0.08); position: relative; background: #FFFFFF;">
+                        <img src="/pdf_sponsor_exhibition.jpg" alt="Sponsor Exhibition Photography" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+
+                    <!-- Ecosystem Access Card -->
+                    <div class="ecosystem-access-card">
+                        <div class="ecosystem-access-title">ECOSYSTEM ACCESS</div>
+                        <ul class="pdf-bullet-list">
+                            <li class="pdf-bullet-item"><span class="pdf-dot brown"></span> Christian Creators</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot gold"></span> Media</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot green"></span> Technology</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot brown"></span> Culture</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot gold"></span> Education</li>
+                            <li class="pdf-bullet-item"><span class="pdf-dot green"></span> Enterprise</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(0,0,0,0.3); font-weight: 700;">11</div>
+    </section>
+
+    <!-- SLIDE 12: CLOSING HERO & FOOTER -->
+    <section class="bg-dark-grid" style="padding: 100px 0 80px; position: relative;">
+        <div class="container hero-grid">
             <div>
-                <!-- Gold Tag with Icon -->
-                <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 1.25rem;">
-                    <img src="/fn-logo-icon.png" alt="Faith Nexus" style="height: 22px; width: 22px; object-fit: contain;">
-                    <span class="pdf-subtitle gold" style="margin-bottom: 0; font-size: 0.85rem;">FAITH NEXUS 2027</span>
+                <span class="pdf-subtitle gold" style="margin-bottom: 1.25rem;">FAITH NEXUS 2027</span>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1.5rem;">
+                    Kingdom Voices. Global Reach.
                 </div>
 
-                <h2 class="pdf-title-large" style="margin-bottom: 1.25rem;">
-                    Kingdom Voices.<br>
-                    Global Reach.
+                <h2 class="pdf-title-large" style="margin-bottom: 1.5rem;">
+                    Three Days. Seven Pillars.<br>
+                    One Creator Ecosystem.
                 </h2>
-                
-                <p style="font-size: 1.15rem; color: #CCCCCC; max-width: 580px; line-height: 1.6; margin-bottom: 2rem;">
-                    Join 2,000 global leaders, media executives, tech builders, and innovators in Johannesburg as we shape the convergence of faith, media, and culture.
-                </p>
 
-                <!-- Premium 3-Tier Button Bar -->
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <a href="/registration.html" class="btn-pdf-white">
-                        Register Your Interest &rarr;
-                    </a>
-                    <a href="/partners.html" class="btn-pdf-outline-light">
-                        Become a Partner ↗
-                    </a>
-                    <a href="/exhibition.html" class="btn-pdf-outline-light">
-                        Exhibit at Summit ↗
-                    </a>
+                <div style="font-weight: 700; font-size: 1.1rem; color: #FFFFFF; margin-bottom: 0.5rem;">
+                    14–16 April 2027
+                </div>
+                <div style="font-size: 1rem; color: #AAAAAA; margin-bottom: 2.5rem;">
+                    Johannesburg, South Africa
                 </div>
 
-                <!-- Summit Stats Metric Ribbon -->
-                <div class="summit-stats-ribbon">
-                    <div>
-                        <div class="stat-metric-num">3</div>
-                        <div class="stat-metric-label">Summit Days</div>
-                    </div>
-                    <div>
-                        <div class="stat-metric-num">7</div>
-                        <div class="stat-metric-label">Strategic Pillars</div>
-                    </div>
-                    <div>
-                        <div class="stat-metric-num">2,000+</div>
-                        <div class="stat-metric-label">Leaders Expected</div>
-                    </div>
-                    <div>
-                        <div class="stat-metric-num">50+</div>
-                        <div class="stat-metric-label">Nations</div>
-                    </div>
-                </div>
+                <a href="/registration.html" class="btn-pdf-white">
+                    REGISTER YOUR INTEREST
+                </a>
             </div>
 
-            <!-- Johannesburg Convention Showcase & Venue Card -->
-            <div class="venue-showcase-card">
-                <div class="venue-img-wrap">
-                    <img src="/covenant-conversations-hall.jpg" alt="Johannesburg Summit Venue" class="venue-img">
-                    <div class="venue-coordinates-pill">
-                        📍 Sandton, Johannesburg &middot; 26.1076° S, 28.0567° E
-                    </div>
-                </div>
-
-                <div class="venue-details-body">
-                    <div>
-                        <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--fn-gold); letter-spacing: 0.05em; margin-bottom: 4px;">
-                            Host City &amp; Venue Precinct
-                        </div>
-                        <h4 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 6px;">
-                            Johannesburg, South Africa
-                        </h4>
-                        <p style="font-size: 0.88rem; color: #AAAAAA; line-height: 1.5;">
-                            Main Summit: <strong>14–16 April 2027</strong><br>
-                            Soft Launch: <strong>29 October 2026</strong>
-                        </p>
-                    </div>
-
-                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
-                        <span style="font-size: 0.8rem; color: #888888;">Accreditation open</span>
-                        <button onclick="addSummitToCalendar()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #FFFFFF; padding: 6px 12px; border-radius: 4px; font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                            📅 Add to Calendar
-                        </button>
-                    </div>
-                </div>
+            <!-- Closing Photography Frame -->
+            <div style="border-radius: 16px; overflow: hidden; height: 380px; border: 1px solid rgba(198,138,39,0.4); box-shadow: 0 25px 50px rgba(0,0,0,0.45); position: relative; background: #0E1217;">
+                <img src="/pdf_closing_editorial.jpg" alt="Closing Photography" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
+        <div style="position: absolute; bottom: 15px; right: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.3); font-weight: 700;">012</div>
     </section>
 
-    <!-- FOOTER: 3-COLUMN MINIMALIST PDF LAYOUT (PDF Page 9) -->
+    <!-- FOOTER: 3-COLUMN MINIMALIST PDF LAYOUT -->
     <footer class="pdf-footer">
         <div class="container">
             <div class="pdf-footer-3col">
@@ -731,20 +831,24 @@
                 <div class="footer-links-row">
                     <div>
                         <a href="/about.html">About</a> &middot; 
-                        <a href="/summit.html">Programme</a> &middot; 
-                        <a href="/covenant.html">Experiences</a>
-                    </div>
-                    <div>
-                        <a href="/faithnexus100.html">FN100</a> &middot; 
+                        <a href="/summit.html">Summit 2027</a> &middot; 
+                        <a href="/summit.html#programme">Programme</a> &middot; 
+                        <a href="/creators.html">Experiences</a> &middot; 
+                        <a href="/covenant.html">Covenant Conversations</a> &middot; 
+                        <a href="/faithnexus100.html">CW100</a> &middot; 
                         <a href="/partners.html">Partners</a> &middot; 
-                        <a href="/exhibition.html">Exhibit</a> &middot; 
                         <a href="/media.html">Media</a>
+                    </div>
+                    <div style="margin-top: 6px; font-weight: 700;">
+                        <a href="/registration.html">Register</a> &middot; 
+                        <a href="/partners.html">Partner</a> &middot; 
+                        <a href="/exhibition.html">Exhibit</a>
                     </div>
                 </div>
 
                 <div class="footer-convened-col">
                     <div>Convened by <strong>WCCCS</strong></div>
-                    <div style="color: #666666; font-size: 0.85rem;">Johannesburg, South Africa</div>
+                    <div style="color: #666666; font-size: 0.85rem; margin-top: 4px;">Johannesburg, South Africa</div>
                 </div>
             </div>
         </div>
