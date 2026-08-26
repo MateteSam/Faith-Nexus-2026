@@ -329,12 +329,12 @@
 
         document.getElementById('delegateRegForm')?.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('dName').value;
-            const email = document.getElementById('dEmail').value;
-            const pass = document.getElementById('dPass').value;
+            const name = document.getElementById('dName')?.value || 'Delegate';
+            const email = document.getElementById('dEmail')?.value || '';
+            const pass = document.getElementById('dPass')?.value || 'Summit Pass';
 
-            alert(`Thank you ${name}!\n\nYour registration interest for [${pass}] has been recorded. Confirmation details will be sent to ${email}.`);
-            e.target.reset();
+            // Redirect to success confirmation page
+            window.location.href = `/success.html?name=${encodeURIComponent(name)}&pass=${encodeURIComponent(pass)}`;
         });
     </script>
 </body>

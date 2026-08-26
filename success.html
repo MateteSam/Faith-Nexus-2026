@@ -49,7 +49,7 @@
                     Your Journey to Nexus 2027 Has Begun
                 </h1>
 
-                <p style="font-size: 1.15rem; color: #EEEEEE; line-height: 1.7; margin-bottom: 2rem;">
+                <p id="welcomeMsg" style="font-size: 1.15rem; color: #EEEEEE; line-height: 1.7; margin-bottom: 2rem;">
                     Thank you for registering your interest for <strong>Faith Nexus 2027</strong> (14–16 April 2027, Rosebank, Johannesburg). An official acknowledgement and briefing pack has been recorded.
                 </p>
 
@@ -83,9 +83,17 @@
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
+        const regName = urlParams.get('name');
+        const regPass = urlParams.get('pass');
+
         if (urlParams.get('type') === 'group') {
             document.getElementById('group-notice').style.display = 'block';
         }
+        
+        if (regName) {
+            document.getElementById('welcomeMsg').innerHTML = `Thank you <strong>${decodeURIComponent(regName)}</strong> for registering your Early Bird interest for <strong>Faith Nexus 2027</strong> (14–16 April 2027, Rosebank, Johannesburg). An official acknowledgement and briefing pack has been recorded.`;
+        }
+
         // Generate pseudo unique reference
         const randomHex = Math.random().toString(36).substring(2, 8).toUpperCase();
         document.getElementById('orderRef').innerText = `Registration Reference: FN2027-${randomHex}`;
