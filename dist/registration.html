@@ -211,20 +211,30 @@
                 </p>
             </div>
 
-            <form id="delegateRegForm" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2.5rem;">
+            <form id="delegateRegForm" action="https://formsubmit.co/info@faithnexus.digital" method="POST" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2.5rem;">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="⚡ New Early Bird Registration - Faith Nexus 2027">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
                 <div style="margin-bottom: 1.25rem;">
                     <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Full Name</label>
-                    <input type="text" id="dName" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="Dr. Jane Doe" required>
+                    <input type="text" id="dName" name="Full Name" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="Dr. Jane Doe" required>
                 </div>
 
                 <div style="margin-bottom: 1.25rem;">
                     <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Email Address</label>
-                    <input type="email" id="dEmail" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="you@domain.org" required>
+                    <input type="email" id="dEmail" name="Email" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="you@domain.org" required>
+                </div>
+
+                <div style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Phone / WhatsApp</label>
+                    <input type="tel" id="dPhone" name="Phone" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="+27 82 123 4567" required>
                 </div>
 
                 <div style="margin-bottom: 1.25rem;">
                     <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Primary Sector</label>
-                    <select id="dSector" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
+                    <select id="dSector" name="Primary Sector" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
                         <option value="Faith & Ministry">Faith & Ministry</option>
                         <option value="Creators & Media">Creators & Media</option>
                         <option value="Technology & Enterprise">Technology & Enterprise</option>
@@ -234,19 +244,28 @@
                     </select>
                 </div>
 
+                <div style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Pass & Pricing Selection</label>
+                    <select id="dPass" name="Pass & Price" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(198,138,39,0.5); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
+                        <option value="⚡ Early Bird Main Event Pass (14–16 April 2027) — R2,950 ZAR / $165 USD" selected>⚡ Early Bird Main Event Pass (14–16 April 2027) — R2,950 ZAR / $165 USD (Active Now)</option>
+                        <option value="Standard Main Summit Delegate Pass — R4,500 ZAR / $250 USD">Standard Main Summit Delegate Pass — R4,500 ZAR / $250 USD</option>
+                        <option value="FN100 Gala VIP Pass (15 April 2027) — R4,500 ZAR / $250 USD">FN100 Gala VIP Pass (15 April 2027) — R4,500 ZAR / $250 USD</option>
+                        <option value="Global Virtual Livestream Pass — R650 ZAR / $35 USD">Global Virtual Livestream Pass — R650 ZAR / $35 USD</option>
+                        <option value="Soft Launch Invitation (29 Oct 2026) — Complimentary">Soft Launch Invitation (29 Oct 2026) — Complimentary (By Invitation)</option>
+                    </select>
+                </div>
+
                 <div style="margin-bottom: 2rem;">
-                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Pass Preference</label>
-                    <select id="dPass" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(198,138,39,0.5); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
-                        <option value="Early Bird Main Event Pass (14–16 April 2027)" selected>⚡ Early Bird Main Event Pass (14–16 April 2027) — Active Now</option>
-                        <option value="Standard Main Summit Delegate Pass (14–16 April 2027)">Standard Main Summit Delegate Pass (14–16 April 2027)</option>
-                        <option value="Soft Launch Invitation (29 Oct 2026)">Soft Launch Invitation (29 Oct 2026)</option>
-                        <option value="Global Virtual Livestream Pass">Global Virtual Livestream Pass</option>
-                        <option value="FN100 Gala VIP Pass">FN100 Gala VIP Pass</option>
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Payment Method</label>
+                    <select id="dPayment" name="Payment Method" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(198,138,39,0.5); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
+                        <option value="Direct Bank Transfer / EFT (Standard Bank / FNB / Nedbank)">Direct Bank Transfer / EFT (Standard Bank / FNB / Nedbank)</option>
+                        <option value="Instant Online Credit / Debit Card Payment (PayFast / Paystack)">Instant Online Credit / Debit Card Payment (PayFast / Paystack)</option>
+                        <option value="Institutional Invoice / Corporate Purchase Order">Institutional Invoice / Corporate Purchase Order</option>
                     </select>
                 </div>
 
                 <button type="submit" class="btn-pdf-cream" style="width: 100%; padding: 14px; font-size: 1rem;">
-                    SUBMIT EARLY BIRD REGISTRATION &rarr;
+                    PROCEED TO PAYMENT &amp; CONFIRM REGISTRATION &rarr;
                 </button>
             </form>
         </div>
