@@ -515,7 +515,32 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initConcierge();
     initSectorHub();
+    initArchetypeSelector();
 });
+
+/* CREATOR ARCHETYPE SELECTOR (INCLUSIVE ECOSYSTEM) */
+function initArchetypeSelector() {
+    const tabs = document.querySelectorAll('.archetype-tab-btn');
+    const panels = document.querySelectorAll('.archetype-content-panel');
+
+    if (!tabs.length || !panels.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-archetype');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+
+            tab.classList.add('active');
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        });
+    });
+}
+
 
 
 

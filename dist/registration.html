@@ -30,8 +30,8 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.05);
         }
     </style>
-  <script type="module" crossorigin src="/assets/main-B_8JH6Hu.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DXdCh9xD.css">
+  <script type="module" crossorigin src="/assets/main-DDsYB-Gc.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CuuvN28f.css">
 </head>
 <body class="bg-cream">
 
@@ -213,7 +213,7 @@
 
             <form id="delegateRegForm" action="https://formsubmit.co/info@faithnexus.digital" method="POST" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 2.5rem;">
                 <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_subject" value="⚡ New Early Bird Registration - Faith Nexus 2027">
+                <input type="hidden" name="_subject" value="⚡ New Priority Early Bird Registration - Faith Nexus 2027">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
 
@@ -228,7 +228,7 @@
                 </div>
 
                 <div style="margin-bottom: 1.25rem;">
-                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Phone / WhatsApp</label>
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Phone / WhatsApp Number</label>
                     <input type="tel" id="dPhone" name="Phone" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #FFF; font-size: 0.95rem;" placeholder="+27 82 123 4567" required>
                 </div>
 
@@ -245,27 +245,33 @@
                 </div>
 
                 <div style="margin-bottom: 1.25rem;">
-                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Pass & Pricing Selection</label>
-                    <select id="dPass" name="Pass & Price" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(198,138,39,0.5); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
-                        <option value="⚡ Early Bird Main Event Pass (14–16 April 2027) — R2,950 ZAR / $165 USD" selected>⚡ Early Bird Main Event Pass (14–16 April 2027) — R2,950 ZAR / $165 USD (Active Now)</option>
-                        <option value="Standard Main Summit Delegate Pass — R4,500 ZAR / $250 USD">Standard Main Summit Delegate Pass — R4,500 ZAR / $250 USD</option>
-                        <option value="FN100 Gala VIP Pass (15 April 2027) — R4,500 ZAR / $250 USD">FN100 Gala VIP Pass (15 April 2027) — R4,500 ZAR / $250 USD</option>
-                        <option value="Global Virtual Livestream Pass — R650 ZAR / $35 USD">Global Virtual Livestream Pass — R650 ZAR / $35 USD</option>
-                        <option value="Soft Launch Invitation (29 Oct 2026) — Complimentary">Soft Launch Invitation (29 Oct 2026) — Complimentary (By Invitation)</option>
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Early Bird Pass Preference</label>
+                    <select id="dPass" name="Pass Preference" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(198,138,39,0.5); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
+                        <option value="⚡ Priority Early Bird Main Event Pass (14–16 April 2027)" selected>⚡ Priority Early Bird Main Event Pass (14–16 April 2027) : Reserve Spot</option>
+                        <option value="FN100 Gala VIP Pass (15 April 2027)">FN100 Gala VIP Pass (15 April 2027)</option>
+                        <option value="Global Virtual Livestream Pass">Global Virtual Livestream Pass</option>
+                        <option value="Soft Launch Invitation (29 Oct 2026)">Soft Launch Invitation (29 Oct 2026)</option>
                     </select>
                 </div>
 
                 <div style="margin-bottom: 2rem;">
-                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Payment Method</label>
-                    <select id="dPayment" name="Payment Method" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(198,138,39,0.5); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
-                        <option value="Direct Bank Transfer / EFT (Standard Bank / FNB / Nedbank)">Direct Bank Transfer / EFT (Standard Bank / FNB / Nedbank)</option>
-                        <option value="Instant Online Credit / Debit Card Payment (PayFast / Paystack)">Instant Online Credit / Debit Card Payment (PayFast / Paystack)</option>
-                        <option value="Institutional Invoice / Corporate Purchase Order">Institutional Invoice / Corporate Purchase Order</option>
+                    <label style="display: block; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.4rem;">Delegation Type</label>
+                    <select id="dDelegation" name="Delegation Type" style="width: 100%; padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1A1A1A; color: #FFF; font-size: 0.95rem;" required>
+                        <option value="Individual Delegate">Individual Delegate</option>
+                        <option value="Church / Ministry Leadership Team">Church / Ministry Leadership Team</option>
+                        <option value="Corporate / Enterprise Delegation">Corporate / Enterprise Delegation</option>
+                        <option value="International Delegation">International Delegation</option>
                     </select>
                 </div>
 
+                <div style="background: rgba(198, 138, 39, 0.1); border: 1px solid rgba(198, 138, 39, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; text-align: center;">
+                    <span style="font-size: 0.85rem; color: var(--fn-gold); font-weight: 700;">
+                        ✓ No upfront payment required today. Your priority seat reservation will be locked in immediately.
+                    </span>
+                </div>
+
                 <button type="submit" class="btn-pdf-cream" style="width: 100%; padding: 14px; font-size: 1rem;">
-                    PROCEED TO PAYMENT &amp; CONFIRM REGISTRATION &rarr;
+                    SECURE YOUR EARLY BIRD RESERVATION &rarr;
                 </button>
             </form>
         </div>
@@ -321,7 +327,7 @@
 
             <div class="pdf-footer-bottom">
                 <div class="footer-convened">
-                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                    Convened by <strong>World Christian Content Creators Summit (WCCCS)</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
                 </div>
                 <div class="footer-socials">
                     <a href="#">LinkedIn</a> &middot; 

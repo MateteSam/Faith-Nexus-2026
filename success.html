@@ -53,24 +53,24 @@
                     Thank you for registering your interest for <strong>Faith Nexus 2027</strong> (14–16 April 2027, Rosebank, Johannesburg). An official acknowledgement and briefing pack has been recorded.
                 </p>
 
-                <div id="paymentDetailsCard" style="background: rgba(198, 138, 39, 0.1); border: 1px solid rgba(198, 138, 39, 0.4); border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem; text-align: left;">
+                <div id="paymentDetailsCard" style="background: rgba(198, 138, 39, 0.12); border: 1px solid rgba(198, 138, 39, 0.4); border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem; text-align: left;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
-                        <span style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--fn-gold);">⚡ Early Bird Payment Details</span>
-                        <span style="font-size: 0.8rem; background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 20px; color: #FFF;">Pass Invoice</span>
+                        <span style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--fn-gold);">⚡ Priority Early Bird Reservation Confirmed</span>
+                        <span style="font-size: 0.8rem; background: rgba(0,255,135,0.15); border: 1px solid rgba(0,255,135,0.4); padding: 4px 12px; border-radius: 20px; color: #00FF87; font-weight: 700;">Status: Active</span>
                     </div>
 
-                    <div style="font-size: 0.95rem; color: #DDDDDD; line-height: 1.8; margin-bottom: 1.5rem;">
-                        <div><strong>Bank Name:</strong> Standard Bank South Africa</div>
-                        <div><strong>Account Name:</strong> Faith Nexus 2027 / WCCCS</div>
-                        <div><strong>Account Number:</strong> 10189283741</div>
-                        <div><strong>Branch Code:</strong> 051001 (Rosebank)</div>
-                        <div><strong>Payment Reference:</strong> <span id="paymentRef" style="color: var(--fn-gold); font-weight: 800;">FN2027-DELEGATE</span></div>
-                        <div><strong>Proof of Payment Email:</strong> <a href="mailto:info@faithnexus.digital" style="color: var(--fn-gold); text-decoration: underline;">info@faithnexus.digital</a></div>
+                    <div style="font-size: 0.98rem; color: #DDDDDD; line-height: 1.8; margin-bottom: 1.5rem;">
+                        <p style="margin-bottom: 1rem;">
+                            <strong>No payment is required today.</strong> Your early bird priority seat for <strong>Faith Nexus 2027</strong> (14–16 April 2027, Rosebank, Johannesburg) has been locked in.
+                        </p>
+                        <div>&bull; <strong>Reservation Reference:</strong> <span id="paymentRef" style="color: var(--fn-gold); font-weight: 800;">FN2027-DELEGATE</span></div>
+                        <div>&bull; <strong>Official Notification Sent To:</strong> <a href="mailto:info@faithnexus.digital" style="color: var(--fn-gold); text-decoration: underline;">info@faithnexus.digital</a></div>
+                        <div>&bull; <strong>Next Steps:</strong> Delegate ticket billing and pass issuance details will be communicated directly to your email closer to the event date.</div>
                     </div>
 
                     <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                        <a id="popLink" href="mailto:info@faithnexus.digital?subject=Proof%20of%20Payment%20-%20Faith%20Nexus%202027" class="btn-pdf-cream" style="font-size: 0.88rem; padding: 10px 18px;">
-                            ✉ Email Proof of Payment to info@faithnexus.digital
+                        <a id="popLink" href="mailto:info@faithnexus.digital?subject=Early%20Bird%20Enquiry%20-%20Faith%20Nexus%202027" class="btn-pdf-cream" style="font-size: 0.88rem; padding: 10px 18px;">
+                            ✉ Contact Convenors Team (info@faithnexus.digital)
                         </a>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
         <div class="container">
             <div class="pdf-footer-bottom" style="border-top: none; padding-top: 0;">
                 <div class="footer-convened">
-                    Convened by <strong>World Christian Content Creators Summit &mdash; WCCCS</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
+                    Convened by <strong>World Christian Content Creators Summit (WCCCS)</strong> (<a href="https://www.wcccs.io" target="_blank" rel="noopener" style="color: var(--fn-gold); text-decoration: underline;">www.wcccs.io</a>)
                 </div>
                 <div class="footer-legal">
                     <span>&copy; 2027 Faith Nexus</span> &middot; 
@@ -124,7 +124,7 @@
             document.getElementById('paymentRef').innerText = refCode;
         }
         if (document.getElementById('popLink')) {
-            document.getElementById('popLink').href = `mailto:info@faithnexus.digital?subject=Proof%20of%20Payment%20-%20${refCode}&body=Hi%20Faith%20Nexus%20Team,%0A%0APlease%20find%20attached%20my%20proof%20of%20payment%20for%20reference%20${refCode}.%0A%0AName:%20${regName ? encodeURIComponent(regName) : ''}%0A`;
+            document.getElementById('popLink').href = `mailto:info@faithnexus.digital?subject=Priority%20Reservation%20Enquiry%20-%20${refCode}&body=Hi%20Faith%20Nexus%20Team,%0A%0AI%20have%20secured%20my%20Early%20Bird%20Priority%20Reservation%20(Ref:%20${refCode}).%0A%0AName:%20${regName ? encodeURIComponent(regName) : ''}%0A`;
         }
     </script>
 </body>
