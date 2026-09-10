@@ -4,3 +4,6 @@ dist/
 .DS_Store
 *.zip
 Untitled design*.mp4
+
+# Local Netlify folder
+.netlify
