@@ -4,7 +4,7 @@ export function renderNavbar() {
         const topBar = document.createElement('div');
         topBar.className = 'announcement-bar';
         topBar.innerHTML = `
-            <span>Faith Nexus 2027 Soft Launch &middot; 29 October 2026 &middot; Johannesburg &nbsp;&rarr;</span>
+            <span>Faith Nexus 2027 Soft Launch &middot; 16 NOV 2026 &middot; Johannesburg &nbsp;&rarr;</span>
             <a href="/virtual.html" class="announcement-link">Explore</a>
         `;
         document.body.prepend(topBar);

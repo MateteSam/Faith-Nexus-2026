@@ -408,8 +408,8 @@ function initConcierge() {
                 <strong>🏨 Summit Hotels & Lodging</strong>
             </div>
 
-            <div class="concierge-faq-item" onclick="alert('🚀 SOFT LAUNCH:\nJoin the hybrid soft launch on 29 October 2026 in Johannesburg ahead of the main summit in April 2027.')">
-                <strong>✨ Soft Launch: 29 Oct 2026</strong>
+            <div class="concierge-faq-item" onclick="alert('🚀 SOFT LAUNCH:\nJoin the hybrid soft launch on 16 NOV 2026 in Johannesburg ahead of the main summit in April 2027.')">
+                <strong>✨ Soft Launch: 16 NOV 2026</strong>
             </div>
 
             <div class="concierge-faq-item" onclick="alert('🏆 CW100 NOMINATIONS:\nNominations are officially open for Christian leaders impacting Africa, UK, Europe, BVI, and Asia.')">
