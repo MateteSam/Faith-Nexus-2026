@@ -13,6 +13,7 @@ files.forEach(file => {
 });
 
 export default defineConfig({
+    plugins: [],
     server: {
         port: 5180,
         strictPort: true,
